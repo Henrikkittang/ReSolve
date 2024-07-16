@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "Windows",
+            "includePath": [
+                "include/*",
+                "app/"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            
+            "compilerPath": "C:/mingw64/bin/clang++.exe"
+        }
+    ],
+    "version": 4
+}
