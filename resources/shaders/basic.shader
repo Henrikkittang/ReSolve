@@ -15,14 +15,8 @@ void main()
 layout(location = 0) out vec4 color;
 
 uniform vec4 u_Color;
-uniform vec4 u_yolo;
-
-vec4 getColor()
-{
-   return u_yolo;
-}
 
 void main()
 {
-   color = u_Color + getColor();
+   color = u_Color;
 } 

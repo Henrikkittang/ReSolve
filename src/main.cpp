@@ -6,20 +6,25 @@
 #include <fstream>
 #include <sstream>    
 
-#include "../app/renderer.hpp"
-#include "../app/vertexBuffer.hpp"
-#include "../app/indexBuffer.hpp"
-#include "../app/vertexBufferLayout.hpp"
-#include "../app/vertexArray.hpp"
-#include "../app/shader.hpp"
-#include "../app/renderer.hpp"
+#include <cstdint>
+
+#include<renderer.hpp>
+#include<vertexBuffer.hpp>
+#include<indexBuffer.hpp>
+#include<vertexBufferLayout.hpp>
+#include<vertexArray.hpp>
+#include<shader.hpp>
+#include<renderer.hpp>
 
 
 int main(void)
-{
+{    
     /* Initialize the library */
     if (!glfwInit())
+    {
+        std::cerr << "Failed to initialize GLFW" << std::endl;
         return -1;
+    }
 
     /* Create a windowed mode window and its OpenGL context */
     GLFWwindow* window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
@@ -60,11 +65,10 @@ int main(void)
 
     IndexBuffer ib(indecies, 6); 
      
-    Shader shader("./resources/shaders/basic.shader");
+    Shader shader("C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/resources/shaders/basic.shader");
     shader.bind();
 
     shader.setUniform4f("u_Color", 0.8f, 0.3f, 0.8f, 1.0f);
-    shader.setUniform4f("u_yolo", 0.0f, 1.0f, 0.0f, 1.0f);
     
     va.unbind();
     vb.unbind();
@@ -100,10 +104,11 @@ int main(void)
 
         /* Poll for and process events */
         glfwPollEvents();
+
+       
     }
 
-    
-
+   
     glfwTerminate();
     return 0;
 }

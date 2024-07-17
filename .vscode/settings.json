@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.hpp": "cpp",
         "algorithm": "cpp",
         "array": "cpp",
         "cmath": "cpp",
@@ -87,14 +88,13 @@
         "numeric": "cpp",
         "string_view": "cpp",
         "fstream": "cpp",
-        "numbers": "cpp",
-        "semaphore": "cpp"
+        "bitset": "cpp",
+        "ranges": "cpp",
+        "span": "cpp"
     },
     "files.exclude": {
         "build/": true,
-        "lib/": true,
         "include/": true,
-        "*.dll": true,
+        "lib/": true,
     },
-    "mesonbuild.configureOnOpen": false,
 }
