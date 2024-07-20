@@ -1,6 +1,0 @@
-Preferably fix the issue with CMAKE_C_COMPILER and CMAKE_CXX_COMPILER compiler. The path now needs to be 
-    specefied in the cmake file.
-
-Have it work with MSVC
-- Propbaly need to compile the correct files with the msvc compiler
-- Add initilize mode for msvc
