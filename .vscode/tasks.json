@@ -8,11 +8,11 @@
             "type": "shell",
             "command": "cmake -B build/debug -G 'MinGW Makefiles' -DCMAKE_BUILD_TYPE=Debug",
             "group": "build"
-        },
+        },        
         {
             "label": "Build: Debug",
             "type": "shell",
-            "command": "cmake --build build/debug --config Debug",
+            "command": "cmake --build build/debug --config Debug -j9",
             "group": "build"
         },
         {
@@ -42,7 +42,7 @@
         {
             "label": "Build: Release",
             "type": "shell",
-            "command": "cmake --build build/release --config Release",
+            "command": "cmake --build build/release --config Release -j9",
             "group": "build"
         },
         {

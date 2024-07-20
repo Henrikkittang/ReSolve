@@ -1,0 +1,3 @@
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/build/ninja/CMakeFiles/output.dir
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/build/ninja/CMakeFiles/edit_cache.dir
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/build/ninja/CMakeFiles/rebuild_cache.dir

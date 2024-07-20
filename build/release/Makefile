@@ -128,149 +128,29 @@ output/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/build
 .PHONY : output/fast
 
-renderer/indexBuffer.obj: renderer/indexBuffer.cpp.obj
-.PHONY : renderer/indexBuffer.obj
+src/indexBuffer.obj: src/indexBuffer.cpp.obj
+.PHONY : src/indexBuffer.obj
 
 # target to build an object file
-renderer/indexBuffer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/indexBuffer.cpp.obj
-.PHONY : renderer/indexBuffer.cpp.obj
+src/indexBuffer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/indexBuffer.cpp.obj
+.PHONY : src/indexBuffer.cpp.obj
 
-renderer/indexBuffer.i: renderer/indexBuffer.cpp.i
-.PHONY : renderer/indexBuffer.i
-
-# target to preprocess a source file
-renderer/indexBuffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/indexBuffer.cpp.i
-.PHONY : renderer/indexBuffer.cpp.i
-
-renderer/indexBuffer.s: renderer/indexBuffer.cpp.s
-.PHONY : renderer/indexBuffer.s
-
-# target to generate assembly for a file
-renderer/indexBuffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/indexBuffer.cpp.s
-.PHONY : renderer/indexBuffer.cpp.s
-
-renderer/renderer.obj: renderer/renderer.cpp.obj
-.PHONY : renderer/renderer.obj
-
-# target to build an object file
-renderer/renderer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/renderer.cpp.obj
-.PHONY : renderer/renderer.cpp.obj
-
-renderer/renderer.i: renderer/renderer.cpp.i
-.PHONY : renderer/renderer.i
+src/indexBuffer.i: src/indexBuffer.cpp.i
+.PHONY : src/indexBuffer.i
 
 # target to preprocess a source file
-renderer/renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/renderer.cpp.i
-.PHONY : renderer/renderer.cpp.i
+src/indexBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/indexBuffer.cpp.i
+.PHONY : src/indexBuffer.cpp.i
 
-renderer/renderer.s: renderer/renderer.cpp.s
-.PHONY : renderer/renderer.s
-
-# target to generate assembly for a file
-renderer/renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/renderer.cpp.s
-.PHONY : renderer/renderer.cpp.s
-
-renderer/shader.obj: renderer/shader.cpp.obj
-.PHONY : renderer/shader.obj
-
-# target to build an object file
-renderer/shader.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/shader.cpp.obj
-.PHONY : renderer/shader.cpp.obj
-
-renderer/shader.i: renderer/shader.cpp.i
-.PHONY : renderer/shader.i
-
-# target to preprocess a source file
-renderer/shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/shader.cpp.i
-.PHONY : renderer/shader.cpp.i
-
-renderer/shader.s: renderer/shader.cpp.s
-.PHONY : renderer/shader.s
+src/indexBuffer.s: src/indexBuffer.cpp.s
+.PHONY : src/indexBuffer.s
 
 # target to generate assembly for a file
-renderer/shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/shader.cpp.s
-.PHONY : renderer/shader.cpp.s
-
-renderer/vertexArray.obj: renderer/vertexArray.cpp.obj
-.PHONY : renderer/vertexArray.obj
-
-# target to build an object file
-renderer/vertexArray.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/vertexArray.cpp.obj
-.PHONY : renderer/vertexArray.cpp.obj
-
-renderer/vertexArray.i: renderer/vertexArray.cpp.i
-.PHONY : renderer/vertexArray.i
-
-# target to preprocess a source file
-renderer/vertexArray.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/vertexArray.cpp.i
-.PHONY : renderer/vertexArray.cpp.i
-
-renderer/vertexArray.s: renderer/vertexArray.cpp.s
-.PHONY : renderer/vertexArray.s
-
-# target to generate assembly for a file
-renderer/vertexArray.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/vertexArray.cpp.s
-.PHONY : renderer/vertexArray.cpp.s
-
-renderer/vertexBuffer.obj: renderer/vertexBuffer.cpp.obj
-.PHONY : renderer/vertexBuffer.obj
-
-# target to build an object file
-renderer/vertexBuffer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/vertexBuffer.cpp.obj
-.PHONY : renderer/vertexBuffer.cpp.obj
-
-renderer/vertexBuffer.i: renderer/vertexBuffer.cpp.i
-.PHONY : renderer/vertexBuffer.i
-
-# target to preprocess a source file
-renderer/vertexBuffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/vertexBuffer.cpp.i
-.PHONY : renderer/vertexBuffer.cpp.i
-
-renderer/vertexBuffer.s: renderer/vertexBuffer.cpp.s
-.PHONY : renderer/vertexBuffer.s
-
-# target to generate assembly for a file
-renderer/vertexBuffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/vertexBuffer.cpp.s
-.PHONY : renderer/vertexBuffer.cpp.s
-
-renderer/vertexBufferLayout.obj: renderer/vertexBufferLayout.cpp.obj
-.PHONY : renderer/vertexBufferLayout.obj
-
-# target to build an object file
-renderer/vertexBufferLayout.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/vertexBufferLayout.cpp.obj
-.PHONY : renderer/vertexBufferLayout.cpp.obj
-
-renderer/vertexBufferLayout.i: renderer/vertexBufferLayout.cpp.i
-.PHONY : renderer/vertexBufferLayout.i
-
-# target to preprocess a source file
-renderer/vertexBufferLayout.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/vertexBufferLayout.cpp.i
-.PHONY : renderer/vertexBufferLayout.cpp.i
-
-renderer/vertexBufferLayout.s: renderer/vertexBufferLayout.cpp.s
-.PHONY : renderer/vertexBufferLayout.s
-
-# target to generate assembly for a file
-renderer/vertexBufferLayout.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/renderer/vertexBufferLayout.cpp.s
-.PHONY : renderer/vertexBufferLayout.cpp.s
+src/indexBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/indexBuffer.cpp.s
+.PHONY : src/indexBuffer.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -296,6 +176,366 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/renderer.obj: src/renderer.cpp.obj
+.PHONY : src/renderer.obj
+
+# target to build an object file
+src/renderer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/renderer.cpp.obj
+.PHONY : src/renderer.cpp.obj
+
+src/renderer.i: src/renderer.cpp.i
+.PHONY : src/renderer.i
+
+# target to preprocess a source file
+src/renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/renderer.cpp.i
+.PHONY : src/renderer.cpp.i
+
+src/renderer.s: src/renderer.cpp.s
+.PHONY : src/renderer.s
+
+# target to generate assembly for a file
+src/renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/renderer.cpp.s
+.PHONY : src/renderer.cpp.s
+
+src/shader.obj: src/shader.cpp.obj
+.PHONY : src/shader.obj
+
+# target to build an object file
+src/shader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/shader.cpp.obj
+.PHONY : src/shader.cpp.obj
+
+src/shader.i: src/shader.cpp.i
+.PHONY : src/shader.i
+
+# target to preprocess a source file
+src/shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/shader.cpp.i
+.PHONY : src/shader.cpp.i
+
+src/shader.s: src/shader.cpp.s
+.PHONY : src/shader.s
+
+# target to generate assembly for a file
+src/shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/shader.cpp.s
+.PHONY : src/shader.cpp.s
+
+src/texture.obj: src/texture.cpp.obj
+.PHONY : src/texture.obj
+
+# target to build an object file
+src/texture.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/texture.cpp.obj
+.PHONY : src/texture.cpp.obj
+
+src/texture.i: src/texture.cpp.i
+.PHONY : src/texture.i
+
+# target to preprocess a source file
+src/texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/texture.cpp.i
+.PHONY : src/texture.cpp.i
+
+src/texture.s: src/texture.cpp.s
+.PHONY : src/texture.s
+
+# target to generate assembly for a file
+src/texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/texture.cpp.s
+.PHONY : src/texture.cpp.s
+
+src/vertexArray.obj: src/vertexArray.cpp.obj
+.PHONY : src/vertexArray.obj
+
+# target to build an object file
+src/vertexArray.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/vertexArray.cpp.obj
+.PHONY : src/vertexArray.cpp.obj
+
+src/vertexArray.i: src/vertexArray.cpp.i
+.PHONY : src/vertexArray.i
+
+# target to preprocess a source file
+src/vertexArray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/vertexArray.cpp.i
+.PHONY : src/vertexArray.cpp.i
+
+src/vertexArray.s: src/vertexArray.cpp.s
+.PHONY : src/vertexArray.s
+
+# target to generate assembly for a file
+src/vertexArray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/vertexArray.cpp.s
+.PHONY : src/vertexArray.cpp.s
+
+src/vertexBuffer.obj: src/vertexBuffer.cpp.obj
+.PHONY : src/vertexBuffer.obj
+
+# target to build an object file
+src/vertexBuffer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/vertexBuffer.cpp.obj
+.PHONY : src/vertexBuffer.cpp.obj
+
+src/vertexBuffer.i: src/vertexBuffer.cpp.i
+.PHONY : src/vertexBuffer.i
+
+# target to preprocess a source file
+src/vertexBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/vertexBuffer.cpp.i
+.PHONY : src/vertexBuffer.cpp.i
+
+src/vertexBuffer.s: src/vertexBuffer.cpp.s
+.PHONY : src/vertexBuffer.s
+
+# target to generate assembly for a file
+src/vertexBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/vertexBuffer.cpp.s
+.PHONY : src/vertexBuffer.cpp.s
+
+src/vertexBufferLayout.obj: src/vertexBufferLayout.cpp.obj
+.PHONY : src/vertexBufferLayout.obj
+
+# target to build an object file
+src/vertexBufferLayout.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/vertexBufferLayout.cpp.obj
+.PHONY : src/vertexBufferLayout.cpp.obj
+
+src/vertexBufferLayout.i: src/vertexBufferLayout.cpp.i
+.PHONY : src/vertexBufferLayout.i
+
+# target to preprocess a source file
+src/vertexBufferLayout.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/vertexBufferLayout.cpp.i
+.PHONY : src/vertexBufferLayout.cpp.i
+
+src/vertexBufferLayout.s: src/vertexBufferLayout.cpp.s
+.PHONY : src/vertexBufferLayout.s
+
+# target to generate assembly for a file
+src/vertexBufferLayout.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/vertexBufferLayout.cpp.s
+.PHONY : src/vertexBufferLayout.cpp.s
+
+vendor/glm/detail/glm.obj: vendor/glm/detail/glm.cpp.obj
+.PHONY : vendor/glm/detail/glm.obj
+
+# target to build an object file
+vendor/glm/detail/glm.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/glm/detail/glm.cpp.obj
+.PHONY : vendor/glm/detail/glm.cpp.obj
+
+vendor/glm/detail/glm.i: vendor/glm/detail/glm.cpp.i
+.PHONY : vendor/glm/detail/glm.i
+
+# target to preprocess a source file
+vendor/glm/detail/glm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/glm/detail/glm.cpp.i
+.PHONY : vendor/glm/detail/glm.cpp.i
+
+vendor/glm/detail/glm.s: vendor/glm/detail/glm.cpp.s
+.PHONY : vendor/glm/detail/glm.s
+
+# target to generate assembly for a file
+vendor/glm/detail/glm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/glm/detail/glm.cpp.s
+.PHONY : vendor/glm/detail/glm.cpp.s
+
+vendor/imgui/imgui.obj: vendor/imgui/imgui.cpp.obj
+.PHONY : vendor/imgui/imgui.obj
+
+# target to build an object file
+vendor/imgui/imgui.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui.cpp.obj
+.PHONY : vendor/imgui/imgui.cpp.obj
+
+vendor/imgui/imgui.i: vendor/imgui/imgui.cpp.i
+.PHONY : vendor/imgui/imgui.i
+
+# target to preprocess a source file
+vendor/imgui/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui.cpp.i
+.PHONY : vendor/imgui/imgui.cpp.i
+
+vendor/imgui/imgui.s: vendor/imgui/imgui.cpp.s
+.PHONY : vendor/imgui/imgui.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui.cpp.s
+.PHONY : vendor/imgui/imgui.cpp.s
+
+vendor/imgui/imgui_demo.obj: vendor/imgui/imgui_demo.cpp.obj
+.PHONY : vendor/imgui/imgui_demo.obj
+
+# target to build an object file
+vendor/imgui/imgui_demo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_demo.cpp.obj
+.PHONY : vendor/imgui/imgui_demo.cpp.obj
+
+vendor/imgui/imgui_demo.i: vendor/imgui/imgui_demo.cpp.i
+.PHONY : vendor/imgui/imgui_demo.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_demo.cpp.i
+.PHONY : vendor/imgui/imgui_demo.cpp.i
+
+vendor/imgui/imgui_demo.s: vendor/imgui/imgui_demo.cpp.s
+.PHONY : vendor/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_demo.cpp.s
+.PHONY : vendor/imgui/imgui_demo.cpp.s
+
+vendor/imgui/imgui_draw.obj: vendor/imgui/imgui_draw.cpp.obj
+.PHONY : vendor/imgui/imgui_draw.obj
+
+# target to build an object file
+vendor/imgui/imgui_draw.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_draw.cpp.obj
+.PHONY : vendor/imgui/imgui_draw.cpp.obj
+
+vendor/imgui/imgui_draw.i: vendor/imgui/imgui_draw.cpp.i
+.PHONY : vendor/imgui/imgui_draw.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_draw.cpp.i
+.PHONY : vendor/imgui/imgui_draw.cpp.i
+
+vendor/imgui/imgui_draw.s: vendor/imgui/imgui_draw.cpp.s
+.PHONY : vendor/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_draw.cpp.s
+.PHONY : vendor/imgui/imgui_draw.cpp.s
+
+vendor/imgui/imgui_impl_glfw.obj: vendor/imgui/imgui_impl_glfw.cpp.obj
+.PHONY : vendor/imgui/imgui_impl_glfw.obj
+
+# target to build an object file
+vendor/imgui/imgui_impl_glfw.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_impl_glfw.cpp.obj
+.PHONY : vendor/imgui/imgui_impl_glfw.cpp.obj
+
+vendor/imgui/imgui_impl_glfw.i: vendor/imgui/imgui_impl_glfw.cpp.i
+.PHONY : vendor/imgui/imgui_impl_glfw.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_impl_glfw.cpp.i
+.PHONY : vendor/imgui/imgui_impl_glfw.cpp.i
+
+vendor/imgui/imgui_impl_glfw.s: vendor/imgui/imgui_impl_glfw.cpp.s
+.PHONY : vendor/imgui/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_impl_glfw.cpp.s
+.PHONY : vendor/imgui/imgui_impl_glfw.cpp.s
+
+vendor/imgui/imgui_impl_opengl3.obj: vendor/imgui/imgui_impl_opengl3.cpp.obj
+.PHONY : vendor/imgui/imgui_impl_opengl3.obj
+
+# target to build an object file
+vendor/imgui/imgui_impl_opengl3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_impl_opengl3.cpp.obj
+.PHONY : vendor/imgui/imgui_impl_opengl3.cpp.obj
+
+vendor/imgui/imgui_impl_opengl3.i: vendor/imgui/imgui_impl_opengl3.cpp.i
+.PHONY : vendor/imgui/imgui_impl_opengl3.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_impl_opengl3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_impl_opengl3.cpp.i
+.PHONY : vendor/imgui/imgui_impl_opengl3.cpp.i
+
+vendor/imgui/imgui_impl_opengl3.s: vendor/imgui/imgui_impl_opengl3.cpp.s
+.PHONY : vendor/imgui/imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_impl_opengl3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_impl_opengl3.cpp.s
+.PHONY : vendor/imgui/imgui_impl_opengl3.cpp.s
+
+vendor/imgui/imgui_tables.obj: vendor/imgui/imgui_tables.cpp.obj
+.PHONY : vendor/imgui/imgui_tables.obj
+
+# target to build an object file
+vendor/imgui/imgui_tables.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_tables.cpp.obj
+.PHONY : vendor/imgui/imgui_tables.cpp.obj
+
+vendor/imgui/imgui_tables.i: vendor/imgui/imgui_tables.cpp.i
+.PHONY : vendor/imgui/imgui_tables.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_tables.cpp.i
+.PHONY : vendor/imgui/imgui_tables.cpp.i
+
+vendor/imgui/imgui_tables.s: vendor/imgui/imgui_tables.cpp.s
+.PHONY : vendor/imgui/imgui_tables.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_tables.cpp.s
+.PHONY : vendor/imgui/imgui_tables.cpp.s
+
+vendor/imgui/imgui_widgets.obj: vendor/imgui/imgui_widgets.cpp.obj
+.PHONY : vendor/imgui/imgui_widgets.obj
+
+# target to build an object file
+vendor/imgui/imgui_widgets.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_widgets.cpp.obj
+.PHONY : vendor/imgui/imgui_widgets.cpp.obj
+
+vendor/imgui/imgui_widgets.i: vendor/imgui/imgui_widgets.cpp.i
+.PHONY : vendor/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+vendor/imgui/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_widgets.cpp.i
+.PHONY : vendor/imgui/imgui_widgets.cpp.i
+
+vendor/imgui/imgui_widgets.s: vendor/imgui/imgui_widgets.cpp.s
+.PHONY : vendor/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+vendor/imgui/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/imgui/imgui_widgets.cpp.s
+.PHONY : vendor/imgui/imgui_widgets.cpp.s
+
+vendor/stb_image/stb_image.obj: vendor/stb_image/stb_image.cpp.obj
+.PHONY : vendor/stb_image/stb_image.obj
+
+# target to build an object file
+vendor/stb_image/stb_image.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/stb_image/stb_image.cpp.obj
+.PHONY : vendor/stb_image/stb_image.cpp.obj
+
+vendor/stb_image/stb_image.i: vendor/stb_image/stb_image.cpp.i
+.PHONY : vendor/stb_image/stb_image.i
+
+# target to preprocess a source file
+vendor/stb_image/stb_image.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/stb_image/stb_image.cpp.i
+.PHONY : vendor/stb_image/stb_image.cpp.i
+
+vendor/stb_image/stb_image.s: vendor/stb_image/stb_image.cpp.s
+.PHONY : vendor/stb_image/stb_image.s
+
+# target to generate assembly for a file
+vendor/stb_image/stb_image.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/vendor/stb_image/stb_image.cpp.s
+.PHONY : vendor/stb_image/stb_image.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -305,27 +545,57 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... output
-	@echo ... renderer/indexBuffer.obj
-	@echo ... renderer/indexBuffer.i
-	@echo ... renderer/indexBuffer.s
-	@echo ... renderer/renderer.obj
-	@echo ... renderer/renderer.i
-	@echo ... renderer/renderer.s
-	@echo ... renderer/shader.obj
-	@echo ... renderer/shader.i
-	@echo ... renderer/shader.s
-	@echo ... renderer/vertexArray.obj
-	@echo ... renderer/vertexArray.i
-	@echo ... renderer/vertexArray.s
-	@echo ... renderer/vertexBuffer.obj
-	@echo ... renderer/vertexBuffer.i
-	@echo ... renderer/vertexBuffer.s
-	@echo ... renderer/vertexBufferLayout.obj
-	@echo ... renderer/vertexBufferLayout.i
-	@echo ... renderer/vertexBufferLayout.s
+	@echo ... src/indexBuffer.obj
+	@echo ... src/indexBuffer.i
+	@echo ... src/indexBuffer.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/renderer.obj
+	@echo ... src/renderer.i
+	@echo ... src/renderer.s
+	@echo ... src/shader.obj
+	@echo ... src/shader.i
+	@echo ... src/shader.s
+	@echo ... src/texture.obj
+	@echo ... src/texture.i
+	@echo ... src/texture.s
+	@echo ... src/vertexArray.obj
+	@echo ... src/vertexArray.i
+	@echo ... src/vertexArray.s
+	@echo ... src/vertexBuffer.obj
+	@echo ... src/vertexBuffer.i
+	@echo ... src/vertexBuffer.s
+	@echo ... src/vertexBufferLayout.obj
+	@echo ... src/vertexBufferLayout.i
+	@echo ... src/vertexBufferLayout.s
+	@echo ... vendor/glm/detail/glm.obj
+	@echo ... vendor/glm/detail/glm.i
+	@echo ... vendor/glm/detail/glm.s
+	@echo ... vendor/imgui/imgui.obj
+	@echo ... vendor/imgui/imgui.i
+	@echo ... vendor/imgui/imgui.s
+	@echo ... vendor/imgui/imgui_demo.obj
+	@echo ... vendor/imgui/imgui_demo.i
+	@echo ... vendor/imgui/imgui_demo.s
+	@echo ... vendor/imgui/imgui_draw.obj
+	@echo ... vendor/imgui/imgui_draw.i
+	@echo ... vendor/imgui/imgui_draw.s
+	@echo ... vendor/imgui/imgui_impl_glfw.obj
+	@echo ... vendor/imgui/imgui_impl_glfw.i
+	@echo ... vendor/imgui/imgui_impl_glfw.s
+	@echo ... vendor/imgui/imgui_impl_opengl3.obj
+	@echo ... vendor/imgui/imgui_impl_opengl3.i
+	@echo ... vendor/imgui/imgui_impl_opengl3.s
+	@echo ... vendor/imgui/imgui_tables.obj
+	@echo ... vendor/imgui/imgui_tables.i
+	@echo ... vendor/imgui/imgui_tables.s
+	@echo ... vendor/imgui/imgui_widgets.obj
+	@echo ... vendor/imgui/imgui_widgets.i
+	@echo ... vendor/imgui/imgui_widgets.s
+	@echo ... vendor/stb_image/stb_image.obj
+	@echo ... vendor/stb_image/stb_image.i
+	@echo ... vendor/stb_image/stb_image.s
 .PHONY : help
 
 

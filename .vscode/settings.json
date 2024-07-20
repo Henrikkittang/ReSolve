@@ -94,7 +94,7 @@
     },
     "files.exclude": {
         "build/": true,
-        "include/": true,
         "lib/": true,
+        "*.ini": true,
     },
 }

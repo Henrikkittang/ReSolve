@@ -1,1 +1,1 @@
-  -LC:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/lib  -lglfw3 -lopengl32 -lgdi32 -lglew32 -lm -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+  -L"C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/lib/lib-mingw-w64"  -lglfw3 -lopengl32 -lgdi32 -lglew32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

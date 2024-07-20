@@ -1,4 +1,3 @@
-Figure out file paths to resources
 Preferably fix the issue with CMAKE_C_COMPILER and CMAKE_CXX_COMPILER compiler. The path now needs to be 
     specefied in the cmake file.
 
