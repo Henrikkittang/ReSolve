@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/main.cpp" "CMakeFiles/output.dir/src/main.cpp.obj" "gcc" "CMakeFiles/output.dir/src/main.cpp.obj.d"
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/renderer.cpp" "CMakeFiles/output.dir/src/renderer.cpp.obj" "gcc" "CMakeFiles/output.dir/src/renderer.cpp.obj.d"
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.cpp" "CMakeFiles/output.dir/src/shader.cpp.obj" "gcc" "CMakeFiles/output.dir/src/shader.cpp.obj.d"
+  "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/testClearColor.cpp" "CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj" "gcc" "CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj.d"
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/texture.cpp" "CMakeFiles/output.dir/src/texture.cpp.obj" "gcc" "CMakeFiles/output.dir/src/texture.cpp.obj.d"
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.cpp" "CMakeFiles/output.dir/src/vertexArray.cpp.obj" "gcc" "CMakeFiles/output.dir/src/vertexArray.cpp.obj.d"
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.cpp" "CMakeFiles/output.dir/src/vertexBuffer.cpp.obj" "gcc" "CMakeFiles/output.dir/src/vertexBuffer.cpp.obj.d"

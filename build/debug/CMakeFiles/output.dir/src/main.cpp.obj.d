@@ -353,7 +353,6 @@ CMakeFiles/output.dir/src/main.cpp.obj: \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/integer.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/texture.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/stb_image/stb_image.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtc/matrix_transform.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtc/../mat4x4.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtc/../vec2.hpp \

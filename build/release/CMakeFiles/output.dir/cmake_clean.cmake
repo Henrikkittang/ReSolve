@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/output.dir/src/renderer.cpp.obj.d"
   "CMakeFiles/output.dir/src/shader.cpp.obj"
   "CMakeFiles/output.dir/src/shader.cpp.obj.d"
+  "CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj"
+  "CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj.d"
   "CMakeFiles/output.dir/src/texture.cpp.obj"
   "CMakeFiles/output.dir/src/texture.cpp.obj.d"
   "CMakeFiles/output.dir/src/vertexArray.cpp.obj"
