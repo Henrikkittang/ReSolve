@@ -98,7 +98,7 @@ int main(void)
         VertexBuffer vb(positions.data(), positions.size() * sizeof(float) );
 
         
-
+    
         size_t vertex_count = positions.size() / 2; // 2 coordinates per vertex
         size_t quad_count = vertex_count / 4; // 4 vertices per quad
         size_t count = quad_count * 6; // 6 indices per quad
