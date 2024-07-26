@@ -21,6 +21,8 @@
 
 #include"tests/testClearColor.hpp"
 
+
+
 int main(void)
 {    
     /* Initialize the library */
@@ -50,44 +52,90 @@ int main(void)
     }    
 
 
+    std::cout << "GLEW version: " << glewGetString(GLEW_VERSION) << "\n";
     std::cout << "GL version: " << glGetString(GL_VERSION) << "\n";
 
     GLCall( glEnable(GL_BLEND) );
     GLCall( glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) );
    
-    Renderer renderer;
-
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
     io.Fonts->AddFontDefault();
     io.Fonts->Build();
 
     ImGui_ImplOpenGL3_Init("#version 330");
-
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui::StyleColorsDark();
- 
+
     
-    test::TestClearColor test;
+    
+    Shader shader{ "./resources/shaders/basic.shader" };    
+    shader.bind();
+    shader.setUniform4f("uColor", 0.1f, 0.3f, 0.8f, 1.0);
+
+    Renderer renderer;
+
+
+    glm::vec2 p1(0.3f, 0.3f);
 
     while (!glfwWindowShouldClose(window))
     {
         renderer.clear();
 
+
+        std::vector<float> positions = {
+            0.1f, 0.1f,  
+            0.2f, 0.1f, 
+            0.2f, 0.2f, 
+            0.1f, 0.2f, 
+
+            p1.x, p1.y,  
+            0.4f, 0.3f, 
+            0.4f, 0.4f, 
+            0.3f, 0.4f, 
+        };
+
+        VertexBuffer vb(positions.data(), positions.size() * sizeof(float) );
+
+        
+
+        size_t vertex_count = positions.size() / 2; // 2 coordinates per vertex
+        size_t quad_count = vertex_count / 4; // 4 vertices per quad
+        size_t count = quad_count * 6; // 6 indices per quad
+
+        std::vector<uint32_t> indices(count);
+
+
+        for(size_t i = 0, vertex_index = 0; i < count; i += 6, vertex_index += 4)
+        {
+            indices[i + 0] = vertex_index + 0;
+            indices[i + 1] = vertex_index + 1;
+            indices[i + 2] = vertex_index + 2;
+            indices[i + 3] = vertex_index + 2;
+            indices[i + 4] = vertex_index + 3;
+            indices[i + 5] = vertex_index + 0;
+        }
+
+        IndexBuffer ib(indices.data(), count);
+
+        VertexBufferLayout layout;
+        layout.push<float>(2);
+
+
+        VertexArray va;
+        va.addBuffer(vb, layout);
+
+
+        renderer.draw(va, ib, shader);
        
-
-        test.onUpdate(0.0f);
-        test.onRender();
-
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
     
         {
+            ImGui::SliderFloat2("Position 1", &p1.x, -1.0f, 1.0f);
             ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
         }
-
-        test.onImGuiRender();
 
 
         ImGui::Render();
@@ -96,6 +144,8 @@ int main(void)
         glfwSwapBuffers(window);
         glfwPollEvents();       
     }
+
+
 
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();

@@ -35,4 +35,4 @@ template<>
 void VertexBufferLayout::push<uint32_t>(uint32_t count);
 
 template<>
-void VertexBufferLayout::push<unsigned char>(uint32_t count);
+void VertexBufferLayout::push<uint8_t>(uint32_t count);
