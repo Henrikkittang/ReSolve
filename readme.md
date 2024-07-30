@@ -11,4 +11,7 @@ This project contains a .vscode folder, which means that the easiest way to buil
 
 # To do list
 - Add initlizer tasks in vscode for different build systems
+- Maybe have som sort of system where its easy to switch compilers
 - The cmake should idealy not contain compiler paths
+- The renderer should maybe be RenderWindow
+- Access to resources should happen via a resources manager with proper path access

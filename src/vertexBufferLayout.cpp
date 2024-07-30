@@ -1,6 +1,6 @@
 #include "vertexBufferLayout.hpp"
 
-#include "renderer.hpp"
+#include "renderWindow.hpp"
 #include <GL/glew.h>
 
 

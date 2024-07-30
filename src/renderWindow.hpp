@@ -1,6 +1,9 @@
 #pragma once
 
 #include<GL/glew.h>
+#include<GLFW/glfw3.h>
+
+#include<glm/glm.hpp>
 
 #include"vertexArray.hpp"
 #include"indexBuffer.hpp"
@@ -23,12 +26,23 @@ bool GLLogCall(const char* function, const char* file, int line);
 
 
 
-class Renderer
+class RenderWindow
 {
 public:
 
-	
+	RenderWindow(uint32_t width, uint32_t height);
+	~RenderWindow();
+
 
     void clear() const;
     void draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader) const;
+	bool windowShouldClose() const;
+	void update();
+
+	glm::ivec2 getSize() const;
+	GLFWwindow* getWindow() { return m_window; }	
+
+private:
+
+	GLFWwindow* m_window;
 };

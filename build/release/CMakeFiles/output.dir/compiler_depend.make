@@ -25,15 +25,27 @@ CMakeFiles/output.dir/src/indexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/cp
   C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/glu.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp \
-  C:/mingw64/include/c++/12.1.0/vector \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
+  C:/mingw64/lib/clang/14.0.4/include/__stddef_max_align_t.h \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \
+  C:/mingw64/include/c++/12.1.0/cmath \
+  C:/mingw64/include/c++/12.1.0/bits/cpp_type_traits.h \
+  C:/mingw64/include/c++/12.1.0/ext/type_traits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/math.h \
+  C:/mingw64/include/c++/12.1.0/bits/std_abs.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+  C:/mingw64/lib/clang/14.0.4/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+  C:/mingw64/include/c++/12.1.0/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+  C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h \
+  C:/mingw64/include/c++/12.1.0/bits/specfun.h \
   C:/mingw64/include/c++/12.1.0/bits/stl_algobase.h \
   C:/mingw64/include/c++/12.1.0/bits/functexcept.h \
   C:/mingw64/include/c++/12.1.0/bits/exception_defines.h \
-  C:/mingw64/include/c++/12.1.0/bits/cpp_type_traits.h \
-  C:/mingw64/include/c++/12.1.0/ext/type_traits.h \
   C:/mingw64/include/c++/12.1.0/ext/numeric_traits.h \
   C:/mingw64/include/c++/12.1.0/bits/stl_pair.h \
   C:/mingw64/include/c++/12.1.0/type_traits \
@@ -54,102 +66,6 @@ CMakeFiles/output.dir/src/indexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/cp
   C:/mingw64/include/c++/12.1.0/bits/stl_construct.h \
   C:/mingw64/include/c++/12.1.0/debug/debug.h \
   C:/mingw64/include/c++/12.1.0/bits/predefined_ops.h \
-  C:/mingw64/include/c++/12.1.0/bits/allocator.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/new_allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/memoryfwd.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h \
-  C:/mingw64/include/c++/12.1.0/ext/alloc_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/alloc_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_vector.h \
-  C:/mingw64/include/c++/12.1.0/initializer_list \
-  C:/mingw64/include/c++/12.1.0/bits/stl_bvector.h \
-  C:/mingw64/include/c++/12.1.0/bits/functional_hash.h \
-  C:/mingw64/include/c++/12.1.0/bits/hash_bytes.h \
-  C:/mingw64/include/c++/12.1.0/bits/refwrap.h \
-  C:/mingw64/include/c++/12.1.0/bits/invoke.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_function.h \
-  C:/mingw64/include/c++/12.1.0/backward/binders.h \
-  C:/mingw64/include/c++/12.1.0/bits/range_access.h \
-  C:/mingw64/include/c++/12.1.0/bits/vector.tcc \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
-  C:/mingw64/include/c++/12.1.0/string \
-  C:/mingw64/include/c++/12.1.0/bits/stringfwd.h \
-  C:/mingw64/include/c++/12.1.0/bits/char_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/postypes.h \
-  C:/mingw64/include/c++/12.1.0/cwchar \
-  C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
-  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
-  C:/mingw64/include/c++/12.1.0/bits/localefwd.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++locale.h \
-  C:/mingw64/include/c++/12.1.0/clocale \
-  C:/mingw64/x86_64-w64-mingw32/include/locale.h \
-  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
-  C:/mingw64/include/c++/12.1.0/iosfwd \
-  C:/mingw64/include/c++/12.1.0/cctype \
-  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
-  C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h \
-  C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h \
-  C:/mingw64/include/c++/12.1.0/bits/basic_string.h \
-  C:/mingw64/include/c++/12.1.0/ext/atomicity.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
-  C:/mingw64/lib/clang/14.0.4/include/__stddef_max_align_t.h \
-  C:/mingw64/x86_64-w64-mingw32/include/errno.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
-  C:/mingw64/x86_64-w64-mingw32/include/process.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
-  C:/mingw64/lib/clang/14.0.4/include/limits.h \
-  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
-  C:/mingw64/x86_64-w64-mingw32/include/signal.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
-  C:/mingw64/x86_64-w64-mingw32/include/time.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
-  C:/mingw64/include/c++/12.1.0/string_view \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/max_size_type.h \
-  C:/mingw64/include/c++/12.1.0/numbers \
-  C:/mingw64/include/c++/12.1.0/bits/string_view.tcc \
-  C:/mingw64/include/c++/12.1.0/ext/string_conversions.h \
-  C:/mingw64/include/c++/12.1.0/cstdlib \
-  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
-  C:/mingw64/include/c++/12.1.0/stdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
-  C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h \
-  C:/mingw64/include/c++/12.1.0/bits/std_abs.h \
-  C:/mingw64/include/c++/12.1.0/cstdio \
-  C:/mingw64/include/c++/12.1.0/cerrno \
-  C:/mingw64/include/c++/12.1.0/bits/charconv.h \
-  C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc \
-  C:/mingw64/include/c++/12.1.0/unordered_map \
-  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
-  C:/mingw64/include/c++/12.1.0/tuple \
-  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
-  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
-  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
-  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \
-  C:/mingw64/include/c++/12.1.0/cmath \
-  C:/mingw64/x86_64-w64-mingw32/include/math.h \
-  C:/mingw64/include/c++/12.1.0/bits/specfun.h \
   C:/mingw64/include/c++/12.1.0/limits \
   C:/mingw64/include/c++/12.1.0/tr1/gamma.tcc \
   C:/mingw64/include/c++/12.1.0/tr1/special_function_util.h \
@@ -166,6 +82,7 @@ CMakeFiles/output.dir/src/indexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/cp
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/setup.hpp \
   C:/mingw64/include/c++/12.1.0/cassert \
   C:/mingw64/x86_64-w64-mingw32/include/assert.h \
+  C:/mingw64/include/c++/12.1.0/cstdlib \
   C:/mingw64/include/c++/12.1.0/cstddef \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/simd/platform.h \
   C:/mingw64/include/c++/12.1.0/climits \
@@ -200,8 +117,37 @@ CMakeFiles/output.dir/src/indexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/cp
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_decl.hpp \
   C:/mingw64/include/c++/12.1.0/functional \
+  C:/mingw64/include/c++/12.1.0/bits/stl_function.h \
+  C:/mingw64/include/c++/12.1.0/backward/binders.h \
+  C:/mingw64/include/c++/12.1.0/tuple \
+  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/invoke.h \
+  C:/mingw64/include/c++/12.1.0/bits/functional_hash.h \
+  C:/mingw64/include/c++/12.1.0/bits/hash_bytes.h \
+  C:/mingw64/include/c++/12.1.0/bits/refwrap.h \
   C:/mingw64/include/c++/12.1.0/bits/std_function.h \
   C:/mingw64/include/c++/12.1.0/typeinfo \
+  C:/mingw64/include/c++/12.1.0/unordered_map \
+  C:/mingw64/include/c++/12.1.0/initializer_list \
+  C:/mingw64/include/c++/12.1.0/bits/allocator.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/new_allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/memoryfwd.h \
+  C:/mingw64/include/c++/12.1.0/ext/alloc_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/alloc_traits.h \
+  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
+  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
+  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
+  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
+  C:/mingw64/include/c++/12.1.0/bits/range_access.h \
+  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
+  C:/mingw64/include/c++/12.1.0/vector \
+  C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_vector.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_bvector.h \
+  C:/mingw64/include/c++/12.1.0/bits/vector.tcc \
   C:/mingw64/include/c++/12.1.0/array \
   C:/mingw64/include/c++/12.1.0/bits/stl_algo.h \
   C:/mingw64/include/c++/12.1.0/bits/algorithmfwd.h \
@@ -326,7 +272,62 @@ CMakeFiles/output.dir/src/indexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/cp
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/matrix.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/integer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
+  C:/mingw64/include/c++/12.1.0/string \
+  C:/mingw64/include/c++/12.1.0/bits/stringfwd.h \
+  C:/mingw64/include/c++/12.1.0/bits/char_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/postypes.h \
+  C:/mingw64/include/c++/12.1.0/cwchar \
+  C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
+  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
+  C:/mingw64/include/c++/12.1.0/bits/localefwd.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/mingw64/include/c++/12.1.0/clocale \
+  C:/mingw64/x86_64-w64-mingw32/include/locale.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+  C:/mingw64/include/c++/12.1.0/iosfwd \
+  C:/mingw64/include/c++/12.1.0/cctype \
+  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
+  C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h \
+  C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h \
+  C:/mingw64/include/c++/12.1.0/bits/basic_string.h \
+  C:/mingw64/include/c++/12.1.0/ext/atomicity.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
+  C:/mingw64/x86_64-w64-mingw32/include/errno.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
+  C:/mingw64/x86_64-w64-mingw32/include/process.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
+  C:/mingw64/x86_64-w64-mingw32/include/signal.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
+  C:/mingw64/x86_64-w64-mingw32/include/time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/mingw64/include/c++/12.1.0/string_view \
+  C:/mingw64/include/c++/12.1.0/bits/ranges_base.h \
+  C:/mingw64/include/c++/12.1.0/bits/max_size_type.h \
+  C:/mingw64/include/c++/12.1.0/numbers \
+  C:/mingw64/include/c++/12.1.0/bits/string_view.tcc \
+  C:/mingw64/include/c++/12.1.0/ext/string_conversions.h \
+  C:/mingw64/include/c++/12.1.0/cstdio \
+  C:/mingw64/include/c++/12.1.0/cerrno \
+  C:/mingw64/include/c++/12.1.0/bits/charconv.h \
+  C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc
 
 CMakeFiles/output.dir/src/main.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/main.cpp \
   C:/mingw64/include/c++/12.1.0/iostream \
@@ -734,20 +735,31 @@ CMakeFiles/output.dir/src/renderer.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/o
   C:/mingw64/lib/clang/14.0.4/include/stddef.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/glu.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
-  C:/mingw64/include/c++/12.1.0/cstdint \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
+  C:/mingw64/lib/clang/14.0.4/include/__stddef_max_align_t.h \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \
+  C:/mingw64/include/c++/12.1.0/cmath \
   C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++config.h \
   C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/os_defines.h \
   C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/cpu_defines.h \
   C:/mingw64/include/c++/12.1.0/pstl/pstl_config.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp \
-  C:/mingw64/include/c++/12.1.0/vector \
+  C:/mingw64/include/c++/12.1.0/bits/cpp_type_traits.h \
+  C:/mingw64/include/c++/12.1.0/ext/type_traits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/math.h \
+  C:/mingw64/include/c++/12.1.0/bits/std_abs.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+  C:/mingw64/lib/clang/14.0.4/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+  C:/mingw64/include/c++/12.1.0/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+  C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h \
+  C:/mingw64/include/c++/12.1.0/bits/specfun.h \
   C:/mingw64/include/c++/12.1.0/bits/stl_algobase.h \
   C:/mingw64/include/c++/12.1.0/bits/functexcept.h \
   C:/mingw64/include/c++/12.1.0/bits/exception_defines.h \
-  C:/mingw64/include/c++/12.1.0/bits/cpp_type_traits.h \
-  C:/mingw64/include/c++/12.1.0/ext/type_traits.h \
   C:/mingw64/include/c++/12.1.0/ext/numeric_traits.h \
   C:/mingw64/include/c++/12.1.0/bits/stl_pair.h \
   C:/mingw64/include/c++/12.1.0/type_traits \
@@ -768,103 +780,6 @@ CMakeFiles/output.dir/src/renderer.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/o
   C:/mingw64/include/c++/12.1.0/bits/stl_construct.h \
   C:/mingw64/include/c++/12.1.0/debug/debug.h \
   C:/mingw64/include/c++/12.1.0/bits/predefined_ops.h \
-  C:/mingw64/include/c++/12.1.0/bits/allocator.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/new_allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/memoryfwd.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h \
-  C:/mingw64/include/c++/12.1.0/ext/alloc_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/alloc_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_vector.h \
-  C:/mingw64/include/c++/12.1.0/initializer_list \
-  C:/mingw64/include/c++/12.1.0/bits/stl_bvector.h \
-  C:/mingw64/include/c++/12.1.0/bits/functional_hash.h \
-  C:/mingw64/include/c++/12.1.0/bits/hash_bytes.h \
-  C:/mingw64/include/c++/12.1.0/bits/refwrap.h \
-  C:/mingw64/include/c++/12.1.0/bits/invoke.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_function.h \
-  C:/mingw64/include/c++/12.1.0/backward/binders.h \
-  C:/mingw64/include/c++/12.1.0/bits/range_access.h \
-  C:/mingw64/include/c++/12.1.0/bits/vector.tcc \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
-  C:/mingw64/include/c++/12.1.0/string \
-  C:/mingw64/include/c++/12.1.0/bits/stringfwd.h \
-  C:/mingw64/include/c++/12.1.0/bits/char_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/postypes.h \
-  C:/mingw64/include/c++/12.1.0/cwchar \
-  C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
-  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
-  C:/mingw64/include/c++/12.1.0/bits/localefwd.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++locale.h \
-  C:/mingw64/include/c++/12.1.0/clocale \
-  C:/mingw64/x86_64-w64-mingw32/include/locale.h \
-  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
-  C:/mingw64/include/c++/12.1.0/iosfwd \
-  C:/mingw64/include/c++/12.1.0/cctype \
-  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
-  C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h \
-  C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h \
-  C:/mingw64/include/c++/12.1.0/bits/basic_string.h \
-  C:/mingw64/include/c++/12.1.0/ext/atomicity.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
-  C:/mingw64/lib/clang/14.0.4/include/__stddef_max_align_t.h \
-  C:/mingw64/x86_64-w64-mingw32/include/errno.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
-  C:/mingw64/x86_64-w64-mingw32/include/process.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
-  C:/mingw64/lib/clang/14.0.4/include/limits.h \
-  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
-  C:/mingw64/x86_64-w64-mingw32/include/signal.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
-  C:/mingw64/x86_64-w64-mingw32/include/time.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
-  C:/mingw64/include/c++/12.1.0/string_view \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/max_size_type.h \
-  C:/mingw64/include/c++/12.1.0/numbers \
-  C:/mingw64/include/c++/12.1.0/bits/string_view.tcc \
-  C:/mingw64/include/c++/12.1.0/ext/string_conversions.h \
-  C:/mingw64/include/c++/12.1.0/cstdlib \
-  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
-  C:/mingw64/include/c++/12.1.0/stdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
-  C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h \
-  C:/mingw64/include/c++/12.1.0/bits/std_abs.h \
-  C:/mingw64/include/c++/12.1.0/cstdio \
-  C:/mingw64/include/c++/12.1.0/cerrno \
-  C:/mingw64/include/c++/12.1.0/bits/charconv.h \
-  C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc \
-  C:/mingw64/include/c++/12.1.0/unordered_map \
-  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
-  C:/mingw64/include/c++/12.1.0/tuple \
-  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
-  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
-  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
-  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \
-  C:/mingw64/include/c++/12.1.0/cmath \
-  C:/mingw64/x86_64-w64-mingw32/include/math.h \
-  C:/mingw64/include/c++/12.1.0/bits/specfun.h \
   C:/mingw64/include/c++/12.1.0/limits \
   C:/mingw64/include/c++/12.1.0/tr1/gamma.tcc \
   C:/mingw64/include/c++/12.1.0/tr1/special_function_util.h \
@@ -881,8 +796,10 @@ CMakeFiles/output.dir/src/renderer.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/o
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/setup.hpp \
   C:/mingw64/include/c++/12.1.0/cassert \
   C:/mingw64/x86_64-w64-mingw32/include/assert.h \
+  C:/mingw64/include/c++/12.1.0/cstdlib \
   C:/mingw64/include/c++/12.1.0/cstddef \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/simd/platform.h \
+  C:/mingw64/include/c++/12.1.0/cstdint \
   C:/mingw64/include/c++/12.1.0/climits \
   C:/mingw64/include/c++/12.1.0/cfloat \
   C:/mingw64/lib/clang/14.0.4/include/float.h \
@@ -915,8 +832,37 @@ CMakeFiles/output.dir/src/renderer.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/o
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_decl.hpp \
   C:/mingw64/include/c++/12.1.0/functional \
+  C:/mingw64/include/c++/12.1.0/bits/stl_function.h \
+  C:/mingw64/include/c++/12.1.0/backward/binders.h \
+  C:/mingw64/include/c++/12.1.0/tuple \
+  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/invoke.h \
+  C:/mingw64/include/c++/12.1.0/bits/functional_hash.h \
+  C:/mingw64/include/c++/12.1.0/bits/hash_bytes.h \
+  C:/mingw64/include/c++/12.1.0/bits/refwrap.h \
   C:/mingw64/include/c++/12.1.0/bits/std_function.h \
   C:/mingw64/include/c++/12.1.0/typeinfo \
+  C:/mingw64/include/c++/12.1.0/unordered_map \
+  C:/mingw64/include/c++/12.1.0/initializer_list \
+  C:/mingw64/include/c++/12.1.0/bits/allocator.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/new_allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/memoryfwd.h \
+  C:/mingw64/include/c++/12.1.0/ext/alloc_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/alloc_traits.h \
+  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
+  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
+  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
+  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
+  C:/mingw64/include/c++/12.1.0/bits/range_access.h \
+  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
+  C:/mingw64/include/c++/12.1.0/vector \
+  C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_vector.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_bvector.h \
+  C:/mingw64/include/c++/12.1.0/bits/vector.tcc \
   C:/mingw64/include/c++/12.1.0/array \
   C:/mingw64/include/c++/12.1.0/bits/stl_algo.h \
   C:/mingw64/include/c++/12.1.0/bits/algorithmfwd.h \
@@ -1042,6 +988,62 @@ CMakeFiles/output.dir/src/renderer.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/o
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/integer.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
+  C:/mingw64/include/c++/12.1.0/string \
+  C:/mingw64/include/c++/12.1.0/bits/stringfwd.h \
+  C:/mingw64/include/c++/12.1.0/bits/char_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/postypes.h \
+  C:/mingw64/include/c++/12.1.0/cwchar \
+  C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
+  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
+  C:/mingw64/include/c++/12.1.0/bits/localefwd.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/mingw64/include/c++/12.1.0/clocale \
+  C:/mingw64/x86_64-w64-mingw32/include/locale.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+  C:/mingw64/include/c++/12.1.0/iosfwd \
+  C:/mingw64/include/c++/12.1.0/cctype \
+  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
+  C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h \
+  C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h \
+  C:/mingw64/include/c++/12.1.0/bits/basic_string.h \
+  C:/mingw64/include/c++/12.1.0/ext/atomicity.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
+  C:/mingw64/x86_64-w64-mingw32/include/errno.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
+  C:/mingw64/x86_64-w64-mingw32/include/process.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
+  C:/mingw64/x86_64-w64-mingw32/include/signal.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
+  C:/mingw64/x86_64-w64-mingw32/include/time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/mingw64/include/c++/12.1.0/string_view \
+  C:/mingw64/include/c++/12.1.0/bits/ranges_base.h \
+  C:/mingw64/include/c++/12.1.0/bits/max_size_type.h \
+  C:/mingw64/include/c++/12.1.0/numbers \
+  C:/mingw64/include/c++/12.1.0/bits/string_view.tcc \
+  C:/mingw64/include/c++/12.1.0/ext/string_conversions.h \
+  C:/mingw64/include/c++/12.1.0/cstdio \
+  C:/mingw64/include/c++/12.1.0/cerrno \
+  C:/mingw64/include/c++/12.1.0/bits/charconv.h \
+  C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc \
   C:/mingw64/include/c++/12.1.0/iostream \
   C:/mingw64/include/c++/12.1.0/ostream \
   C:/mingw64/include/c++/12.1.0/ios \
@@ -1392,6 +1394,7 @@ CMakeFiles/output.dir/src/shader.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/ope
   C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/glu.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp \
@@ -1451,20 +1454,31 @@ CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj: C:/Users/henri/Jottaclou
   C:/mingw64/lib/clang/14.0.4/include/stddef.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/glu.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
-  C:/mingw64/include/c++/12.1.0/cstdint \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
+  C:/mingw64/lib/clang/14.0.4/include/__stddef_max_align_t.h \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \
+  C:/mingw64/include/c++/12.1.0/cmath \
   C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++config.h \
   C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/os_defines.h \
   C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/cpu_defines.h \
   C:/mingw64/include/c++/12.1.0/pstl/pstl_config.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp \
-  C:/mingw64/include/c++/12.1.0/vector \
+  C:/mingw64/include/c++/12.1.0/bits/cpp_type_traits.h \
+  C:/mingw64/include/c++/12.1.0/ext/type_traits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/math.h \
+  C:/mingw64/include/c++/12.1.0/bits/std_abs.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+  C:/mingw64/lib/clang/14.0.4/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+  C:/mingw64/include/c++/12.1.0/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+  C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h \
+  C:/mingw64/include/c++/12.1.0/bits/specfun.h \
   C:/mingw64/include/c++/12.1.0/bits/stl_algobase.h \
   C:/mingw64/include/c++/12.1.0/bits/functexcept.h \
   C:/mingw64/include/c++/12.1.0/bits/exception_defines.h \
-  C:/mingw64/include/c++/12.1.0/bits/cpp_type_traits.h \
-  C:/mingw64/include/c++/12.1.0/ext/type_traits.h \
   C:/mingw64/include/c++/12.1.0/ext/numeric_traits.h \
   C:/mingw64/include/c++/12.1.0/bits/stl_pair.h \
   C:/mingw64/include/c++/12.1.0/type_traits \
@@ -1485,103 +1499,6 @@ CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj: C:/Users/henri/Jottaclou
   C:/mingw64/include/c++/12.1.0/bits/stl_construct.h \
   C:/mingw64/include/c++/12.1.0/debug/debug.h \
   C:/mingw64/include/c++/12.1.0/bits/predefined_ops.h \
-  C:/mingw64/include/c++/12.1.0/bits/allocator.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/new_allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/memoryfwd.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h \
-  C:/mingw64/include/c++/12.1.0/ext/alloc_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/alloc_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_vector.h \
-  C:/mingw64/include/c++/12.1.0/initializer_list \
-  C:/mingw64/include/c++/12.1.0/bits/stl_bvector.h \
-  C:/mingw64/include/c++/12.1.0/bits/functional_hash.h \
-  C:/mingw64/include/c++/12.1.0/bits/hash_bytes.h \
-  C:/mingw64/include/c++/12.1.0/bits/refwrap.h \
-  C:/mingw64/include/c++/12.1.0/bits/invoke.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_function.h \
-  C:/mingw64/include/c++/12.1.0/backward/binders.h \
-  C:/mingw64/include/c++/12.1.0/bits/range_access.h \
-  C:/mingw64/include/c++/12.1.0/bits/vector.tcc \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
-  C:/mingw64/include/c++/12.1.0/string \
-  C:/mingw64/include/c++/12.1.0/bits/stringfwd.h \
-  C:/mingw64/include/c++/12.1.0/bits/char_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/postypes.h \
-  C:/mingw64/include/c++/12.1.0/cwchar \
-  C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
-  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
-  C:/mingw64/include/c++/12.1.0/bits/localefwd.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++locale.h \
-  C:/mingw64/include/c++/12.1.0/clocale \
-  C:/mingw64/x86_64-w64-mingw32/include/locale.h \
-  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
-  C:/mingw64/include/c++/12.1.0/iosfwd \
-  C:/mingw64/include/c++/12.1.0/cctype \
-  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
-  C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h \
-  C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h \
-  C:/mingw64/include/c++/12.1.0/bits/basic_string.h \
-  C:/mingw64/include/c++/12.1.0/ext/atomicity.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
-  C:/mingw64/lib/clang/14.0.4/include/__stddef_max_align_t.h \
-  C:/mingw64/x86_64-w64-mingw32/include/errno.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
-  C:/mingw64/x86_64-w64-mingw32/include/process.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
-  C:/mingw64/lib/clang/14.0.4/include/limits.h \
-  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
-  C:/mingw64/x86_64-w64-mingw32/include/signal.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
-  C:/mingw64/x86_64-w64-mingw32/include/time.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
-  C:/mingw64/include/c++/12.1.0/string_view \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/max_size_type.h \
-  C:/mingw64/include/c++/12.1.0/numbers \
-  C:/mingw64/include/c++/12.1.0/bits/string_view.tcc \
-  C:/mingw64/include/c++/12.1.0/ext/string_conversions.h \
-  C:/mingw64/include/c++/12.1.0/cstdlib \
-  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
-  C:/mingw64/include/c++/12.1.0/stdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
-  C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h \
-  C:/mingw64/include/c++/12.1.0/bits/std_abs.h \
-  C:/mingw64/include/c++/12.1.0/cstdio \
-  C:/mingw64/include/c++/12.1.0/cerrno \
-  C:/mingw64/include/c++/12.1.0/bits/charconv.h \
-  C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc \
-  C:/mingw64/include/c++/12.1.0/unordered_map \
-  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
-  C:/mingw64/include/c++/12.1.0/tuple \
-  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
-  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
-  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
-  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \
-  C:/mingw64/include/c++/12.1.0/cmath \
-  C:/mingw64/x86_64-w64-mingw32/include/math.h \
-  C:/mingw64/include/c++/12.1.0/bits/specfun.h \
   C:/mingw64/include/c++/12.1.0/limits \
   C:/mingw64/include/c++/12.1.0/tr1/gamma.tcc \
   C:/mingw64/include/c++/12.1.0/tr1/special_function_util.h \
@@ -1598,8 +1515,10 @@ CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj: C:/Users/henri/Jottaclou
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/setup.hpp \
   C:/mingw64/include/c++/12.1.0/cassert \
   C:/mingw64/x86_64-w64-mingw32/include/assert.h \
+  C:/mingw64/include/c++/12.1.0/cstdlib \
   C:/mingw64/include/c++/12.1.0/cstddef \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/simd/platform.h \
+  C:/mingw64/include/c++/12.1.0/cstdint \
   C:/mingw64/include/c++/12.1.0/climits \
   C:/mingw64/include/c++/12.1.0/cfloat \
   C:/mingw64/lib/clang/14.0.4/include/float.h \
@@ -1632,8 +1551,37 @@ CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj: C:/Users/henri/Jottaclou
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_decl.hpp \
   C:/mingw64/include/c++/12.1.0/functional \
+  C:/mingw64/include/c++/12.1.0/bits/stl_function.h \
+  C:/mingw64/include/c++/12.1.0/backward/binders.h \
+  C:/mingw64/include/c++/12.1.0/tuple \
+  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/invoke.h \
+  C:/mingw64/include/c++/12.1.0/bits/functional_hash.h \
+  C:/mingw64/include/c++/12.1.0/bits/hash_bytes.h \
+  C:/mingw64/include/c++/12.1.0/bits/refwrap.h \
   C:/mingw64/include/c++/12.1.0/bits/std_function.h \
   C:/mingw64/include/c++/12.1.0/typeinfo \
+  C:/mingw64/include/c++/12.1.0/unordered_map \
+  C:/mingw64/include/c++/12.1.0/initializer_list \
+  C:/mingw64/include/c++/12.1.0/bits/allocator.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/new_allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/memoryfwd.h \
+  C:/mingw64/include/c++/12.1.0/ext/alloc_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/alloc_traits.h \
+  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
+  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
+  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
+  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
+  C:/mingw64/include/c++/12.1.0/bits/range_access.h \
+  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
+  C:/mingw64/include/c++/12.1.0/vector \
+  C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_vector.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_bvector.h \
+  C:/mingw64/include/c++/12.1.0/bits/vector.tcc \
   C:/mingw64/include/c++/12.1.0/array \
   C:/mingw64/include/c++/12.1.0/bits/stl_algo.h \
   C:/mingw64/include/c++/12.1.0/bits/algorithmfwd.h \
@@ -1759,6 +1707,62 @@ CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj: C:/Users/henri/Jottaclou
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/integer.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
+  C:/mingw64/include/c++/12.1.0/string \
+  C:/mingw64/include/c++/12.1.0/bits/stringfwd.h \
+  C:/mingw64/include/c++/12.1.0/bits/char_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/postypes.h \
+  C:/mingw64/include/c++/12.1.0/cwchar \
+  C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
+  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
+  C:/mingw64/include/c++/12.1.0/bits/localefwd.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/mingw64/include/c++/12.1.0/clocale \
+  C:/mingw64/x86_64-w64-mingw32/include/locale.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+  C:/mingw64/include/c++/12.1.0/iosfwd \
+  C:/mingw64/include/c++/12.1.0/cctype \
+  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
+  C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h \
+  C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h \
+  C:/mingw64/include/c++/12.1.0/bits/basic_string.h \
+  C:/mingw64/include/c++/12.1.0/ext/atomicity.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
+  C:/mingw64/x86_64-w64-mingw32/include/errno.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
+  C:/mingw64/x86_64-w64-mingw32/include/process.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
+  C:/mingw64/x86_64-w64-mingw32/include/signal.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
+  C:/mingw64/x86_64-w64-mingw32/include/time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/mingw64/include/c++/12.1.0/string_view \
+  C:/mingw64/include/c++/12.1.0/bits/ranges_base.h \
+  C:/mingw64/include/c++/12.1.0/bits/max_size_type.h \
+  C:/mingw64/include/c++/12.1.0/numbers \
+  C:/mingw64/include/c++/12.1.0/bits/string_view.tcc \
+  C:/mingw64/include/c++/12.1.0/ext/string_conversions.h \
+  C:/mingw64/include/c++/12.1.0/cstdio \
+  C:/mingw64/include/c++/12.1.0/cerrno \
+  C:/mingw64/include/c++/12.1.0/bits/charconv.h \
+  C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imconfig.h \
   C:/mingw64/lib/clang/14.0.4/include/stdarg.h \
@@ -1891,26 +1895,7 @@ CMakeFiles/output.dir/src/texture.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/op
   C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/glu.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp \
-  C:/mingw64/include/c++/12.1.0/vector \
-  C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_vector.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_bvector.h \
-  C:/mingw64/include/c++/12.1.0/bits/vector.tcc \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
-  C:/mingw64/include/c++/12.1.0/unordered_map \
-  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
-  C:/mingw64/include/c++/12.1.0/tuple \
-  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
-  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
-  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
-  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \
   C:/mingw64/include/c++/12.1.0/cmath \
@@ -1966,8 +1951,23 @@ CMakeFiles/output.dir/src/texture.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/op
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_decl.hpp \
   C:/mingw64/include/c++/12.1.0/functional \
+  C:/mingw64/include/c++/12.1.0/tuple \
+  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
   C:/mingw64/include/c++/12.1.0/bits/std_function.h \
   C:/mingw64/include/c++/12.1.0/typeinfo \
+  C:/mingw64/include/c++/12.1.0/unordered_map \
+  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
+  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
+  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
+  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
+  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
+  C:/mingw64/include/c++/12.1.0/vector \
+  C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_vector.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_bvector.h \
+  C:/mingw64/include/c++/12.1.0/bits/vector.tcc \
   C:/mingw64/include/c++/12.1.0/array \
   C:/mingw64/include/c++/12.1.0/bits/stl_algo.h \
   C:/mingw64/include/c++/12.1.0/bits/algorithmfwd.h \
@@ -2092,7 +2092,12 @@ CMakeFiles/output.dir/src/texture.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/op
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/matrix.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/integer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp
 
 CMakeFiles/output.dir/src/vertexArray.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.cpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
@@ -2164,84 +2169,21 @@ CMakeFiles/output.dir/src/vertexArray.cpp.obj: C:/Users/henri/Jottacloud/kode/cp
   C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/glu.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
-  C:/mingw64/include/c++/12.1.0/string \
-  C:/mingw64/include/c++/12.1.0/bits/stringfwd.h \
-  C:/mingw64/include/c++/12.1.0/bits/char_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/postypes.h \
-  C:/mingw64/include/c++/12.1.0/cwchar \
-  C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
-  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
-  C:/mingw64/include/c++/12.1.0/bits/localefwd.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++locale.h \
-  C:/mingw64/include/c++/12.1.0/clocale \
-  C:/mingw64/x86_64-w64-mingw32/include/locale.h \
-  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
-  C:/mingw64/include/c++/12.1.0/iosfwd \
-  C:/mingw64/include/c++/12.1.0/cctype \
-  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
-  C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h \
-  C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h \
-  C:/mingw64/include/c++/12.1.0/bits/basic_string.h \
-  C:/mingw64/include/c++/12.1.0/ext/atomicity.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
   C:/mingw64/lib/clang/14.0.4/include/__stddef_max_align_t.h \
-  C:/mingw64/x86_64-w64-mingw32/include/errno.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
-  C:/mingw64/x86_64-w64-mingw32/include/process.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
-  C:/mingw64/lib/clang/14.0.4/include/limits.h \
-  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
-  C:/mingw64/x86_64-w64-mingw32/include/signal.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
-  C:/mingw64/x86_64-w64-mingw32/include/time.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
-  C:/mingw64/include/c++/12.1.0/string_view \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/max_size_type.h \
-  C:/mingw64/include/c++/12.1.0/numbers \
-  C:/mingw64/include/c++/12.1.0/bits/string_view.tcc \
-  C:/mingw64/include/c++/12.1.0/ext/string_conversions.h \
-  C:/mingw64/include/c++/12.1.0/cstdlib \
-  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
-  C:/mingw64/include/c++/12.1.0/stdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
-  C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h \
-  C:/mingw64/include/c++/12.1.0/bits/std_abs.h \
-  C:/mingw64/include/c++/12.1.0/cstdio \
-  C:/mingw64/include/c++/12.1.0/cerrno \
-  C:/mingw64/include/c++/12.1.0/bits/charconv.h \
-  C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc \
-  C:/mingw64/include/c++/12.1.0/unordered_map \
-  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
-  C:/mingw64/include/c++/12.1.0/tuple \
-  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
-  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
-  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
-  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \
   C:/mingw64/include/c++/12.1.0/cmath \
   C:/mingw64/x86_64-w64-mingw32/include/math.h \
+  C:/mingw64/include/c++/12.1.0/bits/std_abs.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+  C:/mingw64/lib/clang/14.0.4/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+  C:/mingw64/include/c++/12.1.0/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+  C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h \
   C:/mingw64/include/c++/12.1.0/bits/specfun.h \
   C:/mingw64/include/c++/12.1.0/limits \
   C:/mingw64/include/c++/12.1.0/tr1/gamma.tcc \
@@ -2259,6 +2201,7 @@ CMakeFiles/output.dir/src/vertexArray.cpp.obj: C:/Users/henri/Jottacloud/kode/cp
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/setup.hpp \
   C:/mingw64/include/c++/12.1.0/cassert \
   C:/mingw64/x86_64-w64-mingw32/include/assert.h \
+  C:/mingw64/include/c++/12.1.0/cstdlib \
   C:/mingw64/include/c++/12.1.0/cstddef \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/simd/platform.h \
   C:/mingw64/include/c++/12.1.0/climits \
@@ -2293,8 +2236,18 @@ CMakeFiles/output.dir/src/vertexArray.cpp.obj: C:/Users/henri/Jottacloud/kode/cp
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_decl.hpp \
   C:/mingw64/include/c++/12.1.0/functional \
+  C:/mingw64/include/c++/12.1.0/tuple \
+  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
   C:/mingw64/include/c++/12.1.0/bits/std_function.h \
   C:/mingw64/include/c++/12.1.0/typeinfo \
+  C:/mingw64/include/c++/12.1.0/unordered_map \
+  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
+  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
+  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
+  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
+  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
   C:/mingw64/include/c++/12.1.0/array \
   C:/mingw64/include/c++/12.1.0/bits/stl_algo.h \
   C:/mingw64/include/c++/12.1.0/bits/algorithmfwd.h \
@@ -2419,7 +2372,60 @@ CMakeFiles/output.dir/src/vertexArray.cpp.obj: C:/Users/henri/Jottacloud/kode/cp
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/matrix.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/integer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
+  C:/mingw64/include/c++/12.1.0/string \
+  C:/mingw64/include/c++/12.1.0/bits/stringfwd.h \
+  C:/mingw64/include/c++/12.1.0/bits/char_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/postypes.h \
+  C:/mingw64/include/c++/12.1.0/cwchar \
+  C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
+  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
+  C:/mingw64/include/c++/12.1.0/bits/localefwd.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/mingw64/include/c++/12.1.0/clocale \
+  C:/mingw64/x86_64-w64-mingw32/include/locale.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+  C:/mingw64/include/c++/12.1.0/iosfwd \
+  C:/mingw64/include/c++/12.1.0/cctype \
+  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
+  C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h \
+  C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h \
+  C:/mingw64/include/c++/12.1.0/bits/basic_string.h \
+  C:/mingw64/include/c++/12.1.0/ext/atomicity.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
+  C:/mingw64/x86_64-w64-mingw32/include/errno.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
+  C:/mingw64/x86_64-w64-mingw32/include/process.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
+  C:/mingw64/x86_64-w64-mingw32/include/signal.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
+  C:/mingw64/x86_64-w64-mingw32/include/time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/mingw64/include/c++/12.1.0/string_view \
+  C:/mingw64/include/c++/12.1.0/bits/ranges_base.h \
+  C:/mingw64/include/c++/12.1.0/bits/max_size_type.h \
+  C:/mingw64/include/c++/12.1.0/numbers \
+  C:/mingw64/include/c++/12.1.0/bits/string_view.tcc \
+  C:/mingw64/include/c++/12.1.0/ext/string_conversions.h \
+  C:/mingw64/include/c++/12.1.0/cstdio \
+  C:/mingw64/include/c++/12.1.0/cerrno \
+  C:/mingw64/include/c++/12.1.0/bits/charconv.h \
+  C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc
 
 CMakeFiles/output.dir/src/vertexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.cpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
@@ -2445,14 +2451,27 @@ CMakeFiles/output.dir/src/vertexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/c
   C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/glu.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp \
-  C:/mingw64/include/c++/12.1.0/vector \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
+  C:/mingw64/lib/clang/14.0.4/include/__stddef_max_align_t.h \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \
+  C:/mingw64/include/c++/12.1.0/cmath \
+  C:/mingw64/include/c++/12.1.0/bits/cpp_type_traits.h \
+  C:/mingw64/include/c++/12.1.0/ext/type_traits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/math.h \
+  C:/mingw64/include/c++/12.1.0/bits/std_abs.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+  C:/mingw64/lib/clang/14.0.4/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+  C:/mingw64/include/c++/12.1.0/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+  C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h \
+  C:/mingw64/include/c++/12.1.0/bits/specfun.h \
   C:/mingw64/include/c++/12.1.0/bits/stl_algobase.h \
   C:/mingw64/include/c++/12.1.0/bits/functexcept.h \
   C:/mingw64/include/c++/12.1.0/bits/exception_defines.h \
-  C:/mingw64/include/c++/12.1.0/bits/cpp_type_traits.h \
-  C:/mingw64/include/c++/12.1.0/ext/type_traits.h \
   C:/mingw64/include/c++/12.1.0/ext/numeric_traits.h \
   C:/mingw64/include/c++/12.1.0/bits/stl_pair.h \
   C:/mingw64/include/c++/12.1.0/type_traits \
@@ -2473,103 +2492,6 @@ CMakeFiles/output.dir/src/vertexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/c
   C:/mingw64/include/c++/12.1.0/bits/stl_construct.h \
   C:/mingw64/include/c++/12.1.0/debug/debug.h \
   C:/mingw64/include/c++/12.1.0/bits/predefined_ops.h \
-  C:/mingw64/include/c++/12.1.0/bits/allocator.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/new_allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/memoryfwd.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h \
-  C:/mingw64/include/c++/12.1.0/ext/alloc_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/alloc_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_vector.h \
-  C:/mingw64/include/c++/12.1.0/initializer_list \
-  C:/mingw64/include/c++/12.1.0/bits/stl_bvector.h \
-  C:/mingw64/include/c++/12.1.0/bits/functional_hash.h \
-  C:/mingw64/include/c++/12.1.0/bits/hash_bytes.h \
-  C:/mingw64/include/c++/12.1.0/bits/refwrap.h \
-  C:/mingw64/include/c++/12.1.0/bits/invoke.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_function.h \
-  C:/mingw64/include/c++/12.1.0/backward/binders.h \
-  C:/mingw64/include/c++/12.1.0/bits/range_access.h \
-  C:/mingw64/include/c++/12.1.0/bits/vector.tcc \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
-  C:/mingw64/include/c++/12.1.0/string \
-  C:/mingw64/include/c++/12.1.0/bits/stringfwd.h \
-  C:/mingw64/include/c++/12.1.0/bits/char_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/postypes.h \
-  C:/mingw64/include/c++/12.1.0/cwchar \
-  C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
-  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
-  C:/mingw64/include/c++/12.1.0/bits/localefwd.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++locale.h \
-  C:/mingw64/include/c++/12.1.0/clocale \
-  C:/mingw64/x86_64-w64-mingw32/include/locale.h \
-  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
-  C:/mingw64/include/c++/12.1.0/iosfwd \
-  C:/mingw64/include/c++/12.1.0/cctype \
-  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
-  C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h \
-  C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h \
-  C:/mingw64/include/c++/12.1.0/bits/basic_string.h \
-  C:/mingw64/include/c++/12.1.0/ext/atomicity.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
-  C:/mingw64/lib/clang/14.0.4/include/__stddef_max_align_t.h \
-  C:/mingw64/x86_64-w64-mingw32/include/errno.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
-  C:/mingw64/x86_64-w64-mingw32/include/process.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
-  C:/mingw64/lib/clang/14.0.4/include/limits.h \
-  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
-  C:/mingw64/x86_64-w64-mingw32/include/signal.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
-  C:/mingw64/x86_64-w64-mingw32/include/time.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
-  C:/mingw64/include/c++/12.1.0/string_view \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/max_size_type.h \
-  C:/mingw64/include/c++/12.1.0/numbers \
-  C:/mingw64/include/c++/12.1.0/bits/string_view.tcc \
-  C:/mingw64/include/c++/12.1.0/ext/string_conversions.h \
-  C:/mingw64/include/c++/12.1.0/cstdlib \
-  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
-  C:/mingw64/include/c++/12.1.0/stdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
-  C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h \
-  C:/mingw64/include/c++/12.1.0/bits/std_abs.h \
-  C:/mingw64/include/c++/12.1.0/cstdio \
-  C:/mingw64/include/c++/12.1.0/cerrno \
-  C:/mingw64/include/c++/12.1.0/bits/charconv.h \
-  C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc \
-  C:/mingw64/include/c++/12.1.0/unordered_map \
-  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
-  C:/mingw64/include/c++/12.1.0/tuple \
-  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
-  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
-  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
-  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \
-  C:/mingw64/include/c++/12.1.0/cmath \
-  C:/mingw64/x86_64-w64-mingw32/include/math.h \
-  C:/mingw64/include/c++/12.1.0/bits/specfun.h \
   C:/mingw64/include/c++/12.1.0/limits \
   C:/mingw64/include/c++/12.1.0/tr1/gamma.tcc \
   C:/mingw64/include/c++/12.1.0/tr1/special_function_util.h \
@@ -2586,6 +2508,7 @@ CMakeFiles/output.dir/src/vertexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/c
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/setup.hpp \
   C:/mingw64/include/c++/12.1.0/cassert \
   C:/mingw64/x86_64-w64-mingw32/include/assert.h \
+  C:/mingw64/include/c++/12.1.0/cstdlib \
   C:/mingw64/include/c++/12.1.0/cstddef \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/simd/platform.h \
   C:/mingw64/include/c++/12.1.0/climits \
@@ -2620,8 +2543,37 @@ CMakeFiles/output.dir/src/vertexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/c
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_decl.hpp \
   C:/mingw64/include/c++/12.1.0/functional \
+  C:/mingw64/include/c++/12.1.0/bits/stl_function.h \
+  C:/mingw64/include/c++/12.1.0/backward/binders.h \
+  C:/mingw64/include/c++/12.1.0/tuple \
+  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/invoke.h \
+  C:/mingw64/include/c++/12.1.0/bits/functional_hash.h \
+  C:/mingw64/include/c++/12.1.0/bits/hash_bytes.h \
+  C:/mingw64/include/c++/12.1.0/bits/refwrap.h \
   C:/mingw64/include/c++/12.1.0/bits/std_function.h \
   C:/mingw64/include/c++/12.1.0/typeinfo \
+  C:/mingw64/include/c++/12.1.0/unordered_map \
+  C:/mingw64/include/c++/12.1.0/initializer_list \
+  C:/mingw64/include/c++/12.1.0/bits/allocator.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/new_allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/memoryfwd.h \
+  C:/mingw64/include/c++/12.1.0/ext/alloc_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/alloc_traits.h \
+  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
+  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
+  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
+  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
+  C:/mingw64/include/c++/12.1.0/bits/range_access.h \
+  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
+  C:/mingw64/include/c++/12.1.0/vector \
+  C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_vector.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_bvector.h \
+  C:/mingw64/include/c++/12.1.0/bits/vector.tcc \
   C:/mingw64/include/c++/12.1.0/array \
   C:/mingw64/include/c++/12.1.0/bits/stl_algo.h \
   C:/mingw64/include/c++/12.1.0/bits/algorithmfwd.h \
@@ -2746,7 +2698,62 @@ CMakeFiles/output.dir/src/vertexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/c
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/matrix.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/integer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
+  C:/mingw64/include/c++/12.1.0/string \
+  C:/mingw64/include/c++/12.1.0/bits/stringfwd.h \
+  C:/mingw64/include/c++/12.1.0/bits/char_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/postypes.h \
+  C:/mingw64/include/c++/12.1.0/cwchar \
+  C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
+  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
+  C:/mingw64/include/c++/12.1.0/bits/localefwd.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/mingw64/include/c++/12.1.0/clocale \
+  C:/mingw64/x86_64-w64-mingw32/include/locale.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+  C:/mingw64/include/c++/12.1.0/iosfwd \
+  C:/mingw64/include/c++/12.1.0/cctype \
+  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
+  C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h \
+  C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h \
+  C:/mingw64/include/c++/12.1.0/bits/basic_string.h \
+  C:/mingw64/include/c++/12.1.0/ext/atomicity.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
+  C:/mingw64/x86_64-w64-mingw32/include/errno.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
+  C:/mingw64/x86_64-w64-mingw32/include/process.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
+  C:/mingw64/x86_64-w64-mingw32/include/signal.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
+  C:/mingw64/x86_64-w64-mingw32/include/time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/mingw64/include/c++/12.1.0/string_view \
+  C:/mingw64/include/c++/12.1.0/bits/ranges_base.h \
+  C:/mingw64/include/c++/12.1.0/bits/max_size_type.h \
+  C:/mingw64/include/c++/12.1.0/numbers \
+  C:/mingw64/include/c++/12.1.0/bits/string_view.tcc \
+  C:/mingw64/include/c++/12.1.0/ext/string_conversions.h \
+  C:/mingw64/include/c++/12.1.0/cstdio \
+  C:/mingw64/include/c++/12.1.0/cerrno \
+  C:/mingw64/include/c++/12.1.0/bits/charconv.h \
+  C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc
 
 CMakeFiles/output.dir/src/vertexBufferLayout.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.cpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp \
@@ -2815,87 +2822,21 @@ CMakeFiles/output.dir/src/vertexBufferLayout.cpp.obj: C:/Users/henri/Jottacloud/
   C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/glu.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
-  C:/mingw64/include/c++/12.1.0/cstdint \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
-  C:/mingw64/include/c++/12.1.0/string \
-  C:/mingw64/include/c++/12.1.0/bits/stringfwd.h \
-  C:/mingw64/include/c++/12.1.0/bits/char_traits.h \
-  C:/mingw64/include/c++/12.1.0/bits/postypes.h \
-  C:/mingw64/include/c++/12.1.0/cwchar \
-  C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
-  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
-  C:/mingw64/include/c++/12.1.0/bits/localefwd.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++locale.h \
-  C:/mingw64/include/c++/12.1.0/clocale \
-  C:/mingw64/x86_64-w64-mingw32/include/locale.h \
-  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
-  C:/mingw64/include/c++/12.1.0/iosfwd \
-  C:/mingw64/include/c++/12.1.0/cctype \
-  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
-  C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h \
-  C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h \
-  C:/mingw64/include/c++/12.1.0/bits/basic_string.h \
-  C:/mingw64/include/c++/12.1.0/ext/atomicity.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
   C:/mingw64/lib/clang/14.0.4/include/__stddef_max_align_t.h \
-  C:/mingw64/x86_64-w64-mingw32/include/errno.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
-  C:/mingw64/x86_64-w64-mingw32/include/process.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
-  C:/mingw64/lib/clang/14.0.4/include/limits.h \
-  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
-  C:/mingw64/x86_64-w64-mingw32/include/signal.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
-  C:/mingw64/x86_64-w64-mingw32/include/time.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
-  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
-  C:/mingw64/include/c++/12.1.0/string_view \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/max_size_type.h \
-  C:/mingw64/include/c++/12.1.0/numbers \
-  C:/mingw64/include/c++/12.1.0/bits/string_view.tcc \
-  C:/mingw64/include/c++/12.1.0/ext/string_conversions.h \
-  C:/mingw64/include/c++/12.1.0/cstdlib \
-  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
-  C:/mingw64/include/c++/12.1.0/stdlib.h \
-  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
-  C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h \
-  C:/mingw64/include/c++/12.1.0/bits/std_abs.h \
-  C:/mingw64/include/c++/12.1.0/cstdio \
-  C:/mingw64/include/c++/12.1.0/cerrno \
-  C:/mingw64/include/c++/12.1.0/bits/charconv.h \
-  C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc \
-  C:/mingw64/include/c++/12.1.0/unordered_map \
-  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
-  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
-  C:/mingw64/include/c++/12.1.0/tuple \
-  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
-  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
-  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
-  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
-  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \
   C:/mingw64/include/c++/12.1.0/cmath \
   C:/mingw64/x86_64-w64-mingw32/include/math.h \
+  C:/mingw64/include/c++/12.1.0/bits/std_abs.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+  C:/mingw64/lib/clang/14.0.4/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+  C:/mingw64/include/c++/12.1.0/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+  C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h \
   C:/mingw64/include/c++/12.1.0/bits/specfun.h \
   C:/mingw64/include/c++/12.1.0/limits \
   C:/mingw64/include/c++/12.1.0/tr1/gamma.tcc \
@@ -2913,8 +2854,10 @@ CMakeFiles/output.dir/src/vertexBufferLayout.cpp.obj: C:/Users/henri/Jottacloud/
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/setup.hpp \
   C:/mingw64/include/c++/12.1.0/cassert \
   C:/mingw64/x86_64-w64-mingw32/include/assert.h \
+  C:/mingw64/include/c++/12.1.0/cstdlib \
   C:/mingw64/include/c++/12.1.0/cstddef \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/simd/platform.h \
+  C:/mingw64/include/c++/12.1.0/cstdint \
   C:/mingw64/include/c++/12.1.0/climits \
   C:/mingw64/include/c++/12.1.0/cfloat \
   C:/mingw64/lib/clang/14.0.4/include/float.h \
@@ -2947,8 +2890,18 @@ CMakeFiles/output.dir/src/vertexBufferLayout.cpp.obj: C:/Users/henri/Jottacloud/
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_decl.hpp \
   C:/mingw64/include/c++/12.1.0/functional \
+  C:/mingw64/include/c++/12.1.0/tuple \
+  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
   C:/mingw64/include/c++/12.1.0/bits/std_function.h \
   C:/mingw64/include/c++/12.1.0/typeinfo \
+  C:/mingw64/include/c++/12.1.0/unordered_map \
+  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
+  C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
+  C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
+  C:/mingw64/include/c++/12.1.0/bits/node_handle.h \
+  C:/mingw64/include/c++/12.1.0/bits/unordered_map.h \
+  C:/mingw64/include/c++/12.1.0/bits/erase_if.h \
   C:/mingw64/include/c++/12.1.0/array \
   C:/mingw64/include/c++/12.1.0/bits/stl_algo.h \
   C:/mingw64/include/c++/12.1.0/bits/algorithmfwd.h \
@@ -3073,7 +3026,62 @@ CMakeFiles/output.dir/src/vertexBufferLayout.cpp.obj: C:/Users/henri/Jottacloud/
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/matrix.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/integer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
+  C:/mingw64/include/c++/12.1.0/string \
+  C:/mingw64/include/c++/12.1.0/bits/stringfwd.h \
+  C:/mingw64/include/c++/12.1.0/bits/char_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/postypes.h \
+  C:/mingw64/include/c++/12.1.0/cwchar \
+  C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
+  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
+  C:/mingw64/include/c++/12.1.0/bits/localefwd.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/mingw64/include/c++/12.1.0/clocale \
+  C:/mingw64/x86_64-w64-mingw32/include/locale.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+  C:/mingw64/include/c++/12.1.0/iosfwd \
+  C:/mingw64/include/c++/12.1.0/cctype \
+  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
+  C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h \
+  C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h \
+  C:/mingw64/include/c++/12.1.0/bits/basic_string.h \
+  C:/mingw64/include/c++/12.1.0/ext/atomicity.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
+  C:/mingw64/x86_64-w64-mingw32/include/errno.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
+  C:/mingw64/x86_64-w64-mingw32/include/process.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
+  C:/mingw64/x86_64-w64-mingw32/include/signal.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
+  C:/mingw64/x86_64-w64-mingw32/include/time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/mingw64/include/c++/12.1.0/string_view \
+  C:/mingw64/include/c++/12.1.0/bits/ranges_base.h \
+  C:/mingw64/include/c++/12.1.0/bits/max_size_type.h \
+  C:/mingw64/include/c++/12.1.0/numbers \
+  C:/mingw64/include/c++/12.1.0/bits/string_view.tcc \
+  C:/mingw64/include/c++/12.1.0/ext/string_conversions.h \
+  C:/mingw64/include/c++/12.1.0/cstdio \
+  C:/mingw64/include/c++/12.1.0/cerrno \
+  C:/mingw64/include/c++/12.1.0/bits/charconv.h \
+  C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc
 
 CMakeFiles/output.dir/vendor/glm/detail/glm.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/glm.cpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtx/dual_quaternion.hpp \
@@ -4839,7 +4847,11 @@ C:/mingw64/include/c++/12.1.0/cstdint:
 
 C:/mingw64/x86_64-w64-mingw32/include/corecrt.h:
 
-C:/mingw64/include/c++/12.1.0/vector:
+C:/mingw64/x86_64-w64-mingw32/include/limits.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_clip_space.inl:
+
+C:/mingw64/x86_64-w64-mingw32/include/stdlib.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.cpp:
 
@@ -4850,10 +4862,6 @@ C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++locale.h:
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtx/dual_quaternion.hpp:
 
 C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/cpu_defines.h:
-
-C:/mingw64/lib/clang/14.0.4/include/stdarg.h:
-
-C:/mingw64/include/c++/12.1.0/bits/stl_bvector.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/debugapi.h:
 
@@ -4887,15 +4895,15 @@ C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/os_defines.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/stdint.h:
 
+C:/mingw64/include/c++/12.1.0/bits/functexcept.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_vec1.inl:
+
 C:/mingw64/include/c++/12.1.0/ext/type_traits.h:
 
 C:/mingw64/lib/clang/14.0.4/include/wmmintrin.h:
 
 C:/mingw64/include/c++/12.1.0/tuple:
-
-C:/mingw64/include/c++/12.1.0/bits/functexcept.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_vec1.inl:
 
 C:/mingw64/x86_64-w64-mingw32/include/crtdefs.h:
 
@@ -4909,15 +4917,9 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_half.i
 
 C:/mingw64/x86_64-w64-mingw32/include/_mingw.h:
 
-C:/mingw64/x86_64-w64-mingw32/include/oleauto.h:
-
-C:/mingw64/include/c++/12.1.0/bits/alloc_traits.h:
-
 C:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_mat4x4.hpp:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/msxml.h:
 
@@ -4947,11 +4949,15 @@ C:/mingw64/lib/clang/14.0.4/include/prfchwintrin.h:
 
 C:/mingw64/include/c++/12.1.0/compare:
 
+C:/mingw64/lib/clang/14.0.4/include/__stddef_max_align_t.h:
+
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/renderer.hpp:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float3x2_precision.hpp:
 
 C:/mingw64/lib/clang/14.0.4/include/avx512cdintrin.h:
+
+C:/mingw64/include/c++/12.1.0/bits/specfun.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GL/glew.h:
 
@@ -4973,19 +4979,19 @@ C:/mingw64/include/c++/12.1.0/bits/charconv.h:
 
 C:/mingw64/include/c++/12.1.0/bits/ptr_traits.h:
 
-C:/mingw64/include/c++/12.1.0/bits/stl_algobase.h:
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h:
 
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/vec4.hpp:
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_uint3.hpp:
 
-C:/mingw64/lib/clang/14.0.4/include/avx512bwintrin.h:
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float4x2.hpp:
 
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp:
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp:
 
-C:/mingw64/include/c++/12.1.0/tr1/ell_integral.tcc:
+C:/mingw64/include/c++/12.1.0/bits/stl_pair.h:
 
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_bool1.hpp:
+C:/mingw64/include/c++/12.1.0/ext/string_conversions.h:
 
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp:
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp:
 
 C:/mingw64/include/c++/12.1.0/debug/assertions.h:
 
@@ -4993,11 +4999,61 @@ C:/mingw64/include/c++/12.1.0/bits/exception_defines.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_float2.hpp:
 
+C:/mingw64/include/c++/12.1.0/cmath:
+
+C:/mingw64/x86_64-w64-mingw32/include/math.h:
+
+C:/mingw64/include/c++/12.1.0/ext/atomicity.h:
+
+C:/mingw64/lib/clang/14.0.4/include/clwbintrin.h:
+
+C:/mingw64/include/c++/12.1.0/bits/std_abs.h:
+
+C:/mingw64/include/c++/12.1.0/bits/fstream.tcc:
+
+C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h:
+
+C:/mingw64/lib/clang/14.0.4/include/limits.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtc/constants.hpp:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/integer.hpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h:
+
+C:/mingw64/include/c++/12.1.0/bits/localefwd.h:
+
+C:/mingw64/include/c++/12.1.0/numbers:
+
+C:/mingw64/include/c++/12.1.0/new:
+
+C:/mingw64/include/c++/12.1.0/bits/concept_check.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/mat4x3.hpp:
+
+C:/mingw64/include/c++/12.1.0/stdlib.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/texture.hpp:
+
+C:/mingw64/include/c++/12.1.0/bits/stl_iterator.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/malloc.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_bool2.hpp:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/quaternion_float_precision.hpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/excpt.h:
+
+C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h:
+
+C:/mingw64/include/c++/12.1.0/bits/stl_algobase.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/vec4.hpp:
+
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_vec2.inl:
 
 C:/mingw64/include/c++/12.1.0/ext/numeric_traits.h:
-
-C:/mingw64/include/c++/12.1.0/bits/stl_pair.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/_mingw_unicode.h:
 
@@ -5005,9 +5061,9 @@ C:/mingw64/include/c++/12.1.0/bits/move.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/simd/platform.h:
 
-C:/mingw64/include/c++/12.1.0/bits/new_allocator.h:
-
 C:/mingw64/include/c++/12.1.0/bits/utility.h:
+
+C:/mingw64/include/c++/12.1.0/bits/new_allocator.h:
 
 C:/mingw64/include/c++/12.1.0/concepts:
 
@@ -5021,22 +5077,6 @@ C:/mingw64/include/c++/12.1.0/bits/stl_iterator_base_funcs.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/pthread.h:
 
-C:/mingw64/include/c++/12.1.0/numbers:
-
-C:/mingw64/include/c++/12.1.0/new:
-
-C:/mingw64/include/c++/12.1.0/bits/concept_check.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/mat4x3.hpp:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/texture.hpp:
-
-C:/mingw64/include/c++/12.1.0/bits/stl_iterator.h:
-
-C:/mingw64/include/c++/12.1.0/bits/allocator.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_bool2_precision.hpp:
-
 C:/mingw64/include/c++/12.1.0/bits/istream.tcc:
 
 C:/mingw64/x86_64-w64-mingw32/include/minwindef.h:
@@ -5047,319 +5087,11 @@ C:/mingw64/include/c++/12.1.0/debug/debug.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_mat4x3.hpp:
 
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_mat2x4.hpp:
-
-C:/mingw64/include/c++/12.1.0/bits/stl_vector.h:
-
 C:/mingw64/include/c++/12.1.0/bits/predefined_ops.h:
 
 C:/mingw64/lib/clang/14.0.4/include/ptwriteintrin.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double3x4_precision.hpp:
-
-C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++allocator.h:
-
-C:/mingw64/include/c++/12.1.0/bits/memoryfwd.h:
-
-C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/windows.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/wincrypt.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/threadpoolapiset.h:
-
-C:/mingw64/lib/clang/14.0.4/include/cetintrin.h:
-
-C:/mingw64/include/c++/12.1.0/ext/alloc_traits.h:
-
-C:/mingw64/include/c++/12.1.0/initializer_list:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/scalar_int_sized.hpp:
-
-C:/mingw64/x86_64-w64-mingw32/include/apiset.h:
-
-C:/mingw64/include/c++/12.1.0/bits/functional_hash.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/winsvc.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/signal.h:
-
-C:/mingw64/lib/clang/14.0.4/include/serializeintrin.h:
-
-C:/mingw64/include/c++/12.1.0/bits/hash_bytes.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_half.hpp:
-
-C:/mingw64/include/c++/12.1.0/bits/refwrap.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double3x3.hpp:
-
-C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h:
-
-C:/mingw64/include/c++/12.1.0/bits/invoke.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtc/vec1.hpp:
-
-C:/mingw64/include/c++/12.1.0/bits/stl_function.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/assert.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float2x4.hpp:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imstb_rectpack.h:
-
-C:/mingw64/include/c++/12.1.0/backward/binders.h:
-
-C:/mingw64/include/c++/12.1.0/bits/range_access.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double2x3.hpp:
-
-C:/mingw64/include/c++/12.1.0/bits/streambuf_iterator.h:
-
-C:/mingw64/include/c++/12.1.0/bits/vector.tcc:
-
-C:/mingw64/include/c++/12.1.0/cstdio:
-
-C:/mingw64/x86_64-w64-mingw32/include/winnt.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp:
-
-C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_types.h:
-
-C:/mingw64/include/c++/12.1.0/string:
-
-C:/mingw64/include/c++/12.1.0/bits/stringfwd.h:
-
-C:/mingw64/include/c++/12.1.0/bits/char_traits.h:
-
-C:/mingw64/include/c++/12.1.0/bits/postypes.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/scalar_uint_sized.hpp:
-
-C:/mingw64/include/c++/12.1.0/cwchar:
-
-C:/mingw64/x86_64-w64-mingw32/include/wtypesbase.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/winuser.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float3x3_precision.hpp:
-
-C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_mreq1.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/wchar.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_double2.hpp:
-
-C:/mingw64/include/c++/12.1.0/bits/fstream.tcc:
-
-C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double3x3_precision.hpp:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_int1.hpp:
-
-C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl:
-
-C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h:
-
-C:/mingw64/include/c++/12.1.0/bits/localefwd.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h:
-
-C:/mingw64/include/c++/12.1.0/clocale:
-
-C:/mingw64/x86_64-w64-mingw32/include/objbase.h:
-
-C:/mingw64/include/c++/12.1.0/functional:
-
-C:/mingw64/x86_64-w64-mingw32/include/locale.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/synchapi.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/stdio.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h:
-
-C:/mingw64/include/c++/12.1.0/iosfwd:
-
-C:/mingw64/include/c++/12.1.0/cctype:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/quaternion_double_precision.hpp:
-
-C:/mingw64/x86_64-w64-mingw32/include/ctype.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtc/constants.inl:
-
-C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h:
-
-C:/mingw64/lib/clang/14.0.4/include/invpcidintrin.h:
-
-C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/scalar_constants.inl:
-
-C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h:
-
-C:/mingw64/include/c++/12.1.0/bits/basic_string.h:
-
-C:/mingw64/include/c++/12.1.0/ext/atomicity.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/math.h:
-
-C:/mingw64/lib/clang/14.0.4/include/clwbintrin.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/unknwn.h:
-
-C:/mingw64/lib/clang/14.0.4/include/waitpkgintrin.h:
-
-C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h:
-
-C:/mingw64/include/c++/12.1.0/bits/ios_base.h:
-
-C:/mingw64/lib/clang/14.0.4/include/mm3dnow.h:
-
-C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h:
-
-C:/mingw64/lib/clang/14.0.4/include/__stddef_max_align_t.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/errno.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/sys/types.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/process.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h:
-
-C:/mingw64/lib/clang/14.0.4/include/avx512vnniintrin.h:
-
-C:/mingw64/lib/clang/14.0.4/include/limits.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtc/constants.hpp:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/integer.hpp:
-
-C:/mingw64/x86_64-w64-mingw32/include/limits.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double4x3_precision.hpp:
-
-C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui_widgets.cpp:
-
-C:/mingw64/x86_64-w64-mingw32/include/time.h:
-
-C:/mingw64/include/c++/12.1.0/bits/locale_facets.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/_timeval.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_quat.inl:
-
-C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h:
-
-C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h:
-
-C:/mingw64/include/c++/12.1.0/string_view:
-
-C:/mingw64/lib/clang/14.0.4/include/avx512vlvp2intersectintrin.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/winerror.h:
-
-C:/mingw64/include/c++/12.1.0/bits/ranges_base.h:
-
-C:/mingw64/include/c++/12.1.0/bits/max_size_type.h:
-
-C:/mingw64/include/c++/12.1.0/bits/string_view.tcc:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp:
-
-C:/mingw64/include/c++/12.1.0/ext/string_conversions.h:
-
-C:/mingw64/include/c++/12.1.0/cstdlib:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_clip_space.inl:
-
-C:/mingw64/x86_64-w64-mingw32/include/stdlib.h:
-
-C:/mingw64/include/c++/12.1.0/stdlib.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/malloc.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_bool2.hpp:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/quaternion_float_precision.hpp:
-
-C:/mingw64/x86_64-w64-mingw32/include/excpt.h:
-
-C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h:
-
-C:/mingw64/include/c++/12.1.0/bits/std_abs.h:
-
-C:/mingw64/include/c++/12.1.0/cerrno:
-
-C:/mingw64/include/c++/12.1.0/tr1/modified_bessel_func.tcc:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/quaternion_double.hpp:
-
-C:/mingw64/x86_64-w64-mingw32/include/reason.h:
-
-C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc:
-
-C:/mingw64/include/c++/12.1.0/unordered_map:
-
-C:/mingw64/lib/clang/14.0.4/include/popcntintrin.h:
-
-C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_float4.hpp:
-
-C:/mingw64/include/c++/12.1.0/bits/hashtable.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double2x3_precision.hpp:
-
-C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h:
-
-C:/mingw64/include/c++/12.1.0/tr1/bessel_function.tcc:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_vec4.inl:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_quat.hpp:
-
-C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/mat4x2.hpp:
-
-C:/mingw64/include/c++/12.1.0/exception:
-
-C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h:
-
-C:/mingw64/include/c++/12.1.0/bits/node_handle.h:
-
-C:/mingw64/lib/clang/14.0.4/include/avx512vlintrin.h:
-
-C:/mingw64/lib/clang/14.0.4/include/avxintrin.h:
-
-C:/mingw64/include/c++/12.1.0/bits/unordered_map.h:
-
-C:/mingw64/include/c++/12.1.0/bits/erase_if.h:
-
-C:/mingw64/include/c++/12.1.0/bits/stl_heap.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float4x2.hpp:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp:
-
-C:/mingw64/include/c++/12.1.0/cmath:
-
-C:/mingw64/include/c++/12.1.0/bits/specfun.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/securitybaseapi.h:
 
@@ -5373,11 +5105,29 @@ C:/mingw64/include/c++/12.1.0/tr1/special_function_util.h:
 
 C:/mingw64/lib/clang/14.0.4/include/avxvnniintrin.h:
 
+C:/mingw64/include/c++/12.1.0/tr1/bessel_function.tcc:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_vec4.inl:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_quat.hpp:
+
+C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/mat4x2.hpp:
+
+C:/mingw64/include/c++/12.1.0/exception:
+
 C:/mingw64/include/c++/12.1.0/ostream:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui_impl_glfw.h:
 
 C:/mingw64/include/c++/12.1.0/tr1/beta_function.tcc:
+
+C:/mingw64/include/c++/12.1.0/tr1/ell_integral.tcc:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_bool1.hpp:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/rpc.h:
 
@@ -5388,6 +5138,12 @@ C:/mingw64/lib/clang/14.0.4/include/bmi2intrin.h:
 C:/mingw64/include/c++/12.1.0/tr1/hypergeometric.tcc:
 
 C:/mingw64/include/c++/12.1.0/tr1/legendre_function.tcc:
+
+C:/mingw64/include/c++/12.1.0/tr1/modified_bessel_func.tcc:
+
+C:/mingw64/include/c++/12.1.0/cerrno:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/quaternion_double.hpp:
 
 C:/mingw64/include/c++/12.1.0/tr1/poly_hermite.tcc:
 
@@ -5416,6 +5172,16 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/setup.hpp:
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/quaternion_geometric.inl:
 
 C:/mingw64/include/c++/12.1.0/cassert:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtc/vec1.hpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/assert.h:
+
+C:/mingw64/include/c++/12.1.0/bits/stl_function.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float2x4.hpp:
+
+C:/mingw64/include/c++/12.1.0/cstdlib:
 
 C:/mingw64/x86_64-w64-mingw32/include/pshpack8.h:
 
@@ -5453,9 +5219,17 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_vec2.h
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_relational.hpp:
 
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_bool2_precision.hpp:
+
+C:/mingw64/include/c++/12.1.0/bits/allocator.h:
+
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_float2_precision.hpp:
 
 C:/mingw64/lib/clang/14.0.4/include/avx512vbmivlintrin.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_double2.hpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_double2_precision.hpp:
 
@@ -5466,6 +5240,12 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_int2.hp
 C:/mingw64/x86_64-w64-mingw32/include/rpcndr.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_int2_sized.hpp:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/scalar_int_sized.hpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/apiset.h:
+
+C:/mingw64/include/c++/12.1.0/bits/functional_hash.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/_wsadata.h:
 
@@ -5480,6 +5260,10 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_uint2_s
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtx/dual_quaternion.inl:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui_impl_opengl3.h:
+
+C:/mingw64/include/c++/12.1.0/cwchar:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/scalar_uint_sized.hpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/winscard.h:
 
@@ -5501,6 +5285,34 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_vec3.i
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_decl.hpp:
 
+C:/mingw64/x86_64-w64-mingw32/include/locale.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/objbase.h:
+
+C:/mingw64/include/c++/12.1.0/functional:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imstb_rectpack.h:
+
+C:/mingw64/include/c++/12.1.0/backward/binders.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h:
+
+C:/mingw64/include/c++/12.1.0/bits/invoke.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/winsvc.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/signal.h:
+
+C:/mingw64/lib/clang/14.0.4/include/serializeintrin.h:
+
+C:/mingw64/include/c++/12.1.0/bits/hash_bytes.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_half.hpp:
+
+C:/mingw64/include/c++/12.1.0/bits/refwrap.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double3x3.hpp:
+
 C:/mingw64/include/c++/12.1.0/bits/std_function.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.cpp:
@@ -5512,6 +5324,76 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_uint3_s
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double3x2_precision.hpp:
 
 C:/mingw64/include/c++/12.1.0/typeinfo:
+
+C:/mingw64/include/c++/12.1.0/unordered_map:
+
+C:/mingw64/lib/clang/14.0.4/include/popcntintrin.h:
+
+C:/mingw64/include/c++/12.1.0/initializer_list:
+
+C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++allocator.h:
+
+C:/mingw64/include/c++/12.1.0/bits/memoryfwd.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/wincrypt.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/threadpoolapiset.h:
+
+C:/mingw64/lib/clang/14.0.4/include/cetintrin.h:
+
+C:/mingw64/include/c++/12.1.0/ext/alloc_traits.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/oleauto.h:
+
+C:/mingw64/include/c++/12.1.0/bits/alloc_traits.h:
+
+C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_float4.hpp:
+
+C:/mingw64/include/c++/12.1.0/bits/hashtable.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double2x3_precision.hpp:
+
+C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h:
+
+C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h:
+
+C:/mingw64/include/c++/12.1.0/bits/node_handle.h:
+
+C:/mingw64/lib/clang/14.0.4/include/avx512vlintrin.h:
+
+C:/mingw64/lib/clang/14.0.4/include/avxintrin.h:
+
+C:/mingw64/include/c++/12.1.0/bits/unordered_map.h:
+
+C:/mingw64/include/c++/12.1.0/bits/range_access.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double2x3.hpp:
+
+C:/mingw64/include/c++/12.1.0/bits/streambuf_iterator.h:
+
+C:/mingw64/include/c++/12.1.0/bits/erase_if.h:
+
+C:/mingw64/include/c++/12.1.0/bits/stl_heap.h:
+
+C:/mingw64/include/c++/12.1.0/vector:
+
+C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/windows.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_mat2x4.hpp:
+
+C:/mingw64/include/c++/12.1.0/bits/stl_vector.h:
+
+C:/mingw64/lib/clang/14.0.4/include/stdarg.h:
+
+C:/mingw64/include/c++/12.1.0/bits/stl_bvector.h:
+
+C:/mingw64/include/c++/12.1.0/bits/vector.tcc:
+
+C:/mingw64/include/c++/12.1.0/cstdio:
 
 C:/mingw64/include/c++/12.1.0/sstream:
 
@@ -5554,10 +5436,6 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_int3.hp
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_int3_sized.hpp:
 
 C:/mingw64/lib/clang/14.0.4/include/mmintrin.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_uint3.hpp:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_vec4.hpp:
 
@@ -5653,7 +5531,23 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_com
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_vec1.hpp:
 
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double3x3_precision.hpp:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_int1.hpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h:
+
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float3x3.hpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_mreq1.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/wchar.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/wtypesbase.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/winuser.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float3x3_precision.hpp:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/mat3x4.hpp:
 
@@ -5686,6 +5580,10 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float4x
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_mat4x4.inl:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double4x3.hpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/pthread_signal.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double4x3_precision.hpp:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float4x3.hpp:
 
@@ -5738,6 +5636,116 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/packing.hpp:
 C:/mingw64/lib/clang/14.0.4/include/xmmintrin.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_integer.inl:
+
+C:/mingw64/lib/clang/14.0.4/include/avx512bwintrin.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/winnt.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_types.h:
+
+C:/mingw64/include/c++/12.1.0/string:
+
+C:/mingw64/include/c++/12.1.0/bits/stringfwd.h:
+
+C:/mingw64/include/c++/12.1.0/bits/char_traits.h:
+
+C:/mingw64/include/c++/12.1.0/bits/postypes.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl:
+
+C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h:
+
+C:/mingw64/include/c++/12.1.0/clocale:
+
+C:/mingw64/x86_64-w64-mingw32/include/synchapi.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/stdio.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h:
+
+C:/mingw64/include/c++/12.1.0/iosfwd:
+
+C:/mingw64/include/c++/12.1.0/cctype:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/quaternion_double_precision.hpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/ctype.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtc/constants.inl:
+
+C:/mingw64/include/c++/12.1.0/bits/ostream_insert.h:
+
+C:/mingw64/lib/clang/14.0.4/include/invpcidintrin.h:
+
+C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/scalar_constants.inl:
+
+C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h:
+
+C:/mingw64/include/c++/12.1.0/bits/basic_string.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/unknwn.h:
+
+C:/mingw64/lib/clang/14.0.4/include/waitpkgintrin.h:
+
+C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h:
+
+C:/mingw64/include/c++/12.1.0/bits/ios_base.h:
+
+C:/mingw64/lib/clang/14.0.4/include/mm3dnow.h:
+
+C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr-default.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/errno.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/sys/types.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/process.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h:
+
+C:/mingw64/lib/clang/14.0.4/include/avx512vnniintrin.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui_widgets.cpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/time.h:
+
+C:/mingw64/include/c++/12.1.0/bits/locale_facets.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/_timeval.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_quat.inl:
+
+C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h:
+
+C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/atomic_word.h:
+
+C:/mingw64/include/c++/12.1.0/string_view:
+
+C:/mingw64/lib/clang/14.0.4/include/avx512vlvp2intersectintrin.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/winerror.h:
+
+C:/mingw64/include/c++/12.1.0/bits/ranges_base.h:
+
+C:/mingw64/include/c++/12.1.0/bits/max_size_type.h:
+
+C:/mingw64/include/c++/12.1.0/bits/string_view.tcc:
+
+C:/mingw64/x86_64-w64-mingw32/include/reason.h:
+
+C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc:
 
 C:/mingw64/lib/clang/14.0.4/include/avx512vlbf16intrin.h:
 

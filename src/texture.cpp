@@ -2,7 +2,7 @@
 
 #include<stb_image/stb_image.h>
 
-#include"renderer.hpp"
+#include"renderWindow.hpp"
 
 Texture::Texture(const std::string& filepath)
     :m_rendererID(0), m_filepath(filepath), m_localBuffer(nullptr), m_width(0), m_height(0), m_BBP(0)
