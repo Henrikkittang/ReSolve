@@ -40,7 +40,12 @@ public:
 	void update();
 
 	glm::ivec2 getSize() const;
+	bool isKeyPressed(int key) const;
+	
+	// This function should not exists but it does for now during development
 	GLFWwindow* getWindow() { return m_window; }	
+	
+
 
 private:
 

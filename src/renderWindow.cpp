@@ -67,6 +67,12 @@ bool RenderWindow::windowShouldClose() const
     return glfwWindowShouldClose( m_window );
 }
 
+void RenderWindow::update()
+{
+    glfwSwapBuffers(m_window);
+    glfwPollEvents();      
+}
+
 glm::ivec2 RenderWindow::getSize() const
 {
     glm::ivec2 size;
@@ -74,9 +80,7 @@ glm::ivec2 RenderWindow::getSize() const
     return size;
 }
 
-
-void RenderWindow::update()
+bool RenderWindow::isKeyPressed(int key) const
 {
-    glfwSwapBuffers(m_window);
-    glfwPollEvents();      
+    return glfwGetKey(m_window, key) == GLFW_PRESS;
 }

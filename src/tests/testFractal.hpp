@@ -2,11 +2,11 @@
 
 #include "test.hpp"
 
-#include"vertexArray.hpp"
-#include"vertexBuffer.hpp"
-#include"indexBuffer.hpp"
-#include"shader.hpp"
-#include"renderer.hpp"
+#include"../vertexArray.hpp"
+#include"../vertexBuffer.hpp"
+#include"../indexBuffer.hpp"
+#include"../shader.hpp"
+#include"../renderWindow.hpp"
 
 namespace test
 {
@@ -15,11 +15,10 @@ namespace test
     public:
         TestFractal(/* args */);
         ~TestFractal();
-        void onUpdate(float dt) override;
+        void onUpdate(const RenderWindow& renderer, float dt);
         void onRender() override;
         void onImGuiRender() override;
 
-        void onUpdate(const Renderer& renderer, float dt);
 
     private:
         VertexArray  m_va;

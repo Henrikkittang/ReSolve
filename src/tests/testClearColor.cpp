@@ -1,6 +1,6 @@
 #include"testClearColor.hpp"
 
-#include"../renderer.hpp"
+#include"../renderWindow.hpp"
 
 #include<imgui/imgui.h>
  
@@ -14,7 +14,7 @@ namespace test
     TestClearColor::~TestClearColor() 
     {}
     
-    void TestClearColor::onUpdate(float dt) 
+    void TestClearColor::onUpdate( const RenderWindow& wn, float dt) 
     {
         GLCall( glClearColor(m_clearColor[0], m_clearColor[1], m_clearColor[2], m_clearColor[3]) );
         GLCall( glClear(GL_COLOR_BUFFER_BIT) );

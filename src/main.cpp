@@ -22,7 +22,6 @@
 #include"tests/testClearColor.hpp"
 
 
-
 int main(void)
 {    
     

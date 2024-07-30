@@ -11,7 +11,7 @@ namespace test
     public:
         TestClearColor(/* args */);
         ~TestClearColor();
-        void onUpdate(float dt) override;
+        void onUpdate( const RenderWindow& wn, float dt) override;
         void onRender() override;
         void onImGuiRender() override;
     private:

@@ -15,3 +15,4 @@ This project contains a .vscode folder, which means that the easiest way to buil
 - The cmake should idealy not contain compiler paths
 - The renderer should maybe be RenderWindow
 - Access to resources should happen via a resources manager with proper path access
+- Make some sort of wrapper around imgui, for setup and cleanup etc, 

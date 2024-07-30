@@ -1,6 +1,6 @@
 #include"testFractal.hpp"
 
-#include"../renderer.hpp"
+#include"../renderWindow.hpp"
 
 #include<imgui/imgui.h>
  
@@ -8,7 +8,6 @@ namespace test
 {
     
     TestFractal::TestFractal() 
-        :m_vb(nullptr, 0), m_ib(nullptr, 0)
     {
         std::vector<float> positions = {
             -1.0f, -1.0f,  
@@ -46,11 +45,7 @@ namespace test
 
         m_va.addBuffer(m_vb, layout);
 
-
-
         m_shader = Shader{ "./resources/shaders/fractal.shader" };    
-
-        
 
         m_shader.bind();
         m_shader.setUniform1f("uZoom", uZoom);
@@ -61,27 +56,26 @@ namespace test
     TestFractal::~TestFractal() 
     {}
 
-    void TestFractal::onUpdate(float dt) {}
-
-
-    void TestFractal::onUpdate(const Renderer& renderer, float dt) 
+    void TestFractal::onUpdate(const RenderWindow& wn, float dt) 
     {
-        if( glfwGetKey( renderer.getWindow(), GLFW_KEY_UP ) == GLFW_PRESS )
+
+        if( wn.isKeyPressed(GLFW_KEY_UP) )
             uZoom = uZoom * 0.99;
-        
-        if( glfwGetKey( renderer.getWindow(), GLFW_KEY_DOWN ) == GLFW_PRESS )
+
+
+        if( wn.isKeyPressed(GLFW_KEY_DOWN) )
             uZoom = uZoom / 0.99;
 
-        if( glfwGetKey( renderer.getWindow(), GLFW_KEY_W ) == GLFW_PRESS )
+        if( wn.isKeyPressed(GLFW_KEY_W) )
             uPan.y = uPan.y - 0.01 * uZoom;
 
-        if( glfwGetKey( renderer.getWindow(), GLFW_KEY_S ) == GLFW_PRESS )
+        if( wn.isKeyPressed(GLFW_KEY_S) )
             uPan.y = uPan.y + 0.01 * uZoom;
 
-        if( glfwGetKey( renderer.getWindow(), GLFW_KEY_D ) == GLFW_PRESS )
+        if( wn.isKeyPressed(GLFW_KEY_D) )
             uPan.x = uPan.x - 0.01 * uZoom;
 
-        if( glfwGetKey( renderer.getWindow(), GLFW_KEY_A ) == GLFW_PRESS )
+        if( wn.isKeyPressed(GLFW_KEY_A) )
             uPan.x = uPan.x + 0.01 * uZoom;
         
         m_shader.bind();

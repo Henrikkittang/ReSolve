@@ -176,29 +176,29 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/renderer.obj: src/renderer.cpp.obj
-.PHONY : src/renderer.obj
+src/renderWindow.obj: src/renderWindow.cpp.obj
+.PHONY : src/renderWindow.obj
 
 # target to build an object file
-src/renderer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/renderer.cpp.obj
-.PHONY : src/renderer.cpp.obj
+src/renderWindow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/renderWindow.cpp.obj
+.PHONY : src/renderWindow.cpp.obj
 
-src/renderer.i: src/renderer.cpp.i
-.PHONY : src/renderer.i
+src/renderWindow.i: src/renderWindow.cpp.i
+.PHONY : src/renderWindow.i
 
 # target to preprocess a source file
-src/renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/renderer.cpp.i
-.PHONY : src/renderer.cpp.i
+src/renderWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/renderWindow.cpp.i
+.PHONY : src/renderWindow.cpp.i
 
-src/renderer.s: src/renderer.cpp.s
-.PHONY : src/renderer.s
+src/renderWindow.s: src/renderWindow.cpp.s
+.PHONY : src/renderWindow.s
 
 # target to generate assembly for a file
-src/renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/renderer.cpp.s
-.PHONY : src/renderer.cpp.s
+src/renderWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/renderWindow.cpp.s
+.PHONY : src/renderWindow.cpp.s
 
 src/shader.obj: src/shader.cpp.obj
 .PHONY : src/shader.obj
@@ -247,6 +247,30 @@ src/tests/testClearColor.s: src/tests/testClearColor.cpp.s
 src/tests/testClearColor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testClearColor.cpp.s
 .PHONY : src/tests/testClearColor.cpp.s
+
+src/tests/testFractal.obj: src/tests/testFractal.cpp.obj
+.PHONY : src/tests/testFractal.obj
+
+# target to build an object file
+src/tests/testFractal.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testFractal.cpp.obj
+.PHONY : src/tests/testFractal.cpp.obj
+
+src/tests/testFractal.i: src/tests/testFractal.cpp.i
+.PHONY : src/tests/testFractal.i
+
+# target to preprocess a source file
+src/tests/testFractal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testFractal.cpp.i
+.PHONY : src/tests/testFractal.cpp.i
+
+src/tests/testFractal.s: src/tests/testFractal.cpp.s
+.PHONY : src/tests/testFractal.s
+
+# target to generate assembly for a file
+src/tests/testFractal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testFractal.cpp.s
+.PHONY : src/tests/testFractal.cpp.s
 
 src/texture.obj: src/texture.cpp.obj
 .PHONY : src/texture.obj
@@ -575,15 +599,18 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
-	@echo ... src/renderer.obj
-	@echo ... src/renderer.i
-	@echo ... src/renderer.s
+	@echo ... src/renderWindow.obj
+	@echo ... src/renderWindow.i
+	@echo ... src/renderWindow.s
 	@echo ... src/shader.obj
 	@echo ... src/shader.i
 	@echo ... src/shader.s
 	@echo ... src/tests/testClearColor.obj
 	@echo ... src/tests/testClearColor.i
 	@echo ... src/tests/testClearColor.s
+	@echo ... src/tests/testFractal.obj
+	@echo ... src/tests/testFractal.i
+	@echo ... src/tests/testFractal.s
 	@echo ... src/texture.obj
 	@echo ... src/texture.i
 	@echo ... src/texture.s
