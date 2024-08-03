@@ -10,14 +10,14 @@ namespace test
 {
     
     TestFractal::TestFractal() 
-        : uZoom(1.0f), uPan(0.0f, 0.0f), maxIterations(500), m_shader("./resources/shaders/test.shader")
+        : uZoom(1.0f), uPan(0.0f, 0.0f), maxIterations(500), m_shader("./resources/shaders/fractal.shader")
     {
-        // m_shader.bind();
-        // m_shader.setUniform1f("uZoom", uZoom);
-        // m_shader.setUniform2f("uPan", uPan.x, uPan.y);
-        // m_shader.setUniform1i("maxIterations", maxIterations);
+        m_shader.bind();
+        m_shader.setUniform1f("uZoom", uZoom);
+        m_shader.setUniform2f("uPan", uPan.x, uPan.y);
+        m_shader.setUniform1i("maxIterations", maxIterations);
 
-        /*std::vector<float> positions = {
+        std::vector<float> positions = {
             -1.0f, -1.0f,  
              1.0f, -1.0f, 
              1.0f,  1.0f, 
@@ -49,13 +49,13 @@ namespace test
 
         VertexBufferLayout layout;
         layout.push<float>(2);
-        m_va.addBuffer(m_vb, layout);*/
+        m_va.addBuffer(m_vb, layout);
+
+        std::cout << "test fractals initilzed \n";
     }
     
     TestFractal::~TestFractal() 
-    {
-
-    }
+    {}
 
     void TestFractal::onUpdate(const RenderWindow& wn, float dt) 
     {
@@ -78,10 +78,10 @@ namespace test
         if( wn.isKeyPressed(GLFW_KEY_A) )
             uPan.x = uPan.x + 0.01 * uZoom;
         
-        // m_shader.bind();
-        // m_shader.setUniform1f("uZoom", uZoom);
-        // m_shader.setUniform2f("uPan", uPan.x, uPan.y);
-        // m_shader.setUniform1i("maxIterations", maxIterations);
+        m_shader.bind();
+        m_shader.setUniform1f("uZoom", uZoom);
+        m_shader.setUniform2f("uPan", uPan.x, uPan.y);
+        m_shader.setUniform1i("maxIterations", maxIterations);
 
         wn.draw(m_va, m_ib, m_shader);
     }
@@ -94,7 +94,7 @@ namespace test
     
     void TestFractal::onImGuiRender() 
     {
-        ImGui::DragInt("Max iterations", &maxIterations, 100, 5, 30000);
+        ImGui::DragInt("Max iterations", &maxIterations, 100, 5, 3000);
     }
     
 } 

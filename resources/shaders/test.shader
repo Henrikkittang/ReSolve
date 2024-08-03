@@ -13,6 +13,10 @@ void main()
 
 layout(location = 0) out vec4 color;
 
+uniform float uZoom;            
+uniform vec2 uPan;              
+uniform int maxIterations;              
+
 
 
 void main()

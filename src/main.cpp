@@ -25,13 +25,16 @@
 
 int main(void)
 {    
-    
+    if (!glfwInit())
+    {
+        std::cerr << "Failed to initialize glfw \n";
+    }
+
     RenderWindow window(960, 540);
 
     
-   
     ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    ImGuiIO& io = ImGui::GetIO(); 
     io.Fonts->AddFontDefault();
     io.Fonts->Build();
 
@@ -69,6 +72,8 @@ int main(void)
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
+
+    glfwTerminate();
    
     return 0;
 }

@@ -19,11 +19,7 @@ bool GLLogCall(const char* function, const char* file, int line)
 
 RenderWindow::RenderWindow(uint32_t width, uint32_t height)
 {
-    if (!glfwInit())
-    {
-        std::cerr << "Failed to initialize glfw \n";
-    }
-
+    
     m_window = glfwCreateWindow(width, height, "Hello World", NULL, NULL);
     if (!m_window)
     {
@@ -43,7 +39,6 @@ RenderWindow::RenderWindow(uint32_t width, uint32_t height)
 
 RenderWindow::~RenderWindow()
 {
-    glfwTerminate();
 }
 
 

@@ -19,8 +19,6 @@ Shader::Shader(const std::string& filepath)
     if( m_renderId == 0 )
         std::cout << "Creating shader failed, m_renderId = " << m_renderId << " \n";
 
-    GLCall( glDeleteProgram(m_renderId) );
-
 }
 
 Shader::~Shader()
@@ -31,7 +29,6 @@ Shader::~Shader()
 
 void Shader::bind() const
 {
-    std::cout << "Render ID in bind: " << m_renderId << "\n";
     GLCall( glUseProgram(m_renderId) );
 }
 
