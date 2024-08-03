@@ -716,7 +716,12 @@ CMakeFiles/output.dir/src/main.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/openg
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/texture.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/testClearColor.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/test.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/renderWindow.hpp
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/renderWindow.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/testFractal.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp
 
 CMakeFiles/output.dir/src/renderWindow.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/renderWindow.cpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/renderWindow.hpp \
@@ -2103,7 +2108,34 @@ CMakeFiles/output.dir/src/tests/testFractal.cpp.obj: C:/Users/henri/Jottacloud/k
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imconfig.h \
   C:/mingw64/lib/clang/14.0.4/include/stdarg.h \
   C:/mingw64/x86_64-w64-mingw32/include/string.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+  C:/mingw64/include/c++/12.1.0/iostream \
+  C:/mingw64/include/c++/12.1.0/ostream \
+  C:/mingw64/include/c++/12.1.0/ios \
+  C:/mingw64/include/c++/12.1.0/exception \
+  C:/mingw64/include/c++/12.1.0/bits/exception_ptr.h \
+  C:/mingw64/include/c++/12.1.0/bits/cxxabi_init_exception.h \
+  C:/mingw64/include/c++/12.1.0/bits/nested_exception.h \
+  C:/mingw64/include/c++/12.1.0/bits/ios_base.h \
+  C:/mingw64/include/c++/12.1.0/bits/locale_classes.h \
+  C:/mingw64/include/c++/12.1.0/bits/locale_classes.tcc \
+  C:/mingw64/include/c++/12.1.0/system_error \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/error_constants.h \
+  C:/mingw64/include/c++/12.1.0/stdexcept \
+  C:/mingw64/include/c++/12.1.0/streambuf \
+  C:/mingw64/include/c++/12.1.0/bits/streambuf.tcc \
+  C:/mingw64/include/c++/12.1.0/bits/basic_ios.h \
+  C:/mingw64/include/c++/12.1.0/bits/locale_facets.h \
+  C:/mingw64/include/c++/12.1.0/cwctype \
+  C:/mingw64/x86_64-w64-mingw32/include/wctype.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/ctype_base.h \
+  C:/mingw64/include/c++/12.1.0/bits/streambuf_iterator.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/ctype_inline.h \
+  C:/mingw64/include/c++/12.1.0/bits/locale_facets.tcc \
+  C:/mingw64/include/c++/12.1.0/bits/basic_ios.tcc \
+  C:/mingw64/include/c++/12.1.0/bits/ostream.tcc \
+  C:/mingw64/include/c++/12.1.0/istream \
+  C:/mingw64/include/c++/12.1.0/bits/istream.tcc
 
 CMakeFiles/output.dir/src/texture.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/texture.cpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/texture.hpp \
@@ -6133,6 +6165,8 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imconfig.h:
 
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/testFractal.hpp:
+
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.cpp:
 
 C:/mingw64/include/c++/12.1.0/fstream:
@@ -6150,8 +6184,6 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/testClearColor.cpp:
 C:/mingw64/lib/clang/14.0.4/include/avx512vlvnniintrin.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/testFractal.cpp:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/testFractal.hpp:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/texture.cpp:
 

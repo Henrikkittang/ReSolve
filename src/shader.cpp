@@ -11,19 +11,59 @@
 
 // Constructors
 Shader::Shader(const std::string& filepath)
-    :m_filepath(filepath), m_rendererID(0)
+    :m_filepath(filepath), m_renderId(0)
 {
     ShaderProgramSource source = parseShader(filepath);
-    m_rendererID = createShader(source.vertexSource, source.fragmentSource); 
-    // GLCall(glUseProgram(m_rendererID));
+    m_renderId = createShader(source.vertexSource, source.fragmentSource); 
+
+    if( m_renderId == 0 )
+        std::cout << "Creating shader failed, m_renderId = " << m_renderId << " \n";
+
 }
 
 Shader::~Shader()
 {
-    GLCall( glDeleteProgram(m_rendererID) );
+    GLCall( glDeleteProgram(m_renderId) );
 }
 
-// Private function
+
+void Shader::bind() const
+{
+    std::cout << "Render ID in bind: " << m_renderId << "\n";
+    GLCall( glUseProgram(m_renderId) );
+}
+
+void Shader::unbind() const
+{
+    GLCall( glUseProgram(0) );
+}
+
+
+void Shader::setUniform1f(const std::string& name, float value)
+{
+    GLCall(glUniform1f(getUniformLocation(name), value));
+}
+
+void Shader::setUniform1i(const std::string& name, int value)
+{
+    GLCall(glUniform1i(getUniformLocation(name), value));
+}
+
+void Shader::setUniform2f(const std::string& name, float v0,  float v1)
+{
+    GLCall(glUniform2f(getUniformLocation(name), v0, v1));
+}
+
+void Shader::setUniform4f(const std::string& name, float v0,  float v1, float v2, float v3)
+{
+    GLCall(glUniform4f(getUniformLocation(name), v0, v1, v2, v3));
+}
+
+
+void Shader::setUniformMat4f(const std::string& name, const glm::mat4& matrix)
+{
+    GLCall( glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, &matrix[0][0]) );
+}
 
 
 
@@ -31,8 +71,11 @@ ShaderProgramSource Shader::parseShader(const std::string& filepath)
 {
     std::ifstream stream(filepath);
 
-    if( !stream.good() )
-        std::cout << "Warning: The file at '" << filepath << "' was not found \n";
+   if (!stream.good()) 
+   {
+        std::cerr << "Error: The file at '" << filepath << "' was not found. \n"; 
+        return {"", ""};
+    }
 
     enum class ShaderType
     {
@@ -79,13 +122,13 @@ uint32_t Shader::compileShader(uint32_t type, const std::string& source)
     if(result == GL_FALSE)
     {
         int length;
-        glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
+        GLCall( glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length) );
         char* message = (char*)alloca(length * sizeof(char));
-        glGetShaderInfoLog(id, length, &length, message);
+        GLCall( glGetShaderInfoLog(id, length, &length, message) );
         std::cout << "Failed to compile shader " << std::endl;
         std::cout << message << std::endl;
-        glDeleteShader(id);
-        return 0; 
+        GLCall( glDeleteShader(id) );
+        return 0; // set id = 0 instead?
     }
 
     return id;
@@ -114,47 +157,9 @@ uint32_t Shader::getUniformLocation(const std::string& name)
     if(m_uniformLocationCache.find(name) != m_uniformLocationCache.end())
         return m_uniformLocationCache[name];
 
-    GLCall(int location = glGetUniformLocation(m_rendererID, name.c_str()));
+    GLCall(int location = glGetUniformLocation(m_renderId, name.c_str()));
     if(location == -1)
         std::cout << "Warning: uniform '" << name << "' dosent exists! \n";
     m_uniformLocationCache[name] = location;
     return location;
-}
-
-// Public functions
-void Shader::bind() const
-{
-    GLCall( glUseProgram(m_rendererID) );
-}
-
-void Shader::unbind() const
-{
-    GLCall( glUseProgram(0) );
-}
-
-
-void Shader::setUniform1f(const std::string& name, float value)
-{
-    GLCall(glUniform1f(getUniformLocation(name), value));
-}
-
-void Shader::setUniform1i(const std::string& name, int value)
-{
-    GLCall(glUniform1i(getUniformLocation(name), value));
-}
-
-void Shader::setUniform2f(const std::string& name, float v0,  float v1)
-{
-    GLCall(glUniform2f(getUniformLocation(name), v0, v1));
-}
-
-void Shader::setUniform4f(const std::string& name, float v0,  float v1, float v2, float v3)
-{
-    GLCall(glUniform4f(getUniformLocation(name), v0, v1, v2, v3));
-}
-
-
-void Shader::setUniformMat4f(const std::string& name, const glm::mat4& matrix)
-{
-    GLCall( glUniformMatrix4fv(getUniformLocation(name), 1, GL_FALSE, &matrix[0][0]) );
 }

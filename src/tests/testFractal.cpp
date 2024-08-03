@@ -4,11 +4,21 @@
 
 #include<imgui/imgui.h>
  
+#include<iostream>
+
 namespace test
 {
     
     TestFractal::TestFractal() 
+        : uZoom(1.0f), uPan(0.0f, 0.0f), maxIterations(500)
     {
+        m_shader = Shader{ "./resources/shaders/fractal.shader" };    
+
+        m_shader.bind();
+        m_shader.setUniform1f("uZoom", uZoom);
+        m_shader.setUniform2f("uPan", uPan.x, uPan.y);
+        m_shader.setUniform1i("maxIterations", maxIterations);
+
         std::vector<float> positions = {
             -1.0f, -1.0f,  
              1.0f, -1.0f, 
@@ -16,7 +26,7 @@ namespace test
             -1.0f,  1.0f, 
         };
 
-        m_vb = VertexBuffer(positions.data(), positions.size() * sizeof(float) );
+        m_vb = VertexBuffer{ positions.data(), static_cast<uint32_t>(positions.size() * sizeof(float)) };
 
         
 
@@ -37,31 +47,23 @@ namespace test
             indices[i + 5] = vertex_index + 0;
         }
 
-        m_ib = IndexBuffer(indices.data(), count);
+        m_ib = IndexBuffer{ indices.data(), static_cast<uint32_t>(count) };
 
         VertexBufferLayout layout;
         layout.push<float>(2);
-
-
         m_va.addBuffer(m_vb, layout);
-
-        m_shader = Shader{ "./resources/shaders/fractal.shader" };    
-
-        m_shader.bind();
-        m_shader.setUniform1f("uZoom", uZoom);
-        m_shader.setUniform2f("uPan", uPan.x, uPan.y);
-        m_shader.setUniform1i("maxIterations", maxIterations);
     }
     
     TestFractal::~TestFractal() 
-    {}
+    {
+
+    }
 
     void TestFractal::onUpdate(const RenderWindow& wn, float dt) 
     {
 
         if( wn.isKeyPressed(GLFW_KEY_UP) )
             uZoom = uZoom * 0.99;
-
 
         if( wn.isKeyPressed(GLFW_KEY_DOWN) )
             uZoom = uZoom / 0.99;

@@ -20,6 +20,7 @@
 #include"texture.hpp"
 
 #include"tests/testClearColor.hpp"
+#include"tests/testFractal.hpp"
 
 
 int main(void)
@@ -34,20 +35,23 @@ int main(void)
     io.Fonts->AddFontDefault();
     io.Fonts->Build();
 
-    ImGui_ImplOpenGL3_Init("#version 330");
+    ImGui_ImplOpenGL3_Init("#version 460");
     ImGui_ImplGlfw_InitForOpenGL( window.getWindow() , true);
     ImGui::StyleColorsDark();
 
+    test::TestFractal test{};
     
     while ( !window.windowShouldClose() )
     {
         window.clear();
         
-        
+        test.onUpdate(window, 0);
        
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
+
+        test.onImGuiRender();
     
         {
             ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);

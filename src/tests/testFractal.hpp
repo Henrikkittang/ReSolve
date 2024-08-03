@@ -13,9 +13,9 @@ namespace test
     class TestFractal : public Test 
     {
     public:
-        TestFractal(/* args */);
+        TestFractal();
         ~TestFractal();
-        void onUpdate(const RenderWindow& renderer, float dt);
+        void onUpdate(const RenderWindow& wn, float dt) override;
         void onRender() override;
         void onImGuiRender() override;
 
@@ -26,8 +26,8 @@ namespace test
         IndexBuffer  m_ib;
         Shader       m_shader;
 
-        float uZoom    = 1.0f;            
-        glm::vec2 uPan = {0.0f, 0.0f};      
-        int maxIterations = 500;
+        float     uZoom;                   
+        glm::vec2 uPan;               
+        int       maxIterations;
     };
-} // namespace test
+} 

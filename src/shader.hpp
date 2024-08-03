@@ -33,15 +33,15 @@ public:
     void setUniformMat4f(const std::string& name, const glm::mat4& matrix);
 
 private:
-    std::string m_filepath;
-    uint32_t m_rendererID;
-    std::unordered_map<std::string, int> m_uniformLocationCache;
-private:
 
     ShaderProgramSource parseShader(const std::string& filepath);
     uint32_t compileShader(uint32_t type, const std::string& source);
     uint32_t createShader(const std::string& vertexShader, const std::string& fragmentShader);
-
     
     uint32_t getUniformLocation(const std::string& name);
+
+private:
+    std::string m_filepath;
+    uint32_t    m_renderId;
+    std::unordered_map<std::string, int> m_uniformLocationCache;
 };

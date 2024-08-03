@@ -1,4 +1,4 @@
-#include "RenderWindow.hpp"
+#include"renderWindow.hpp"
 #include<iostream>
 
 void GLClearError()
