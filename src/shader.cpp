@@ -19,6 +19,8 @@ Shader::Shader(const std::string& filepath)
     if( m_renderId == 0 )
         std::cout << "Creating shader failed, m_renderId = " << m_renderId << " \n";
 
+    GLCall( glDeleteProgram(m_renderId) );
+
 }
 
 Shader::~Shader()
@@ -128,7 +130,7 @@ uint32_t Shader::compileShader(uint32_t type, const std::string& source)
         std::cout << "Failed to compile shader " << std::endl;
         std::cout << message << std::endl;
         GLCall( glDeleteShader(id) );
-        return 0; // set id = 0 instead?
+        return 0; 
     }
 
     return id;
