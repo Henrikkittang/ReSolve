@@ -12,7 +12,7 @@ namespace test
         TestClearColor(/* args */);
         ~TestClearColor();
         void onUpdate( const RenderWindow& wn, float dt) override;
-        void onRender() override;
+        void onRender( const RenderWindow& wn, float dt ) override;
         void onImGuiRender() override;
     private:
         float m_clearColor[4];

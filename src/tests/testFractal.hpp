@@ -15,8 +15,8 @@ namespace test
     public:
         TestFractal();
         ~TestFractal();
-        void onUpdate(const RenderWindow& wn, float dt) override;
-        void onRender() override;
+        void onUpdate( const RenderWindow& wn, float dt ) override;
+        void onRender( const RenderWindow& wn, float dt ) override;
         void onImGuiRender() override;
 
 
@@ -25,13 +25,9 @@ namespace test
         glm::vec2    uPan;               
         int          maxIterations;
         Shader       m_shader;
-        std::vector<float> m_positions;
-        VertexBuffer m_vb;
 
         VertexArray  m_va;
         IndexBuffer  m_ib;
-
-        VertexBufferLayout m_layout;
 
         
     };

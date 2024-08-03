@@ -10,17 +10,18 @@ namespace test
 {
     
     TestFractal::TestFractal() 
-    : uZoom(1.0f), uPan(0.0f, 0.0f), maxIterations(500), m_shader("./resources/shaders/fractal.shader"),
-      m_positions{
+    : uZoom(1.0f), uPan(0.0f, 0.0f), maxIterations(500), m_shader("./resources/shaders/fractal.shader")
+      
+    {
+     
+        std::vector<float> positions = {
           -1.0f, -1.0f,
           1.0f, -1.0f,
           1.0f, 1.0f,
           -1.0f, 1.0f,
-      },
-      m_vb(m_positions.data(), static_cast<uint32_t>(m_positions.size() * sizeof(float)))
-    {
-     
-        size_t vertex_count = m_positions.size() / 2; // 2 coordinates per vertex
+        };
+
+        size_t vertex_count = positions.size() / 2; // 2 coordinates per vertex
         size_t quad_count = vertex_count / 4; // 4 vertices per quad
         size_t count = quad_count * 6; // 6 indices per quad
 
@@ -36,14 +37,13 @@ namespace test
             indices[i + 4] = vertex_index + 3;
             indices[i + 5] = vertex_index + 0;
         }
-
         m_ib = IndexBuffer{ indices.data(), static_cast<uint32_t>(count) };
 
-        m_layout.push<float>(2);
+        VertexBuffer vb(positions.data(), static_cast<uint32_t>(positions.size() * sizeof(float)));
+        VertexBufferLayout layout; 
+        layout.push<float>(2);
         
-        m_va.addBuffer(m_vb, m_layout);
-
-
+        m_va.addBuffer(vb, layout);
     }
     
     TestFractal::~TestFractal() 
@@ -73,17 +73,13 @@ namespace test
         m_shader.bind();
         m_shader.setUniform1f("uZoom", uZoom);
         m_shader.setUniform2f("uPan", uPan.x, uPan.y);
-        m_shader.setUniform1i("maxIterations", maxIterations);
-
-    
-        wn.draw(m_va, m_ib, m_shader);
-
+        m_shader.setUniform1i("maxIterations", maxIterations);   
+        
     }
 
-
-    void TestFractal::onRender() 
+    void TestFractal::onRender( const RenderWindow& wn, float dt ) 
     {
-
+        wn.draw(m_va, m_ib, m_shader);
     }
     
     void TestFractal::onImGuiRender() 

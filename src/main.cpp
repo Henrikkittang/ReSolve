@@ -49,7 +49,8 @@ int main(void)
         window.clear();
         
         test.onUpdate(window, 0);
-       
+        test.onRender(window, 0);
+
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
