@@ -4,17 +4,17 @@
 
 VertexArray::VertexArray()
 {
-    GLCall(glGenVertexArrays(1, &m_renderId));
+    GLCall(glGenVertexArrays(1, &m_renderID));
 }
 
 VertexArray::~VertexArray()
 {
-    GLCall( glDeleteVertexArrays(1, &m_renderId) );
+    GLCall( glDeleteVertexArrays(1, &m_renderID) );
 }
 
 void VertexArray::bind() const
 {
-    GLCall( glBindVertexArray(m_renderId) );
+    GLCall( glBindVertexArray(m_renderID) );
 }
 
 void VertexArray::unbind() const

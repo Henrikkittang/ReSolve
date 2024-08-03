@@ -16,7 +16,7 @@ public:
     inline int getWidth() { return m_width; }    
     inline int getHeight() { return m_height; }
 private:
-    uint32_t    m_rendererID;
+    GLuint      m_rendererID;
     std::string m_filepath;
     uint8_t*    m_localBuffer;
     int         m_width, m_height, m_BBP;
