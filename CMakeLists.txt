@@ -9,8 +9,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Kinda cursed code for setting the compiler path. Not realy portable
 if (NOT MSVC)
-    set(CMAKE_C_COMPILER C:/mingw64/bin/clang)
-    set(CMAKE_CXX_COMPILER C:/mingw64/bin/clang++)
+    set(CMAKE_C_COMPILER C:/mingw64/bin/gcc)
+    set(CMAKE_CXX_COMPILER C:/mingw64/bin/g++)
 endif()
 
 if(NOT MSVC)

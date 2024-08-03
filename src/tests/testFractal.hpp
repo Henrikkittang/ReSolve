@@ -26,6 +26,9 @@ namespace test
         IndexBuffer  m_ib;
         Shader       m_shader;
 
+        std::vector<float> m_positions;
+        VertexBufferLayout m_layout;
+
         float     uZoom;                   
         glm::vec2 uPan;               
         int       maxIterations;

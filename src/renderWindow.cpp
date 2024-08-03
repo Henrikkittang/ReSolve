@@ -52,9 +52,12 @@ void RenderWindow::draw(const VertexArray& va, const IndexBuffer& ib, const Shad
     shader.bind();
     va.bind();
     ib.bind();
-
     
     GLCall(glDrawElements(GL_TRIANGLES, ib.getCount(), GL_UNSIGNED_INT, nullptr));
+
+    shader.unbind();
+    va.unbind();
+    ib.unbind();
 }
 
 bool RenderWindow::windowShouldClose() const

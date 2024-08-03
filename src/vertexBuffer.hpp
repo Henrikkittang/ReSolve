@@ -13,5 +13,5 @@ public:
     void bind() const;
     void unbind() const;
 private:
-    uint32_t m_renderId;
+    uint32_t m_renderID;
 };

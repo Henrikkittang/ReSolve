@@ -1,21 +1,26 @@
 #include "vertexBuffer.hpp"
 #include "renderWindow.hpp"
 
+#include<iostream>
+
 VertexBuffer::VertexBuffer(const void* data, uint32_t size)
 {
-    GLCall( glGenBuffers(1, &m_renderId) );
-    GLCall( glBindBuffer(GL_ARRAY_BUFFER, m_renderId) );
+    GLCall( glGenBuffers(1, &m_renderID) );
+    GLCall( glBindBuffer(GL_ARRAY_BUFFER, m_renderID) );
     GLCall( glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW) ) ;
+
+   
+    // std::cout << "vb render id: " << m_renderID << "\n";
 }
 
 VertexBuffer::~VertexBuffer() 
 {
-    GLCall(glDeleteBuffers(1, &m_renderId));
+    GLCall(glDeleteBuffers(1, &m_renderID));
 }
 
 void VertexBuffer::bind() const
 {
-    GLCall( glBindBuffer(GL_ARRAY_BUFFER, m_renderId) );
+    GLCall( glBindBuffer(GL_ARRAY_BUFFER, m_renderID) );
 }
 
 

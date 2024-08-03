@@ -17,16 +17,21 @@ namespace test
         // m_shader.setUniform2f("uPan", uPan.x, uPan.y);
         // m_shader.setUniform1i("maxIterations", maxIterations);
 
-        std::vector<float> positions = {
+        m_positions = {
             0.1f, 0.1f,  
             0.2f, 0.1f, 
             0.2f, 0.2f, 
             0.1f, 0.2f, 
+
+            0.3f, 0.3f,  
+            0.4f, 0.3f, 
+            0.4f, 0.4f, 
+            0.3f, 0.4f, 
         };
 
-        m_vb = VertexBuffer{ positions.data(), static_cast<uint32_t>(positions.size() * sizeof(float)) };
-
-        size_t vertex_count = positions.size() / 2; // 2 coordinates per vertex
+        m_vb = VertexBuffer{ m_positions.data(), static_cast<uint32_t>(m_positions.size() * sizeof(float)) };
+        
+        size_t vertex_count = m_positions.size() / 2; // 2 coordinates per vertex
         size_t quad_count = vertex_count / 4; // 4 vertices per quad
         size_t count = quad_count * 6; // 6 indices per quad
 
@@ -45,10 +50,10 @@ namespace test
 
         m_ib = IndexBuffer{ indices.data(), static_cast<uint32_t>(count) };
 
-        VertexBufferLayout layout;
-        layout.push<float>(2);
+        m_layout.push<float>(2);
         
-        m_va.addBuffer(m_vb, layout);
+        m_va.addBuffer(m_vb, m_layout);
+
 
         std::cout << "test fractals initilzed \n";
     }
@@ -82,28 +87,29 @@ namespace test
         // m_shader.setUniform2f("uPan", uPan.x, uPan.y);
         // m_shader.setUniform1i("maxIterations", maxIterations);
 
-        std::vector<float> positions = {
-            0.1f, 0.1f,  
-            0.2f, 0.1f, 
-            0.2f, 0.2f, 
-            0.1f, 0.2f, 
-        };
-
+        
        
 
-        auto vb = VertexBuffer{ positions.data(), static_cast<uint32_t>(positions.size() * sizeof(float)) };
-        VertexBufferLayout layout;
-        layout.push<float>(2);
+        auto vb = VertexBuffer{ m_positions.data(), static_cast<uint32_t>(m_positions.size() * sizeof(float)) };
+        vb.bind();
+        // m_vb.bind(); // Should work instead of the two lines above
+
+        m_va.bind();
+        GLCall( glEnableVertexAttribArray(0) );
+        GLCall( glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 8, (const void*)0) );
+
+        m_shader.bind();
+        m_va.bind();
+        m_ib.bind();
         
-        VertexArray va{};
-        va.addBuffer(vb, layout); // Works
-        // va.addBuffer(m_vb, layout); // Does not work
+        GLCall(glDrawElements(GL_TRIANGLES, m_ib.getCount(), GL_UNSIGNED_INT, nullptr));
 
+        m_shader.unbind();
+        m_va.unbind();
+        m_ib.unbind();
 
-        
+        wn.draw(m_va, m_ib, m_shader);
 
-
-        wn.draw(va, m_ib, m_shader);
     }
 
 
