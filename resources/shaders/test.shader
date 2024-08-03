@@ -1,5 +1,5 @@
 #shader vertex
-#version 460 core
+#version 330 core
 
 layout(location = 0) in vec4 position;
 
@@ -9,13 +9,13 @@ void main()
 }
 
 #shader fragment
-#version 460 core
+#version 330 core
 
 layout(location = 0) out vec4 color;
 
 uniform float uZoom;            
-uniform vec2 uPan;              
-uniform int maxIterations;              
+uniform vec2  uPan;              
+uniform int   maxIterations;              
 
 
 
