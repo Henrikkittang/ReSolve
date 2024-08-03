@@ -2,6 +2,9 @@
 #include"vertexBuffer.hpp"
 #include"vertexBufferLayout.hpp"
 
+
+#include<GL/glew.h>
+
 class VertexArray
 {
 public:

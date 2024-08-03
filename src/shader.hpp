@@ -1,9 +1,12 @@
 #pragma once
 
+
+#include<GL/glew.h>
+#include<glm/glm.hpp>
+
 #include<string>
 #include<unordered_map>
 
-#include<glm/glm.hpp>
 
 struct ShaderProgramSource
 {
@@ -41,6 +44,6 @@ private:
 
 private:
     std::string m_filepath;
-    uint32_t    m_renderId;
+    GLuint      m_renderId;
     std::unordered_map<std::string, int> m_uniformLocationCache;
 };
