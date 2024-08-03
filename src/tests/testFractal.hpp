@@ -21,16 +21,18 @@ namespace test
 
 
     private:
-        VertexArray  m_va;
-        VertexBuffer m_vb;
-        IndexBuffer  m_ib;
+        float        uZoom;                   
+        glm::vec2    uPan;               
+        int          maxIterations;
         Shader       m_shader;
-
         std::vector<float> m_positions;
+        VertexBuffer m_vb;
+
+        VertexArray  m_va;
+        IndexBuffer  m_ib;
+
         VertexBufferLayout m_layout;
 
-        float     uZoom;                   
-        glm::vec2 uPan;               
-        int       maxIterations;
+        
     };
 } 

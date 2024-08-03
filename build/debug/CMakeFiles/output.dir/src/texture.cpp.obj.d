@@ -1,6 +1,21 @@
 CMakeFiles/output.dir/src/texture.cpp.obj: \
  C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\texture.cpp \
  C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\texture.hpp \
+ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GL/glew.h \
+ c:\mingw64\x86_64-w64-mingw32\include\inttypes.h \
+ c:\mingw64\x86_64-w64-mingw32\include\crtdefs.h \
+ c:\mingw64\x86_64-w64-mingw32\include\corecrt.h \
+ c:\mingw64\x86_64-w64-mingw32\include\_mingw.h \
+ c:\mingw64\x86_64-w64-mingw32\include\_mingw_mac.h \
+ c:\mingw64\x86_64-w64-mingw32\include\_mingw_secapi.h \
+ c:\mingw64\x86_64-w64-mingw32\include\vadefs.h \
+ c:\mingw64\x86_64-w64-mingw32\include\sdks/_mingw_ddk.h \
+ c:\mingw64\lib\gcc\x86_64-w64-mingw32\12.1.0\include\stdint.h \
+ c:\mingw64\x86_64-w64-mingw32\include\stdint.h \
+ c:\mingw64\lib\gcc\x86_64-w64-mingw32\12.1.0\include\stddef.h \
+ c:\mingw64\x86_64-w64-mingw32\include\stddef.h \
+ c:\mingw64\x86_64-w64-mingw32\include\gl\glu.h \
+ c:\mingw64\x86_64-w64-mingw32\include\gl\gl.h \
  c:\mingw64\include\c++\12.1.0\string \
  c:\mingw64\include\c++\12.1.0\x86_64-w64-mingw32\bits\c++config.h \
  c:\mingw64\include\c++\12.1.0\x86_64-w64-mingw32\bits\os_defines.h \
@@ -12,12 +27,6 @@ CMakeFiles/output.dir/src/texture.cpp.obj: \
  c:\mingw64\include\c++\12.1.0\bits\postypes.h \
  c:\mingw64\include\c++\12.1.0\cwchar \
  c:\mingw64\x86_64-w64-mingw32\include\wchar.h \
- c:\mingw64\x86_64-w64-mingw32\include\corecrt.h \
- c:\mingw64\x86_64-w64-mingw32\include\_mingw.h \
- c:\mingw64\x86_64-w64-mingw32\include\_mingw_mac.h \
- c:\mingw64\x86_64-w64-mingw32\include\_mingw_secapi.h \
- c:\mingw64\x86_64-w64-mingw32\include\vadefs.h \
- c:\mingw64\x86_64-w64-mingw32\include\sdks/_mingw_ddk.h \
  c:\mingw64\x86_64-w64-mingw32\include\corecrt_stdio_config.h \
  c:\mingw64\x86_64-w64-mingw32\include\corecrt_wstdlib.h \
  c:\mingw64\x86_64-w64-mingw32\include\_mingw_off_t.h \
@@ -39,11 +48,6 @@ CMakeFiles/output.dir/src/texture.cpp.obj: \
  c:\mingw64\include\c++\12.1.0\bits\concept_check.h \
  c:\mingw64\include\c++\12.1.0\debug\assertions.h \
  c:\mingw64\include\c++\12.1.0\cstdint \
- c:\mingw64\lib\gcc\x86_64-w64-mingw32\12.1.0\include\stdint.h \
- c:\mingw64\x86_64-w64-mingw32\include\stdint.h \
- c:\mingw64\x86_64-w64-mingw32\include\crtdefs.h \
- c:\mingw64\lib\gcc\x86_64-w64-mingw32\12.1.0\include\stddef.h \
- c:\mingw64\x86_64-w64-mingw32\include\stddef.h \
  c:\mingw64\include\c++\12.1.0\bits\allocator.h \
  c:\mingw64\include\c++\12.1.0\x86_64-w64-mingw32\bits\c++allocator.h \
  c:\mingw64\include\c++\12.1.0\bits\new_allocator.h \
@@ -120,10 +124,6 @@ CMakeFiles/output.dir/src/texture.cpp.obj: \
  c:\mingw64\include\c++\12.1.0\bits\basic_string.tcc \
  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/stb_image/stb_image.h \
  C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\renderWindow.hpp \
- C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GL/glew.h \
- c:\mingw64\x86_64-w64-mingw32\include\inttypes.h \
- c:\mingw64\x86_64-w64-mingw32\include\gl\glu.h \
- c:\mingw64\x86_64-w64-mingw32\include\gl\gl.h \
  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \

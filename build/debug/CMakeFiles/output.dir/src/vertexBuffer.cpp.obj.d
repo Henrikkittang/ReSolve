@@ -1,13 +1,8 @@
 CMakeFiles/output.dir/src/vertexBuffer.cpp.obj: \
  C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\vertexBuffer.cpp \
  C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\vertexBuffer.hpp \
- c:\mingw64\include\c++\12.1.0\cstdint \
- c:\mingw64\include\c++\12.1.0\x86_64-w64-mingw32\bits\c++config.h \
- c:\mingw64\include\c++\12.1.0\x86_64-w64-mingw32\bits\os_defines.h \
- c:\mingw64\include\c++\12.1.0\x86_64-w64-mingw32\bits\cpu_defines.h \
- c:\mingw64\include\c++\12.1.0\pstl\pstl_config.h \
- c:\mingw64\lib\gcc\x86_64-w64-mingw32\12.1.0\include\stdint.h \
- c:\mingw64\x86_64-w64-mingw32\include\stdint.h \
+ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GL/glew.h \
+ c:\mingw64\x86_64-w64-mingw32\include\inttypes.h \
  c:\mingw64\x86_64-w64-mingw32\include\crtdefs.h \
  c:\mingw64\x86_64-w64-mingw32\include\corecrt.h \
  c:\mingw64\x86_64-w64-mingw32\include\_mingw.h \
@@ -15,17 +10,21 @@ CMakeFiles/output.dir/src/vertexBuffer.cpp.obj: \
  c:\mingw64\x86_64-w64-mingw32\include\_mingw_secapi.h \
  c:\mingw64\x86_64-w64-mingw32\include\vadefs.h \
  c:\mingw64\x86_64-w64-mingw32\include\sdks/_mingw_ddk.h \
+ c:\mingw64\lib\gcc\x86_64-w64-mingw32\12.1.0\include\stdint.h \
+ c:\mingw64\x86_64-w64-mingw32\include\stdint.h \
  c:\mingw64\lib\gcc\x86_64-w64-mingw32\12.1.0\include\stddef.h \
  c:\mingw64\x86_64-w64-mingw32\include\stddef.h \
- C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\renderWindow.hpp \
- C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GL/glew.h \
- c:\mingw64\x86_64-w64-mingw32\include\inttypes.h \
  c:\mingw64\x86_64-w64-mingw32\include\gl\glu.h \
  c:\mingw64\x86_64-w64-mingw32\include\gl\gl.h \
+ C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\renderWindow.hpp \
  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \
  c:\mingw64\include\c++\12.1.0\cmath \
+ c:\mingw64\include\c++\12.1.0\x86_64-w64-mingw32\bits\c++config.h \
+ c:\mingw64\include\c++\12.1.0\x86_64-w64-mingw32\bits\os_defines.h \
+ c:\mingw64\include\c++\12.1.0\x86_64-w64-mingw32\bits\cpu_defines.h \
+ c:\mingw64\include\c++\12.1.0\pstl\pstl_config.h \
  c:\mingw64\include\c++\12.1.0\bits\cpp_type_traits.h \
  c:\mingw64\include\c++\12.1.0\ext\type_traits.h \
  c:\mingw64\x86_64-w64-mingw32\include\math.h \
@@ -83,6 +82,7 @@ CMakeFiles/output.dir/src/vertexBuffer.cpp.obj: \
  c:\mingw64\include\c++\12.1.0\cstdlib \
  c:\mingw64\include\c++\12.1.0\cstddef \
  c:\users\henri\jottacloud\kode\cpp\opengl\renderer\vendor\glm\simd\platform.h \
+ c:\mingw64\include\c++\12.1.0\cstdint \
  c:\mingw64\include\c++\12.1.0\climits \
  c:\mingw64\include\c++\12.1.0\cfloat \
  c:\mingw64\lib\gcc\x86_64-w64-mingw32\12.1.0\include\float.h \
