@@ -1,12 +1,11 @@
-#include "vertexBuffer.hpp"
-#include "renderWindow.hpp"
+#include"vertexBuffer.hpp"
+#include"util.hpp"
 
 #include<iostream>
 
 VertexBuffer::VertexBuffer()
-{
-    std::cout << "Vertex buffer created: default constructor \n";
-}
+    : m_renderID(0)
+{}
 
 VertexBuffer::VertexBuffer(const void* data, uint32_t size)
 {
@@ -19,6 +18,25 @@ VertexBuffer::~VertexBuffer()
 {
     GLCall(glDeleteBuffers(1, &m_renderID));
 }
+
+VertexBuffer::VertexBuffer(VertexBuffer&& other)
+    : m_renderID(other.m_renderID) 
+{
+    other.m_renderID = 0; 
+}
+
+VertexBuffer& VertexBuffer::operator=(VertexBuffer&&  other)
+{
+    if (this != &other) 
+    {
+        GLCall(glDeleteBuffers(1, &m_renderID));
+        
+        m_renderID = other.m_renderID;
+        other.m_renderID = 0;
+    }
+    return *this;
+}
+
 
 void VertexBuffer::bind() const
 {

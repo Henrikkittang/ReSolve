@@ -1,6 +1,6 @@
 #include"vertexArray.hpp"
 
-#include "renderWindow.hpp"
+#include"util.hpp"
 
 VertexArray::VertexArray()
 {
@@ -11,6 +11,25 @@ VertexArray::~VertexArray()
 {
     GLCall( glDeleteVertexArrays(1, &m_renderID) );
 }
+
+VertexArray::VertexArray(VertexArray&& other)
+    : m_renderID(other.m_renderID) 
+{
+    other.m_renderID = 0; 
+}
+
+VertexArray& VertexArray::operator=(VertexArray&& other)
+{
+    if (this != &other) 
+    {
+        GLCall( glDeleteVertexArrays(1, &m_renderID) );
+        
+        m_renderID = other.m_renderID;
+        other.m_renderID = 0;
+    }
+    return *this;
+}
+
 
 void VertexArray::bind() const
 {
@@ -28,7 +47,7 @@ void VertexArray::addBuffer(const VertexBuffer& vb, const VertexBufferLayout& la
     vb.bind();
     const auto& elements = layout.getElements();
     uint32_t offset = 0;
-    for(int i = 0; i < elements.size(); i++)
+    for(size_t i = 0; i < elements.size(); i++)
     {
         const auto& element = elements[i];
         GLCall( glEnableVertexAttribArray(i) );

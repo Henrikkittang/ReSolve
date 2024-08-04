@@ -24,8 +24,8 @@ namespace test
         float        uZoom;                   
         glm::vec2    uPan;               
         int          maxIterations;
+        
         Shader       m_shader;
-
         VertexArray  m_va;
         IndexBuffer  m_ib;
 

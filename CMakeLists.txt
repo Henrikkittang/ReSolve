@@ -55,9 +55,16 @@ target_link_libraries(output
 )
 
 target_compile_options(output PRIVATE
-    $<$<CONFIG:Debug>:-Wall -g>
+    $<$<CONFIG:Debug>:-Wall -g -pg -no-pie> 
     $<$<CONFIG:Release>:-O3>
 )
+
+
+target_link_options(output PRIVATE
+    $<$<CONFIG:Debug>:-Wall -g -pg -no-pie> 
+    $<$<CONFIG:Release>:-O3>
+)
+
 
 file(GLOB DLL_FILES ${LIBS}/*.dll)
 foreach(DLL ${DLL_FILES})

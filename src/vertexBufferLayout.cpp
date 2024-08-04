@@ -1,7 +1,7 @@
-#include "vertexBufferLayout.hpp"
+#include"vertexBufferLayout.hpp"
+#include"util.hpp"
 
-#include "renderWindow.hpp"
-#include <GL/glew.h>
+#include<GL/glew.h>
 
 
 VertexBufferElement::VertexBufferElement(uint32_t type, uint32_t count, bool normalized)

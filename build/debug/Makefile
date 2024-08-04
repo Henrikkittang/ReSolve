@@ -296,6 +296,30 @@ src/texture.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/texture.cpp.s
 .PHONY : src/texture.cpp.s
 
+src/util.obj: src/util.cpp.obj
+.PHONY : src/util.obj
+
+# target to build an object file
+src/util.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/util.cpp.obj
+.PHONY : src/util.cpp.obj
+
+src/util.i: src/util.cpp.i
+.PHONY : src/util.i
+
+# target to preprocess a source file
+src/util.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/util.cpp.i
+.PHONY : src/util.cpp.i
+
+src/util.s: src/util.cpp.s
+.PHONY : src/util.s
+
+# target to generate assembly for a file
+src/util.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/util.cpp.s
+.PHONY : src/util.cpp.s
+
 src/vertexArray.obj: src/vertexArray.cpp.obj
 .PHONY : src/vertexArray.obj
 
@@ -614,6 +638,9 @@ help:
 	@echo ... src/texture.obj
 	@echo ... src/texture.i
 	@echo ... src/texture.s
+	@echo ... src/util.obj
+	@echo ... src/util.i
+	@echo ... src/util.s
 	@echo ... src/vertexArray.obj
 	@echo ... src/vertexArray.i
 	@echo ... src/vertexArray.s

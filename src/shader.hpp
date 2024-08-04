@@ -19,8 +19,11 @@ class Shader
 
 public:
 
+    Shader();
     Shader(const std::string& filepath);
     ~Shader();
+    Shader(Shader&& other);
+    Shader& operator=(Shader&& other);
 
     void bind() const;
     void unbind() const;
@@ -44,6 +47,6 @@ private:
 
 private:
     std::string m_filepath;
-    GLuint      m_renderId;
+    GLuint      m_renderID;
     std::unordered_map<std::string, int> m_uniformLocationCache;
 };

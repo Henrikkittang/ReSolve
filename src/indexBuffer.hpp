@@ -11,6 +11,8 @@ public:
     IndexBuffer() = default;
     IndexBuffer(const uint32_t* data, uint32_t count);
     ~IndexBuffer();
+    IndexBuffer(IndexBuffer&& other);
+    IndexBuffer& operator=(IndexBuffer&& other);
 
     void bind() const;
     void unbind() const;
@@ -18,6 +20,6 @@ public:
     uint32_t getCount() const { return m_count; }
 
 private:
-    GLuint m_renderId;
+    GLuint   m_renderID;
     uint32_t m_count;
 };

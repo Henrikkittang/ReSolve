@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/output.dir/src/tests/testFractal.cpp.obj.d"
   "CMakeFiles/output.dir/src/texture.cpp.obj"
   "CMakeFiles/output.dir/src/texture.cpp.obj.d"
+  "CMakeFiles/output.dir/src/util.cpp.obj"
+  "CMakeFiles/output.dir/src/util.cpp.obj.d"
   "CMakeFiles/output.dir/src/vertexArray.cpp.obj"
   "CMakeFiles/output.dir/src/vertexArray.cpp.obj.d"
   "CMakeFiles/output.dir/src/vertexBuffer.cpp.obj"

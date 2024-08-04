@@ -1,6 +1,7 @@
 #include"testFractal.hpp"
 
 #include"../renderWindow.hpp"
+#include"../util.hpp"
 
 #include<imgui/imgui.h>
  
@@ -10,15 +11,15 @@ namespace test
 {
     
     TestFractal::TestFractal() 
-    : uZoom(1.0f), uPan(0.0f, 0.0f), maxIterations(500), m_shader("./resources/shaders/fractal.shader")
-      
+        : uZoom(1.0f), uPan(0.0f, 0.0f), maxIterations(500), m_shader()
     {
-     
+        m_shader = Shader{"./resources/shaders/fractal.shader"};
+
         std::vector<float> positions = {
-          -1.0f, -1.0f,
-          1.0f, -1.0f,
-          1.0f, 1.0f,
-          -1.0f, 1.0f,
+            -1.0f, -1.0f,
+             1.0f, -1.0f,
+             1.0f,  1.0f,
+            -1.0f,  1.0f,
         };
 
         size_t vertex_count = positions.size() / 2; // 2 coordinates per vertex
@@ -51,6 +52,9 @@ namespace test
 
     void TestFractal::onUpdate(const RenderWindow& wn, float dt) 
     {
+
+        if( wn.isKeyPressed(GLFW_KEY_ESCAPE) )
+            exit(0);
 
         if( wn.isKeyPressed(GLFW_KEY_UP) )
             uZoom = uZoom * 0.99;

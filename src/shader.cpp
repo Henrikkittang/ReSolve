@@ -1,6 +1,6 @@
 #include"shader.hpp"
 
-#include"renderWindow.hpp"
+#include"util.hpp"
 
 #include <GL/glew.h>
 
@@ -9,27 +9,52 @@
 #include <fstream>
 #include <sstream>    
 
+Shader::Shader()
+    :m_filepath(""), m_renderID(0)
+{}
+
 // Constructors
 Shader::Shader(const std::string& filepath)
-    :m_filepath(filepath), m_renderId(0)
+    :m_filepath(filepath), m_renderID(0)
 {
     ShaderProgramSource source = parseShader(filepath);
-    m_renderId = createShader(source.vertexSource, source.fragmentSource); 
+    m_renderID = createShader(source.vertexSource, source.fragmentSource); 
 
-    if( m_renderId == 0 )
-        std::cout << "Creating shader failed, m_renderId = " << m_renderId << " \n";
-
+    if( m_renderID == 0 )
+        std::cout << "Creating shader failed, m_renderID = " << m_renderID << " \n";
 }
+
 
 Shader::~Shader()
 {
-    GLCall( glDeleteProgram(m_renderId) );
+    GLCall( glDeleteProgram(m_renderID) );
+}
+
+
+Shader::Shader(Shader&& other)  
+    : m_renderID(other.m_renderID) 
+{
+    other.m_renderID = 0; 
+}
+
+Shader& Shader::operator=(Shader&& other) 
+{
+    if (this != &other) 
+    {
+        GLCall( glDeleteProgram(m_renderID) );
+        
+        m_renderID = other.m_renderID;
+        m_filepath = std::move( other.m_filepath );
+        m_uniformLocationCache = std::move( other.m_uniformLocationCache );
+        other.m_renderID = 0;
+    }
+    return *this;
 }
 
 
 void Shader::bind() const
 {
-    GLCall( glUseProgram(m_renderId) );
+    GLCall( glUseProgram(m_renderID) );
 }
 
 void Shader::unbind() const
@@ -156,7 +181,7 @@ uint32_t Shader::getUniformLocation(const std::string& name)
     if(m_uniformLocationCache.find(name) != m_uniformLocationCache.end())
         return m_uniformLocationCache[name];
 
-    GLCall(int location = glGetUniformLocation(m_renderId, name.c_str()));
+    GLCall(int location = glGetUniformLocation(m_renderID, name.c_str()));
     if(location == -1)
         std::cout << "Warning: uniform '" << name << "' dosent exists! \n";
     m_uniformLocationCache[name] = location;

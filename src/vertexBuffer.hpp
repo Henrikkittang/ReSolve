@@ -10,6 +10,8 @@ public:
     VertexBuffer();
     VertexBuffer(const void* data, uint32_t size);
     ~VertexBuffer();
+    VertexBuffer(VertexBuffer&& other);
+    VertexBuffer& operator=(VertexBuffer&&  other);
 
     void bind() const;
     void unbind() const;

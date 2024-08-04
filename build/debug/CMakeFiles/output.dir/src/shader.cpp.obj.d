@@ -309,12 +309,8 @@ CMakeFiles/output.dir/src/shader.cpp.obj: \
  c:\mingw64\include\c++\12.1.0\cerrno \
  c:\mingw64\include\c++\12.1.0\bits\charconv.h \
  c:\mingw64\include\c++\12.1.0\bits\basic_string.tcc \
- C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\renderWindow.hpp \
+ C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\util.hpp \
  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
- C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\vertexArray.hpp \
- C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\vertexBuffer.hpp \
- C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\vertexBufferLayout.hpp \
- C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\indexBuffer.hpp \
  c:\mingw64\include\c++\12.1.0\iostream \
  c:\mingw64\include\c++\12.1.0\ostream c:\mingw64\include\c++\12.1.0\ios \
  c:\mingw64\include\c++\12.1.0\exception \
