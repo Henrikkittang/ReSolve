@@ -1,6 +1,6 @@
 #pragma once
 
-#include"../renderWindow.hpp"
+#include"renderWindow.hpp"
 
 namespace test
 {

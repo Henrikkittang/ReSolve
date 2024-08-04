@@ -21,4 +21,3 @@ This project contains a .vscode folder, which means that the easiest way to buil
 - Access to resources should happen via a resources manager with proper path access
 - Make some sort of state machine to swith between tests, scenes, etc.
 - Make some sort of wrapper around imgui, for setup and cleanup etc, 
-- Fix includes paths? test has to ../ into the previous dir

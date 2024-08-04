@@ -1,7 +1,7 @@
 #include"testClearColor.hpp"
 
-#include"../renderWindow.hpp"
-#include "../util.hpp"
+#include"renderWindow.hpp"
+#include"util.hpp"
 
 
 #include<imgui/imgui.h>

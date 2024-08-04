@@ -2,11 +2,11 @@
 
 #include "test.hpp"
 
-#include"../vertexArray.hpp"
-#include"../vertexBuffer.hpp"
-#include"../indexBuffer.hpp"
-#include"../shader.hpp"
-#include"../renderWindow.hpp"
+#include"vertexArray.hpp"
+#include"vertexBuffer.hpp"
+#include"indexBuffer.hpp"
+#include"shader.hpp"
+#include"renderWindow.hpp"
 
 namespace test
 {

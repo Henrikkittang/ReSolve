@@ -41,6 +41,8 @@ file(GLOB_RECURSE TESTS "src/tests/*.cpp")
 file(GLOB_RECURSE VENDOR  "vendor/*.cpp")
 
 include_directories(
+	${CMAKE_SOURCE_DIR}/src/ 
+	${CMAKE_SOURCE_DIR}/src/tests/ 
 	${CMAKE_SOURCE_DIR}/vendor/ 
 )
 
