@@ -32,6 +32,33 @@ Texture::~Texture()
     GLCall( glDeleteTextures(1, &m_rendererID) );
 }
 
+Texture::Texture(Texture&& other)
+    :m_rendererID(other.m_rendererID), m_filepath(other.m_filepath), m_localBuffer(other.m_localBuffer), m_width(other.m_width), m_height(other.m_height), m_BBP(other.m_BBP)
+{
+    other.m_rendererID  = 0;
+    other.m_localBuffer = nullptr;
+}
+
+Texture& Texture::operator=(Texture&& other)
+{
+    if(this != &other)
+    {
+        GLCall( glDeleteTextures(1, &m_rendererID) );
+
+        m_rendererID  = other.m_rendererID;
+        m_filepath    = std::move( other.m_filepath );
+        m_localBuffer = other.m_localBuffer;
+        m_width       = other.m_width;
+        m_height      = other.m_height;
+        m_BBP         = other.m_BBP;
+
+        other.m_rendererID  = 0;
+        other.m_localBuffer = nullptr;        
+
+    }
+    return *this;
+}
+
 void Texture::bind(uint32_t slot) const
 {
     GLCall( glActiveTexture(GL_TEXTURE0 + slot) );

@@ -14,6 +14,9 @@ public:
     IndexBuffer(IndexBuffer&& other);
     IndexBuffer& operator=(IndexBuffer&& other);
 
+    IndexBuffer(const IndexBuffer& other) = delete;
+    IndexBuffer& operator=(const IndexBuffer& other) = delete;
+
     void bind() const;
     void unbind() const;
 

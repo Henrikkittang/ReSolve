@@ -14,7 +14,7 @@ IndexBuffer::~IndexBuffer()
 }
 
 IndexBuffer::IndexBuffer(IndexBuffer&& other)
-    : m_renderID(other.m_renderID) 
+    : m_renderID(other.m_renderID), m_count(other.m_count) 
 {
     other.m_renderID = 0; 
 }
@@ -26,6 +26,8 @@ IndexBuffer& IndexBuffer::operator=(IndexBuffer&& other)
         GLCall( glDeleteBuffers(1, &m_renderID) );
         
         m_renderID = other.m_renderID;
+        m_count    = other.m_count;
+
         other.m_renderID = 0;
     }
     return *this;

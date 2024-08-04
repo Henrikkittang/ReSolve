@@ -25,6 +25,7 @@ VertexArray& VertexArray::operator=(VertexArray&& other)
         GLCall( glDeleteVertexArrays(1, &m_renderID) );
         
         m_renderID = other.m_renderID;
+        
         other.m_renderID = 0;
     }
     return *this;

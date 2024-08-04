@@ -11,6 +11,11 @@ class Texture
 public:
     Texture(const std::string& filepath);
     ~Texture();
+    Texture(Texture&& other);
+    Texture& operator=(Texture&& other);
+
+    Texture(const Texture& other) = delete;
+    Texture operator=(const Texture& other) = delete;
 
     void bind(uint32_t slot = 0) const;
     void unbind() const;

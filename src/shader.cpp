@@ -46,6 +46,7 @@ Shader& Shader::operator=(Shader&& other)
         m_renderID = other.m_renderID;
         m_filepath = std::move( other.m_filepath );
         m_uniformLocationCache = std::move( other.m_uniformLocationCache );
+        
         other.m_renderID = 0;
     }
     return *this;

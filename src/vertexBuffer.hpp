@@ -13,6 +13,9 @@ public:
     VertexBuffer(VertexBuffer&& other);
     VertexBuffer& operator=(VertexBuffer&&  other);
 
+    VertexBuffer(const VertexBuffer& other) = delete;
+    VertexBuffer& operator=(const VertexBuffer& other) = delete;
+
     void bind() const;
     void unbind() const;
 private:
