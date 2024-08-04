@@ -128,6 +128,30 @@ output/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/build
 .PHONY : output/fast
 
+src/application.obj: src/application.cpp.obj
+.PHONY : src/application.obj
+
+# target to build an object file
+src/application.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/application.cpp.obj
+.PHONY : src/application.cpp.obj
+
+src/application.i: src/application.cpp.i
+.PHONY : src/application.i
+
+# target to preprocess a source file
+src/application.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/application.cpp.i
+.PHONY : src/application.cpp.i
+
+src/application.s: src/application.cpp.s
+.PHONY : src/application.s
+
+# target to generate assembly for a file
+src/application.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/application.cpp.s
+.PHONY : src/application.cpp.s
+
 src/indexBuffer.obj: src/indexBuffer.cpp.obj
 .PHONY : src/indexBuffer.obj
 
@@ -199,6 +223,54 @@ src/renderWindow.s: src/renderWindow.cpp.s
 src/renderWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/renderWindow.cpp.s
 .PHONY : src/renderWindow.cpp.s
+
+src/scene.obj: src/scene.cpp.obj
+.PHONY : src/scene.obj
+
+# target to build an object file
+src/scene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scene.cpp.obj
+.PHONY : src/scene.cpp.obj
+
+src/scene.i: src/scene.cpp.i
+.PHONY : src/scene.i
+
+# target to preprocess a source file
+src/scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scene.cpp.i
+.PHONY : src/scene.cpp.i
+
+src/scene.s: src/scene.cpp.s
+.PHONY : src/scene.s
+
+# target to generate assembly for a file
+src/scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scene.cpp.s
+.PHONY : src/scene.cpp.s
+
+src/scenes/sceneFractal.obj: src/scenes/sceneFractal.cpp.obj
+.PHONY : src/scenes/sceneFractal.obj
+
+# target to build an object file
+src/scenes/sceneFractal.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj
+.PHONY : src/scenes/sceneFractal.cpp.obj
+
+src/scenes/sceneFractal.i: src/scenes/sceneFractal.cpp.i
+.PHONY : src/scenes/sceneFractal.i
+
+# target to preprocess a source file
+src/scenes/sceneFractal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.i
+.PHONY : src/scenes/sceneFractal.cpp.i
+
+src/scenes/sceneFractal.s: src/scenes/sceneFractal.cpp.s
+.PHONY : src/scenes/sceneFractal.s
+
+# target to generate assembly for a file
+src/scenes/sceneFractal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.s
+.PHONY : src/scenes/sceneFractal.cpp.s
 
 src/shader.obj: src/shader.cpp.obj
 .PHONY : src/shader.obj
@@ -617,6 +689,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... output
+	@echo ... src/application.obj
+	@echo ... src/application.i
+	@echo ... src/application.s
 	@echo ... src/indexBuffer.obj
 	@echo ... src/indexBuffer.i
 	@echo ... src/indexBuffer.s
@@ -626,6 +701,12 @@ help:
 	@echo ... src/renderWindow.obj
 	@echo ... src/renderWindow.i
 	@echo ... src/renderWindow.s
+	@echo ... src/scene.obj
+	@echo ... src/scene.i
+	@echo ... src/scene.s
+	@echo ... src/scenes/sceneFractal.obj
+	@echo ... src/scenes/sceneFractal.i
+	@echo ... src/scenes/sceneFractal.s
 	@echo ... src/shader.obj
 	@echo ... src/shader.i
 	@echo ... src/shader.s

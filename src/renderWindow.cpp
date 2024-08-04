@@ -26,7 +26,9 @@ RenderWindow::RenderWindow(uint32_t width, uint32_t height)
 }
 
 RenderWindow::~RenderWindow()
-{}
+{
+    glfwDestroyWindow(m_window);    
+}
 
 
 void RenderWindow::clear() const

@@ -1,1 +1,1 @@
--IC:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src -IC:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests -IC:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor
+-IC:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src -IC:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests -IC:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes -IC:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor

@@ -9,8 +9,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Kinda cursed code for setting the compiler path. Not realy portable
 if (NOT MSVC)
-    set(CMAKE_C_COMPILER C:/mingw64/bin/gcc)
-    set(CMAKE_CXX_COMPILER C:/mingw64/bin/g++)
+    set(CMAKE_C_COMPILER C:/mingw64/bin/clang)
+    set(CMAKE_CXX_COMPILER C:/mingw64/bin/clang++)
 endif()
 
 if(NOT MSVC)
@@ -38,12 +38,14 @@ set(GLEW_LIBS glew32)
 # Get all .cpp files in the source directory
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 file(GLOB_RECURSE TESTS   "src/tests/*.cpp")
+file(GLOB_RECURSE SCENES  "src/scenes/*.cpp")
 file(GLOB_RECURSE VENDOR  "vendor/*.cpp")
 
 include_directories(
 	${CMAKE_SOURCE_DIR}/src/ 
 	${CMAKE_SOURCE_DIR}/src/tests/ 
-	${CMAKE_SOURCE_DIR}/vendor/ 
+	${CMAKE_SOURCE_DIR}/src/scenes/ 
+    ${CMAKE_SOURCE_DIR}/vendor/ 
 )
 
 add_executable(output
@@ -57,13 +59,13 @@ target_link_libraries(output
 )
 
 target_compile_options(output PRIVATE
-    $<$<CONFIG:Debug>:-Wall -g -pg -no-pie> 
+    $<$<CONFIG:Debug>:-Wall -g > 
     $<$<CONFIG:Release>:-O3>
 )
 
 
 target_link_options(output PRIVATE
-    $<$<CONFIG:Debug>:-Wall -g -pg -no-pie> 
+    $<$<CONFIG:Debug>:-Wall -g > 
     $<$<CONFIG:Release>:-O3>
 )
 
