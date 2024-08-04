@@ -37,7 +37,7 @@ set(GLEW_LIBS glew32)
 
 # Get all .cpp files in the source directory
 file(GLOB_RECURSE SOURCES "src/*.cpp")
-file(GLOB_RECURSE TESTS "src/tests/*.cpp")
+file(GLOB_RECURSE TESTS   "src/tests/*.cpp")
 file(GLOB_RECURSE VENDOR  "vendor/*.cpp")
 
 include_directories(

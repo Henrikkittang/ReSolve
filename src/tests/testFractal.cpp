@@ -1,17 +1,16 @@
 #include"testFractal.hpp"
-
 #include"renderWindow.hpp"
 #include"util.hpp"
 
-#include<imgui/imgui.h>
- 
 #include<iostream>
 
+#include<imgui/imgui.h>
+ 
 namespace test
 {
     
     TestFractal::TestFractal() 
-        : uZoom(1.0f), uPan(0.0f, 0.0f), maxIterations(500), m_shader()
+        : uZoom(1.0f), uPan(0.0f, 0.0f), maxIterations(500)
     {
         m_shader = Shader{"./resources/shaders/fractal.shader"};
 
