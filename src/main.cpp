@@ -2,14 +2,13 @@
 
 #include"application.hpp"
 #include"sceneFractal.hpp"
+#include"sceneClearColor.hpp"
 
 int main()
 {    
     Application app;
     app.ImGuiInit();
 
-    // app.emplaceScene( new SceneFractal );
-    auto ptr = std::make_unique<SceneFractal>();
-    app.pushScene( std::move(ptr) );
+    app.emplaceScene( new SceneClearColor );
     app.run();    
 }

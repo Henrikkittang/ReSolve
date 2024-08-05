@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/output.dir/src/main.cpp.obj.d"
   "CMakeFiles/output.dir/src/renderWindow.cpp.obj"
   "CMakeFiles/output.dir/src/renderWindow.cpp.obj.d"
+  "CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj"
+  "CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj.d"
   "CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj"
   "CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj.d"
   "CMakeFiles/output.dir/src/shader.cpp.obj"

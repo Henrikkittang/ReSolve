@@ -224,6 +224,30 @@ src/renderWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/renderWindow.cpp.s
 .PHONY : src/renderWindow.cpp.s
 
+src/scenes/sceneClearColor.obj: src/scenes/sceneClearColor.cpp.obj
+.PHONY : src/scenes/sceneClearColor.obj
+
+# target to build an object file
+src/scenes/sceneClearColor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj
+.PHONY : src/scenes/sceneClearColor.cpp.obj
+
+src/scenes/sceneClearColor.i: src/scenes/sceneClearColor.cpp.i
+.PHONY : src/scenes/sceneClearColor.i
+
+# target to preprocess a source file
+src/scenes/sceneClearColor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.i
+.PHONY : src/scenes/sceneClearColor.cpp.i
+
+src/scenes/sceneClearColor.s: src/scenes/sceneClearColor.cpp.s
+.PHONY : src/scenes/sceneClearColor.s
+
+# target to generate assembly for a file
+src/scenes/sceneClearColor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.s
+.PHONY : src/scenes/sceneClearColor.cpp.s
+
 src/scenes/sceneFractal.obj: src/scenes/sceneFractal.cpp.obj
 .PHONY : src/scenes/sceneFractal.obj
 
@@ -677,6 +701,9 @@ help:
 	@echo ... src/renderWindow.obj
 	@echo ... src/renderWindow.i
 	@echo ... src/renderWindow.s
+	@echo ... src/scenes/sceneClearColor.obj
+	@echo ... src/scenes/sceneClearColor.i
+	@echo ... src/scenes/sceneClearColor.s
 	@echo ... src/scenes/sceneFractal.obj
 	@echo ... src/scenes/sceneFractal.i
 	@echo ... src/scenes/sceneFractal.s
