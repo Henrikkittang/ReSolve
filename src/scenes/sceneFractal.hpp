@@ -1,7 +1,5 @@
 #pragma once
 
-#include "test.hpp"
-
 #include"vertexArray.hpp"
 #include"vertexBuffer.hpp"
 #include"indexBuffer.hpp"

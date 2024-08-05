@@ -80,7 +80,7 @@ void Application::run()
         s_scenes.pop();
     
         while( !glfwWindowShouldClose( m_window ) )
-    {
+        {
             glClear(GL_COLOR_BUFFER_BIT);  
             
             ImGui_ImplOpenGL3_NewFrame();
@@ -95,6 +95,7 @@ void Application::run()
                 ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
             }
 
+            
 
             ImGui::Render();
             ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

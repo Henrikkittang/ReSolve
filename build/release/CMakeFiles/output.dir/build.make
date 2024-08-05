@@ -173,41 +173,11 @@ CMakeFiles/output.dir/src/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/src/shader.cpp.s"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\shader.cpp -o CMakeFiles\output.dir\src\shader.cpp.s
 
-CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj: CMakeFiles/output.dir/flags.make
-CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
-CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/testClearColor.cpp
-CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj"
-	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj -MF CMakeFiles\output.dir\src\tests\testClearColor.cpp.obj.d -o CMakeFiles\output.dir\src\tests\testClearColor.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\tests\testClearColor.cpp
-
-CMakeFiles/output.dir/src/tests/testClearColor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/src/tests/testClearColor.cpp.i"
-	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\tests\testClearColor.cpp > CMakeFiles\output.dir\src\tests\testClearColor.cpp.i
-
-CMakeFiles/output.dir/src/tests/testClearColor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/src/tests/testClearColor.cpp.s"
-	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\tests\testClearColor.cpp -o CMakeFiles\output.dir\src\tests\testClearColor.cpp.s
-
-CMakeFiles/output.dir/src/tests/testFractal.cpp.obj: CMakeFiles/output.dir/flags.make
-CMakeFiles/output.dir/src/tests/testFractal.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
-CMakeFiles/output.dir/src/tests/testFractal.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/testFractal.cpp
-CMakeFiles/output.dir/src/tests/testFractal.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/output.dir/src/tests/testFractal.cpp.obj"
-	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/tests/testFractal.cpp.obj -MF CMakeFiles\output.dir\src\tests\testFractal.cpp.obj.d -o CMakeFiles\output.dir\src\tests\testFractal.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\tests\testFractal.cpp
-
-CMakeFiles/output.dir/src/tests/testFractal.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/src/tests/testFractal.cpp.i"
-	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\tests\testFractal.cpp > CMakeFiles\output.dir\src\tests\testFractal.cpp.i
-
-CMakeFiles/output.dir/src/tests/testFractal.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/src/tests/testFractal.cpp.s"
-	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\tests\testFractal.cpp -o CMakeFiles\output.dir\src\tests\testFractal.cpp.s
-
 CMakeFiles/output.dir/src/texture.cpp.obj: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/src/texture.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/src/texture.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/texture.cpp
 CMakeFiles/output.dir/src/texture.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/output.dir/src/texture.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/output.dir/src/texture.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/texture.cpp.obj -MF CMakeFiles\output.dir\src\texture.cpp.obj.d -o CMakeFiles\output.dir\src\texture.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\texture.cpp
 
 CMakeFiles/output.dir/src/texture.cpp.i: cmake_force
@@ -222,7 +192,7 @@ CMakeFiles/output.dir/src/util.cpp.obj: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/src/util.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/src/util.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/util.cpp
 CMakeFiles/output.dir/src/util.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/output.dir/src/util.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/output.dir/src/util.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/util.cpp.obj -MF CMakeFiles\output.dir\src\util.cpp.obj.d -o CMakeFiles\output.dir\src\util.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\util.cpp
 
 CMakeFiles/output.dir/src/util.cpp.i: cmake_force
@@ -237,7 +207,7 @@ CMakeFiles/output.dir/src/vertexArray.cpp.obj: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/src/vertexArray.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/src/vertexArray.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.cpp
 CMakeFiles/output.dir/src/vertexArray.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/output.dir/src/vertexArray.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/output.dir/src/vertexArray.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/vertexArray.cpp.obj -MF CMakeFiles\output.dir\src\vertexArray.cpp.obj.d -o CMakeFiles\output.dir\src\vertexArray.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\vertexArray.cpp
 
 CMakeFiles/output.dir/src/vertexArray.cpp.i: cmake_force
@@ -252,7 +222,7 @@ CMakeFiles/output.dir/src/vertexBuffer.cpp.obj: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/src/vertexBuffer.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/src/vertexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.cpp
 CMakeFiles/output.dir/src/vertexBuffer.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/output.dir/src/vertexBuffer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/output.dir/src/vertexBuffer.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/vertexBuffer.cpp.obj -MF CMakeFiles\output.dir\src\vertexBuffer.cpp.obj.d -o CMakeFiles\output.dir\src\vertexBuffer.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\vertexBuffer.cpp
 
 CMakeFiles/output.dir/src/vertexBuffer.cpp.i: cmake_force
@@ -267,7 +237,7 @@ CMakeFiles/output.dir/src/vertexBufferLayout.cpp.obj: CMakeFiles/output.dir/flag
 CMakeFiles/output.dir/src/vertexBufferLayout.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/src/vertexBufferLayout.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.cpp
 CMakeFiles/output.dir/src/vertexBufferLayout.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/output.dir/src/vertexBufferLayout.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/output.dir/src/vertexBufferLayout.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/vertexBufferLayout.cpp.obj -MF CMakeFiles\output.dir\src\vertexBufferLayout.cpp.obj.d -o CMakeFiles\output.dir\src\vertexBufferLayout.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\vertexBufferLayout.cpp
 
 CMakeFiles/output.dir/src/vertexBufferLayout.cpp.i: cmake_force
@@ -282,7 +252,7 @@ CMakeFiles/output.dir/vendor/glm/detail/glm.cpp.obj: CMakeFiles/output.dir/flags
 CMakeFiles/output.dir/vendor/glm/detail/glm.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/vendor/glm/detail/glm.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/glm.cpp
 CMakeFiles/output.dir/vendor/glm/detail/glm.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/output.dir/vendor/glm/detail/glm.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/output.dir/vendor/glm/detail/glm.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/vendor/glm/detail/glm.cpp.obj -MF CMakeFiles\output.dir\vendor\glm\detail\glm.cpp.obj.d -o CMakeFiles\output.dir\vendor\glm\detail\glm.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\vendor\glm\detail\glm.cpp
 
 CMakeFiles/output.dir/vendor/glm/detail/glm.cpp.i: cmake_force
@@ -297,7 +267,7 @@ CMakeFiles/output.dir/vendor/imgui/imgui.cpp.obj: CMakeFiles/output.dir/flags.ma
 CMakeFiles/output.dir/vendor/imgui/imgui.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/vendor/imgui/imgui.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui.cpp
 CMakeFiles/output.dir/vendor/imgui/imgui.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/vendor/imgui/imgui.cpp.obj -MF CMakeFiles\output.dir\vendor\imgui\imgui.cpp.obj.d -o CMakeFiles\output.dir\vendor\imgui\imgui.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\vendor\imgui\imgui.cpp
 
 CMakeFiles/output.dir/vendor/imgui/imgui.cpp.i: cmake_force
@@ -312,7 +282,7 @@ CMakeFiles/output.dir/vendor/imgui/imgui_demo.cpp.obj: CMakeFiles/output.dir/fla
 CMakeFiles/output.dir/vendor/imgui/imgui_demo.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/vendor/imgui/imgui_demo.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui_demo.cpp
 CMakeFiles/output.dir/vendor/imgui/imgui_demo.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui_demo.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui_demo.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/vendor/imgui/imgui_demo.cpp.obj -MF CMakeFiles\output.dir\vendor\imgui\imgui_demo.cpp.obj.d -o CMakeFiles\output.dir\vendor\imgui\imgui_demo.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\vendor\imgui\imgui_demo.cpp
 
 CMakeFiles/output.dir/vendor/imgui/imgui_demo.cpp.i: cmake_force
@@ -327,7 +297,7 @@ CMakeFiles/output.dir/vendor/imgui/imgui_draw.cpp.obj: CMakeFiles/output.dir/fla
 CMakeFiles/output.dir/vendor/imgui/imgui_draw.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/vendor/imgui/imgui_draw.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui_draw.cpp
 CMakeFiles/output.dir/vendor/imgui/imgui_draw.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui_draw.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui_draw.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/vendor/imgui/imgui_draw.cpp.obj -MF CMakeFiles\output.dir\vendor\imgui\imgui_draw.cpp.obj.d -o CMakeFiles\output.dir\vendor\imgui\imgui_draw.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\vendor\imgui\imgui_draw.cpp
 
 CMakeFiles/output.dir/vendor/imgui/imgui_draw.cpp.i: cmake_force
@@ -342,7 +312,7 @@ CMakeFiles/output.dir/vendor/imgui/imgui_impl_glfw.cpp.obj: CMakeFiles/output.di
 CMakeFiles/output.dir/vendor/imgui/imgui_impl_glfw.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/vendor/imgui/imgui_impl_glfw.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui_impl_glfw.cpp
 CMakeFiles/output.dir/vendor/imgui/imgui_impl_glfw.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui_impl_glfw.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui_impl_glfw.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/vendor/imgui/imgui_impl_glfw.cpp.obj -MF CMakeFiles\output.dir\vendor\imgui\imgui_impl_glfw.cpp.obj.d -o CMakeFiles\output.dir\vendor\imgui\imgui_impl_glfw.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\vendor\imgui\imgui_impl_glfw.cpp
 
 CMakeFiles/output.dir/vendor/imgui/imgui_impl_glfw.cpp.i: cmake_force
@@ -357,7 +327,7 @@ CMakeFiles/output.dir/vendor/imgui/imgui_impl_opengl3.cpp.obj: CMakeFiles/output
 CMakeFiles/output.dir/vendor/imgui/imgui_impl_opengl3.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/vendor/imgui/imgui_impl_opengl3.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui_impl_opengl3.cpp
 CMakeFiles/output.dir/vendor/imgui/imgui_impl_opengl3.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui_impl_opengl3.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui_impl_opengl3.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/vendor/imgui/imgui_impl_opengl3.cpp.obj -MF CMakeFiles\output.dir\vendor\imgui\imgui_impl_opengl3.cpp.obj.d -o CMakeFiles\output.dir\vendor\imgui\imgui_impl_opengl3.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\vendor\imgui\imgui_impl_opengl3.cpp
 
 CMakeFiles/output.dir/vendor/imgui/imgui_impl_opengl3.cpp.i: cmake_force
@@ -372,7 +342,7 @@ CMakeFiles/output.dir/vendor/imgui/imgui_tables.cpp.obj: CMakeFiles/output.dir/f
 CMakeFiles/output.dir/vendor/imgui/imgui_tables.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/vendor/imgui/imgui_tables.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui_tables.cpp
 CMakeFiles/output.dir/vendor/imgui/imgui_tables.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui_tables.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui_tables.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/vendor/imgui/imgui_tables.cpp.obj -MF CMakeFiles\output.dir\vendor\imgui\imgui_tables.cpp.obj.d -o CMakeFiles\output.dir\vendor\imgui\imgui_tables.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\vendor\imgui\imgui_tables.cpp
 
 CMakeFiles/output.dir/vendor/imgui/imgui_tables.cpp.i: cmake_force
@@ -387,7 +357,7 @@ CMakeFiles/output.dir/vendor/imgui/imgui_widgets.cpp.obj: CMakeFiles/output.dir/
 CMakeFiles/output.dir/vendor/imgui/imgui_widgets.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/vendor/imgui/imgui_widgets.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui_widgets.cpp
 CMakeFiles/output.dir/vendor/imgui/imgui_widgets.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui_widgets.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/output.dir/vendor/imgui/imgui_widgets.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/vendor/imgui/imgui_widgets.cpp.obj -MF CMakeFiles\output.dir\vendor\imgui\imgui_widgets.cpp.obj.d -o CMakeFiles\output.dir\vendor\imgui\imgui_widgets.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\vendor\imgui\imgui_widgets.cpp
 
 CMakeFiles/output.dir/vendor/imgui/imgui_widgets.cpp.i: cmake_force
@@ -402,7 +372,7 @@ CMakeFiles/output.dir/vendor/stb_image/stb_image.cpp.obj: CMakeFiles/output.dir/
 CMakeFiles/output.dir/vendor/stb_image/stb_image.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/vendor/stb_image/stb_image.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/stb_image/stb_image.cpp
 CMakeFiles/output.dir/vendor/stb_image/stb_image.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/output.dir/vendor/stb_image/stb_image.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/output.dir/vendor/stb_image/stb_image.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/vendor/stb_image/stb_image.cpp.obj -MF CMakeFiles\output.dir\vendor\stb_image\stb_image.cpp.obj.d -o CMakeFiles\output.dir\vendor\stb_image\stb_image.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\vendor\stb_image\stb_image.cpp
 
 CMakeFiles/output.dir/vendor/stb_image/stb_image.cpp.i: cmake_force
@@ -422,8 +392,6 @@ output_OBJECTS = \
 "CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj" \
 "CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj" \
 "CMakeFiles/output.dir/src/shader.cpp.obj" \
-"CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj" \
-"CMakeFiles/output.dir/src/tests/testFractal.cpp.obj" \
 "CMakeFiles/output.dir/src/texture.cpp.obj" \
 "CMakeFiles/output.dir/src/util.cpp.obj" \
 "CMakeFiles/output.dir/src/vertexArray.cpp.obj" \
@@ -449,8 +417,6 @@ bin/output.exe: CMakeFiles/output.dir/src/renderWindow.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/shader.cpp.obj
-bin/output.exe: CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj
-bin/output.exe: CMakeFiles/output.dir/src/tests/testFractal.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/texture.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/util.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/vertexArray.cpp.obj
@@ -469,7 +435,7 @@ bin/output.exe: CMakeFiles/output.dir/build.make
 bin/output.exe: CMakeFiles/output.dir/linkLibs.rsp
 bin/output.exe: CMakeFiles/output.dir/objects1.rsp
 bin/output.exe: CMakeFiles/output.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable bin\output.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable bin\output.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\output.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Copying glew32.dll to the target directory"
 	"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/lib/lib-mingw-w64/glew32.dll C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/build/release/bin/glew32.dll

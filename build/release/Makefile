@@ -296,54 +296,6 @@ src/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/shader.cpp.s
 .PHONY : src/shader.cpp.s
 
-src/tests/testClearColor.obj: src/tests/testClearColor.cpp.obj
-.PHONY : src/tests/testClearColor.obj
-
-# target to build an object file
-src/tests/testClearColor.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj
-.PHONY : src/tests/testClearColor.cpp.obj
-
-src/tests/testClearColor.i: src/tests/testClearColor.cpp.i
-.PHONY : src/tests/testClearColor.i
-
-# target to preprocess a source file
-src/tests/testClearColor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testClearColor.cpp.i
-.PHONY : src/tests/testClearColor.cpp.i
-
-src/tests/testClearColor.s: src/tests/testClearColor.cpp.s
-.PHONY : src/tests/testClearColor.s
-
-# target to generate assembly for a file
-src/tests/testClearColor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testClearColor.cpp.s
-.PHONY : src/tests/testClearColor.cpp.s
-
-src/tests/testFractal.obj: src/tests/testFractal.cpp.obj
-.PHONY : src/tests/testFractal.obj
-
-# target to build an object file
-src/tests/testFractal.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testFractal.cpp.obj
-.PHONY : src/tests/testFractal.cpp.obj
-
-src/tests/testFractal.i: src/tests/testFractal.cpp.i
-.PHONY : src/tests/testFractal.i
-
-# target to preprocess a source file
-src/tests/testFractal.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testFractal.cpp.i
-.PHONY : src/tests/testFractal.cpp.i
-
-src/tests/testFractal.s: src/tests/testFractal.cpp.s
-.PHONY : src/tests/testFractal.s
-
-# target to generate assembly for a file
-src/tests/testFractal.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testFractal.cpp.s
-.PHONY : src/tests/testFractal.cpp.s
-
 src/texture.obj: src/texture.cpp.obj
 .PHONY : src/texture.obj
 
@@ -710,12 +662,6 @@ help:
 	@echo ... src/shader.obj
 	@echo ... src/shader.i
 	@echo ... src/shader.s
-	@echo ... src/tests/testClearColor.obj
-	@echo ... src/tests/testClearColor.i
-	@echo ... src/tests/testClearColor.s
-	@echo ... src/tests/testFractal.obj
-	@echo ... src/tests/testFractal.i
-	@echo ... src/tests/testFractal.s
 	@echo ... src/texture.obj
 	@echo ... src/texture.i
 	@echo ... src/texture.s
