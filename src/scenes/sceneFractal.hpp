@@ -13,7 +13,7 @@ class SceneFractal : public Scene
 {
 public:
     SceneFractal();
-    ~SceneFractal();
+    ~SceneFractal() override;
     void onUpdate( GLFWwindow* wn ) override;
     void onRender( GLFWwindow* wn ) override;
     void onImGuiRender() override;

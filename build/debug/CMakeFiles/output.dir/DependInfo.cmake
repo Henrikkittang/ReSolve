@@ -12,7 +12,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.cpp" "CMakeFiles/output.dir/src/indexBuffer.cpp.obj" "gcc" "CMakeFiles/output.dir/src/indexBuffer.cpp.obj.d"
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/main.cpp" "CMakeFiles/output.dir/src/main.cpp.obj" "gcc" "CMakeFiles/output.dir/src/main.cpp.obj.d"
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/renderWindow.cpp" "CMakeFiles/output.dir/src/renderWindow.cpp.obj" "gcc" "CMakeFiles/output.dir/src/renderWindow.cpp.obj.d"
-  "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scene.cpp" "CMakeFiles/output.dir/src/scene.cpp.obj" "gcc" "CMakeFiles/output.dir/src/scene.cpp.obj.d"
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes/sceneFractal.cpp" "CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj" "gcc" "CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj.d"
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.cpp" "CMakeFiles/output.dir/src/shader.cpp.obj" "gcc" "CMakeFiles/output.dir/src/shader.cpp.obj.d"
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/testClearColor.cpp" "CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj" "gcc" "CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj.d"

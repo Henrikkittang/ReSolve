@@ -40,7 +40,16 @@ Application::Application()
 
 Application::~Application()
 {
-    glfwDestroyWindow(m_window);    
+    glfwDestroyWindow(m_window);  
+    
+    if( m_isImguiActive )
+    {
+        ImGui_ImplOpenGL3_Shutdown();
+        ImGui_ImplGlfw_Shutdown();
+        ImGui::DestroyContext();
+    }
+    m_isImguiActive = false;
+
     glfwTerminate();
 }
 
@@ -59,21 +68,40 @@ void Application::ImGuiInit()
     ImGui::StyleColorsDark();
 }
 
-void Application::ImGuiShutdown()
-{
-    ImGui_ImplOpenGL3_Shutdown();
-    ImGui_ImplGlfw_Shutdown();
-    ImGui::DestroyContext();
-}
 
 void Application::run()
 {
+    // This function kinda does a lot of things...
+    // Maybe have a function for the stack and memory handling
+    // and another with the game loop
     while( !s_scenes.empty() )
     {
-        auto scene = std::move( s_scenes.top() );
+        std::unique_ptr<Scene> scene = std::move( s_scenes.top() );
         s_scenes.pop();
     
-        scene->run(m_window);
+        while( !glfwWindowShouldClose( m_window ) )
+    {
+            glClear(GL_COLOR_BUFFER_BIT);  
+            
+            ImGui_ImplOpenGL3_NewFrame();
+            ImGui_ImplGlfw_NewFrame();
+            ImGui::NewFrame();
+
+            scene->onUpdate(m_window);
+            scene->onRender(m_window);
+            scene->onImGuiRender();
+        
+            {
+                ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+            }
+
+
+            ImGui::Render();
+            ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+            glfwSwapBuffers(m_window);
+            glfwPollEvents();     
+        }
     }
 }
 
@@ -83,4 +111,7 @@ void Application::emplaceScene(Scene* scene)
     s_scenes.emplace( scene );
 }
 
-
+void Application::pushScene(std::unique_ptr<Scene>&& scene)
+{
+    s_scenes.push( std::move(scene) );
+}

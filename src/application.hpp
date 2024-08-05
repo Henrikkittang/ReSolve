@@ -22,11 +22,12 @@ public:
     ~Application();
 
     void ImGuiInit();
-    void ImGuiShutdown();
 
     void run();
 
     static void emplaceScene(Scene* scene);
+    static void pushScene(std::unique_ptr<Scene>&& scene);
+
 
 private:
 

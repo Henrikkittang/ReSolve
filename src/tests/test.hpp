@@ -7,7 +7,7 @@ namespace test
     class Test
     {
     public:
-        Test(/* args */) {}
+        Test() {}
         virtual ~Test() {}
         virtual void onUpdate( const RenderWindow& wn, float dt ) {}
         virtual void onRender( const RenderWindow& wn, float dt ) {}

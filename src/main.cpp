@@ -8,10 +8,8 @@ int main()
     Application app;
     app.ImGuiInit();
 
-    app.emplaceScene( new SceneFractal );
-    app.run();
-    
-    app.ImGuiShutdown();
-
-    return 0;
+    // app.emplaceScene( new SceneFractal );
+    auto ptr = std::make_unique<SceneFractal>();
+    app.pushScene( std::move(ptr) );
+    app.run();    
 }

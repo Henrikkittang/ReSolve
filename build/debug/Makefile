@@ -224,30 +224,6 @@ src/renderWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/renderWindow.cpp.s
 .PHONY : src/renderWindow.cpp.s
 
-src/scene.obj: src/scene.cpp.obj
-.PHONY : src/scene.obj
-
-# target to build an object file
-src/scene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scene.cpp.obj
-.PHONY : src/scene.cpp.obj
-
-src/scene.i: src/scene.cpp.i
-.PHONY : src/scene.i
-
-# target to preprocess a source file
-src/scene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scene.cpp.i
-.PHONY : src/scene.cpp.i
-
-src/scene.s: src/scene.cpp.s
-.PHONY : src/scene.s
-
-# target to generate assembly for a file
-src/scene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scene.cpp.s
-.PHONY : src/scene.cpp.s
-
 src/scenes/sceneFractal.obj: src/scenes/sceneFractal.cpp.obj
 .PHONY : src/scenes/sceneFractal.obj
 
@@ -701,9 +677,6 @@ help:
 	@echo ... src/renderWindow.obj
 	@echo ... src/renderWindow.i
 	@echo ... src/renderWindow.s
-	@echo ... src/scene.obj
-	@echo ... src/scene.i
-	@echo ... src/scene.s
 	@echo ... src/scenes/sceneFractal.obj
 	@echo ... src/scenes/sceneFractal.i
 	@echo ... src/scenes/sceneFractal.s
