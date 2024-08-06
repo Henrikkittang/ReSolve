@@ -6,9 +6,9 @@
 
 int main()
 {    
-    Application app;
+    Application app{960, 540, "Hello world"};
     app.ImGuiInit();
 
-    app.emplaceScene( new SceneClearColor );
+    app.addScene(new SceneClearColor);
     app.run();    
 }

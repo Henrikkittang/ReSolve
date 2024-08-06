@@ -17,7 +17,8 @@ class RenderWindow
 {
 public:
 
-	RenderWindow(uint32_t width, uint32_t height);
+	RenderWindow();
+	RenderWindow(GLFWwindow* window);
 	~RenderWindow();
 
 
@@ -32,8 +33,6 @@ public:
 	// This function should not exists but it does for now during development
 	GLFWwindow* getWindow() { return m_window; }	
 	
-
-
 private:
 
 	GLFWwindow* m_window;

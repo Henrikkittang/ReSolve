@@ -7,10 +7,10 @@
 class SceneClearColor : public Scene 
 {
 public:
-    SceneClearColor(/* args */);
     ~SceneClearColor();
-    void onUpdate( GLFWwindow* wn) override;
-    void onRender( GLFWwindow* wn ) override;
+    void init() override;
+    void onUpdate( const RenderWindow& wn) override;
+    void onRender( const RenderWindow& wn ) override;
     void onImGuiRender() override;
 private:
     float m_clearColor[4];

@@ -156,39 +156,14 @@ CMakeFiles/output.dir/src/main.cpp.obj: \
   C:/mingw64/include/c++/12.1.0/bits/deque.tcc \
   C:/mingw64/include/c++/12.1.0/bits/stl_stack.h \
   C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
-  C:/mingw64/include/c++/12.1.0/memory \
-  C:/mingw64/include/c++/12.1.0/bits/stl_tempbuf.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_raw_storage_iter.h \
-  C:/mingw64/include/c++/12.1.0/bits/align.h \
-  C:/mingw64/include/c++/12.1.0/bit \
-  C:/mingw64/include/c++/12.1.0/bits/unique_ptr.h \
-  C:/mingw64/include/c++/12.1.0/tuple \
-  C:/mingw64/include/c++/12.1.0/bits/shared_ptr.h \
-  C:/mingw64/include/c++/12.1.0/bits/shared_ptr_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/allocated_ptr.h \
-  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
-  C:/mingw64/include/c++/12.1.0/ext/concurrence.h \
-  C:/mingw64/include/c++/12.1.0/bits/shared_ptr_atomic.h \
-  C:/mingw64/include/c++/12.1.0/bits/atomic_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/atomic_lockfree_defines.h \
-  C:/mingw64/include/c++/12.1.0/bits/atomic_wait.h \
-  C:/mingw64/include/c++/12.1.0/bits/std_mutex.h \
-  C:/mingw64/include/c++/12.1.0/backward/auto_ptr.h \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_uninitialized.h \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_algobase.h \
-  C:/mingw64/include/c++/12.1.0/bits/uses_allocator_args.h \
-  C:/mingw64/include/c++/12.1.0/pstl/glue_memory_defs.h \
-  C:/mingw64/include/c++/12.1.0/pstl/execution_defs.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GL/glew.h \
   C:/mingw64/lib/clang/14.0.4/include/inttypes.h \
   C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/glu.h \
   C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scene.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes/sceneFractal.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/test.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/renderWindow.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/glm.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_fixes.hpp \
   C:/mingw64/include/c++/12.1.0/cmath \
@@ -244,8 +219,10 @@ CMakeFiles/output.dir/src/main.cpp.obj: \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_decl.hpp \
   C:/mingw64/include/c++/12.1.0/functional \
+  C:/mingw64/include/c++/12.1.0/tuple \
   C:/mingw64/include/c++/12.1.0/bits/std_function.h \
   C:/mingw64/include/c++/12.1.0/unordered_map \
+  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
   C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
   C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
   C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
@@ -256,6 +233,7 @@ CMakeFiles/output.dir/src/main.cpp.obj: \
   C:/mingw64/include/c++/12.1.0/bits/stl_algo.h \
   C:/mingw64/include/c++/12.1.0/bits/algorithmfwd.h \
   C:/mingw64/include/c++/12.1.0/bits/stl_heap.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_tempbuf.h \
   C:/mingw64/include/c++/12.1.0/bits/uniform_int_dist.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_vectorize.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/./ext/vector_bool3_precision.hpp \
@@ -380,4 +358,6 @@ CMakeFiles/output.dir/src/main.cpp.obj: \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBufferLayout.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes/sceneFractal.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes/sceneClearColor.hpp

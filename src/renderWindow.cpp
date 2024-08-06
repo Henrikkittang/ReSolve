@@ -4,30 +4,19 @@
 #include<iostream>
 
 
+RenderWindow::RenderWindow()
+    : m_window(nullptr)
+{}
 
-RenderWindow::RenderWindow(uint32_t width, uint32_t height)
-{
-    
-    m_window = glfwCreateWindow(width, height, "Hello World", NULL, NULL);
-    if (!m_window)
-    {
-        std::cerr << "Failed to create glfw window \n";
-        glfwTerminate();
-    }
 
-    glfwMakeContextCurrent(m_window);
-    if(glewInit() != GLEW_OK)
-    {
-        std::cout << "Failed to initilize glew \n";
-    }    
-
-    GLCall( glEnable(GL_BLEND) );
-    GLCall( glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) );
-}
+RenderWindow::RenderWindow(GLFWwindow* window)
+    : m_window(window)
+{}
 
 RenderWindow::~RenderWindow()
 {
-    glfwDestroyWindow(m_window);    
+    // if( m_window != nullptr )
+    //     glfwDestroyWindow(m_window);    
 }
 
 

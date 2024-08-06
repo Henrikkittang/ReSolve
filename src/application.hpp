@@ -2,37 +2,30 @@
 #include<string>
 #include<vector>
 #include<stack>
-#include<memory>
 
 #include<GL/glew.h>
 
 #include"scene.hpp"
+#include"renderWindow.hpp"
 
-// struct ApplicationSettings
-// {
-//     uint32_t screenWidth;
-//     uint32_t screenHeight;
-//     std::string screenTitle;
-// };
 
 class Application
 {
 public:
-    Application();
+    Application(uint32_t screenWidth, uint32_t screenHeight, const std::string& title);
     ~Application();
 
     void ImGuiInit();
-
     void run();
+    static void addScene(Scene* scene);
 
-    static void emplaceScene(Scene* scene);
-    static void pushScene(std::unique_ptr<Scene>&& scene);
-
+private:
+    void runScene(Scene* scene);
 
 private:
 
-    GLFWwindow* m_window;
-    bool        m_isImguiActive;
+    RenderWindow m_window;
+    bool         m_isImguiActive;
 
-    inline static std::stack<std::unique_ptr<Scene>> s_scenes;
+    inline static std::stack<Scene*> s_scenes;
 };

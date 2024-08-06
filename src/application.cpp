@@ -9,30 +9,29 @@
 
 #include"util.hpp"
 #include"scene.hpp"
+#include"event.hpp"
 
-Application::Application()
+Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std::string& title)
 {
-    int width  = 960; 
-    int height = 540; // NB! needs to be initlized!
-
     if (!glfwInit())
     {
         std::cout << "Failed to initialize glfw \n";
     }
 
-    m_window = glfwCreateWindow(width, height, "Hello World", NULL, NULL);
-    if (!m_window)
+    GLFWwindow* window = glfwCreateWindow(screenWidth, screenHeight, title.c_str(), NULL, NULL);
+    if (!window)
     {
         std::cerr << "Failed to create glfw window \n";
         glfwTerminate();
     }
 
-    glfwMakeContextCurrent(m_window);
+    glfwMakeContextCurrent(window);
     if(glewInit() != GLEW_OK)
     {
         std::cout << "Failed to initilize glew \n";
     }    
 
+    m_window = RenderWindow(window);
     GLCall( glEnable(GL_BLEND) );
     GLCall( glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) );
 }
@@ -40,7 +39,7 @@ Application::Application()
 
 Application::~Application()
 {
-    glfwDestroyWindow(m_window);  
+    // glfwDestroyWindow(m_window);  
     
     if( m_isImguiActive )
     {
@@ -64,55 +63,65 @@ void Application::ImGuiInit()
     io.Fonts->Build();
 
     ImGui_ImplOpenGL3_Init("#version 460");
-    ImGui_ImplGlfw_InitForOpenGL( m_window , true);
+    ImGui_ImplGlfw_InitForOpenGL( m_window.getWindow() , true);
     ImGui::StyleColorsDark();
 }
 
 
 void Application::run()
 {
-    // This function kinda does a lot of things...
-    // Maybe have a function for the stack and memory handling
-    // and another with the game loop
     while( !s_scenes.empty() )
     {
-        std::unique_ptr<Scene> scene = std::move( s_scenes.top() );
+        Scene* scene = s_scenes.top();
         s_scenes.pop();
-    
-        while( !glfwWindowShouldClose( m_window ) )
-        {
-            glClear(GL_COLOR_BUFFER_BIT);  
-            
-            ImGui_ImplOpenGL3_NewFrame();
-            ImGui_ImplGlfw_NewFrame();
-            ImGui::NewFrame();
 
-            scene->onUpdate(m_window);
-            scene->onRender(m_window);
-            scene->onImGuiRender();
-        
-            {
-                ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-            }
-
-            
-
-            ImGui::Render();
-            ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-            glfwSwapBuffers(m_window);
-            glfwPollEvents();     
-        }
+        scene->init();
+        runScene( scene );
     }
 }
 
 
-void Application::emplaceScene(Scene* scene)
+void Application::addScene(Scene* scene)
 {
-    s_scenes.emplace( scene );
+    // This function may be better written if the scene type is a templated argument
+    // This way the ownership would be better defined. Another solution is a unique_ptr
+    s_scenes.push( scene );
 }
 
-void Application::pushScene(std::unique_ptr<Scene>&& scene)
+// Private functions
+
+void Application::runScene(Scene* scene)
 {
-    s_scenes.push( std::move(scene) );
+    while( !m_window.windowShouldClose() )
+    {
+        Event event;
+        while( EventManager::pollEvent(event) )
+        {
+            if( event == Event::END_CURRENT_SCENE )
+                return;
+        }
+
+        m_window.clear();
+        
+        if( m_isImguiActive )
+        {
+            ImGui_ImplOpenGL3_NewFrame();
+            ImGui_ImplGlfw_NewFrame();
+            ImGui::NewFrame();
+        }
+        
+        scene->onUpdate(m_window);
+        scene->onRender(m_window);
+        scene->onImGuiRender();
+
+        if( m_isImguiActive )
+        {
+            ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+            ImGui::Render();
+            ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+        }
+        
+        m_window.update();
+         
+    }
 }

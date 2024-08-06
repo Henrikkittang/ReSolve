@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/output.dir/src/application.cpp.obj"
   "CMakeFiles/output.dir/src/application.cpp.obj.d"
+  "CMakeFiles/output.dir/src/event.cpp.obj"
+  "CMakeFiles/output.dir/src/event.cpp.obj.d"
   "CMakeFiles/output.dir/src/indexBuffer.cpp.obj"
   "CMakeFiles/output.dir/src/indexBuffer.cpp.obj.d"
   "CMakeFiles/output.dir/src/main.cpp.obj"

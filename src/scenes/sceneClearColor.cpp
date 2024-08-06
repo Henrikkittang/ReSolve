@@ -4,29 +4,37 @@
 
 #include"util.hpp"
 #include"application.hpp"
+#include"event.hpp"
 #include"sceneFractal.hpp"
 
-SceneClearColor::SceneClearColor() 
-    :m_clearColor{0.2f, 0.3f, 0.8f, 1.0f}
-{}
+
 
 SceneClearColor::~SceneClearColor() 
 {}
 
-void SceneClearColor::onUpdate( GLFWwindow* wn ) 
+void SceneClearColor::init()
+{
+    m_clearColor[0] = 0.2f;
+    m_clearColor[1] = 0.3f;
+    m_clearColor[2] = 0.8f;
+    m_clearColor[3] = 1.0f;
+}
+
+void SceneClearColor::onUpdate( const RenderWindow& ) 
 {
     GLCall( glClearColor(m_clearColor[0], m_clearColor[1], m_clearColor[2], m_clearColor[3]) );
     GLCall( glClear(GL_COLOR_BUFFER_BIT) );
 
 }
-void SceneClearColor::onRender( GLFWwindow* wn ) 
+void SceneClearColor::onRender( const RenderWindow& ) 
 {}
 
 void SceneClearColor::onImGuiRender() 
 {
     if( ImGui::Button("Change scene") )
     {
-        Application::emplaceScene( new SceneFractal );
+        Application::addScene( new SceneFractal );
+        EventManager::dispatchEvent( Event::END_CURRENT_SCENE );
     }
 
     ImGui::ColorEdit4("Clear color", m_clearColor);

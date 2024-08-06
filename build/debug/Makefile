@@ -152,6 +152,30 @@ src/application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/application.cpp.s
 .PHONY : src/application.cpp.s
 
+src/event.obj: src/event.cpp.obj
+.PHONY : src/event.obj
+
+# target to build an object file
+src/event.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/event.cpp.obj
+.PHONY : src/event.cpp.obj
+
+src/event.i: src/event.cpp.i
+.PHONY : src/event.i
+
+# target to preprocess a source file
+src/event.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/event.cpp.i
+.PHONY : src/event.cpp.i
+
+src/event.s: src/event.cpp.s
+.PHONY : src/event.s
+
+# target to generate assembly for a file
+src/event.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/event.cpp.s
+.PHONY : src/event.cpp.s
+
 src/indexBuffer.obj: src/indexBuffer.cpp.obj
 .PHONY : src/indexBuffer.obj
 
@@ -224,6 +248,30 @@ src/renderWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/renderWindow.cpp.s
 .PHONY : src/renderWindow.cpp.s
 
+src/scenes/sceneClearColor.obj: src/scenes/sceneClearColor.cpp.obj
+.PHONY : src/scenes/sceneClearColor.obj
+
+# target to build an object file
+src/scenes/sceneClearColor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj
+.PHONY : src/scenes/sceneClearColor.cpp.obj
+
+src/scenes/sceneClearColor.i: src/scenes/sceneClearColor.cpp.i
+.PHONY : src/scenes/sceneClearColor.i
+
+# target to preprocess a source file
+src/scenes/sceneClearColor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.i
+.PHONY : src/scenes/sceneClearColor.cpp.i
+
+src/scenes/sceneClearColor.s: src/scenes/sceneClearColor.cpp.s
+.PHONY : src/scenes/sceneClearColor.s
+
+# target to generate assembly for a file
+src/scenes/sceneClearColor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.s
+.PHONY : src/scenes/sceneClearColor.cpp.s
+
 src/scenes/sceneFractal.obj: src/scenes/sceneFractal.cpp.obj
 .PHONY : src/scenes/sceneFractal.obj
 
@@ -271,54 +319,6 @@ src/shader.s: src/shader.cpp.s
 src/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/shader.cpp.s
 .PHONY : src/shader.cpp.s
-
-src/tests/testClearColor.obj: src/tests/testClearColor.cpp.obj
-.PHONY : src/tests/testClearColor.obj
-
-# target to build an object file
-src/tests/testClearColor.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj
-.PHONY : src/tests/testClearColor.cpp.obj
-
-src/tests/testClearColor.i: src/tests/testClearColor.cpp.i
-.PHONY : src/tests/testClearColor.i
-
-# target to preprocess a source file
-src/tests/testClearColor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testClearColor.cpp.i
-.PHONY : src/tests/testClearColor.cpp.i
-
-src/tests/testClearColor.s: src/tests/testClearColor.cpp.s
-.PHONY : src/tests/testClearColor.s
-
-# target to generate assembly for a file
-src/tests/testClearColor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testClearColor.cpp.s
-.PHONY : src/tests/testClearColor.cpp.s
-
-src/tests/testFractal.obj: src/tests/testFractal.cpp.obj
-.PHONY : src/tests/testFractal.obj
-
-# target to build an object file
-src/tests/testFractal.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testFractal.cpp.obj
-.PHONY : src/tests/testFractal.cpp.obj
-
-src/tests/testFractal.i: src/tests/testFractal.cpp.i
-.PHONY : src/tests/testFractal.i
-
-# target to preprocess a source file
-src/tests/testFractal.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testFractal.cpp.i
-.PHONY : src/tests/testFractal.cpp.i
-
-src/tests/testFractal.s: src/tests/testFractal.cpp.s
-.PHONY : src/tests/testFractal.s
-
-# target to generate assembly for a file
-src/tests/testFractal.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/tests/testFractal.cpp.s
-.PHONY : src/tests/testFractal.cpp.s
 
 src/texture.obj: src/texture.cpp.obj
 .PHONY : src/texture.obj
@@ -668,6 +668,9 @@ help:
 	@echo ... src/application.obj
 	@echo ... src/application.i
 	@echo ... src/application.s
+	@echo ... src/event.obj
+	@echo ... src/event.i
+	@echo ... src/event.s
 	@echo ... src/indexBuffer.obj
 	@echo ... src/indexBuffer.i
 	@echo ... src/indexBuffer.s
@@ -677,18 +680,15 @@ help:
 	@echo ... src/renderWindow.obj
 	@echo ... src/renderWindow.i
 	@echo ... src/renderWindow.s
+	@echo ... src/scenes/sceneClearColor.obj
+	@echo ... src/scenes/sceneClearColor.i
+	@echo ... src/scenes/sceneClearColor.s
 	@echo ... src/scenes/sceneFractal.obj
 	@echo ... src/scenes/sceneFractal.i
 	@echo ... src/scenes/sceneFractal.s
 	@echo ... src/shader.obj
 	@echo ... src/shader.i
 	@echo ... src/shader.s
-	@echo ... src/tests/testClearColor.obj
-	@echo ... src/tests/testClearColor.i
-	@echo ... src/tests/testClearColor.s
-	@echo ... src/tests/testFractal.obj
-	@echo ... src/tests/testFractal.i
-	@echo ... src/tests/testFractal.s
 	@echo ... src/texture.obj
 	@echo ... src/texture.i
 	@echo ... src/texture.s

@@ -10,10 +10,10 @@
 class SceneFractal : public Scene 
 {
 public:
-    SceneFractal();
     ~SceneFractal() override;
-    void onUpdate( GLFWwindow* wn ) override;
-    void onRender( GLFWwindow* wn ) override;
+    void init() override;
+    void onUpdate( const RenderWindow& wn ) override;
+    void onRender( const RenderWindow& wn ) override;
     void onImGuiRender() override;
 
 

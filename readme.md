@@ -3,7 +3,7 @@ This project uses cmake as its configuration system. This means that you need bo
 
 Two commands are required to build the project
 ```
-cmake -B build/release  -DCMAKE_BUILD_TYPE=Release
+cmake -B build/release -DCMAKE_BUILD_TYPE=Release
 cmake --build build/release --config Release -j9
 ```
 
@@ -19,5 +19,7 @@ This project contains a .vscode folder, which means that the easiest way to buil
 
 ## Project
 - Access to resources should happen via a resources manager with proper path access
-- Make some sort of state machine to swith between tests, scenes, etc.
-- Make some sort of wrapper around imgui, for setup and cleanup etc, 
+- Build in functionality for batch rendering
+- Add a system for mvp matrecies, define stuff by default in pixel space
+- Add glfw events to the event system via callback functions
+- I maybe want the applicaton class to own the raw window pointer and have a renderwindow wrapped around it and sent to the scenes without ever modifying it

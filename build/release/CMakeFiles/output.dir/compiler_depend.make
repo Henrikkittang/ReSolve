@@ -131,13 +131,14 @@ CMakeFiles/output.dir/src/application.cpp.obj: C:/Users/henri/Jottacloud/kode/cp
   C:/mingw64/include/c++/12.1.0/bits/deque.tcc \
   C:/mingw64/include/c++/12.1.0/bits/stl_stack.h \
   C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
-  C:/mingw64/include/c++/12.1.0/memory \
-  C:/mingw64/include/c++/12.1.0/bits/stl_tempbuf.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_raw_storage_iter.h \
-  C:/mingw64/include/c++/12.1.0/bits/align.h \
-  C:/mingw64/include/c++/12.1.0/bit \
-  C:/mingw64/include/c++/12.1.0/bits/unique_ptr.h \
-  C:/mingw64/include/c++/12.1.0/tuple \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GL/glew.h \
+  C:/mingw64/lib/clang/14.0.4/include/inttypes.h \
+  C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
+  C:/mingw64/x86_64-w64-mingw32/include/GL/glu.h \
+  C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scene.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
+  C:/mingw64/include/c++/12.1.0/iostream \
   C:/mingw64/include/c++/12.1.0/ostream \
   C:/mingw64/include/c++/12.1.0/ios \
   C:/mingw64/include/c++/12.1.0/exception \
@@ -163,30 +164,6 @@ CMakeFiles/output.dir/src/application.cpp.obj: C:/Users/henri/Jottacloud/kode/cp
   C:/mingw64/include/c++/12.1.0/bits/locale_facets.tcc \
   C:/mingw64/include/c++/12.1.0/bits/basic_ios.tcc \
   C:/mingw64/include/c++/12.1.0/bits/ostream.tcc \
-  C:/mingw64/include/c++/12.1.0/bits/shared_ptr.h \
-  C:/mingw64/include/c++/12.1.0/bits/shared_ptr_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/allocated_ptr.h \
-  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
-  C:/mingw64/include/c++/12.1.0/ext/concurrence.h \
-  C:/mingw64/include/c++/12.1.0/bits/shared_ptr_atomic.h \
-  C:/mingw64/include/c++/12.1.0/bits/atomic_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/atomic_lockfree_defines.h \
-  C:/mingw64/include/c++/12.1.0/bits/atomic_wait.h \
-  C:/mingw64/include/c++/12.1.0/bits/std_mutex.h \
-  C:/mingw64/include/c++/12.1.0/backward/auto_ptr.h \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_uninitialized.h \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_algobase.h \
-  C:/mingw64/include/c++/12.1.0/bits/uses_allocator_args.h \
-  C:/mingw64/include/c++/12.1.0/pstl/glue_memory_defs.h \
-  C:/mingw64/include/c++/12.1.0/pstl/execution_defs.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GL/glew.h \
-  C:/mingw64/lib/clang/14.0.4/include/inttypes.h \
-  C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
-  C:/mingw64/x86_64-w64-mingw32/include/GL/glu.h \
-  C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scene.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
-  C:/mingw64/include/c++/12.1.0/iostream \
   C:/mingw64/include/c++/12.1.0/istream \
   C:/mingw64/include/c++/12.1.0/bits/istream.tcc \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui.h \
@@ -199,7 +176,59 @@ CMakeFiles/output.dir/src/application.cpp.obj: C:/Users/henri/Jottacloud/kode/cp
   C:/mingw64/x86_64-w64-mingw32/include/assert.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui_impl_glfw.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui_impl_opengl3.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/util.hpp
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/util.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/event.hpp
+
+CMakeFiles/output.dir/src/event.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/event.cpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/event.hpp \
+  C:/mingw64/include/c++/12.1.0/stack \
+  C:/mingw64/include/c++/12.1.0/deque \
+  C:/mingw64/include/c++/12.1.0/bits/stl_algobase.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++config.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+  C:/mingw64/include/c++/12.1.0/pstl/pstl_config.h \
+  C:/mingw64/include/c++/12.1.0/bits/functexcept.h \
+  C:/mingw64/include/c++/12.1.0/bits/exception_defines.h \
+  C:/mingw64/include/c++/12.1.0/bits/cpp_type_traits.h \
+  C:/mingw64/include/c++/12.1.0/ext/type_traits.h \
+  C:/mingw64/include/c++/12.1.0/ext/numeric_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_pair.h \
+  C:/mingw64/include/c++/12.1.0/type_traits \
+  C:/mingw64/include/c++/12.1.0/bits/move.h \
+  C:/mingw64/include/c++/12.1.0/bits/utility.h \
+  C:/mingw64/include/c++/12.1.0/compare \
+  C:/mingw64/include/c++/12.1.0/concepts \
+  C:/mingw64/include/c++/12.1.0/bits/stl_iterator_base_types.h \
+  C:/mingw64/include/c++/12.1.0/bits/iterator_concepts.h \
+  C:/mingw64/include/c++/12.1.0/bits/ptr_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/ranges_cmp.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_iterator_base_funcs.h \
+  C:/mingw64/include/c++/12.1.0/bits/concept_check.h \
+  C:/mingw64/include/c++/12.1.0/debug/assertions.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_iterator.h \
+  C:/mingw64/include/c++/12.1.0/new \
+  C:/mingw64/include/c++/12.1.0/bits/exception.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_construct.h \
+  C:/mingw64/include/c++/12.1.0/debug/debug.h \
+  C:/mingw64/include/c++/12.1.0/bits/predefined_ops.h \
+  C:/mingw64/include/c++/12.1.0/bits/allocator.h \
+  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/new_allocator.h \
+  C:/mingw64/include/c++/12.1.0/bits/memoryfwd.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h \
+  C:/mingw64/include/c++/12.1.0/ext/alloc_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/alloc_traits.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_deque.h \
+  C:/mingw64/include/c++/12.1.0/initializer_list \
+  C:/mingw64/include/c++/12.1.0/bits/refwrap.h \
+  C:/mingw64/include/c++/12.1.0/bits/invoke.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_function.h \
+  C:/mingw64/include/c++/12.1.0/backward/binders.h \
+  C:/mingw64/include/c++/12.1.0/bits/range_access.h \
+  C:/mingw64/include/c++/12.1.0/bits/deque.tcc \
+  C:/mingw64/include/c++/12.1.0/bits/stl_stack.h \
+  C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h
 
 CMakeFiles/output.dir/src/indexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.cpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
@@ -386,29 +415,6 @@ CMakeFiles/output.dir/src/main.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/openg
   C:/mingw64/include/c++/12.1.0/bits/deque.tcc \
   C:/mingw64/include/c++/12.1.0/bits/stl_stack.h \
   C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
-  C:/mingw64/include/c++/12.1.0/memory \
-  C:/mingw64/include/c++/12.1.0/bits/stl_tempbuf.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_raw_storage_iter.h \
-  C:/mingw64/include/c++/12.1.0/bits/align.h \
-  C:/mingw64/include/c++/12.1.0/bit \
-  C:/mingw64/include/c++/12.1.0/bits/unique_ptr.h \
-  C:/mingw64/include/c++/12.1.0/tuple \
-  C:/mingw64/include/c++/12.1.0/bits/shared_ptr.h \
-  C:/mingw64/include/c++/12.1.0/bits/shared_ptr_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/allocated_ptr.h \
-  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
-  C:/mingw64/include/c++/12.1.0/ext/concurrence.h \
-  C:/mingw64/include/c++/12.1.0/bits/shared_ptr_atomic.h \
-  C:/mingw64/include/c++/12.1.0/bits/atomic_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/atomic_lockfree_defines.h \
-  C:/mingw64/include/c++/12.1.0/bits/atomic_wait.h \
-  C:/mingw64/include/c++/12.1.0/bits/std_mutex.h \
-  C:/mingw64/include/c++/12.1.0/backward/auto_ptr.h \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_uninitialized.h \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_algobase.h \
-  C:/mingw64/include/c++/12.1.0/bits/uses_allocator_args.h \
-  C:/mingw64/include/c++/12.1.0/pstl/glue_memory_defs.h \
-  C:/mingw64/include/c++/12.1.0/pstl/execution_defs.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GL/glew.h \
   C:/mingw64/lib/clang/14.0.4/include/inttypes.h \
   C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
@@ -477,8 +483,10 @@ CMakeFiles/output.dir/src/main.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/openg
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_decl.hpp \
   C:/mingw64/include/c++/12.1.0/functional \
+  C:/mingw64/include/c++/12.1.0/tuple \
   C:/mingw64/include/c++/12.1.0/bits/std_function.h \
   C:/mingw64/include/c++/12.1.0/unordered_map \
+  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
   C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
   C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
   C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
@@ -489,6 +497,7 @@ CMakeFiles/output.dir/src/main.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/openg
   C:/mingw64/include/c++/12.1.0/bits/stl_algo.h \
   C:/mingw64/include/c++/12.1.0/bits/algorithmfwd.h \
   C:/mingw64/include/c++/12.1.0/bits/stl_heap.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_tempbuf.h \
   C:/mingw64/include/c++/12.1.0/bits/uniform_int_dist.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_vectorize.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_bool3_precision.hpp \
@@ -1114,54 +1123,7 @@ CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj: C:/Users/henri/Jottacl
   C:/mingw64/include/c++/12.1.0/bits/deque.tcc \
   C:/mingw64/include/c++/12.1.0/bits/stl_stack.h \
   C:/mingw64/include/c++/12.1.0/bits/uses_allocator.h \
-  C:/mingw64/include/c++/12.1.0/memory \
-  C:/mingw64/include/c++/12.1.0/bits/stl_tempbuf.h \
-  C:/mingw64/include/c++/12.1.0/bits/stl_raw_storage_iter.h \
-  C:/mingw64/include/c++/12.1.0/bits/align.h \
-  C:/mingw64/include/c++/12.1.0/bit \
-  C:/mingw64/include/c++/12.1.0/bits/unique_ptr.h \
-  C:/mingw64/include/c++/12.1.0/tuple \
-  C:/mingw64/include/c++/12.1.0/ostream \
-  C:/mingw64/include/c++/12.1.0/ios \
-  C:/mingw64/include/c++/12.1.0/exception \
-  C:/mingw64/include/c++/12.1.0/bits/exception_ptr.h \
-  C:/mingw64/include/c++/12.1.0/bits/cxxabi_init_exception.h \
-  C:/mingw64/include/c++/12.1.0/typeinfo \
-  C:/mingw64/include/c++/12.1.0/bits/nested_exception.h \
-  C:/mingw64/include/c++/12.1.0/bits/ios_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/locale_classes.h \
-  C:/mingw64/include/c++/12.1.0/bits/locale_classes.tcc \
-  C:/mingw64/include/c++/12.1.0/system_error \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/error_constants.h \
-  C:/mingw64/include/c++/12.1.0/stdexcept \
-  C:/mingw64/include/c++/12.1.0/streambuf \
-  C:/mingw64/include/c++/12.1.0/bits/streambuf.tcc \
-  C:/mingw64/include/c++/12.1.0/bits/basic_ios.h \
-  C:/mingw64/include/c++/12.1.0/bits/locale_facets.h \
-  C:/mingw64/include/c++/12.1.0/cwctype \
-  C:/mingw64/x86_64-w64-mingw32/include/wctype.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/ctype_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/streambuf_iterator.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/ctype_inline.h \
-  C:/mingw64/include/c++/12.1.0/bits/locale_facets.tcc \
-  C:/mingw64/include/c++/12.1.0/bits/basic_ios.tcc \
-  C:/mingw64/include/c++/12.1.0/bits/ostream.tcc \
-  C:/mingw64/include/c++/12.1.0/bits/shared_ptr.h \
-  C:/mingw64/include/c++/12.1.0/bits/shared_ptr_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/allocated_ptr.h \
-  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
-  C:/mingw64/include/c++/12.1.0/ext/concurrence.h \
-  C:/mingw64/include/c++/12.1.0/bits/shared_ptr_atomic.h \
-  C:/mingw64/include/c++/12.1.0/bits/atomic_base.h \
-  C:/mingw64/include/c++/12.1.0/bits/atomic_lockfree_defines.h \
-  C:/mingw64/include/c++/12.1.0/bits/atomic_wait.h \
-  C:/mingw64/include/c++/12.1.0/bits/std_mutex.h \
-  C:/mingw64/include/c++/12.1.0/backward/auto_ptr.h \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_uninitialized.h \
-  C:/mingw64/include/c++/12.1.0/bits/ranges_algobase.h \
-  C:/mingw64/include/c++/12.1.0/bits/uses_allocator_args.h \
-  C:/mingw64/include/c++/12.1.0/pstl/glue_memory_defs.h \
-  C:/mingw64/include/c++/12.1.0/pstl/execution_defs.h \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/event.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes/sceneFractal.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexArray.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/vertexBuffer.hpp \
@@ -1220,8 +1182,11 @@ CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj: C:/Users/henri/Jottacl
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_relational.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/compute_vector_decl.hpp \
   C:/mingw64/include/c++/12.1.0/functional \
+  C:/mingw64/include/c++/12.1.0/tuple \
   C:/mingw64/include/c++/12.1.0/bits/std_function.h \
+  C:/mingw64/include/c++/12.1.0/typeinfo \
   C:/mingw64/include/c++/12.1.0/unordered_map \
+  C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h \
   C:/mingw64/include/c++/12.1.0/bits/hashtable.h \
   C:/mingw64/include/c++/12.1.0/bits/hashtable_policy.h \
   C:/mingw64/include/c++/12.1.0/bits/enable_special_members.h \
@@ -1232,6 +1197,7 @@ CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj: C:/Users/henri/Jottacl
   C:/mingw64/include/c++/12.1.0/bits/stl_algo.h \
   C:/mingw64/include/c++/12.1.0/bits/algorithmfwd.h \
   C:/mingw64/include/c++/12.1.0/bits/stl_heap.h \
+  C:/mingw64/include/c++/12.1.0/bits/stl_tempbuf.h \
   C:/mingw64/include/c++/12.1.0/bits/uniform_int_dist.h \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_vectorize.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_bool3_precision.hpp \
@@ -4408,9 +4374,9 @@ C:/mingw64/lib/clang/14.0.4/include/prfchwintrin.h:
 
 C:/mingw64/include/c++/12.1.0/compare:
 
-C:/mingw64/lib/clang/14.0.4/include/pconfigintrin.h:
-
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/application.cpp:
+
+C:/mingw64/lib/clang/14.0.4/include/pconfigintrin.h:
 
 C:/mingw64/include/c++/12.1.0/cctype:
 
@@ -4642,6 +4608,8 @@ C:/mingw64/include/c++/12.1.0/bits/stl_iterator.h:
 
 C:/mingw64/include/c++/12.1.0/clocale:
 
+C:/mingw64/lib/clang/14.0.4/include/invpcidintrin.h:
+
 C:/mingw64/include/c++/12.1.0/bits/cxxabi_forced.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/scalar_constants.inl:
@@ -4676,11 +4644,11 @@ C:/mingw64/include/c++/12.1.0/debug/debug.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_mat4x3.hpp:
 
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double3x4_precision.hpp:
+C:/mingw64/include/c++/12.1.0/bits/predefined_ops.h:
 
 C:/mingw64/lib/clang/14.0.4/include/ptwriteintrin.h:
 
-C:/mingw64/include/c++/12.1.0/bits/predefined_ops.h:
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double3x4_precision.hpp:
 
 C:/mingw64/include/c++/12.1.0/bits/refwrap.h:
 
@@ -4707,6 +4675,10 @@ C:/mingw64/include/c++/12.1.0/ext/atomicity.h:
 C:/mingw64/x86_64-w64-mingw32/include/math.h:
 
 C:/mingw64/lib/clang/14.0.4/include/clwbintrin.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/unknwn.h:
+
+C:/mingw64/lib/clang/14.0.4/include/waitpkgintrin.h:
 
 C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/gthr.h:
 
@@ -4736,17 +4708,15 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/integer.hpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/limits.h:
 
-C:/mingw64/include/c++/12.1.0/bits/hash_bytes.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_half.hpp:
-
 C:/mingw64/x86_64-w64-mingw32/include/winsvc.h:
-
-C:/mingw64/lib/clang/14.0.4/include/serializeintrin.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/signal.h:
 
-C:/mingw64/include/c++/12.1.0/pstl/glue_memory_defs.h:
+C:/mingw64/lib/clang/14.0.4/include/serializeintrin.h:
+
+C:/mingw64/include/c++/12.1.0/bits/hash_bytes.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_half.hpp:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double4x3_precision.hpp:
 
@@ -4790,6 +4760,8 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/scalar_int_siz
 
 C:/mingw64/include/c++/12.1.0/bits/functional_hash.h:
 
+C:/mingw64/lib/clang/14.0.4/include/avx512vlvp2intersectintrin.h:
+
 C:/mingw64/x86_64-w64-mingw32/include/winerror.h:
 
 C:/mingw64/include/c++/12.1.0/bits/ranges_base.h:
@@ -4804,21 +4776,19 @@ C:/mingw64/include/c++/12.1.0/ext/string_conversions.h:
 
 C:/mingw64/include/c++/12.1.0/cstdlib:
 
-C:/mingw64/include/c++/12.1.0/bits/shared_ptr.h:
-
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_clip_space.inl:
 
 C:/mingw64/x86_64-w64-mingw32/include/stdlib.h:
 
 C:/mingw64/include/c++/12.1.0/stdlib.h:
 
-C:/mingw64/x86_64-w64-mingw32/include/excpt.h:
-
 C:/mingw64/x86_64-w64-mingw32/include/malloc.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_bool2.hpp:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/quaternion_float_precision.hpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/excpt.h:
 
 C:/mingw64/lib/clang/14.0.4/include/mm_malloc.h:
 
@@ -4840,9 +4810,9 @@ C:/mingw64/include/c++/12.1.0/bits/basic_string.tcc:
 
 C:/mingw64/include/c++/12.1.0/vector:
 
-C:/mingw64/x86_64-w64-mingw32/include/windows.h:
-
 C:/mingw64/include/c++/12.1.0/bits/stl_uninitialized.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/windows.h:
 
 C:/mingw64/lib/clang/14.0.4/include/stdarg.h:
 
@@ -4878,23 +4848,29 @@ C:/mingw64/include/c++/12.1.0/exception:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/mat4x2.hpp:
 
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float4x4.hpp:
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GL/glew.h:
 
-C:/mingw64/include/c++/12.1.0/memory:
+C:/mingw64/lib/clang/14.0.4/include/inttypes.h:
 
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes/sceneFractal.hpp:
+C:/mingw64/include/c++/12.1.0/cwctype:
 
-C:/mingw64/include/c++/12.1.0/bits/stl_tempbuf.h:
+C:/mingw64/lib/clang/14.0.4/include/uintrintrin.h:
 
-C:/mingw64/include/c++/12.1.0/bits/stl_raw_storage_iter.h:
+C:/mingw64/lib/clang/14.0.4/include/avx512ifmavlintrin.h:
 
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_exponential.inl:
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double4x2_precision.hpp:
 
-C:/mingw64/include/c++/12.1.0/bits/align.h:
+C:/mingw64/x86_64-w64-mingw32/include/inttypes.h:
 
-C:/mingw64/include/c++/12.1.0/bit:
+C:/mingw64/include/c++/12.1.0/streambuf:
 
-C:/mingw64/include/c++/12.1.0/bits/unique_ptr.h:
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double2x4.hpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h:
+
+C:/mingw64/include/c++/12.1.0/iostream:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/exponential.hpp:
 
 C:/mingw64/include/c++/12.1.0/tr1/beta_function.tcc:
 
@@ -4920,8 +4896,6 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double3
 
 C:/mingw64/include/c++/12.1.0/typeinfo:
 
-C:/mingw64/include/c++/12.1.0/backward/auto_ptr.h:
-
 C:/mingw64/include/c++/12.1.0/bits/nested_exception.h:
 
 C:/mingw64/include/c++/12.1.0/bits/locale_classes.h:
@@ -4936,23 +4910,9 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_float3_
 
 C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/error_constants.h:
 
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double4x2_precision.hpp:
-
-C:/mingw64/include/c++/12.1.0/streambuf:
-
-C:/mingw64/x86_64-w64-mingw32/include/inttypes.h:
-
 C:/mingw64/include/c++/12.1.0/bits/streambuf.tcc:
 
 C:/mingw64/include/c++/12.1.0/bits/basic_ios.h:
-
-C:/mingw64/include/c++/12.1.0/cwctype:
-
-C:/mingw64/lib/clang/14.0.4/include/inttypes.h:
-
-C:/mingw64/lib/clang/14.0.4/include/uintrintrin.h:
-
-C:/mingw64/lib/clang/14.0.4/include/avx512ifmavlintrin.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/wctype.h:
 
@@ -4965,70 +4925,6 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_matrix
 C:/mingw64/include/c++/12.1.0/bits/locale_facets.tcc:
 
 C:/mingw64/include/c++/12.1.0/bits/basic_ios.tcc:
-
-C:/mingw64/include/c++/12.1.0/bits/shared_ptr_base.h:
-
-C:/mingw64/include/c++/12.1.0/bits/allocated_ptr.h:
-
-C:/mingw64/lib/clang/14.0.4/include/avx512vlbitalgintrin.h:
-
-C:/mingw64/lib/clang/14.0.4/include/pkuintrin.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double3x4.hpp:
-
-C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_float4.hpp:
-
-C:/mingw64/include/c++/12.1.0/ext/concurrence.h:
-
-C:/mingw64/lib/clang/14.0.4/include/avx512vpopcntdqvlintrin.h:
-
-C:/mingw64/include/c++/12.1.0/cfloat:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtc/quaternion.inl:
-
-C:/mingw64/include/c++/12.1.0/bits/shared_ptr_atomic.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_mat3x4.hpp:
-
-C:/mingw64/x86_64-w64-mingw32/include/sec_api/stralign_s.h:
-
-C:/mingw64/include/c++/12.1.0/bits/atomic_base.h:
-
-C:/mingw64/include/c++/12.1.0/bits/atomic_lockfree_defines.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_uint1_sized.hpp:
-
-C:/mingw64/include/c++/12.1.0/bits/atomic_wait.h:
-
-C:/mingw64/lib/clang/14.0.4/include/emmintrin.h:
-
-C:/mingw64/include/c++/12.1.0/bits/std_mutex.h:
-
-C:/mingw64/include/c++/12.1.0/bits/ranges_uninitialized.h:
-
-C:/mingw64/include/c++/12.1.0/bits/ranges_algobase.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_float.hpp:
-
-C:/mingw64/include/c++/12.1.0/bits/uses_allocator_args.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float2x3_precision.hpp:
-
-C:/mingw64/include/c++/12.1.0/pstl/execution_defs.h:
-
-C:/mingw64/lib/clang/14.0.4/include/avx512vpopcntdqintrin.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GL/glew.h:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double2x4.hpp:
-
-C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h:
-
-C:/mingw64/include/c++/12.1.0/iostream:
-
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/exponential.hpp:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui.h:
 
@@ -5058,15 +4954,25 @@ C:/mingw64/include/c++/12.1.0/tr1/poly_laguerre.tcc:
 
 C:/mingw64/include/c++/12.1.0/bits/uniform_int_dist.h:
 
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/event.hpp:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/event.cpp:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/mat2x4.hpp:
+
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.cpp:
 
-C:/mingw64/lib/clang/14.0.4/include/movdirintrin.h:
-
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp:
+
+C:/mingw64/lib/clang/14.0.4/include/movdirintrin.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_vector_relational.inl:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/main.cpp:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float4x4.hpp:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes/sceneFractal.hpp:
 
 C:/mingw64/lib/clang/14.0.4/include/avx512bwintrin.h:
 
@@ -5142,6 +5048,10 @@ C:/mingw64/include/c++/12.1.0/climits:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/stb_image/stb_image.h:
 
+C:/mingw64/lib/clang/14.0.4/include/avx512vpopcntdqvlintrin.h:
+
+C:/mingw64/include/c++/12.1.0/cfloat:
+
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/fwd.hpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/winreg.h:
@@ -5208,6 +5118,10 @@ C:/mingw64/include/c++/12.1.0/unordered_map:
 
 C:/mingw64/lib/clang/14.0.4/include/popcntintrin.h:
 
+C:/mingw64/include/c++/12.1.0/ext/aligned_buffer.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_float4.hpp:
+
 C:/mingw64/include/c++/12.1.0/bits/hashtable.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double2x3_precision.hpp:
@@ -5241,6 +5155,8 @@ C:/mingw64/lib/clang/14.0.4/include/avx512vlcdintrin.h:
 C:/mingw64/include/c++/12.1.0/bits/algorithmfwd.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_uint4_sized.hpp:
+
+C:/mingw64/include/c++/12.1.0/bits/stl_tempbuf.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/_vectorize.hpp:
 
@@ -5304,7 +5220,7 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_mat2x3
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float2x3.hpp:
 
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/mat2x4.hpp:
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float2x3_precision.hpp:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double2x4_precision.hpp:
 
@@ -5350,13 +5266,23 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float3x
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/mat3x4.hpp:
 
+C:/mingw64/lib/clang/14.0.4/include/avx512vlbitalgintrin.h:
+
+C:/mingw64/lib/clang/14.0.4/include/pkuintrin.h:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double3x4.hpp:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtc/quaternion.inl:
+
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_mat3x4.hpp:
+
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float3x4.hpp:
 
-C:/mingw64/lib/clang/14.0.4/include/xsavesintrin.h:
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float3x4_precision.hpp:
 
 C:/mingw64/lib/clang/14.0.4/include/avx512vp2intersectintrin.h:
 
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float3x4_precision.hpp:
+C:/mingw64/lib/clang/14.0.4/include/xsavesintrin.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double4x2.hpp:
 
@@ -5384,9 +5310,13 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_geomet
 
 C:/mingw64/lib/clang/14.0.4/include/rdseedintrin.h:
 
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/func_exponential.inl:
+
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float4x4_precision.hpp:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_double2x2_precision.hpp:
+
+C:/mingw64/lib/clang/14.0.4/include/amxintrin.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/matrix_float2x2.hpp:
 
@@ -5452,6 +5382,8 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_relatio
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_relational.inl:
 
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/detail/type_float.hpp:
+
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/quaternion_common.hpp:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/quaternion_geometric.hpp:
@@ -5468,9 +5400,9 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/quaternion_tra
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/gtc/epsilon.hpp:
 
-C:/mingw64/lib/clang/14.0.4/include/enqcmdintrin.h:
-
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_bool1_precision.hpp:
+
+C:/mingw64/lib/clang/14.0.4/include/enqcmdintrin.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_float1.hpp:
 
@@ -5488,6 +5420,8 @@ C:/mingw64/x86_64-w64-mingw32/include/dde.h:
 
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_uint1.hpp:
 
+C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/glm/ext/vector_uint1_sized.hpp:
+
 C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imgui.cpp:
 
 C:/mingw64/lib/clang/14.0.4/include/immintrin.h:
@@ -5499,6 +5433,8 @@ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/imgui/imstb_truetype.h
 C:/mingw64/lib/clang/14.0.4/include/x86gprintrin.h:
 
 C:/mingw64/lib/clang/14.0.4/include/hresetintrin.h:
+
+C:/mingw64/lib/clang/14.0.4/include/emmintrin.h:
 
 C:/mingw64/lib/clang/14.0.4/include/smmintrin.h:
 
@@ -5519,6 +5455,8 @@ C:/mingw64/lib/clang/14.0.4/include/bmiintrin.h:
 C:/mingw64/lib/clang/14.0.4/include/fmaintrin.h:
 
 C:/mingw64/lib/clang/14.0.4/include/avx512bitalgintrin.h:
+
+C:/mingw64/lib/clang/14.0.4/include/avx512vpopcntdqintrin.h:
 
 C:/mingw64/lib/clang/14.0.4/include/avx512vlvnniintrin.h:
 
@@ -5548,21 +5486,11 @@ C:/mingw64/lib/clang/14.0.4/include/wbnoinvdintrin.h:
 
 C:/mingw64/lib/clang/14.0.4/include/cldemoteintrin.h:
 
-C:/mingw64/x86_64-w64-mingw32/include/unknwn.h:
-
-C:/mingw64/lib/clang/14.0.4/include/waitpkgintrin.h:
-
 C:/mingw64/lib/clang/14.0.4/include/sgxintrin.h:
-
-C:/mingw64/lib/clang/14.0.4/include/invpcidintrin.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/jobapi.h:
 
 C:/mingw64/lib/clang/14.0.4/include/keylockerintrin.h:
-
-C:/mingw64/lib/clang/14.0.4/include/amxintrin.h:
-
-C:/mingw64/lib/clang/14.0.4/include/avx512vlvp2intersectintrin.h:
 
 C:/mingw64/lib/clang/14.0.4/include/tsxldtrkintrin.h:
 
@@ -5687,6 +5615,8 @@ C:/mingw64/x86_64-w64-mingw32/include/wnnc.h:
 C:/mingw64/x86_64-w64-mingw32/include/virtdisk.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/stralign.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/sec_api/stralign_s.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/shellapi.h:
 

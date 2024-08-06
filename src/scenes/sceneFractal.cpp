@@ -6,10 +6,16 @@
 
 #include"util.hpp"
 
-    
-SceneFractal::SceneFractal() 
-    : uZoom(1.0f), uPan(0.0f, 0.0f), maxIterations(500)
+   
+SceneFractal::~SceneFractal() 
+{}
+
+void SceneFractal::init()
 {
+    uZoom = 1.0f;
+    uPan = {0.0f, 0.0f};
+    maxIterations = 500;
+
     m_shader = Shader{"./resources/shaders/fractal.shader"};
 
     std::vector<float> positions = {
@@ -44,11 +50,26 @@ SceneFractal::SceneFractal()
     m_va.addBuffer(vb, layout);
 }
 
-SceneFractal::~SceneFractal() 
-{}
-
-void SceneFractal::onUpdate(GLFWwindow* wn) 
+void SceneFractal::onUpdate(const RenderWindow& wn) 
 {    
+    if( wn.isKeyPressed(GLFW_KEY_UP) )
+        uZoom = uZoom * 0.99;
+
+    if( wn.isKeyPressed(GLFW_KEY_DOWN) )
+        uZoom = uZoom / 0.99;
+
+    if( wn.isKeyPressed(GLFW_KEY_W) )
+        uPan.y = uPan.y - 0.01 * uZoom;
+
+    if( wn.isKeyPressed(GLFW_KEY_S) )
+        uPan.y = uPan.y + 0.01 * uZoom;
+
+    if( wn.isKeyPressed(GLFW_KEY_D) )
+        uPan.x = uPan.x - 0.01 * uZoom;
+
+    if( wn.isKeyPressed(GLFW_KEY_A) )
+        uPan.x = uPan.x + 0.01 * uZoom;
+
     m_shader.bind();
     m_shader.setUniform1f("uZoom", uZoom);
     m_shader.setUniform2f("uPan", uPan.x, uPan.y);
@@ -56,7 +77,7 @@ void SceneFractal::onUpdate(GLFWwindow* wn)
     
 }
 
-void SceneFractal::onRender(GLFWwindow* wn) 
+void SceneFractal::onRender(const RenderWindow& wn) 
 {
     m_shader.bind();
     m_va.bind();

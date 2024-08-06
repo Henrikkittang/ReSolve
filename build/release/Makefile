@@ -152,6 +152,30 @@ src/application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/application.cpp.s
 .PHONY : src/application.cpp.s
 
+src/event.obj: src/event.cpp.obj
+.PHONY : src/event.obj
+
+# target to build an object file
+src/event.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/event.cpp.obj
+.PHONY : src/event.cpp.obj
+
+src/event.i: src/event.cpp.i
+.PHONY : src/event.i
+
+# target to preprocess a source file
+src/event.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/event.cpp.i
+.PHONY : src/event.cpp.i
+
+src/event.s: src/event.cpp.s
+.PHONY : src/event.s
+
+# target to generate assembly for a file
+src/event.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/event.cpp.s
+.PHONY : src/event.cpp.s
+
 src/indexBuffer.obj: src/indexBuffer.cpp.obj
 .PHONY : src/indexBuffer.obj
 
@@ -644,6 +668,9 @@ help:
 	@echo ... src/application.obj
 	@echo ... src/application.i
 	@echo ... src/application.s
+	@echo ... src/event.obj
+	@echo ... src/event.i
+	@echo ... src/event.s
 	@echo ... src/indexBuffer.obj
 	@echo ... src/indexBuffer.i
 	@echo ... src/indexBuffer.s

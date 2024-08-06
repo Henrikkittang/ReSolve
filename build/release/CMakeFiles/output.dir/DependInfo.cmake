@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/application.cpp" "CMakeFiles/output.dir/src/application.cpp.obj" "gcc" "CMakeFiles/output.dir/src/application.cpp.obj.d"
+  "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/event.cpp" "CMakeFiles/output.dir/src/event.cpp.obj" "gcc" "CMakeFiles/output.dir/src/event.cpp.obj.d"
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.cpp" "CMakeFiles/output.dir/src/indexBuffer.cpp.obj" "gcc" "CMakeFiles/output.dir/src/indexBuffer.cpp.obj.d"
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/main.cpp" "CMakeFiles/output.dir/src/main.cpp.obj" "gcc" "CMakeFiles/output.dir/src/main.cpp.obj.d"
   "C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/renderWindow.cpp" "CMakeFiles/output.dir/src/renderWindow.cpp.obj" "gcc" "CMakeFiles/output.dir/src/renderWindow.cpp.obj.d"

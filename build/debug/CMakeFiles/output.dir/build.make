@@ -83,11 +83,26 @@ CMakeFiles/output.dir/src/application.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/src/application.cpp.s"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\application.cpp -o CMakeFiles\output.dir\src\application.cpp.s
 
+CMakeFiles/output.dir/src/event.cpp.obj: CMakeFiles/output.dir/flags.make
+CMakeFiles/output.dir/src/event.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
+CMakeFiles/output.dir/src/event.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/event.cpp
+CMakeFiles/output.dir/src/event.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/output.dir/src/event.cpp.obj"
+	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/event.cpp.obj -MF CMakeFiles\output.dir\src\event.cpp.obj.d -o CMakeFiles\output.dir\src\event.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\event.cpp
+
+CMakeFiles/output.dir/src/event.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/src/event.cpp.i"
+	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\event.cpp > CMakeFiles\output.dir\src\event.cpp.i
+
+CMakeFiles/output.dir/src/event.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/src/event.cpp.s"
+	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\event.cpp -o CMakeFiles\output.dir\src\event.cpp.s
+
 CMakeFiles/output.dir/src/indexBuffer.cpp.obj: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/src/indexBuffer.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/src/indexBuffer.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.cpp
 CMakeFiles/output.dir/src/indexBuffer.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/output.dir/src/indexBuffer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/output.dir/src/indexBuffer.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/indexBuffer.cpp.obj -MF CMakeFiles\output.dir\src\indexBuffer.cpp.obj.d -o CMakeFiles\output.dir\src\indexBuffer.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\indexBuffer.cpp
 
 CMakeFiles/output.dir/src/indexBuffer.cpp.i: cmake_force
@@ -102,7 +117,7 @@ CMakeFiles/output.dir/src/main.cpp.obj: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/src/main.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/src/main.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/main.cpp
 CMakeFiles/output.dir/src/main.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/output.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/output.dir/src/main.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/main.cpp.obj -MF CMakeFiles\output.dir\src\main.cpp.obj.d -o CMakeFiles\output.dir\src\main.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\main.cpp
 
 CMakeFiles/output.dir/src/main.cpp.i: cmake_force
@@ -117,7 +132,7 @@ CMakeFiles/output.dir/src/renderWindow.cpp.obj: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/src/renderWindow.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/src/renderWindow.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/renderWindow.cpp
 CMakeFiles/output.dir/src/renderWindow.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/output.dir/src/renderWindow.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/output.dir/src/renderWindow.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/renderWindow.cpp.obj -MF CMakeFiles\output.dir\src\renderWindow.cpp.obj.d -o CMakeFiles\output.dir\src\renderWindow.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\renderWindow.cpp
 
 CMakeFiles/output.dir/src/renderWindow.cpp.i: cmake_force
@@ -128,11 +143,26 @@ CMakeFiles/output.dir/src/renderWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/src/renderWindow.cpp.s"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\renderWindow.cpp -o CMakeFiles\output.dir\src\renderWindow.cpp.s
 
+CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj: CMakeFiles/output.dir/flags.make
+CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
+CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes/sceneClearColor.cpp
+CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj"
+	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj -MF CMakeFiles\output.dir\src\scenes\sceneClearColor.cpp.obj.d -o CMakeFiles\output.dir\src\scenes\sceneClearColor.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\scenes\sceneClearColor.cpp
+
+CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.i"
+	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\scenes\sceneClearColor.cpp > CMakeFiles\output.dir\src\scenes\sceneClearColor.cpp.i
+
+CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.s"
+	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\scenes\sceneClearColor.cpp -o CMakeFiles\output.dir\src\scenes\sceneClearColor.cpp.s
+
 CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes/sceneFractal.cpp
 CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj -MF CMakeFiles\output.dir\src\scenes\sceneFractal.cpp.obj.d -o CMakeFiles\output.dir\src\scenes\sceneFractal.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\scenes\sceneFractal.cpp
 
 CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.i: cmake_force
@@ -147,7 +177,7 @@ CMakeFiles/output.dir/src/shader.cpp.obj: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/src/shader.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
 CMakeFiles/output.dir/src/shader.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.cpp
 CMakeFiles/output.dir/src/shader.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/output.dir/src/shader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/output.dir/src/shader.cpp.obj"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/shader.cpp.obj -MF CMakeFiles\output.dir\src\shader.cpp.obj.d -o CMakeFiles\output.dir\src\shader.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\shader.cpp
 
 CMakeFiles/output.dir/src/shader.cpp.i: cmake_force
@@ -157,36 +187,6 @@ CMakeFiles/output.dir/src/shader.cpp.i: cmake_force
 CMakeFiles/output.dir/src/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/src/shader.cpp.s"
 	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\shader.cpp -o CMakeFiles\output.dir\src\shader.cpp.s
-
-CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj: CMakeFiles/output.dir/flags.make
-CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
-CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/testClearColor.cpp
-CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj"
-	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj -MF CMakeFiles\output.dir\src\tests\testClearColor.cpp.obj.d -o CMakeFiles\output.dir\src\tests\testClearColor.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\tests\testClearColor.cpp
-
-CMakeFiles/output.dir/src/tests/testClearColor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/src/tests/testClearColor.cpp.i"
-	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\tests\testClearColor.cpp > CMakeFiles\output.dir\src\tests\testClearColor.cpp.i
-
-CMakeFiles/output.dir/src/tests/testClearColor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/src/tests/testClearColor.cpp.s"
-	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\tests\testClearColor.cpp -o CMakeFiles\output.dir\src\tests\testClearColor.cpp.s
-
-CMakeFiles/output.dir/src/tests/testFractal.cpp.obj: CMakeFiles/output.dir/flags.make
-CMakeFiles/output.dir/src/tests/testFractal.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
-CMakeFiles/output.dir/src/tests/testFractal.cpp.obj: C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/tests/testFractal.cpp
-CMakeFiles/output.dir/src/tests/testFractal.cpp.obj: CMakeFiles/output.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/output.dir/src/tests/testFractal.cpp.obj"
-	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/output.dir/src/tests/testFractal.cpp.obj -MF CMakeFiles\output.dir\src\tests\testFractal.cpp.obj.d -o CMakeFiles\output.dir\src\tests\testFractal.cpp.obj -c C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\tests\testFractal.cpp
-
-CMakeFiles/output.dir/src/tests/testFractal.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/output.dir/src/tests/testFractal.cpp.i"
-	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\tests\testFractal.cpp > CMakeFiles\output.dir\src\tests\testFractal.cpp.i
-
-CMakeFiles/output.dir/src/tests/testFractal.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/output.dir/src/tests/testFractal.cpp.s"
-	C:\mingw64\bin\clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\tests\testFractal.cpp -o CMakeFiles\output.dir\src\tests\testFractal.cpp.s
 
 CMakeFiles/output.dir/src/texture.cpp.obj: CMakeFiles/output.dir/flags.make
 CMakeFiles/output.dir/src/texture.cpp.obj: CMakeFiles/output.dir/includes_CXX.rsp
@@ -401,13 +401,13 @@ CMakeFiles/output.dir/vendor/stb_image/stb_image.cpp.s: cmake_force
 # Object files for target output
 output_OBJECTS = \
 "CMakeFiles/output.dir/src/application.cpp.obj" \
+"CMakeFiles/output.dir/src/event.cpp.obj" \
 "CMakeFiles/output.dir/src/indexBuffer.cpp.obj" \
 "CMakeFiles/output.dir/src/main.cpp.obj" \
 "CMakeFiles/output.dir/src/renderWindow.cpp.obj" \
+"CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj" \
 "CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj" \
 "CMakeFiles/output.dir/src/shader.cpp.obj" \
-"CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj" \
-"CMakeFiles/output.dir/src/tests/testFractal.cpp.obj" \
 "CMakeFiles/output.dir/src/texture.cpp.obj" \
 "CMakeFiles/output.dir/src/util.cpp.obj" \
 "CMakeFiles/output.dir/src/vertexArray.cpp.obj" \
@@ -427,13 +427,13 @@ output_OBJECTS = \
 output_EXTERNAL_OBJECTS =
 
 bin/output.exe: CMakeFiles/output.dir/src/application.cpp.obj
+bin/output.exe: CMakeFiles/output.dir/src/event.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/indexBuffer.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/main.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/renderWindow.cpp.obj
+bin/output.exe: CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/shader.cpp.obj
-bin/output.exe: CMakeFiles/output.dir/src/tests/testClearColor.cpp.obj
-bin/output.exe: CMakeFiles/output.dir/src/tests/testFractal.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/texture.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/util.cpp.obj
 bin/output.exe: CMakeFiles/output.dir/src/vertexArray.cpp.obj
