@@ -10,9 +10,12 @@
 #include"util.hpp"
 #include"scene.hpp"
 #include"event.hpp"
+#include"random.hpp"
 
 Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std::string& title)
 {
+    Random::initialize();
+
     if (!glfwInit())
     {
         std::cout << "Failed to initialize glfw \n";

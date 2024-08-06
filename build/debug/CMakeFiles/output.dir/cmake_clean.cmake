@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/output.dir/src/indexBuffer.cpp.obj.d"
   "CMakeFiles/output.dir/src/main.cpp.obj"
   "CMakeFiles/output.dir/src/main.cpp.obj.d"
+  "CMakeFiles/output.dir/src/random.cpp.obj"
+  "CMakeFiles/output.dir/src/random.cpp.obj.d"
   "CMakeFiles/output.dir/src/renderWindow.cpp.obj"
   "CMakeFiles/output.dir/src/renderWindow.cpp.obj.d"
   "CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj"

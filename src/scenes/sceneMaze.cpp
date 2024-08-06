@@ -1,21 +1,34 @@
 #include"sceneMaze.hpp"
 
+#include<iostream>
+
 #include <glm/gtc/matrix_transform.hpp>
 
+#include"random.hpp"
 
 Maze::~Maze()
 {}
 
 void Maze::init() 
 {
-    m_width  = 960;
-    m_height = 540;
 
-    m_mazeData = std::vector<int>( m_width*m_height, 0 );
+	srand((int)time(0));
 
-    m_open.emplace( rand_range(0, m_width), rand_range(0, m_height) );
+    m_scl = 5;
 
+    m_width  = 960 / m_scl;
+    m_height = 540 / m_scl;
+
+
+    m_mazeData = std::vector<int>( m_width*m_height, 1 );
+
+    glm::ivec2 position = { Random::getInt(0, m_width), Random::getInt(0, m_height) };
+    while( position.x % 2 == 0 || position.y % 2 == 0 )
+        position = { Random::getInt(0, m_width), Random::getInt(0, m_height) };
+    m_open.push( position );
+    
     m_shader = Shader{"./resources/shaders/red.shader"};
+
 }
 
 void Maze::onUpdate( const RenderWindow& wn ) 
@@ -45,52 +58,38 @@ void Maze::onUpdate( const RenderWindow& wn )
 
 void Maze::onRender( const RenderWindow& wn) 
 {
-    // Model matrix: Identity matrix (no transformation)
-    glm::mat4 model = glm::mat4(1.0f);
+    glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
 
-    // View matrix: Camera at (0, 0, 3), looking at the origin, up is positive Y axis
-    glm::mat4 view = glm::lookAt(
-        glm::vec3(0.0f, 0.0f, 3.0f), // Camera position
-        glm::vec3(0.0f, 0.0f, 0.0f), // Look at point
-        glm::vec3(0.0f, 1.0f, 0.0f)  // Up vector
-    );
+    glm::mat4 ident = glm::mat4(1.0f);
+    glm::vec3 trvec = glm::vec3(0, 0, 0);
+    glm::mat4 view = glm::translate(ident, trvec);
+    glm::mat4 proj = glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f);
+    glm::mat4 mvp = proj * view * model;
 
-    // Projection matrix: Perspective projection
-    glm::mat4 projection = glm::perspective(
-        glm::radians(45.0f), // Field of view in radians
-        800.0f / 600.0f,     // Aspect ratio
-        0.1f,                // Near clipping plane
-        100.0f               // Far clipping plane
-    );
+    m_shader.bind();
+    m_shader.setUniformMat4f("uMVP", mvp);
 
-    // Combine the matrices to create the MVP matrix
-    glm::mat4 mvp = projection * view * model;
-
-
-    std::vector<int> vertecies;
+    std::vector<float> vertecies;
     for(size_t i = 0; i < m_mazeData.size(); i++)
     {
         glm::ivec2 positon = { i % m_width, i / m_width };
 
-        if( m_mazeData[positon.y*m_width + positon.x] )
+        if( m_mazeData[positon.y*m_width + positon.x] == 0 )
             continue;
 
-        vertecies.push_back( positon.x );
-        vertecies.push_back( positon.y );
+        vertecies.push_back( positon.x*m_scl );
+        vertecies.push_back( positon.y*m_scl );
 
-        vertecies.push_back( positon.x + 1);
-        vertecies.push_back( positon.y );
+        vertecies.push_back( positon.x*m_scl + m_scl);
+        vertecies.push_back( positon.y*m_scl );
 
-        vertecies.push_back( positon.x + 1 );
-        vertecies.push_back( positon.y + 1 );
+        vertecies.push_back( positon.x*m_scl + m_scl );
+        vertecies.push_back( positon.y*m_scl + m_scl );
 
-        vertecies.push_back( positon.x );
-        vertecies.push_back( positon.y  + 1);
+        vertecies.push_back( positon.x*m_scl );
+        vertecies.push_back( positon.y*m_scl  + m_scl);
     }
-
-
-
-
+    
     size_t vertex_count = vertecies.size() / 2; // 2 coordinates per vertex
     size_t quad_count = vertex_count / 4; // 4 vertices per quad
     size_t count = quad_count * 6; // 6 indices per quad
@@ -121,10 +120,6 @@ void Maze::onRender( const RenderWindow& wn)
 
 void Maze::onImGuiRender() {}
 
-int Maze::rand_range(int start, int end)
-{
-    return (std::rand() % (int)(end - start)) + start;
-}
 
 void Maze::connect_nodes(glm::ivec2 curPos, glm::ivec2 nodePos)
 {

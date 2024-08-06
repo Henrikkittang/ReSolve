@@ -18,12 +18,11 @@ public:
     void onImGuiRender() override;
 
 private:
-    int rand_range(int start, int end);
     void connect_nodes(glm::ivec2 cur_pos, glm::ivec2 node_pos);
     std::vector<glm::ivec2> find_frontiers(glm::ivec2 pos, int state);
 
 private:
-    uint32_t               m_width, m_height;
+    uint32_t               m_width, m_height, m_scl;
     std::vector<int>       m_mazeData;
     std::stack<glm::ivec2> m_open;
     Shader                 m_shader;

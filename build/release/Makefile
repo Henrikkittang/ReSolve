@@ -224,6 +224,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/random.obj: src/random.cpp.obj
+.PHONY : src/random.obj
+
+# target to build an object file
+src/random.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/random.cpp.obj
+.PHONY : src/random.cpp.obj
+
+src/random.i: src/random.cpp.i
+.PHONY : src/random.i
+
+# target to preprocess a source file
+src/random.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/random.cpp.i
+.PHONY : src/random.cpp.i
+
+src/random.s: src/random.cpp.s
+.PHONY : src/random.s
+
+# target to generate assembly for a file
+src/random.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/random.cpp.s
+.PHONY : src/random.cpp.s
+
 src/renderWindow.obj: src/renderWindow.cpp.obj
 .PHONY : src/renderWindow.obj
 
@@ -295,6 +319,30 @@ src/scenes/sceneFractal.s: src/scenes/sceneFractal.cpp.s
 src/scenes/sceneFractal.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.s
 .PHONY : src/scenes/sceneFractal.cpp.s
+
+src/scenes/sceneMaze.obj: src/scenes/sceneMaze.cpp.obj
+.PHONY : src/scenes/sceneMaze.obj
+
+# target to build an object file
+src/scenes/sceneMaze.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scenes/sceneMaze.cpp.obj
+.PHONY : src/scenes/sceneMaze.cpp.obj
+
+src/scenes/sceneMaze.i: src/scenes/sceneMaze.cpp.i
+.PHONY : src/scenes/sceneMaze.i
+
+# target to preprocess a source file
+src/scenes/sceneMaze.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scenes/sceneMaze.cpp.i
+.PHONY : src/scenes/sceneMaze.cpp.i
+
+src/scenes/sceneMaze.s: src/scenes/sceneMaze.cpp.s
+.PHONY : src/scenes/sceneMaze.s
+
+# target to generate assembly for a file
+src/scenes/sceneMaze.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\output.dir\build.make CMakeFiles/output.dir/src/scenes/sceneMaze.cpp.s
+.PHONY : src/scenes/sceneMaze.cpp.s
 
 src/shader.obj: src/shader.cpp.obj
 .PHONY : src/shader.obj
@@ -677,6 +725,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/random.obj
+	@echo ... src/random.i
+	@echo ... src/random.s
 	@echo ... src/renderWindow.obj
 	@echo ... src/renderWindow.i
 	@echo ... src/renderWindow.s
@@ -686,6 +737,9 @@ help:
 	@echo ... src/scenes/sceneFractal.obj
 	@echo ... src/scenes/sceneFractal.i
 	@echo ... src/scenes/sceneFractal.s
+	@echo ... src/scenes/sceneMaze.obj
+	@echo ... src/scenes/sceneMaze.i
+	@echo ... src/scenes/sceneMaze.s
 	@echo ... src/shader.obj
 	@echo ... src/shader.i
 	@echo ... src/shader.s
