@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/output.dir/src/scenes/sceneClearColor.cpp.obj.d"
   "CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj"
   "CMakeFiles/output.dir/src/scenes/sceneFractal.cpp.obj.d"
+  "CMakeFiles/output.dir/src/scenes/sceneMaze.cpp.obj"
+  "CMakeFiles/output.dir/src/scenes/sceneMaze.cpp.obj.d"
   "CMakeFiles/output.dir/src/shader.cpp.obj"
   "CMakeFiles/output.dir/src/shader.cpp.obj.d"
   "CMakeFiles/output.dir/src/texture.cpp.obj"

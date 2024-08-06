@@ -31,7 +31,6 @@ void SceneFractal::init()
 
     std::vector<uint32_t> indices(count);
 
-
     for(size_t i = 0, vertex_index = 0; i < count; i += 6, vertex_index += 4)
     {
         indices[i + 0] = vertex_index + 0;

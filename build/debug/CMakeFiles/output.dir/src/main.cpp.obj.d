@@ -360,4 +360,5 @@ CMakeFiles/output.dir/src/main.cpp.obj: \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/shader.hpp \
   C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes/sceneFractal.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes/sceneClearColor.hpp
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes/sceneClearColor.hpp \
+  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/scenes/sceneMaze.hpp
