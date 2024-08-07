@@ -80,14 +80,14 @@ void Application::run()
 
         scene->init();
         runScene( scene );
+        
+        delete scene;
     }
 }
 
 
 void Application::addScene(Scene* scene)
 {
-    // This function may be better written if the scene type is a templated argument
-    // This way the ownership would be better defined. Another solution is a unique_ptr
     s_scenes.push( scene );
 }
 

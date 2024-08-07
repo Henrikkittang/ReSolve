@@ -10,7 +10,7 @@ int main()
 {    
     Application app{960, 540, "Hello world"};
     app.ImGuiInit();
-
+    
     app.addScene(new Maze);
     app.run();    
 }

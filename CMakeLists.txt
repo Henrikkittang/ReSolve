@@ -37,10 +37,6 @@ set(GLEW_LIBS glew32)
 
 # Get all .cpp files in the source directory
 file(GLOB_RECURSE SOURCES   "src/*.cpp")
-file(GLOB_RECURSE TESTS     "src/tests/*.cpp")
-file(GLOB_RECURSE SCENES    "src/scenes/*.cpp")
-file(GLOB_RECURSE GRPAPHICS "src/graphics/*.cpp")
-file(GLOB_RECURSE CORE      "src/core/*.cpp")
 file(GLOB_RECURSE VENDOR    "vendor/*.cpp")
 
 include_directories(
@@ -48,6 +44,7 @@ include_directories(
 	${CMAKE_SOURCE_DIR}/src/tests/ 
 	${CMAKE_SOURCE_DIR}/src/scenes/ 
 	${CMAKE_SOURCE_DIR}/src/graphics/ 
+	${CMAKE_SOURCE_DIR}/src/util/ 
 	${CMAKE_SOURCE_DIR}/src/core/ 
     ${CMAKE_SOURCE_DIR}/vendor/ 
 )
