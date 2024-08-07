@@ -1,3 +1,0 @@
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/build/debug/CMakeFiles/output.dir
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/build/debug/CMakeFiles/edit_cache.dir
-C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/build/debug/CMakeFiles/rebuild_cache.dir
