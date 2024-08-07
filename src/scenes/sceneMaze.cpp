@@ -57,17 +57,15 @@ void Maze::onUpdate( const RenderWindow& wn )
 void Maze::onRender( const RenderWindow& wn) 
 {
     glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
-
-    glm::mat4 ident = glm::mat4(1.0f);
-    glm::vec3 trvec = glm::vec3(0, 0, 0);
-    glm::mat4 view = glm::translate(ident, trvec);
-    glm::mat4 proj = glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f);
+    glm::mat4 view  = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
+    glm::mat4 proj  = glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f);
     glm::mat4 mvp = proj * view * model;
 
     m_shader.bind();
     m_shader.setUniformMat4f("uMVP", mvp);
 
     std::vector<float> vertecies;
+    vertecies.reserve( m_mazeData.size() * 8 );
     for(size_t i = 0; i < m_mazeData.size(); i++)
     {
         glm::ivec2 positon = { i % m_width, i / m_width };
@@ -88,31 +86,7 @@ void Maze::onRender( const RenderWindow& wn)
         vertecies.push_back( positon.y*m_scl  + m_scl);
     }
     
-    size_t vertex_count = vertecies.size() / 2; // 2 coordinates per vertex
-    size_t quad_count = vertex_count / 4; // 4 vertices per quad
-    size_t count = quad_count * 6; // 6 indices per quad
-
-    std::vector<uint32_t> indices(count);
-
-    for(size_t i = 0, vertex_index = 0; i < count; i += 6, vertex_index += 4)
-    {
-        indices[i + 0] = vertex_index + 0;
-        indices[i + 1] = vertex_index + 1;
-        indices[i + 2] = vertex_index + 2;
-        indices[i + 3] = vertex_index + 2;
-        indices[i + 4] = vertex_index + 3;
-        indices[i + 5] = vertex_index + 0;
-    }
-    IndexBuffer ib = { indices.data(), static_cast<uint32_t>(count) };
-
-    VertexBuffer vb = {vertecies.data(), static_cast<uint32_t>(vertecies.size() * sizeof(float))};
-    VertexBufferLayout layout; 
-    layout.push<float>(2);
-    
-    VertexArray va;
-    va.addBuffer(vb, layout);
-
-    wn.draw(va, ib, m_shader);
+    wn.draw(vertecies.data(), vertecies.size(), m_shader);
 }
 
 

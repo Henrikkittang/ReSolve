@@ -39,6 +39,36 @@ void RenderWindow::draw(const VertexArray& va, const IndexBuffer& ib, const Shad
     ib.unbind();
 }
 
+
+void RenderWindow::draw(float* vertexData, size_t size, const Shader& shader) const
+{
+    size_t vertex_count = size / 2; // 2 coordinates per vertex
+    size_t quad_count = vertex_count / 4; // 4 vertices per quad
+    size_t count = quad_count * 6; // 6 indices per quad
+
+    uint32_t* indices = new uint32_t[count];
+    for(size_t i = 0, vertex_index = 0; i < count; i += 6, vertex_index += 4)
+    {
+        indices[i + 0] = vertex_index + 0;
+        indices[i + 1] = vertex_index + 1;
+        indices[i + 2] = vertex_index + 2;
+        indices[i + 3] = vertex_index + 2;
+        indices[i + 4] = vertex_index + 3;
+        indices[i + 5] = vertex_index + 0;
+    }
+    IndexBuffer ib = { indices, static_cast<uint32_t>(count) };
+    delete[] indices;
+
+    VertexBuffer vb = {vertexData, static_cast<uint32_t>(size * sizeof(float))};
+    VertexBufferLayout layout; 
+    layout.push<float>(2);
+    
+    VertexArray va;
+    va.addBuffer(vb, layout);
+
+    draw(va, ib, shader);   
+}
+
 bool RenderWindow::windowShouldClose() const
 {
     return glfwWindowShouldClose( m_window );

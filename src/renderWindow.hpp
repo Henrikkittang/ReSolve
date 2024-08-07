@@ -24,6 +24,8 @@ public:
 
     void clear() const;
     void draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader) const;
+	void draw(float* vertexData, size_t size, const Shader& shader) const;
+
 	bool windowShouldClose() const;
 	void update();
 
