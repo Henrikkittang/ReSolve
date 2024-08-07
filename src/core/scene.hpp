@@ -1,6 +1,6 @@
 #pragma once
 #include"renderWindow.hpp"
-
+#include"camera.hpp"
 
 class Scene
 {
@@ -12,4 +12,6 @@ public:
     virtual void onUpdate( const RenderWindow& wn ) = 0;
     virtual void onRender( const RenderWindow& wn ) = 0;
     virtual void onImGuiRender() {};
+protected:
+    Camera m_camera;
 };

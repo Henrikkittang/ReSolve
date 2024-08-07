@@ -2,6 +2,8 @@
 
 #include<iostream>
 #include<stack>
+#include <thread>
+
 
 #include<imgui/imgui.h>
 #include<imgui/imgui_impl_glfw.h>
@@ -95,6 +97,8 @@ void Application::addScene(Scene* scene)
 
 void Application::runScene(Scene* scene)
 {
+    bool isParallel = false;
+
     while( !m_window.windowShouldClose() )
     {
         Event event;
@@ -112,9 +116,20 @@ void Application::runScene(Scene* scene)
             ImGui_ImplGlfw_NewFrame();
             ImGui::NewFrame();
         }
-        
-        scene->onUpdate(m_window);
-        scene->onRender(m_window);
+
+        ImGui::Checkbox("is parallel", &isParallel);
+        if(isParallel)
+        {
+            std::thread updateThread(&Scene::onUpdate, scene, std::ref(m_window));        
+            scene->onRender(m_window);
+            updateThread.join();
+        }
+        else
+        {
+            scene->onUpdate(m_window);
+            scene->onRender(m_window);
+        }
+                
         scene->onImGuiRender();
 
         if( m_isImguiActive )

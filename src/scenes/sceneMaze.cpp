@@ -2,8 +2,6 @@
 
 #include<iostream>
 
-#include <glm/gtc/matrix_transform.hpp>
-
 #include"random.hpp"
 
 Maze::~Maze()
@@ -34,6 +32,8 @@ void Maze::onUpdate( const RenderWindow& wn )
     if( m_open.empty() )
         return;
 
+    Random::initialize();
+
     glm::ivec2 currentPositon = m_open.top();
     m_mazeData[ currentPositon.y*m_width + currentPositon.x ] = 0;
 
@@ -56,10 +56,7 @@ void Maze::onUpdate( const RenderWindow& wn )
 
 void Maze::onRender( const RenderWindow& wn) 
 {
-    glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
-    glm::mat4 view  = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0));
-    glm::mat4 proj  = glm::ortho(0.0f, 960.0f, 0.0f, 540.0f, -1.0f, 1.0f);
-    glm::mat4 mvp = proj * view * model;
+    auto mvp = m_camera.getMVP();
 
     m_shader.bind();
     m_shader.setUniformMat4f("uMVP", mvp);

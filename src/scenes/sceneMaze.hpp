@@ -4,9 +4,7 @@
 
 #include<glm/glm.hpp>
 
-
 #include"scene.hpp"
-
 
 class Maze : public Scene
 {
