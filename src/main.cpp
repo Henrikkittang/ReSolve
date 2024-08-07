@@ -5,6 +5,7 @@
 #include"sceneClearColor.hpp"
 #include"sceneMaze.hpp"
 
+
 int main()
 {    
     Application app{960, 540, "Hello world"};

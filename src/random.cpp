@@ -1,23 +1,26 @@
 #include"random.hpp"
 
+
+
 void Random::initialize()
 {
     std::random_device device;
     if(device.entropy() != 0)
-        m_generator.seed(device());
+        s_generator.seed(device());
     else
-        m_generator.seed(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+        s_generator.seed(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 }
 
 double Random::getDouble(double min, double max)
 {
-    return m_distribution(m_generator) * (max - min) + min;
+    return s_distribution(s_generator) * (max - min) + min;
 }
 
 float Random::getFloat(float min, float max)
 {
     return static_cast<float>( getDouble(min, max) );
 }
+
 
 glm::vec3 Random::getFloat3(float min, float max)
 {

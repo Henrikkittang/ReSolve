@@ -12,9 +12,7 @@ Maze::~Maze()
 void Maze::init() 
 {
 
-	srand((int)time(0));
-
-    m_scl = 5;
+    m_scl = 2;
 
     m_width  = 960 / m_scl;
     m_height = 540 / m_scl;
@@ -44,7 +42,7 @@ void Maze::onUpdate( const RenderWindow& wn )
    
     if(!frontiers.empty())
     {
-        size_t idx = rand_range(0, frontiers.size());
+        size_t idx = Random::getInt(0, frontiers.size());
         glm::ivec2 newFrontier = frontiers[ idx ];
 
         connect_nodes(currentPositon, newFrontier);
@@ -144,13 +142,13 @@ std::vector<glm::ivec2> Maze::find_frontiers(glm::ivec2 pos, int state)
     if( pos.x - 2 >= 0 && m_mazeData[ pos.y*m_width + (pos.x - 2) ] )
         frontiers.emplace_back(pos.x-2, pos.y);
 
-    if( pos.x + 2 >= 0 && m_mazeData[ pos.y*m_width + (pos.x + 2) ] )
+    if( pos.x + 2 < m_width && m_mazeData[ pos.y*m_width + (pos.x + 2) ] )
         frontiers.emplace_back(pos.x+2, pos.y);
 
     if( pos.y - 2 >= 0 && m_mazeData[ (pos.y-2)*m_width + pos.x ] )
         frontiers.emplace_back(pos.x, pos.y-2);
 
-    if( pos.y + 2 >= 0 && m_mazeData[ (pos.y+2)*m_width + pos.x ] )
+    if( pos.y + 2 < m_height && m_mazeData[ (pos.y+2)*m_width + pos.x ] )
         frontiers.emplace_back(pos.x, pos.y+2);
 
 

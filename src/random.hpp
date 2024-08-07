@@ -1,13 +1,17 @@
 #pragma once
 #include<chrono>
 #include<random>
+#include<thread> 
+
 #include<glm/glm.hpp>
+
+
 
 class Random
 {
 public:
 
-    Random() = default;
+    Random() = delete;
 
     static void      initialize(); 
     static double    getDouble(double min=0.0, double max=1.0);
@@ -16,18 +20,15 @@ public:
     static int32_t   getInt(int32_t min=0, int32_t max=2);  
 
 private:   
-    inline static std::mt19937                           m_generator{};
-    inline static std::uniform_real_distribution<double> m_distribution{0, 1.0};
+  
+    inline thread_local static std::mt19937                           s_generator{};
+    inline thread_local static std::uniform_real_distribution<double> s_distribution{0.0, 1.0};
+
 };
 
 
 class Noise
 {
-
-private:
-
-    
-
 public:
 
     Noise() = delete;

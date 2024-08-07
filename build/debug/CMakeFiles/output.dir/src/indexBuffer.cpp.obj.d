@@ -1,27 +1,22 @@
 CMakeFiles/output.dir/src/indexBuffer.cpp.obj: \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.cpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/indexBuffer.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GL/glew.h \
-  C:/mingw64/lib/clang/14.0.4/include/inttypes.h \
-  C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
-  C:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
-  C:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
-  C:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
-  C:/mingw64/lib/clang/14.0.4/include/vadefs.h \
-  C:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
-  C:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
-  C:/mingw64/lib/clang/14.0.4/include/stdint.h \
-  C:/mingw64/x86_64-w64-mingw32/include/stdint.h \
-  C:/mingw64/lib/clang/14.0.4/include/stddef.h \
-  C:/mingw64/x86_64-w64-mingw32/include/GL/glu.h \
-  C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h \
-  C:/mingw64/include/c++/12.1.0/cstdint \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/c++config.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/os_defines.h \
-  C:/mingw64/include/c++/12.1.0/x86_64-w64-mingw32/bits/cpu_defines.h \
-  C:/mingw64/include/c++/12.1.0/pstl/pstl_config.h \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/src/util.hpp \
-  C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h \
-  C:/mingw64/lib/clang/14.0.4/include/__stddef_max_align_t.h
+ C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\indexBuffer.cpp \
+ C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\indexBuffer.hpp \
+ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GL/glew.h \
+ C:/msys64/mingw64/include/inttypes.h C:/msys64/mingw64/include/crtdefs.h \
+ C:/msys64/mingw64/include/corecrt.h C:/msys64/mingw64/include/_mingw.h \
+ C:/msys64/mingw64/include/_mingw_mac.h \
+ C:/msys64/mingw64/include/_mingw_secapi.h \
+ C:/msys64/mingw64/include/vadefs.h \
+ C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
+ C:/msys64/mingw64/include/stdint.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+ C:/msys64/mingw64/include/stddef.h C:/msys64/mingw64/include/GL/glu.h \
+ C:/msys64/mingw64/include/GL/gl.h \
+ C:/msys64/mingw64/include/c++/14.2.0/cstdint \
+ C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
+ C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+ C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+ C:/msys64/mingw64/include/c++/14.2.0/pstl/pstl_config.h \
+ C:\Users\henri\Jottacloud\kode\cpp\opengl\renderer\src\util.hpp \
+ C:/Users/henri/Jottacloud/kode/cpp/opengl/renderer/vendor/GLFW/glfw3.h

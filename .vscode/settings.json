@@ -90,7 +90,8 @@
         "fstream": "cpp",
         "bitset": "cpp",
         "ranges": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "coroutine": "cpp"
     },
     "files.exclude": {
         "build/": true,
