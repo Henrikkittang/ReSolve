@@ -19,10 +19,8 @@ This project contains a .vscode folder, which means that the easiest way to buil
 
 ## Project
 - Access to resources should happen via a resources manager with proper path access
-- Build in functionality for batch rendering
-- Add a system for mvp matrecies, define stuff by default in pixel space
 - Add glfw events to the event system via callback functions
 - I maybe want the applicaton class to own the raw window pointer and have a renderwindow wrapped around it and sent to the scenes without ever modifying it
-- Have a diffrent scene system based on caching and maps rather than a stack
 - Be able to send data to scenes
 - Send data through events?
+- Having destroy function for scenes, so that I can construct them directly in the map

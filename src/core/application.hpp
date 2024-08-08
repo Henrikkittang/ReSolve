@@ -17,10 +17,9 @@ public:
 
     void ImGuiInit();
     void run();
-    static void addScene(const std::string& name, const Scene& scene);
     
-
-    inline static SceneManager s_sceneManager;
+public:
+    inline static SceneManager sceneManager;
 
 private:
 
