@@ -31,11 +31,7 @@ void SceneClearColor::onRender( const RenderWindow& )
 
 void SceneClearColor::onImGuiRender() 
 {
-    if( ImGui::Button("Change scene") )
-    {
-        Application::addScene( new SceneFractal );
-        EventManager::dispatchEvent( Event::END_CURRENT_SCENE );
-    }
+    
 
     ImGui::ColorEdit4("Clear color", m_clearColor);
 }

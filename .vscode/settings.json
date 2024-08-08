@@ -91,7 +91,8 @@
         "bitset": "cpp",
         "ranges": "cpp",
         "span": "cpp",
-        "coroutine": "cpp"
+        "coroutine": "cpp",
+        "variant": "cpp"
     },
     "files.exclude": {
         "build/": true,

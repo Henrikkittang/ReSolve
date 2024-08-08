@@ -7,7 +7,7 @@
 
 #include"scene.hpp"
 #include"renderWindow.hpp"
-
+#include"sceneManager.hpp"
 
 class Application
 {
@@ -17,15 +17,16 @@ public:
 
     void ImGuiInit();
     void run();
-    static void addScene(Scene* scene);
+    static void addScene(const std::string& name, const Scene& scene);
+    
+
+    inline static SceneManager s_sceneManager;
 
 private:
-    void runScene(Scene* scene);
 
 private:
 
     RenderWindow m_window;
     bool         m_isImguiActive;
 
-    inline static std::stack<Scene*> s_scenes;
 };

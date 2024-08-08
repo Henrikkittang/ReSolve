@@ -75,30 +75,11 @@ void Application::ImGuiInit()
 
 void Application::run()
 {
-    while( !s_scenes.empty() )
-    {
-        Scene* scene = s_scenes.top();
-        s_scenes.pop();
+    auto names = s_sceneManager.getNames();
+    std::string currentSceneName = names[0];
+    s_sceneManager.setCurrentScene(currentSceneName);
 
-        scene->init();
-        runScene( scene );
-        
-        delete scene;
-    }
-}
-
-
-void Application::addScene(Scene* scene)
-{
-    s_scenes.push( scene );
-}
-
-// Private functions
-
-void Application::runScene(Scene* scene)
-{
-    bool isParallel = false;
-
+    std::vector<Scene*> scenePtr;
     while( !m_window.windowShouldClose() )
     {
         Event event;
@@ -117,20 +98,25 @@ void Application::runScene(Scene* scene)
             ImGui::NewFrame();
         }
 
-        ImGui::Checkbox("is parallel", &isParallel);
-        if(isParallel)
+        Scene* scene = s_sceneManager.getCurrentScene();
+
+        for(const std::string& name : names)
         {
-            std::thread updateThread(&Scene::onUpdate, scene, std::ref(m_window));        
-            scene->onRender(m_window);
-            updateThread.join();
+            if(ImGui::RadioButton(name.c_str(), currentSceneName == name))
+            {
+                s_sceneManager.setCurrentScene(name);
+                currentSceneName = name;
+                scenePtr.push_back(scene);
+            }
         }
-        else
+        
+        if(scene != nullptr)
         {
             scene->onUpdate(m_window);
             scene->onRender(m_window);
+            scene->onImGuiRender();
         }
                 
-        scene->onImGuiRender();
 
         if( m_isImguiActive )
         {
@@ -142,4 +128,12 @@ void Application::runScene(Scene* scene)
         m_window.update();
          
     }
+
 }
+
+
+void Application::addScene(const std::string& name, const Scene& scene)
+{
+    // s_sceneManager.addScene(name, scene);
+}
+

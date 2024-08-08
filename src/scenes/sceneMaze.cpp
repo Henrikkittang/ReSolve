@@ -4,10 +4,10 @@
 
 #include"random.hpp"
 
-Maze::~Maze()
+SceneMaze::~SceneMaze()
 {}
 
-void Maze::init() 
+void SceneMaze::init() 
 {
 
     m_scl = 2;
@@ -27,7 +27,7 @@ void Maze::init()
 
 }
 
-void Maze::onUpdate( const RenderWindow& wn ) 
+void SceneMaze::onUpdate( const RenderWindow& wn ) 
 {
     if( m_open.empty() )
         return;
@@ -54,7 +54,7 @@ void Maze::onUpdate( const RenderWindow& wn )
     }
 }
 
-void Maze::onRender( const RenderWindow& wn) 
+void SceneMaze::onRender( const RenderWindow& wn) 
 {
     auto mvp = m_camera.getMVP();
 
@@ -87,10 +87,10 @@ void Maze::onRender( const RenderWindow& wn)
 }
 
 
-void Maze::onImGuiRender() {}
+void SceneMaze::onImGuiRender() {}
 
 
-void Maze::connect_nodes(glm::ivec2 curPos, glm::ivec2 nodePos)
+void SceneMaze::connect_nodes(glm::ivec2 curPos, glm::ivec2 nodePos)
 {
     if(curPos.x > nodePos.x)
         m_mazeData[ curPos.y*m_width + (curPos.x-1) ] = 0;
@@ -105,7 +105,7 @@ void Maze::connect_nodes(glm::ivec2 curPos, glm::ivec2 nodePos)
         m_mazeData[ (curPos.y+1)*m_width + curPos.x ] = 0;
 }
 
-std::vector<glm::ivec2> Maze::find_frontiers(glm::ivec2 pos, int state)
+std::vector<glm::ivec2> SceneMaze::find_frontiers(glm::ivec2 pos, int state)
 {
     std::vector<glm::ivec2> frontiers;
     frontiers.reserve(4);

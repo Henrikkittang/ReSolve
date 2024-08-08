@@ -1,12 +1,15 @@
 #pragma once
 
-#include "scene.hpp"
+#include<iostream>
+#include "..\core\scene.hpp"
 
 
 
 class SceneClearColor : public Scene 
 {
 public:
+    
+    inline SceneClearColor() { init(); }
     ~SceneClearColor();
     void init() override;
     void onUpdate( const RenderWindow& wn) override;

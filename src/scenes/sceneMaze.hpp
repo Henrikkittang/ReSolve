@@ -4,12 +4,14 @@
 
 #include<glm/glm.hpp>
 
-#include"scene.hpp"
+#include"..\core\scene.hpp"
 
-class Maze : public Scene
+class SceneMaze : public Scene
 {
 public:
-    ~Maze();
+    SceneMaze() { init(); }
+
+    ~SceneMaze();
     void init() override;
     void onUpdate( const RenderWindow& wn) override;
     void onRender( const RenderWindow& wn) override;
