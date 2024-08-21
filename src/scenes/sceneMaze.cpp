@@ -4,6 +4,16 @@
 
 #include"random.hpp"
 
+
+struct Quad
+{
+	float p[8];
+
+	Quad(float x, float y, float width, float height)
+		: p(x, y, x+width, y, x+width, y+height, x, y+height)
+	{}
+};
+
 SceneMaze::~SceneMaze()
 {}
 
@@ -24,7 +34,6 @@ void SceneMaze::init()
     m_open.push( position );
     
     m_shader = Shader{"./resources/shaders/red.shader"};
-
 }
 
 void SceneMaze::onUpdate( const RenderWindow& wn ) 
@@ -32,13 +41,10 @@ void SceneMaze::onUpdate( const RenderWindow& wn )
     if( m_open.empty() )
         return;
 
-    Random::initialize();
-
     glm::ivec2 currentPositon = m_open.top();
     m_mazeData[ currentPositon.y*m_width + currentPositon.x ] = 0;
 
     auto frontiers = find_frontiers(currentPositon, 1);
-
    
     if(!frontiers.empty())
     {
@@ -60,8 +66,24 @@ void SceneMaze::onRender( const RenderWindow& wn)
 
     m_shader.bind();
     m_shader.setUniformMat4f("uMVP", mvp);
+   
+    std::vector<Quad> quads;
+    quads.reserve( m_mazeData.size() );
+    for(size_t i = 0; i < m_mazeData.size(); i++)
+    {
+        glm::vec2 positon = { i % m_width, i / m_width };
 
-    std::vector<float> vertecies;
+        if( m_mazeData[positon.y*m_width + positon.x] == 0 )
+            continue;
+
+        quads.emplace_back( positon.x*m_scl, positon.y*m_scl, m_scl, m_scl );
+    }
+    float* data = (float*)quads.data();
+    
+    wn.draw(data, quads.size()*8, m_shader);
+    
+ 
+    /*std::vector<float> vertecies;
     vertecies.reserve( m_mazeData.size() * 8 );
     for(size_t i = 0; i < m_mazeData.size(); i++)
     {
@@ -83,7 +105,7 @@ void SceneMaze::onRender( const RenderWindow& wn)
         vertecies.push_back( positon.y*m_scl  + m_scl);
     }
     
-    wn.draw(vertecies.data(), vertecies.size(), m_shader);
+    wn.draw(vertecies.data(), vertecies.size(), m_shader);*/
 }
 
 

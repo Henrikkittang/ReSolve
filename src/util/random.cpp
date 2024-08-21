@@ -24,7 +24,7 @@ float Random::getFloat(float min, float max)
 
 glm::vec3 Random::getFloat3(float min, float max)
 {
-    return { getFloat(min, max), getFloat(min, max) , getFloat(min, max)  }; ;
+    return { getFloat(min, max), getFloat(min, max), getFloat(min, max) }; ;
 }    
 
 int32_t Random::getInt(int32_t min, int32_t max)

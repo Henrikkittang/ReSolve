@@ -7,11 +7,13 @@ SceneManager::SceneManager()
 {}
 
 
-
 void SceneManager::removeScene(const std::string& name)
 {
+#if DEBUG
     if( !m_scenes.contains( name ) )
         std::cout << "Cant remove scene because name not in scenes: "<< name << "\n";
+#endif
+
     auto it = m_scenes.find(name);
     m_scenes.erase(name);
     delete it->second;
@@ -24,9 +26,16 @@ Scene* SceneManager::getCurrentScene()
 
 void SceneManager::setCurrentScene(const std::string& name)
 {
+#if DEBUG
     if( !m_scenes.contains( name ) )
         std::cout << "Cant set scene because name not in scenes: "<< name << "\n";
+#endif    
+
+    if( m_currentScene )
+        m_currentScene->onDeactivate();
+
     m_currentScene = m_scenes[name];
+    m_currentScene->onActive();
 }   
 
 std::vector<std::string> SceneManager::getNames() const

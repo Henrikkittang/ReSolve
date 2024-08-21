@@ -23,4 +23,5 @@ This project contains a .vscode folder, which means that the easiest way to buil
 - I maybe want the applicaton class to own the raw window pointer and have a renderwindow wrapped around it and sent to the scenes without ever modifying it
 - Be able to send data to scenes
 - Send data through events?
-- Having destroy function for scenes, so that I can construct them directly in the map
+- Might remove destructor for scenes, also rename `init` and `destroy` to `onCreate` and `onDestroy`
+- Having destroy function for scenes, so that I can construct them directly in the map (???)

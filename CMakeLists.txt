@@ -59,6 +59,16 @@ target_link_libraries(output
     ${GLFW_LIBS} ${GLEW_LIBS} ${OTHER_LIBS}
 )
 
+
+target_compile_definitions(output PRIVATE
+    $<$<CONFIG:Debug>:DEBUG>
+)
+
+target_compile_definitions(output PRIVATE
+    $<$<CONFIG:Release>:RELEASE>
+)
+
+
 target_compile_options(output PRIVATE
     $<$<CONFIG:Debug>:  -Wall -g> 
     $<$<CONFIG:Release>:-O3>
