@@ -5,6 +5,26 @@
 #include"random.hpp"
 
 
+#pragma once
+
+#include"scene.hpp"
+
+class Placeholder : public Scene
+{
+public:
+    void init() override;
+
+    void onUpdate( const RenderWindow& wn ) override;
+    void onRender( const RenderWindow& wn ) override;
+    void onImGuiRender() override;
+
+    void onActive() override;
+    void onDeactivate() override;
+
+private:
+
+};
+
 struct NoiseSettnings
 {
     int    depth = 7;

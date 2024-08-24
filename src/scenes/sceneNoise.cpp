@@ -2,6 +2,7 @@
 
 #include<imgui/imgui.h>
 
+#include"texture.hpp"
 
 void SceneNoise::init() 
 {
@@ -29,7 +30,7 @@ void SceneNoise::init()
     m_texture.update();
     m_texture.bind();
 
-    
+    m_noiseSettnigns.redraw = true;
 }
 
 void SceneNoise::onUpdate( const RenderWindow& wn ) 
@@ -56,8 +57,6 @@ void SceneNoise::onUpdate( const RenderWindow& wn )
 
 void SceneNoise::onRender( const RenderWindow& wn ) 
 {
-    
-
     float positions[] = {
           0.0f,    0.0f, 0.0f, 0.0f,
         960.0f,    0.0f, 1.0f, 0.0f,

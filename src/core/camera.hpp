@@ -9,6 +9,7 @@ class Camera
 public:
 
     Camera();
+    Camera(float width, float height);
     const glm::mat4& getMVP() const;
     
     void setPosition(const glm::vec3& position);
