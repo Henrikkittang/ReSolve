@@ -21,8 +21,8 @@ public:
 
 private:   
   
-    inline thread_local static std::mt19937                           s_generator{};
-    inline thread_local static std::uniform_real_distribution<double> s_distribution{0.0, 1.0};
+    static thread_local std::mt19937                           s_generator;
+    static thread_local std::uniform_real_distribution<double> s_distribution;
 
 };
 
@@ -44,11 +44,11 @@ private:
     static void permute(int* p, int n); 
 
 private:
-    inline static int s_pointCount = 256;
-    inline static glm::vec3* s_randomValues;
-    inline static int* s_xperm;
-    inline static int* s_yperm;
-    inline static int* s_zperm;
+    static inline int s_pointCount = 256;
+    static inline glm::vec3* s_randomValues = nullptr;
+    static inline int* s_xperm = nullptr;
+    static inline int* s_yperm = nullptr;
+    static inline int* s_zperm = nullptr;
 };
 
 

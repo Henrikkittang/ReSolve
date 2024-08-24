@@ -2,6 +2,11 @@
 
 
 
+// Necesarry for g++ compilation. It is not happy about the thread_local business
+thread_local std::mt19937 Random::s_generator{};
+thread_local std::uniform_real_distribution<double> Random::s_distribution{0.0, 1.0};
+
+
 void Random::initialize()
 {
     std::random_device device;
@@ -37,6 +42,11 @@ int32_t Random::getInt(int32_t min, int32_t max)
 
 void Noise::initilize() 
 {
+
+    delete[] s_randomValues;
+    delete[] s_xperm;
+    delete[] s_yperm;
+    delete[] s_zperm;   
 
     // These does not need to be heap allocations, but they are a straight forward and should never be called
     // in a loop. I dont realy know the implications of static stack allocations.
@@ -78,7 +88,6 @@ double Noise::noise(double x, double y, double z)
     double v = y - floor(y);
     double w = z - floor(z);
 
-    
     int i = static_cast<int>(floor(x));
     int j = static_cast<int>(floor(y));
     int k = static_cast<int>(floor(z));
@@ -101,20 +110,14 @@ double Noise::turbulence(double x, double y, double z, int depth)
 {
     double acc = 0.0;
     double weight = 1.0;
+    double freq   = 1.0;
 
-    double tx = x;
-    double ty = y;
-    double tz = z;
-
-    
+  
     for (int i = 0; i < depth; i++) 
     {
-        acc += weight*noise(tx, ty, tz);
+        acc += weight*noise(x*freq, y*freq, z*freq);
         weight *= 0.5;
-
-        tx = tx * 2;
-        ty = ty * 2;
-        tz = tz * 2;
+        freq   *= 2.0;
     }
 
     return abs(acc);

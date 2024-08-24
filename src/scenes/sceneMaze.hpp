@@ -9,7 +9,6 @@
 class SceneMaze : public Scene
 {
 public:
-    SceneMaze() { init(); }
 
     ~SceneMaze();
     void init() override;

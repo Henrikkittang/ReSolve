@@ -18,9 +18,10 @@ public:
         if( m_scenes.contains(name) )
             std::cout << "Scene label already used: " << name << "\n";
         m_scenes[name] = new T{};
+        m_scenes[name]->init();
     }
     
-    void removeScene(const std::string& name);
+    void   removeScene(const std::string& name);
     Scene* getCurrentScene();
     void   setCurrentScene(const std::string& name);
     std::vector<std::string> getNames() const;

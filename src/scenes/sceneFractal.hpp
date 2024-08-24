@@ -11,7 +11,6 @@ class SceneFractal : public Scene
 {
 public:
 
-    SceneFractal() { init(); }
     ~SceneFractal() override;
     void init() override;
     void onUpdate( const RenderWindow& wn ) override;

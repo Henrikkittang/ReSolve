@@ -8,10 +8,10 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Kinda cursed code for setting the compiler path. Not realy portable
-if (NOT MSVC)
-    set(CMAKE_C_COMPILER C:/msys64/mingw64/bin/clang)
-    set(CMAKE_CXX_COMPILER C:/msys64/mingw64/bin/clang++)
-endif()
+# if (NOT MSVC)
+#     set(CMAKE_C_COMPILER C:/msys64/ucrt64/bin/clang)
+#     set(CMAKE_CXX_COMPILER C:/msys64/ucrt64/bin/clang++)
+# endif()
 
 if(NOT MSVC)
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

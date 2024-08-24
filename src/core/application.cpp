@@ -2,7 +2,7 @@
 
 #include<iostream>
 #include<stack>
-#include <thread>
+#include<thread>
 
 
 #include<imgui/imgui.h>
@@ -17,6 +17,7 @@
 Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std::string& title)
 {
     Random::initialize();
+    Noise::initilize();
 
     if (!glfwInit())
     {
