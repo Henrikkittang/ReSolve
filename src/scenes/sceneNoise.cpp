@@ -6,15 +6,14 @@
 
 void SceneNoise::init() 
 {
+    m_camera = Camera{960.0, 540.0};
+
     m_shader = Shader{"./resources/shaders/basic.shader"};
     auto mvp = m_camera.getMVP();
     m_shader.bind();
     m_shader.setUniformMat4f("uMVP", mvp);
 
     m_texture = Texture{960, 540};
-    m_texture.bind();
-    m_shader.setUniform1i("uTexture", 0);
-
     
     for(int y = 0; y < 540; y++)
     {
@@ -29,6 +28,7 @@ void SceneNoise::init()
     }
     m_texture.update();
     m_texture.bind();
+    m_shader.setUniform1i("uTexture", 0);
 
     m_noiseSettnigns.redraw = true;
 }

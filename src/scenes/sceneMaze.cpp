@@ -19,6 +19,8 @@ SceneMaze::~SceneMaze()
 
 void SceneMaze::init() 
 {
+    m_camera = Camera{960.0, 540.0};
+
 
     m_scl = 2;
 

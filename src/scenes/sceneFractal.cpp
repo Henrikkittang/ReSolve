@@ -12,6 +12,8 @@ SceneFractal::~SceneFractal()
 
 void SceneFractal::init()
 {
+    m_camera = Camera{960.0, 540.0};
+
     uZoom = 1.0f;
     uPan = {0.0f, 0.0f};
     maxIterations = 500;

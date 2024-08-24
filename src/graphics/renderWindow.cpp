@@ -1,5 +1,6 @@
 #include"renderWindow.hpp"
 #include"util.hpp"
+#include"renderable.hpp"
 
 #include<iostream>
 
@@ -80,18 +81,16 @@ void RenderWindow::draw(float* vertexData, size_t size, const Shader& shader) co
 
 void RenderWindow::draw(float* vertexData, size_t size, const Shader& shader) const
 {
-    uint32_t* indices = new uint32_t[size];
-    for(size_t i = 0; i < size; i += 4)
-    {
-        indices[i + 0] = i + 0;
-        indices[i + 1] = i + 1;
-        indices[i + 2] = i + 2;
-        indices[i + 3] = i + 3;
-    }
-    IndexBuffer ib = { indices, static_cast<uint32_t>(size) };
-    delete[] indices;
+    Renderable r{vertexData, static_cast<uint32_t>(size * sizeof(float)), 2};
+    // r.update(vertexData, static_cast<uint32_t>(size * sizeof(float)));
+
+    r.bind();
+    GLCall( glDrawArrays(GL_QUADS, 0, size) );
+
+    return;
 
     VertexBuffer vb = {vertexData, static_cast<uint32_t>(size * sizeof(float))};
+    
     VertexBufferLayout layout; 
     layout.push<float>(2);
     
@@ -100,13 +99,11 @@ void RenderWindow::draw(float* vertexData, size_t size, const Shader& shader) co
 
     shader.bind();
     va.bind();
-    ib.bind();
     
-    GLCall(glDrawElements(GL_QUADS, ib.getCount(), GL_UNSIGNED_INT, nullptr));
+    GLCall( glDrawArrays(GL_QUADS, 0, size) );
 
     shader.unbind();
     va.unbind();
-    ib.unbind();
 }
 
 bool RenderWindow::windowShouldClose() const
