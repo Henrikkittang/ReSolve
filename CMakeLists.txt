@@ -46,12 +46,12 @@ include_directories(
 	${CMAKE_SOURCE_DIR}/src/graphics/ 
 	${CMAKE_SOURCE_DIR}/src/util/ 
 	${CMAKE_SOURCE_DIR}/src/core/ 
+	${CMAKE_SOURCE_DIR}/src/decapricated/ 
     ${CMAKE_SOURCE_DIR}/vendor/ 
 )
 
 add_executable(output
     ${SOURCES}
-    ${TESTS}
     ${VENDOR}
 )
 

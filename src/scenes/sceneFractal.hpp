@@ -1,7 +1,7 @@
 #pragma once
 
-#include"vertexArray.hpp"
-#include"vertexBuffer.hpp"
+#include"..\decapricated\vertexArray.hpp"
+#include"..\decapricated\vertexBuffer.hpp"
 #include"indexBuffer.hpp"
 #include"shader.hpp"
 

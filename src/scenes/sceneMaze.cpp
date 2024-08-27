@@ -4,7 +4,6 @@
 
 #include"random.hpp"
 
-
 struct Quad
 {
 	float p[8];
@@ -17,10 +16,11 @@ struct Quad
 SceneMaze::~SceneMaze()
 {}
 
+
 void SceneMaze::init() 
 {
     m_camera = Camera{960.0, 540.0};
-
+    m_renderable = Renderable{nullptr, 960 * 540 * 4, 2};
 
     m_scl = 2;
 
@@ -36,6 +36,10 @@ void SceneMaze::init()
     m_open.push( position );
     
     m_shader = Shader{"./resources/shaders/red.shader"};
+    auto mvp = m_camera.getMVP();
+
+    m_shader.bind();
+    m_shader.setUniformMat4f("uMVP", mvp);
 }
 
 void SceneMaze::onUpdate( const RenderWindow& wn ) 
@@ -64,10 +68,7 @@ void SceneMaze::onUpdate( const RenderWindow& wn )
 
 void SceneMaze::onRender( const RenderWindow& wn) 
 {
-    auto mvp = m_camera.getMVP();
-
-    m_shader.bind();
-    m_shader.setUniformMat4f("uMVP", mvp);
+    
    
     std::vector<Quad> quads;
     quads.reserve( m_mazeData.size() );
@@ -75,39 +76,17 @@ void SceneMaze::onRender( const RenderWindow& wn)
     {
         glm::vec2 positon = { i % m_width, i / m_width };
 
-        if( m_mazeData[positon.y*m_width + positon.x] == 0 )
+        if( m_mazeData[positon.y*m_width + positon.x] == 1 )
             continue;
 
         quads.emplace_back( positon.x*m_scl, positon.y*m_scl, m_scl, m_scl );
     }
     float* data = (float*)quads.data();
     
-    wn.draw(data, quads.size()*8, m_shader);
+    m_renderable.update(data, (uint32_t)quads.size()*8*sizeof(float));
+    wn.draw(m_renderable, m_shader);
     
- 
-    /*std::vector<float> vertecies;
-    vertecies.reserve( m_mazeData.size() * 8 );
-    for(size_t i = 0; i < m_mazeData.size(); i++)
-    {
-        glm::ivec2 positon = { i % m_width, i / m_width };
-
-        if( m_mazeData[positon.y*m_width + positon.x] == 0 )
-            continue;
-
-        vertecies.push_back( positon.x*m_scl );
-        vertecies.push_back( positon.y*m_scl );
-
-        vertecies.push_back( positon.x*m_scl + m_scl);
-        vertecies.push_back( positon.y*m_scl );
-
-        vertecies.push_back( positon.x*m_scl + m_scl );
-        vertecies.push_back( positon.y*m_scl + m_scl );
-
-        vertecies.push_back( positon.x*m_scl );
-        vertecies.push_back( positon.y*m_scl  + m_scl);
-    }
-    
-    wn.draw(vertecies.data(), vertecies.size(), m_shader);*/
+  
 }
 
 

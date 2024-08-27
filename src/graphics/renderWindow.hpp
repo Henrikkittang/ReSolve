@@ -5,12 +5,12 @@
 
 #include<glm/glm.hpp>
 
+#include <cstdint>
+
 #include"vertexArray.hpp"
 #include"indexBuffer.hpp"
 #include"shader.hpp"
-
-#include <cstdint>
-
+#include"renderable.hpp"
 
 
 class RenderWindow
@@ -24,7 +24,7 @@ public:
 
     void clear() const;
     void draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader) const;
-	void draw(float* vertexData, size_t size, const Shader& shader) const;
+	void draw(const Renderable& renderable, const Shader& shader) const;
 
 	bool windowShouldClose() const;
 	void update();

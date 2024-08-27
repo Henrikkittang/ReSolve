@@ -92,7 +92,14 @@
         "ranges": "cpp",
         "span": "cpp",
         "coroutine": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "codecvt": "cpp",
+        "regex": "cpp",
+        "numbers": "cpp",
+        "semaphore": "cpp",
+        "shared_mutex": "cpp",
+        "text_encoding": "cpp",
+        "cinttypes": "cpp"
     },
     "files.exclude": {
         "build/": true,

@@ -4,7 +4,8 @@
 
 #include<glm/glm.hpp>
 
-#include"..\core\scene.hpp"
+#include"renderable.hpp"
+#include"scene.hpp"
 
 class SceneMaze : public Scene
 {
@@ -25,5 +26,5 @@ private:
     std::vector<int>       m_mazeData;
     std::stack<glm::ivec2> m_open;
     Shader                 m_shader;
-
+    Renderable             m_renderable;
 };
