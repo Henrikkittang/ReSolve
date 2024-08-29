@@ -3,15 +3,7 @@
 #include<iostream>
 
 #include"random.hpp"
-
-struct Quad
-{
-	float p[8];
-
-	Quad(float x, float y, float width, float height)
-		: p(x, y, x+width, y, x+width, y+height, x, y+height)
-	{}
-};
+#include"util.hpp"
 
 SceneMaze::~SceneMaze()
 {}
@@ -20,13 +12,12 @@ SceneMaze::~SceneMaze()
 void SceneMaze::init() 
 {
     m_camera = Camera{960.0, 540.0};
-    m_renderable = Renderable{nullptr, 960 * 540 * 4, 2};
+    m_renderable = Renderable{nullptr, 960 * 540 * 4, 2, GL_DYNAMIC_DRAW};
 
     m_scl = 2;
 
     m_width  = 960 / m_scl;
     m_height = 540 / m_scl;
-
 
     m_mazeData = std::vector<int>( m_width*m_height, 1 );
 
@@ -47,17 +38,17 @@ void SceneMaze::onUpdate( const RenderWindow& wn )
     if( m_open.empty() )
         return;
 
-    glm::ivec2 currentPositon = m_open.top();
-    m_mazeData[ currentPositon.y*m_width + currentPositon.x ] = 0;
+    glm::ivec2 currentposition = m_open.top();
+    m_mazeData[ currentposition.y*m_width + currentposition.x ] = 0;
 
-    auto frontiers = find_frontiers(currentPositon, 1);
+    auto frontiers = find_frontiers(currentposition, 1);
    
     if(!frontiers.empty())
     {
         size_t idx = Random::getInt(0, frontiers.size());
         glm::ivec2 newFrontier = frontiers[ idx ];
 
-        connect_nodes(currentPositon, newFrontier);
+        connect_nodes(currentposition, newFrontier);
         
         m_mazeData[ newFrontier.y*m_width + newFrontier.x ] = 0;
         m_open.push(newFrontier);
@@ -68,25 +59,23 @@ void SceneMaze::onUpdate( const RenderWindow& wn )
 
 void SceneMaze::onRender( const RenderWindow& wn) 
 {
-    
-   
-    std::vector<Quad> quads;
-    quads.reserve( m_mazeData.size() );
-    for(size_t i = 0; i < m_mazeData.size(); i++)
-    {
-        glm::vec2 positon = { i % m_width, i / m_width };
+    // std::vector<Quad> quads;
+    // quads.reserve( m_mazeData.size() );
+    // for(size_t i = 0; i < m_mazeData.size(); i++)
+    // {
+    //     glm::vec2 position = { i % m_width, i / m_width };
+// 
+    //     if( m_mazeData[position.y*m_width + position.x] == 1 )
+    //         continue;
+// 
+    //     quads.emplace_back( position.x*m_scl, position.y*m_scl, m_scl, m_scl );
+    // }
 
-        if( m_mazeData[positon.y*m_width + positon.x] == 1 )
-            continue;
+    float* data = (float*)m_quads.data();
 
-        quads.emplace_back( positon.x*m_scl, positon.y*m_scl, m_scl, m_scl );
-    }
-    float* data = (float*)quads.data();
-    
-    m_renderable.update(data, (uint32_t)quads.size()*8*sizeof(float));
-    wn.draw(m_renderable, m_shader);
-    
-  
+    m_renderable.update(data, (uint32_t)m_quads.size()*8*sizeof(float));
+
+    GLCall( glDrawArrays(GL_QUADS, 0, m_renderable.size()) );    
 }
 
 
@@ -95,17 +84,32 @@ void SceneMaze::onImGuiRender() {}
 
 void SceneMaze::connect_nodes(glm::ivec2 curPos, glm::ivec2 nodePos)
 {
+    m_quads.emplace_back( nodePos.x*m_scl, nodePos.y*m_scl, m_scl, m_scl );    
+
+
     if(curPos.x > nodePos.x)
+    {
         m_mazeData[ curPos.y*m_width + (curPos.x-1) ] = 0;
+        m_quads.emplace_back( (nodePos.x-1)*m_scl, nodePos.y*m_scl, m_scl, m_scl );    
+    }
 
     else if(curPos.x < nodePos.x)
+    {
         m_mazeData[ curPos.y*m_width + (curPos.x+1) ] = 0;
-
+        m_quads.emplace_back( (nodePos.x+1)*m_scl, nodePos.y*m_scl, m_scl, m_scl );    
+    }
+    
     else if(curPos.y > nodePos.y)
+    {
         m_mazeData[ (curPos.y-1)*m_width + curPos.x ] = 0;
+        m_quads.emplace_back( nodePos.x*m_scl, (nodePos.y-1)*m_scl, m_scl, m_scl );    
+    }
 
     else if(curPos.y < nodePos.y)
+    {
         m_mazeData[ (curPos.y+1)*m_width + curPos.x ] = 0;
+        m_quads.emplace_back( nodePos.x*m_scl, (nodePos.y+1)*m_scl, m_scl, m_scl );    
+    }
 }
 
 std::vector<glm::ivec2> SceneMaze::find_frontiers(glm::ivec2 pos, int state)
@@ -129,3 +133,17 @@ std::vector<glm::ivec2> SceneMaze::find_frontiers(glm::ivec2 pos, int state)
     return frontiers;
 }
 
+
+
+void SceneMaze::onActive()
+{
+    m_renderable.bind();
+    m_shader.bind();
+}
+
+
+void SceneMaze::onDeactivate()
+{
+    m_renderable.unbind();
+    m_shader.unbind();
+}  

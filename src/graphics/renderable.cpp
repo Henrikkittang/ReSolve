@@ -4,11 +4,11 @@
 
 
 Renderable::Renderable()
-    : m_size(0), m_vertexBufferID(0), m_vertexArrayID(0)
+    : m_size(0), m_mode(GL_STATIC_DRAW), m_vertexBufferID(0), m_vertexArrayID(0)
 {}
 
-Renderable::Renderable(const void* data, uint32_t size, uint32_t floats)
-    : m_size(size), m_vertexBufferID(0), m_vertexArrayID(0)
+Renderable::Renderable(const void* data, uint32_t size, uint32_t floats, int mode)
+    : m_size(size), m_mode(mode), m_vertexBufferID(0), m_vertexArrayID(0)
 {
 
     GLCall( glGenVertexArrays(1, &m_vertexArrayID) );
@@ -16,7 +16,7 @@ Renderable::Renderable(const void* data, uint32_t size, uint32_t floats)
 
     GLCall( glGenBuffers(1, &m_vertexBufferID) );
     GLCall( glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID) );
-    GLCall( glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW) );
+    GLCall( glBufferData(GL_ARRAY_BUFFER, size, data, m_mode) );
 
     GLCall( glEnableVertexAttribArray(0) );
     GLCall( glVertexAttribPointer(0, floats, GL_FLOAT, GL_FALSE, floats * sizeof(float), (void*)0) );
@@ -79,5 +79,5 @@ void Renderable::update(const void* data, uint32_t size)
 {
     m_size = size;
     GLCall( glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID) );    
-    GLCall( glBufferData(GL_ARRAY_BUFFER, m_size, data, GL_STATIC_DRAW) );
+    GLCall( glBufferData(GL_ARRAY_BUFFER, m_size, data, m_mode) );
 }

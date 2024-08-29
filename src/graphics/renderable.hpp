@@ -9,7 +9,7 @@ class Renderable
 public:
 
     Renderable();
-    Renderable(const void* data, uint32_t size, uint32_t floats);
+    Renderable(const void* data, uint32_t size, uint32_t floats, int mode=GL_STATIC_DRAW);
     ~Renderable();
     Renderable(Renderable&& other);
     Renderable& operator=(Renderable&& other);
@@ -21,8 +21,9 @@ public:
 
 private:
     uint32_t m_size;
-    GLuint m_vertexBufferID;
-    GLuint m_vertexArrayID;
+    int      m_mode;
+    GLuint   m_vertexBufferID;
+    GLuint   m_vertexArrayID;
 };
 
 

@@ -7,6 +7,17 @@
 #include"renderable.hpp"
 #include"scene.hpp"
 
+
+struct Quad
+{
+	float p[8];
+
+	Quad(float x, float y, float width, float height)
+		: p(x, y, x+width, y, x+width, y+height, x, y+height)
+	{}
+};
+
+
 class SceneMaze : public Scene
 {
 public:
@@ -16,6 +27,9 @@ public:
     void onUpdate( const RenderWindow& wn) override;
     void onRender( const RenderWindow& wn) override;
     void onImGuiRender() override;
+
+    void onActive() override;
+    void onDeactivate() override;   
 
 private:
     void connect_nodes(glm::ivec2 cur_pos, glm::ivec2 node_pos);
@@ -27,4 +41,5 @@ private:
     std::stack<glm::ivec2> m_open;
     Shader                 m_shader;
     Renderable             m_renderable;
+    std::vector<Quad>      m_quads;
 };
