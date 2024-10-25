@@ -79,5 +79,7 @@ void Renderable::update(const void* data, uint32_t size)
 {
     m_size = size;
     GLCall( glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID) );    
+    
     GLCall( glBufferData(GL_ARRAY_BUFFER, m_size, data, m_mode) );
+    // glBufferSubData(GL_ARRAY_BUFFER, 0, size, data);
 }

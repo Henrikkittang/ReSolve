@@ -22,9 +22,9 @@ int main()
     app.ImGuiInit();
 
     // app.sceneManager.addScene<SceneClearColor>("Color");
-    app.sceneManager.addScene<SceneNoise>("Noise");
+    // app.sceneManager.addScene<SceneNoise>("Noise");
     app.sceneManager.addScene<SceneMaze>("Maze");
-    app.sceneManager.addScene<SceneFractal>("Fractal");
+    // app.sceneManager.addScene<SceneFractal>("Fractal");
 
     app.run();    
 }

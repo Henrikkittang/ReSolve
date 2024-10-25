@@ -12,12 +12,16 @@ SceneMaze::~SceneMaze()
 void SceneMaze::init() 
 {
     m_camera = Camera{960.0, 540.0};
-    m_renderable = Renderable{nullptr, 960 * 540 * 4, 2, GL_DYNAMIC_DRAW};
 
-    m_scl = 2;
+
+
+    m_scl = 8;
 
     m_width  = 960 / m_scl;
     m_height = 540 / m_scl;
+
+    m_renderable = Renderable{nullptr, (uint32_t)(m_width * m_height * 8 * sizeof(float)), 2, GL_DYNAMIC_DRAW};
+    // m_renderable = Renderable{nullptr, 2 * 8 * sizeof(float), 2, GL_DYNAMIC_DRAW};
 
     m_mazeData = std::vector<int>( m_width*m_height, 1 );
 
@@ -57,6 +61,7 @@ void SceneMaze::onUpdate( const RenderWindow& wn )
     }
 }
 
+
 void SceneMaze::onRender( const RenderWindow& wn) 
 {
     // std::vector<Quad> quads;
@@ -70,12 +75,13 @@ void SceneMaze::onRender( const RenderWindow& wn)
 // 
     //     quads.emplace_back( position.x*m_scl, position.y*m_scl, m_scl, m_scl );
     // }
+    
 
     float* data = (float*)m_quads.data();
-
     m_renderable.update(data, (uint32_t)m_quads.size()*8*sizeof(float));
 
-    GLCall( glDrawArrays(GL_QUADS, 0, m_renderable.size()) );    
+    GLCall( glDrawArrays(GL_QUADS, 0, m_renderable.size()*8*sizeof(float)) );    
+
 }
 
 
@@ -84,8 +90,8 @@ void SceneMaze::onImGuiRender() {}
 
 void SceneMaze::connect_nodes(glm::ivec2 curPos, glm::ivec2 nodePos)
 {
-    m_quads.emplace_back( nodePos.x*m_scl, nodePos.y*m_scl, m_scl, m_scl );    
 
+    m_quads.emplace_back( nodePos.x*m_scl, nodePos.y*m_scl, m_scl, m_scl );    
 
     if(curPos.x > nodePos.x)
     {
