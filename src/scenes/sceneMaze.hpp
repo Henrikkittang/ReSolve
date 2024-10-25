@@ -42,4 +42,6 @@ private:
     Shader                 m_shader;
     Renderable             m_renderable;
     std::vector<Quad>      m_quads;
+
+    Camera m_camera;
 };

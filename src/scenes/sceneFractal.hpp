@@ -2,7 +2,7 @@
 
 #include"..\decapricated\vertexArray.hpp"
 #include"..\decapricated\vertexBuffer.hpp"
-#include"indexBuffer.hpp"
+#include"..\graphics\indexBuffer.hpp"
 #include"shader.hpp"
 
 #include"..\core\scene.hpp"
@@ -27,6 +27,6 @@ private:
     VertexArray  m_va;
     IndexBuffer  m_ib;
 
-    
+    Camera m_camera;
 };
 

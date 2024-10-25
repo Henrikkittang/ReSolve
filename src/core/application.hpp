@@ -19,7 +19,7 @@ public:
     void run();
     
 public:
-    inline static SceneManager sceneManager;
+    SceneManager sceneManager;
 
 private:
 
