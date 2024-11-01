@@ -15,10 +15,12 @@ public:
     template<typename T>
     inline void addScene(const std::string& name)
     {
+#if DEBUG
         if( m_scenes.contains(name) )
             std::cout << "Scene label already used: " << name << "\n";
+#endif 
         m_scenes[name] = new T{};
-        m_scenes[name]->init();
+        m_scenes[name]->onCreate();
     }
     
     void   removeScene(const std::string& name);
@@ -29,7 +31,6 @@ public:
   
 private:
 
-    // Few elements and having this structure own the scenes means a regular map is best
     std::map<std::string, Scene*> m_scenes;
     Scene* m_currentScene;
 

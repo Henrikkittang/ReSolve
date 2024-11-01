@@ -3,27 +3,12 @@
 #include"scene.hpp"
 #include"texture.hpp"
 #include"random.hpp"
-
+#include"camera.hpp"
 
 #pragma once
 
 #include"scene.hpp"
 
-class Placeholder : public Scene
-{
-public:
-    void init() override;
-
-    void onUpdate( const RenderWindow& wn ) override;
-    void onRender( const RenderWindow& wn ) override;
-    void onImGuiRender() override;
-
-    void onActive() override;
-    void onDeactivate() override;
-
-private:
-
-};
 
 struct NoiseSettnings
 {
@@ -36,13 +21,13 @@ struct NoiseSettnings
 class SceneNoise : public Scene
 {
 public:
-    void init() override;
+    void onCreate() override;
 
     void onUpdate( const RenderWindow& wn ) override;
     void onRender( const RenderWindow& wn ) override;
     void onImGuiRender() override;
 
-    void onActive() override;
+    void onActivate() override;
     void onDeactivate() override;
 
 private:

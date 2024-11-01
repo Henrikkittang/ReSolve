@@ -6,11 +6,8 @@
 
 #include"util.hpp"
 
-   
-SceneFractal::~SceneFractal() 
-{}
-
-void SceneFractal::init()
+  
+void SceneFractal::onCreate()
 {
     m_camera = Camera{960.0, 540.0};
 

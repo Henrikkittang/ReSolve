@@ -6,13 +6,13 @@
 #include"shader.hpp"
 
 #include"..\core\scene.hpp"
+#include"camera.hpp"
 
 class SceneFractal : public Scene 
 {
 public:
 
-    ~SceneFractal() override;
-    void init() override;
+    void onCreate() override;
     void onUpdate( const RenderWindow& wn ) override;
     void onRender( const RenderWindow& wn ) override;
     void onImGuiRender() override;

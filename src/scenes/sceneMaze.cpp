@@ -5,11 +5,7 @@
 #include"random.hpp"
 #include"util.hpp"
 
-SceneMaze::~SceneMaze()
-{}
-
-
-void SceneMaze::init() 
+void SceneMaze::onCreate() 
 {
     m_camera = Camera{960.0, 540.0};
 
@@ -141,7 +137,7 @@ std::vector<glm::ivec2> SceneMaze::find_frontiers(glm::ivec2 pos, int state)
 
 
 
-void SceneMaze::onActive()
+void SceneMaze::onActivate()
 {
     m_renderable.bind();
     m_shader.bind();

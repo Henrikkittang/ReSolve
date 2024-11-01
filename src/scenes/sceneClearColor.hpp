@@ -9,8 +9,7 @@ class SceneClearColor : public Scene
 {
 public:
     
-    ~SceneClearColor();
-    void init() override;
+    void onCreate() override;
     void onUpdate( const RenderWindow& wn) override;
     void onRender( const RenderWindow& wn ) override;
     void onImGuiRender() override;

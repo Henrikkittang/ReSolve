@@ -3,8 +3,9 @@
 #include<imgui/imgui.h>
 
 #include"texture.hpp"
+#include"camera.hpp"
 
-void SceneNoise::init() 
+void SceneNoise::onCreate() 
 {
     m_camera = Camera{960.0, 540.0};
 
@@ -93,7 +94,7 @@ void SceneNoise::onImGuiRender()
 };
 
 
-void SceneNoise::onActive() 
+void SceneNoise::onActivate() 
 {}
 
 void SceneNoise::onDeactivate() 

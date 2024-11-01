@@ -35,7 +35,7 @@ void SceneManager::setCurrentScene(const std::string& name)
         m_currentScene->onDeactivate();
 
     m_currentScene = m_scenes[name];
-    m_currentScene->onActive();
+    m_currentScene->onActivate();
 }   
 
 std::vector<std::string> SceneManager::getNames() const

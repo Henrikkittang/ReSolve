@@ -9,10 +9,8 @@
 
 
 
-SceneClearColor::~SceneClearColor() 
-{}
 
-void SceneClearColor::init()
+void SceneClearColor::onCreate()
 {
     m_clearColor[0] = 0.2f;
     m_clearColor[1] = 0.3f;

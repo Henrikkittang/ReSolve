@@ -6,7 +6,7 @@
 
 #include"renderable.hpp"
 #include"scene.hpp"
-
+#include"camera.hpp"
 
 struct Quad
 {
@@ -22,13 +22,12 @@ class SceneMaze : public Scene
 {
 public:
 
-    ~SceneMaze();
-    void init() override;
+    void onCreate() override;
     void onUpdate( const RenderWindow& wn) override;
     void onRender( const RenderWindow& wn) override;
     void onImGuiRender() override;
 
-    void onActive() override;
+    void onActivate() override;
     void onDeactivate() override;   
 
 private:
