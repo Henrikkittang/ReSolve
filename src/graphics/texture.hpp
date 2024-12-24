@@ -6,12 +6,11 @@
 #include<cstdint>
 #include<glm/glm.hpp>
 
-
-class Texture
+class Texture 
 {
 public:
     
-    Texture() = default;
+    Texture();
     Texture(int width, int height);
     Texture(const std::string& filepath);
     ~Texture();

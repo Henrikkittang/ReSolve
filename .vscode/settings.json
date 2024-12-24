@@ -99,7 +99,9 @@
         "semaphore": "cpp",
         "shared_mutex": "cpp",
         "text_encoding": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "*.inc": "cpp",
+        "*.def": "cpp"
     },
     "files.exclude": {
         "build/": true,

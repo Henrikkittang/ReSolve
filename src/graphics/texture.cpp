@@ -8,6 +8,11 @@
 #include"util.hpp"
 #include"random.hpp"
 
+
+Texture::Texture()
+    :m_rendererID(0), m_filepath(""), m_localBuffer(nullptr), m_width(0), m_height(0), m_BBP(0)
+{}
+
 Texture::Texture(int width, int height)
     :m_rendererID(0), m_filepath(""), m_localBuffer(nullptr), m_width(width), m_height(height), m_BBP(32)
 {
@@ -16,7 +21,6 @@ Texture::Texture(int width, int height)
     memset(m_localBuffer, 0, 4*m_width*m_height);
 
    
-
     GLCall( glGenTextures(1, &m_rendererID) );
     GLCall( glBindTexture(GL_TEXTURE_2D, m_rendererID) );
 
@@ -54,6 +58,7 @@ Texture::Texture(const std::string& filepath)
     // m_localBuffer = nullptr;
 }
 
+
 Texture::~Texture()
 {
     GLCall( glDeleteTextures(1, &m_rendererID) );
@@ -86,6 +91,7 @@ Texture& Texture::operator=(Texture&& other)
     }
     return *this;
 }
+
 
 void Texture::bind(uint32_t slot) const
 {
