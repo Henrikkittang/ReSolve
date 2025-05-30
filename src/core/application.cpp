@@ -22,6 +22,7 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
     if (!glfwInit())
     {
         std::cout << "Failed to initialize glfw \n";
+        exit(0);
     }
 
     GLFWwindow* window = glfwCreateWindow(screenWidth, screenHeight, title.c_str(), NULL, NULL);
@@ -29,12 +30,16 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
     {
         std::cerr << "Failed to create glfw window \n";
         glfwTerminate();
+        exit(0);
     }
 
     glfwMakeContextCurrent(window);
     if(glewInit() != GLEW_OK)
     {
         std::cout << "Failed to initilize glew \n";
+        glfwDestroyWindow(window);
+        glfwTerminate();
+        exit(0);
     }    
 
     m_window = RenderWindow(window);
@@ -45,8 +50,8 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
 
 Application::~Application()
 {
-    // glfwDestroyWindow(m_window);  
-    
+    // glfwDestroyWindow(m_window.getWindow());
+
     if( m_isImguiActive )
     {
         ImGui_ImplOpenGL3_Shutdown();
@@ -62,6 +67,9 @@ Application::~Application()
 
 void Application::ImGuiInit()
 {
+    if (m_isImguiActive)
+        return;
+
     m_isImguiActive = true;
 
     ImGui::CreateContext();
@@ -86,8 +94,9 @@ void Application::run()
         Event event;
         while( EventManager::pollEvent(event) )
         {
-            if( event == Event::END_CURRENT_SCENE )
+            if( event == Event::END_CURRENT_SCENE )  // This is possibly problematic with glfw
                 return;
+                // glfwSetWindowShouldClose(m_window.getWindow(), true);
         }
 
         m_window.clear();
@@ -125,7 +134,6 @@ void Application::run()
         }
         
         m_window.update();
-         
     }
 }
 

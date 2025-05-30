@@ -20,7 +20,10 @@ public:
 	RenderWindow();
 	RenderWindow(GLFWwindow* window);
 	~RenderWindow();
-
+	RenderWindow(const RenderWindow&) = delete;
+	RenderWindow& operator=(const RenderWindow&) = delete;
+	RenderWindow(RenderWindow&& other);
+	RenderWindow& operator=(RenderWindow&& other);
 
     void clear() const;
     void draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader) const;
