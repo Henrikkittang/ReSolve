@@ -4,14 +4,16 @@
 
 #include"renderWindow.hpp"
 
+struct AppContext;
 
 class Scene
 {
 public:
     
 
-    inline Scene() { }
-    inline ~Scene() { }
+    inline Scene(AppContext& appContext) 
+        : m_appContext(appContext)
+    {}
 
 
     virtual void onCreate() { assert("Init not implemented"); }
@@ -25,5 +27,9 @@ public:
     virtual void onDeactivate() {}
     
     // virtual void onEvent(Event event);
+
+protected: 
+
+    AppContext& m_appContext;
 
 };

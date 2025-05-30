@@ -23,7 +23,7 @@ int main()
 
     // app.sceneManager.addScene<SceneClearColor>("Color");
     // app.sceneManager.addScene<SceneNoise>("Noise");
-    app.sceneManager.addScene<SceneMaze>("Maze");
+    app.registerScene<SceneMaze>("Maze");
     // app.sceneManager.addScene<SceneFractal>("Fractal");
 
     app.run();    

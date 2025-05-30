@@ -6,6 +6,25 @@ SceneManager::SceneManager()
     : m_scenes(), m_currentScene(nullptr)
 {}
 
+SceneManager::~SceneManager()
+{
+    m_currentScene->onDeactivate();
+    for (const auto& [name, scene] : m_scenes) 
+    {
+        scene->onDestroy();
+        delete scene;
+    }
+}
+
+void SceneManager::addScene(const std::string& name, Scene* scene)
+{
+#if DEBUG
+    if( m_scenes.contains(name) )
+        std::cout << "Scene label already used: " << name << "\n";
+#endif 
+    scene->onCreate();
+    m_scenes[name] = scene;
+}
 
 void SceneManager::removeScene(const std::string& name)
 {
@@ -21,6 +40,10 @@ void SceneManager::removeScene(const std::string& name)
 
 Scene* SceneManager::getCurrentScene()
 {
+#if DEBUG
+    if(m_currentScene == nullptr)
+        std::cout << "Current scene is nullptr \n";
+#endif   
     return m_currentScene;
 }
 

@@ -59,6 +59,7 @@ Application::~Application()
 }
 
 
+
 void Application::ImGuiInit()
 {
     m_isImguiActive = true;
@@ -76,9 +77,9 @@ void Application::ImGuiInit()
 
 void Application::run()
 {
-    auto names = sceneManager.getNames();
-    std::string currentSceneName = names[0];
-    sceneManager.setCurrentScene(currentSceneName);
+    auto names = m_sceneManager.getNames();
+    std::string currentname = names[0];
+    m_sceneManager.setCurrentScene(currentname);
 
     while( !m_window.windowShouldClose() )
     {
@@ -100,14 +101,14 @@ void Application::run()
 
         for(const std::string& name : names)
         {
-            if(ImGui::RadioButton(name.c_str(), currentSceneName == name))
+            if(ImGui::RadioButton(name.c_str(), currentname == name))
             {
-                sceneManager.setCurrentScene(name);
-                currentSceneName = name;
+                m_sceneManager.setCurrentScene(name);
+                currentname = name;
             }
         }
 
-        Scene* scene = sceneManager.getCurrentScene();
+        Scene* scene = m_sceneManager.getCurrentScene();
         if(scene != nullptr)
         {
             scene->onUpdate(m_window);

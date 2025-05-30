@@ -22,6 +22,9 @@ class SceneMaze : public Scene
 {
 public:
 
+using Scene::Scene; // Inherit constructors
+
+
     void onCreate() override;
     void onUpdate( const RenderWindow& wn) override;
     void onRender( const RenderWindow& wn) override;
