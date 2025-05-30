@@ -1,6 +1,6 @@
-#include"renderable.hpp"
+#include"graphics/renderable.hpp"
 
-#include"util.hpp"
+#include"util/util.hpp"
 
 
 Renderable::Renderable()

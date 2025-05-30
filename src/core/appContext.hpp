@@ -1,5 +1,5 @@
-#include"renderWindow.hpp"
-#include"sceneManager.hpp"
+#include"graphics/renderWindow.hpp"
+#include"core/sceneManager.hpp"
 
 
 struct AppContext

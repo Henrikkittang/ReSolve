@@ -1,12 +1,12 @@
-#include"texture.hpp"
+#include"graphics/texture.hpp"
 
 #include<iostream>
 #include<cstring>
 
 #include<stb_image/stb_image.h>
 
-#include"util.hpp"
-#include"random.hpp"
+#include"util/util.hpp"
+#include"util/random.hpp"
 
 
 Texture::Texture()

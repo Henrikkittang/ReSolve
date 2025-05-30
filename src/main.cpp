@@ -1,10 +1,10 @@
 #include<iostream>
 
-#include"application.hpp"
-#include"sceneFractal.hpp"
-#include"sceneClearColor.hpp"
-#include"sceneMaze.hpp"
-#include"sceneNoise.hpp"
+#include"core/application.hpp"
+#include"scenes/sceneFractal.hpp"
+#include"scenes/sceneClearColor.hpp"
+#include"scenes/sceneMaze.hpp"
+#include"scenes/sceneNoise.hpp"
 
 
 

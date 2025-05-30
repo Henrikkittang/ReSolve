@@ -1,5 +1,5 @@
-#include"sceneManager.hpp"
 #include<iostream>
+#include"core/sceneManager.hpp"
 
 
 SceneManager::SceneManager()

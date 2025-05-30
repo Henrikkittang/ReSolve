@@ -1,10 +1,10 @@
 #pragma once
 
-#include"scene.hpp"
-#include"texture.hpp"
-#include"random.hpp"
-#include"camera.hpp"
-#include"shader.hpp"
+#include"core/scene.hpp"
+#include"core/camera.hpp"
+#include"graphics/texture.hpp"
+#include"graphics/shader.hpp"
+#include"util/random.hpp"
 
 
 struct NoiseSettnings

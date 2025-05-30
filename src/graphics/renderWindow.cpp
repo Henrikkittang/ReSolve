@@ -1,6 +1,6 @@
-#include"renderWindow.hpp"
-#include"util.hpp"
-#include"renderable.hpp"
+#include"graphics/renderWindow.hpp"
+#include"util/util.hpp"
+#include"graphics/renderable.hpp"
 
 #include<iostream>
 

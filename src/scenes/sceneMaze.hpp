@@ -4,10 +4,10 @@
 
 #include<glm/glm.hpp>
 
-#include"renderable.hpp"
-#include"scene.hpp"
-#include"camera.hpp"
-#include"shader.hpp"
+#include"graphics/renderable.hpp"
+#include"graphics/shader.hpp"
+#include"core/scene.hpp"
+#include"core/camera.hpp"
 
 struct Quad
 {

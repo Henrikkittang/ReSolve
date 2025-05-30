@@ -1,7 +1,7 @@
 #pragma once
 
 #include<iostream>
-#include "..\core\scene.hpp"
+#include "core/scene.hpp"
 
 
 

@@ -4,7 +4,7 @@
 #include<vector>
 #include<variant>
 
-#include"scene.hpp"
+#include"core/scene.hpp"
 
 class SceneManager
 {

@@ -9,10 +9,10 @@
 #include<imgui/imgui_impl_glfw.h>
 #include<imgui/imgui_impl_opengl3.h>
 
-#include"util.hpp"
-#include"scene.hpp"
+#include"util/util.hpp"
+#include"core/scene.hpp"
 #include"event.hpp"
-#include"random.hpp"
+#include"util/random.hpp"
 
 Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std::string& title)
 {

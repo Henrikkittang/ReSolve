@@ -10,11 +10,11 @@ class Scene
 {
 public:
     
-
     inline Scene(AppContext& appContext) 
         : m_appContext(appContext)
     {}
 
+    virtual ~Scene() {}
 
     virtual void onCreate() { assert("Init not implemented"); }
     virtual void onDestroy() {}

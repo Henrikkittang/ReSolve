@@ -1,13 +1,14 @@
-#include"shader.hpp"
+#include"graphics/shader.hpp"
 
-#include"util.hpp"
-
-#include <GL/glew.h>
 
 #include <iostream>
 #include <string>
 #include <fstream>
 #include <sstream>    
+
+
+#include <GL/glew.h>
+#include"util/util.hpp"
 
 Shader::Shader()
     :m_filepath(""), m_renderID(0)

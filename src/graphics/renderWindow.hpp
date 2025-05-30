@@ -7,10 +7,10 @@
 
 #include <cstdint>
 
-#include"vertexArray.hpp"
-#include"indexBuffer.hpp"
-#include"shader.hpp"
-#include"renderable.hpp"
+#include"decapricated/vertexArray.hpp"
+#include"decapricated\indexBuffer.hpp"
+#include"graphics/shader.hpp"
+#include"graphics/renderable.hpp"
 
 
 class RenderWindow

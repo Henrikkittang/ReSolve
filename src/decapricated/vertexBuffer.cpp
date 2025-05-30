@@ -1,5 +1,5 @@
 #include"vertexBuffer.hpp"
-#include"util.hpp"
+#include"util/util.hpp"
 
 #include<iostream>
 

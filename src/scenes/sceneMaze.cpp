@@ -2,8 +2,8 @@
 
 #include<iostream>
 
-#include"random.hpp"
-#include"util.hpp"
+#include"util/random.hpp"
+#include"util/util.hpp"
 
 
 void SceneMaze::onCreate() 

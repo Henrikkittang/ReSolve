@@ -41,12 +41,6 @@ file(GLOB_RECURSE VENDOR    "vendor/*.cpp")
 
 include_directories(
 	${CMAKE_SOURCE_DIR}/src/ 
-	${CMAKE_SOURCE_DIR}/src/tests/ 
-	${CMAKE_SOURCE_DIR}/src/scenes/ 
-	${CMAKE_SOURCE_DIR}/src/graphics/ 
-	${CMAKE_SOURCE_DIR}/src/util/ 
-	${CMAKE_SOURCE_DIR}/src/core/ 
-	${CMAKE_SOURCE_DIR}/src/decapricated/ 
     ${CMAKE_SOURCE_DIR}/vendor/ 
 )
 

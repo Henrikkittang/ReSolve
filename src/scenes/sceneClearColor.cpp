@@ -2,9 +2,8 @@
 
 #include<imgui/imgui.h>
 
-#include"util.hpp"
-#include"event.hpp"
-#include"sceneFractal.hpp"
+#include"util/util.hpp"
+#include"core/event.hpp"
 
 
 void SceneClearColor::onCreate()

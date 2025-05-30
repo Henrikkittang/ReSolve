@@ -1,5 +1,5 @@
 #include"vertexBufferLayout.hpp"
-#include"util.hpp"
+#include"util/util.hpp"
 
 #include<GL/glew.h>
 

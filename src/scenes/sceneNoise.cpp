@@ -1,9 +1,9 @@
 #include"sceneNoise.hpp"
 
 #include<imgui/imgui.h>
-#include"texture.hpp"
-#include"camera.hpp"
-#include"appContext.hpp"
+#include"graphics/texture.hpp"
+#include"core/camera.hpp"
+#include"core/appContext.hpp"
 
 void SceneNoise::onCreate() 
 {

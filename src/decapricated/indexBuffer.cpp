@@ -1,5 +1,5 @@
-#include"..\graphics\indexBuffer.hpp"
-#include"util.hpp"
+#include"indexBuffer.hpp"
+#include"util/util.hpp"
 
 IndexBuffer::IndexBuffer(const uint32_t* data, uint32_t count)
     : m_count(count)

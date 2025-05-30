@@ -2,9 +2,9 @@
 
 #include<iostream>
 #include<imgui/imgui.h>
-#include"util.hpp"
+#include"util/util.hpp"
 
-#include"appContext.hpp"
+#include"core/appContext.hpp"
 
 
 void SceneFractal::onCreate()
