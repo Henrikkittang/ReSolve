@@ -4,10 +4,7 @@
 #include"texture.hpp"
 #include"random.hpp"
 #include"camera.hpp"
-
-#pragma once
-
-#include"scene.hpp"
+#include"shader.hpp"
 
 
 struct NoiseSettnings
@@ -21,10 +18,12 @@ struct NoiseSettnings
 class SceneNoise : public Scene
 {
 public:
-    void onCreate() override;
+    using Scene::Scene;
 
-    void onUpdate( const RenderWindow& wn ) override;
-    void onRender( const RenderWindow& wn ) override;
+
+    void onCreate() override;
+    void onUpdate() override;
+    void onRender() override;
     void onImGuiRender() override;
 
     void onActivate() override;

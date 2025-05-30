@@ -5,11 +5,10 @@
 #include"random.hpp"
 #include"util.hpp"
 
+
 void SceneMaze::onCreate() 
 {
     m_camera = Camera{960.0, 540.0};
-
-
 
     m_scl = 8;
 
@@ -33,7 +32,7 @@ void SceneMaze::onCreate()
     m_shader.setUniformMat4f("uMVP", mvp);
 }
 
-void SceneMaze::onUpdate( const RenderWindow& wn ) 
+void SceneMaze::onUpdate() 
 {
     if( m_open.empty() )
         return;
@@ -58,7 +57,7 @@ void SceneMaze::onUpdate( const RenderWindow& wn )
 }
 
 
-void SceneMaze::onRender( const RenderWindow& wn) 
+void SceneMaze::onRender() 
 {
     // std::vector<Quad> quads;
     // quads.reserve( m_mazeData.size() );

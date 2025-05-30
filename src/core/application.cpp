@@ -111,8 +111,8 @@ void Application::run()
         Scene* scene = m_sceneManager.getCurrentScene();
         if(scene != nullptr)
         {
-            scene->onUpdate(m_window);
-            scene->onRender(m_window);
+            scene->onUpdate();
+            scene->onRender();
             scene->onImGuiRender();
         }
                 

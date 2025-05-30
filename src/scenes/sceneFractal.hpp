@@ -12,9 +12,11 @@ class SceneFractal : public Scene
 {
 public:
 
+    using Scene::Scene;
+
     void onCreate() override;
-    void onUpdate( const RenderWindow& wn ) override;
-    void onRender( const RenderWindow& wn ) override;
+    void onUpdate(  ) override;
+    void onRender(  ) override;
     void onImGuiRender() override;
 
 

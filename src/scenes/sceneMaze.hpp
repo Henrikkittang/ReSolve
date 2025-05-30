@@ -7,6 +7,7 @@
 #include"renderable.hpp"
 #include"scene.hpp"
 #include"camera.hpp"
+#include"shader.hpp"
 
 struct Quad
 {
@@ -21,13 +22,11 @@ struct Quad
 class SceneMaze : public Scene
 {
 public:
-
-using Scene::Scene; // Inherit constructors
-
+    using Scene::Scene;
 
     void onCreate() override;
-    void onUpdate( const RenderWindow& wn) override;
-    void onRender( const RenderWindow& wn) override;
+    void onUpdate() override;
+    void onRender() override;
     void onImGuiRender() override;
 
     void onActivate() override;

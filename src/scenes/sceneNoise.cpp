@@ -1,9 +1,9 @@
 #include"sceneNoise.hpp"
 
 #include<imgui/imgui.h>
-
 #include"texture.hpp"
 #include"camera.hpp"
+#include"appContext.hpp"
 
 void SceneNoise::onCreate() 
 {
@@ -34,7 +34,7 @@ void SceneNoise::onCreate()
     m_noiseSettnigns.redraw = true;
 }
 
-void SceneNoise::onUpdate( const RenderWindow& wn ) 
+void SceneNoise::onUpdate(  ) 
 {
     if( !m_noiseSettnigns.redraw )
         return;
@@ -56,7 +56,7 @@ void SceneNoise::onUpdate( const RenderWindow& wn )
     m_noiseSettnigns.redraw = false;
 }
 
-void SceneNoise::onRender( const RenderWindow& wn ) 
+void SceneNoise::onRender(  ) 
 {
     float positions[] = {
           0.0f,    0.0f, 0.0f, 0.0f,
@@ -81,7 +81,7 @@ void SceneNoise::onRender( const RenderWindow& wn )
 
     m_texture.bind();
 
-    wn.draw(va, ib, m_shader);   
+    m_appContext.window->draw(va, ib, m_shader);   
 }
 
 void SceneNoise::onImGuiRender() 

@@ -1,12 +1,12 @@
 #include"sceneFractal.hpp"
 
 #include<iostream>
-
 #include<imgui/imgui.h>
-
 #include"util.hpp"
 
-  
+#include"appContext.hpp"
+
+
 void SceneFractal::onCreate()
 {
     m_camera = Camera{960.0, 540.0};
@@ -48,24 +48,24 @@ void SceneFractal::onCreate()
     m_va.addBuffer(vb, layout);
 }
 
-void SceneFractal::onUpdate(const RenderWindow& wn) 
+void SceneFractal::onUpdate() 
 {    
-    if( wn.isKeyPressed(GLFW_KEY_UP) )
+    if( m_appContext.window->isKeyPressed(GLFW_KEY_UP) )
         uZoom = uZoom * 0.99;
 
-    if( wn.isKeyPressed(GLFW_KEY_DOWN) )
+    if( m_appContext.window->isKeyPressed(GLFW_KEY_D) )
         uZoom = uZoom / 0.99;
 
-    if( wn.isKeyPressed(GLFW_KEY_W) )
+    if( m_appContext.window->isKeyPressed(GLFW_KEY_W) )
         uPan.y = uPan.y - 0.01 * uZoom;
 
-    if( wn.isKeyPressed(GLFW_KEY_S) )
+    if( m_appContext.window->isKeyPressed(GLFW_KEY_S) )
         uPan.y = uPan.y + 0.01 * uZoom;
 
-    if( wn.isKeyPressed(GLFW_KEY_D) )
+    if( m_appContext.window->isKeyPressed(GLFW_KEY_D) )
         uPan.x = uPan.x - 0.01 * uZoom;
 
-    if( wn.isKeyPressed(GLFW_KEY_A) )
+    if( m_appContext.window->isKeyPressed(GLFW_KEY_A) )
         uPan.x = uPan.x + 0.01 * uZoom;
 
     m_shader.bind();
@@ -75,7 +75,7 @@ void SceneFractal::onUpdate(const RenderWindow& wn)
     
 }
 
-void SceneFractal::onRender(const RenderWindow& wn) 
+void SceneFractal::onRender() 
 {
     m_shader.bind();
     m_va.bind();
