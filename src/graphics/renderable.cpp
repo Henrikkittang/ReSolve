@@ -1,5 +1,4 @@
 #include"graphics/renderable.hpp"
-
 #include"util/util.hpp"
 
 

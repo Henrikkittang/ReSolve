@@ -18,8 +18,8 @@ void SceneClearColor::onUpdate()
 {
     GLCall( glClearColor(m_clearColor[0], m_clearColor[1], m_clearColor[2], m_clearColor[3]) );
     GLCall( glClear(GL_COLOR_BUFFER_BIT) );
-
 }
+
 void SceneClearColor::onRender() 
 {}
 

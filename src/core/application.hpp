@@ -5,11 +5,11 @@
 
 #include<GL/glew.h>
 
-#include"core/scene.hpp"
-#include"graphics/renderWindow.hpp"
-#include"core/sceneManager.hpp"
+#include"scene.hpp"
+#include"renderWindow.hpp"
+#include"sceneManager.hpp"
 
-#include"core/appContext.hpp"
+#include"appContext.hpp"
 
 class Application
 {

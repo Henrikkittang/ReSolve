@@ -21,8 +21,8 @@ int main()
     Application app{960, 540, "Hello world"};
     app.ImGuiInit();
 
-    // app.sceneManager.addScene<SceneClearColor>("Color");
-    // app.sceneManager.addScene<SceneNoise>("Noise");
+    app.registerScene<SceneClearColor>("Color");
+    app.registerScene<SceneNoise>("Noise");
     app.registerScene<SceneMaze>("Maze");
     // app.sceneManager.addScene<SceneFractal>("Fractal");
 

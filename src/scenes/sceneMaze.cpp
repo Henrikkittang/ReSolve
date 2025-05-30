@@ -2,6 +2,7 @@
 
 #include<iostream>
 
+#include"core/appContext.hpp"
 #include"util/random.hpp"
 #include"util/util.hpp"
 
@@ -83,6 +84,7 @@ void SceneMaze::onRender()
 void SceneMaze::onImGuiRender() {}
 
 
+
 void SceneMaze::connect_nodes(glm::ivec2 curPos, glm::ivec2 nodePos)
 {
 
@@ -138,6 +140,7 @@ std::vector<glm::ivec2> SceneMaze::find_frontiers(glm::ivec2 pos, int state)
 
 void SceneMaze::onActivate()
 {
+    m_ctx.window.clear();
     m_renderable.bind();
     m_shader.bind();
 }
