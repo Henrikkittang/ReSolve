@@ -4,6 +4,6 @@
 
 struct AppContext
 {
-    RenderWindow* window;
-    SceneManager* sceneManager;
+    RenderWindow& window;
+    SceneManager& sceneManager;
 };

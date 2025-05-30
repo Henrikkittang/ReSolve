@@ -50,22 +50,22 @@ void SceneFractal::onCreate()
 
 void SceneFractal::onUpdate() 
 {    
-    if( m_appContext.window->isKeyPressed(GLFW_KEY_UP) )
+    if( m_ctx.window.isKeyPressed(GLFW_KEY_UP) )
         uZoom = uZoom * 0.99;
 
-    if( m_appContext.window->isKeyPressed(GLFW_KEY_D) )
+    if( m_ctx.window.isKeyPressed(GLFW_KEY_D) )
         uZoom = uZoom / 0.99;
 
-    if( m_appContext.window->isKeyPressed(GLFW_KEY_W) )
+    if( m_ctx.window.isKeyPressed(GLFW_KEY_W) )
         uPan.y = uPan.y - 0.01 * uZoom;
 
-    if( m_appContext.window->isKeyPressed(GLFW_KEY_S) )
+    if( m_ctx.window.isKeyPressed(GLFW_KEY_S) )
         uPan.y = uPan.y + 0.01 * uZoom;
 
-    if( m_appContext.window->isKeyPressed(GLFW_KEY_D) )
+    if( m_ctx.window.isKeyPressed(GLFW_KEY_D) )
         uPan.x = uPan.x - 0.01 * uZoom;
 
-    if( m_appContext.window->isKeyPressed(GLFW_KEY_A) )
+    if( m_ctx.window.isKeyPressed(GLFW_KEY_A) )
         uPan.x = uPan.x + 0.01 * uZoom;
 
     m_shader.bind();

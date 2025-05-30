@@ -37,7 +37,7 @@ private:
     // Important that these are defined in the same way as in the struct
     AppContext m_appContext = 
     {
-        &m_window,
-        &m_sceneManager
+        m_window,
+        m_sceneManager
     };
 };

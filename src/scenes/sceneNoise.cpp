@@ -81,7 +81,7 @@ void SceneNoise::onRender(  )
 
     m_texture.bind();
 
-    m_appContext.window->draw(va, ib, m_shader);   
+    m_ctx.window.draw(va, ib, m_shader);   
 }
 
 void SceneNoise::onImGuiRender() 

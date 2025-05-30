@@ -10,8 +10,8 @@ class Scene
 {
 public:
     
-    inline Scene(AppContext& appContext) 
-        : m_appContext(appContext)
+    inline Scene(AppContext& m_ctx) 
+        : m_ctx(m_ctx)
     {}
 
     virtual ~Scene() {}
@@ -30,6 +30,6 @@ public:
 
 protected: 
 
-    AppContext& m_appContext;
+    AppContext& m_ctx;
 
 };
