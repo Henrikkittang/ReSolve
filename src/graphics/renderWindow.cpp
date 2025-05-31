@@ -16,8 +16,8 @@ RenderWindow::RenderWindow(GLFWwindow* window)
 
 RenderWindow::~RenderWindow()
 {
-    if( m_window != nullptr )
-        glfwDestroyWindow(m_window);    
+    // if( m_window != nullptr )
+    //     glfwDestroyWindow(m_window);    
 }
 
 RenderWindow::RenderWindow(RenderWindow&& other)

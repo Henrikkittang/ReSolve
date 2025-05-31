@@ -67,9 +67,6 @@ Application::~Application()
 
 void Application::ImGuiInit()
 {
-    if (m_isImguiActive)
-        return;
-
     m_isImguiActive = true;
 
     ImGui::CreateContext();
