@@ -14,7 +14,6 @@ This project contains a .vscode folder, which means that the easiest way to buil
 ## Build system
 - Add initlizer tasks in vscode for different build systems (vscode specific)
 - Maybe have som sort of system where its easy to switch compilers (vscode specific)
-- The cmake should idealy not contain compiler paths
 - Have cmake specify parallel building, like the -j<n> flag
 
 ## Project
