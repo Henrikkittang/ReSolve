@@ -15,7 +15,6 @@ find_package(OpenGL REQUIRED)
 # Add sub project
 add_subdirectory(vendor/glad)
 add_subdirectory(vendor/glfw)
-add_subdirectory(external/imgui)
 
 
 # Add source files from your own code
