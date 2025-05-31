@@ -3,7 +3,7 @@
 #include<iostream>
 #include<cstring>
 
-#include<stb_image/stb_image.h>
+// #include<stb_image/stb_image.h>
 
 #include"util/util.hpp"
 #include"util/random.hpp"
@@ -38,8 +38,8 @@ Texture::Texture(int width, int height)
 Texture::Texture(const std::string& filepath)
     :m_rendererID(0), m_filepath(filepath), m_localBuffer(nullptr), m_width(0), m_height(0), m_BBP(0)
 {
-    stbi_set_flip_vertically_on_load(true);
-    m_localBuffer = stbi_load(filepath.c_str(), &m_width, &m_height, &m_BBP, 4);
+    // stbi_set_flip_vertically_on_load(true);
+    // m_localBuffer = stbi_load(filepath.c_str(), &m_width, &m_height, &m_BBP, 4);
 
     GLCall( glGenTextures(1, &m_rendererID) );
     GLCall( glBindTexture(GL_TEXTURE_2D, m_rendererID) );

@@ -1,8 +1,8 @@
-#include"graphics/renderWindow.hpp"
-#include"util/util.hpp"
-#include"graphics/renderable.hpp"
-
 #include<iostream>
+
+#include"graphics/renderWindow.hpp"
+#include"graphics/renderable.hpp"
+#include"util/util.hpp"
 
 
 RenderWindow::RenderWindow()
