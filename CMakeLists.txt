@@ -33,7 +33,7 @@ add_executable(output ${SOURCES} ${VENDOR})
 target_link_libraries(output
     glad
     glfw3
-    ${OPENGL_gl_LIBRARY}
+    OpenGL::GL
     gdi32
 )
 
