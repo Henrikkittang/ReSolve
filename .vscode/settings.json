@@ -105,7 +105,6 @@
     },
     "files.exclude": {
         "build/": true,
-        // "lib/": true,
         "*.ini": true,
     },
 }

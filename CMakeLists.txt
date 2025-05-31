@@ -12,23 +12,14 @@ endif()
 # Dependencies
 find_package(OpenGL REQUIRED)
 
-# Set library path manually
-if(MSVC)
-    set(LIBS ${CMAKE_SOURCE_DIR}/lib/lib-vc2022)
-else()
-    set(LIBS ${CMAKE_SOURCE_DIR}/lib/lib-mingw-w64)
-endif()
-link_directories(${LIBS})
-
 # Add sub project
 add_subdirectory(vendor/glad)
 add_subdirectory(vendor/glfw)
-
+add_subdirectory(external/imgui)
 
 
 # Add source files from your own code
 file(GLOB_RECURSE SOURCES "src/*.cpp")
-file(GLOB_RECURSE VENDOR  "vendor/*.cpp")
 
 
 # Define the executable
