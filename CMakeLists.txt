@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(OpenGLProject)
+project(ReSolve)
 
 # C++ standard
 set(CMAKE_CXX_STANDARD 23)
@@ -32,18 +32,19 @@ target_include_directories(imgui PUBLIC
     ${IMGUI_DIR}
     ${IMGUI_DIR}/backends
     ${CMAKE_SOURCE_DIR}/vendor/GLFW/include
+    ${CMAKE_SOURCE_DIR}/vendor/glm/
 )
 
 # Source files
 file(GLOB_RECURSE PROJECT_SOURCES ${CMAKE_SOURCE_DIR}/src/*.cpp)
 
 # Executable target
-add_executable(OpenGLProject 
+add_executable(output 
     ${PROJECT_SOURCES}
     ${CMAKE_SOURCE_DIR}/vendor/stb_image/stb_image.cpp
 )
 
-target_include_directories(OpenGLProject PRIVATE
+target_include_directories(output PRIVATE
     ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/vendor
     ${CMAKE_SOURCE_DIR}/vendor/GLFW/include
@@ -52,7 +53,7 @@ target_include_directories(OpenGLProject PRIVATE
 )
 
 # Link libraries
-target_link_libraries(OpenGLProject PRIVATE
+target_link_libraries(output PRIVATE
     glad
     glfw
     OpenGL::GL
@@ -60,18 +61,18 @@ target_link_libraries(OpenGLProject PRIVATE
 )
 
 # Compiler definitions
-target_compile_definitions(OpenGLProject PRIVATE
+target_compile_definitions(output PRIVATE
     $<$<CONFIG:Debug>:DEBUG>
     $<$<CONFIG:Release>:RELEASE>
 )
 
 # Compiler options
-target_compile_options(OpenGLProject PRIVATE
+target_compile_options(output PRIVATE
     $<$<CONFIG:Debug>:-g>
     $<$<CONFIG:Release>:-O3>
 )
 
 # Optional: Windows-specific linkage
 if (WIN32)
-    target_link_libraries(OpenGLProject PRIVATE gdi32)
+    target_link_libraries(output PRIVATE gdi32)
 endif()
