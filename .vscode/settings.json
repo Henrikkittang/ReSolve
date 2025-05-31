@@ -104,7 +104,7 @@
         "*.def": "cpp"
     },
     "files.exclude": {
-        "build/": true,
+        // "build/": true,
         "*.ini": true,
     },
 }
