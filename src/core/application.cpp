@@ -9,10 +9,11 @@
 #include<imgui/imgui_impl_glfw.h>
 #include<imgui/imgui_impl_opengl3.h>
 
-#include"util/util.hpp"
 #include"core/scene.hpp"
-#include"event.hpp"
+#include"core/event.hpp"
 #include"util/random.hpp"
+#include"util/util.hpp"
+
 
 Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std::string& title)
 {
@@ -34,13 +35,13 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
     }
 
     glfwMakeContextCurrent(window);
-    if(glewInit() != GLEW_OK)
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
-        std::cout << "Failed to initilize glew \n";
+        std::cout << "Failed to initialize GLAD\n";
         glfwDestroyWindow(window);
         glfwTerminate();
         exit(0);
-    }    
+    }
 
     m_window = RenderWindow(window);
     GLCall( glEnable(GL_BLEND) );

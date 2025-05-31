@@ -3,7 +3,7 @@
 #include<vector>
 #include<stack>
 
-#include<GL/glew.h>
+#include <glad/glad.h>
 
 
 #include"core/appContext.hpp"

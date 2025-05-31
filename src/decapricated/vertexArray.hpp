@@ -2,7 +2,7 @@
 #include"vertexBuffer.hpp"
 #include"vertexBufferLayout.hpp"
 
-#include<GL/glew.h>
+#include <glad/glad.h>
 
 class VertexArray 
 {
