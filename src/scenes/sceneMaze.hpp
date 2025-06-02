@@ -11,13 +11,16 @@
 
 struct Quad
 {
-	float p[8];
+    float p[8];
 
-	Quad(float x, float y, float width, float height)
-		: p(x, y, x+width, y, x+width, y+height, x, y+height)
-	{}
+    Quad(float x, float y, float width, float height)
+    {
+        p[0] = x;          p[1] = y;
+        p[2] = x + width;  p[3] = y;
+        p[4] = x + width;  p[5] = y + height;
+        p[6] = x;          p[7] = y + height;
+    }
 };
-
 
 class SceneMaze : public Scene
 {

@@ -6,8 +6,22 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Output directory
-if(NOT MSVC)
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+# Detect platform
+if(WIN32)
+    set(PLATFORM_WINDOWS TRUE)
+elseif(UNIX)
+    set(PLATFORM_LINUX TRUE)
+endif()
+
+# Detect compiler
+if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    set(COMPILER_CLANG TRUE)
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    set(COMPILER_GCC TRUE)
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    set(COMPILER_MSVC TRUE)
 endif()
 
 # Find OpenGL
@@ -67,12 +81,19 @@ target_compile_definitions(output PRIVATE
 )
 
 # Compiler options
-target_compile_options(output PRIVATE
-    $<$<CONFIG:Debug>:-g>
-    $<$<CONFIG:Release>:-O3>
-)
+if (COMPILER_GCC OR COMPILER_CLANG)
+    target_compile_options(output PRIVATE
+        $<$<CONFIG:Debug>:-g>
+        $<$<CONFIG:Release>:-O3>
+    )
+elseif(COMPILER_MSVC)
+    target_compile_options(output PRIVATE
+        $<$<CONFIG:Debug>:/Zi /Od>
+        $<$<CONFIG:Release>:/O2>
+    )
+endif()
 
-# Optional: Windows-specific linkage
-if (WIN32)
+# Platform-specific settings
+if (PLATFORM_WINDOWS)
     target_link_libraries(output PRIVATE gdi32)
 endif()
