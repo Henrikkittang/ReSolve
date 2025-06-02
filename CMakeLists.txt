@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 project(ReSolve)
 
 # C++ standard
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Output directory
@@ -28,8 +28,8 @@ endif()
 find_package(OpenGL REQUIRED)
 
 # Dependencies
-add_subdirectory(vendor/glad)
-add_subdirectory(vendor/glfw)
+add_subdirectory(vendor/GLAD)
+add_subdirectory(vendor/GLFW)
 
 # ImGui setup
 set(IMGUI_DIR ${CMAKE_SOURCE_DIR}/vendor/imgui)
