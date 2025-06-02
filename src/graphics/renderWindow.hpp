@@ -8,7 +8,7 @@
 #include <cstdint>
 
 #include"decapricated/vertexArray.hpp"
-#include"decapricated\indexBuffer.hpp"
+#include"decapricated/indexBuffer.hpp"
 #include"graphics/shader.hpp"
 #include"graphics/renderable.hpp"
 

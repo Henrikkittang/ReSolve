@@ -3,7 +3,7 @@
 #include"decapricated/vertexArray.hpp"
 #include"decapricated/vertexBuffer.hpp"
 
-#include"..\decapricated\indexBuffer.hpp"
+#include".decapricated/indexBuffer.hpp"
 #include"graphics/shader.hpp"
 
 #include"core/scene.hpp"
