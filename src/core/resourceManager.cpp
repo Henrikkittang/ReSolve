@@ -19,15 +19,16 @@ bool ResourceManager::load(const std::string& filepath, ResourceHandle& handle)
     std::string extension = pathObject.extension().string();
     
     Resource* resource;
+    ResourceType type;
     if( extension ==  ".shader")
     {
         resource = (Resource*)new Shader{};
-        handle.type = ResourceType::SHD; 
+        type = ResourceType::SHD; 
     }
     else if( extension == ".png" )
     {
         resource = (Resource*)new Texture{};
-        handle.type = ResourceType::TEX; 
+        type = ResourceType::TEX; 
     }
     else
         return false;
@@ -37,6 +38,7 @@ bool ResourceManager::load(const std::string& filepath, ResourceHandle& handle)
 
     handle.filepath = filepath;
     handle.id = Random::getInt();
+    handle.type = type;
 
     m_resources[handle.id] = resource;
 
