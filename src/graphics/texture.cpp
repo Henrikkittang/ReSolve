@@ -53,16 +53,16 @@ Texture::Texture(const std::string& filepath)
     
     unbind();
 
-    // if( m_localBuffer )
-    //     stbi_image_free(m_localBuffer);
-    // m_localBuffer = nullptr;
+  
 }
 
 
 Texture::~Texture()
 {
     GLCall( glDeleteTextures(1, &m_rendererID) );
-    free(m_localBuffer);
+    if( m_localBuffer )
+        stbi_image_free(m_localBuffer);
+    m_localBuffer = nullptr;
 }
 
 Texture::Texture(Texture&& other)

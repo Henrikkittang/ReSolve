@@ -6,7 +6,7 @@
 #include"scenes/sceneMaze.hpp"
 #include"scenes/sceneNoise.hpp"
 
-
+#include"core/resourceManager.hpp"
 
 int main()
 {    
@@ -18,13 +18,26 @@ int main()
         std::cout << "No mode is active." << std::endl;
     #endif
 
+
     Application app{960, 540, "Hello world"};
     app.ImGuiInit();
 
-    app.registerScene<SceneClearColor>("Color");
-    app.registerScene<SceneNoise>("Noise");
-    app.registerScene<SceneMaze>("Maze");
+    ResourceManager rm{};
+
+    ResourceHandle shaderHande;
+    ResourceHandle textureHandle;
+
+    
+
+    rm.load("./resources/shaders/basic.shader", &shaderHande);
+    rm.load("./resources/textures/paint.png", &textureHandle);
+
+    
+
+    // app.registerScene<SceneClearColor>("Color");
+    // app.registerScene<SceneNoise>("Noise");
+    // app.registerScene<SceneMaze>("Maze");
     // app.sceneManager.addScene<SceneFractal>("Fractal");
 
-    app.run();    
+    // app.run();    
 }
