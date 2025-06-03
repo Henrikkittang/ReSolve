@@ -10,11 +10,11 @@
 
 
 Texture::Texture()
-    :m_rendererID(0), m_filepath(""), m_localBuffer(nullptr), m_width(0), m_height(0), m_BBP(0)
+    :m_rendererID(0), m_localBuffer(nullptr), m_width(0), m_height(0), m_BBP(0)
 {}
 
 Texture::Texture(int width, int height)
-    :m_rendererID(0), m_filepath(""), m_localBuffer(nullptr), m_width(width), m_height(height), m_BBP(32)
+    :m_rendererID(0), m_localBuffer(nullptr), m_width(width), m_height(height), m_BBP(32)
 {
     // Using malloc for stb_image compatibility
     m_localBuffer = (uint8_t*)malloc(4*m_width*m_height);
@@ -35,9 +35,53 @@ Texture::Texture(int width, int height)
 }
 
 
-Texture::Texture(const std::string& filepath)
-    :m_rendererID(0), m_filepath(filepath), m_localBuffer(nullptr), m_width(0), m_height(0), m_BBP(0)
+
+Texture::~Texture()
 {
+    if( m_rendererID != 0 )
+        GLCall( glDeleteTextures(1, &m_rendererID) );
+ 
+    if( m_localBuffer )
+        stbi_image_free(m_localBuffer);
+
+    m_localBuffer = nullptr;
+    m_rendererID  = 0;
+}
+
+Texture::Texture(Texture&& other)
+    :m_rendererID(other.m_rendererID), m_localBuffer(other.m_localBuffer), m_width(other.m_width), m_height(other.m_height), m_BBP(other.m_BBP)
+{
+    other.m_rendererID  = 0;
+    other.m_localBuffer = nullptr;
+}
+
+Texture& Texture::operator=(Texture&& other)
+{
+    if(this != &other)
+    {
+        GLCall( glDeleteTextures(1, &m_rendererID) );
+
+        m_rendererID  = other.m_rendererID;
+        m_localBuffer = other.m_localBuffer;
+        m_width       = other.m_width;
+        m_height      = other.m_height;
+        m_BBP         = other.m_BBP;
+
+        other.m_rendererID  = 0;
+        other.m_localBuffer = nullptr;        
+
+    }
+    return *this;
+}
+
+
+bool Texture::load(const std::string& filepath) 
+{
+#ifdef DEBUG
+    if(m_localBuffer != nullptr)
+        std::cout << "Overwriting local buffer in texture" << "\n";
+#endif
+
     stbi_set_flip_vertically_on_load(true);
     m_localBuffer = stbi_load(filepath.c_str(), &m_width, &m_height, &m_BBP, 4);
 
@@ -53,45 +97,30 @@ Texture::Texture(const std::string& filepath)
     
     unbind();
 
-  
-}
-
-
-Texture::~Texture()
-{
-    GLCall( glDeleteTextures(1, &m_rendererID) );
-    if( m_localBuffer )
-        stbi_image_free(m_localBuffer);
-    m_localBuffer = nullptr;
-}
-
-Texture::Texture(Texture&& other)
-    :m_rendererID(other.m_rendererID), m_filepath(other.m_filepath), m_localBuffer(other.m_localBuffer), m_width(other.m_width), m_height(other.m_height), m_BBP(other.m_BBP)
-{
-    other.m_rendererID  = 0;
-    other.m_localBuffer = nullptr;
-}
-
-Texture& Texture::operator=(Texture&& other)
-{
-    if(this != &other)
-    {
-        GLCall( glDeleteTextures(1, &m_rendererID) );
-
-        m_rendererID  = other.m_rendererID;
-        m_filepath    = std::move( other.m_filepath );
-        m_localBuffer = other.m_localBuffer;
-        m_width       = other.m_width;
-        m_height      = other.m_height;
-        m_BBP         = other.m_BBP;
-
-        other.m_rendererID  = 0;
-        other.m_localBuffer = nullptr;        
-
+    if (!m_localBuffer) {
+#ifdef DEBUG
+        std::cerr << "Failed to load texture: " << filepath << "\n";
+#endif
+        return false;
     }
-    return *this;
+
+    return true;    
 }
 
+
+bool Texture::unload() 
+{
+    if (m_rendererID != 0)
+        GLCall(glDeleteTextures(1, &m_rendererID));
+
+    if (m_localBuffer)
+        stbi_image_free(m_localBuffer);
+
+    m_localBuffer = nullptr;
+    m_rendererID = 0;
+
+    return true;  
+}
 
 void Texture::bind(uint32_t slot) const
 {
@@ -140,8 +169,8 @@ glm::u8vec4 Texture::getPixel(int x, int y) const
 void Texture::setPixel(int x, int y, glm::u8vec4 color)
 {
 #if DEBUG
-    // if( x >= m_width - 3 || x < 0 || y >= m_height - 3 || y < 0)
-    //     std::cout << "Position out of bound in texture \n";
+    if( x >= m_width - 3 || x < 0 || y >= m_height - 3 || y < 0)
+        std::cout << "Position out of bound in texture \n";
     if(!m_localBuffer)
         std::cout << "Local buffer is nullptr \n";
 #endif

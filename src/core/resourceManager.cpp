@@ -1,9 +1,11 @@
 
 #include"resourceManager.hpp"
 
+#include<iostream>
 #include<filesystem>
 
 #include"util/random.hpp"
+
 
 ResourceManager::ResourceManager()
 {}
@@ -11,39 +13,61 @@ ResourceManager::ResourceManager()
 ResourceManager::~ResourceManager()
 {}
 
-bool ResourceManager::load(const std::string& filepath, ResourceHandle* handle)
+bool ResourceManager::load(const std::string& filepath, ResourceHandle& handle)
 {
     std::filesystem::path pathObject(filepath);
-    std::string extension =  pathObject.extension().string();
+    std::string extension = pathObject.extension().string();
     
-    void* resource;
+    Resource* resource;
     if( extension ==  ".shader")
     {
-        resource = (void*)new Shader{filepath};
-        handle->type = ResourceType::SHD; 
+        resource = (Resource*)new Shader{};
+        handle.type = ResourceType::SHD; 
     }
     else if( extension == ".png" )
     {
-        resource = (void*)new Texture{filepath};
-        handle->type = ResourceType::TEX; 
+        resource = (Resource*)new Texture{};
+        handle.type = ResourceType::TEX; 
     }
+    else
+        return false;
 
-    handle->filepath = filepath;
-    handle->id = Random::getInt();
+    if(!resource->load(filepath));
+        return false;
 
-    m_resources[handle->id] = resource;
+    handle.filepath = filepath;
+    handle.id = Random::getInt();
+
+    m_resources[handle.id] = resource;
 
     return true;
 }
 
-bool ResourceManager::unload(const ResourceHandle& handle)
+bool ResourceManager::unload(ResourceHandle& handle)
 {
-    const void* resource = m_resources[handle.id];
+#ifdef DEBUG
+    if( !m_resources.contains(handle.id) ) 
+        std::cout << "Resource not found: " << handle.id << "\n";       
+#endif
+    
+    Resource* resource = m_resources[handle.id];
     m_resources.erase(handle.id);
-    delete resource;
+
+    resource->unload();
+
+    if(handle.type == ResourceType::SHD)
+        delete static_cast<Shader*>(resource);
+    else if(handle.type == ResourceType::TEX)
+        delete static_cast<Texture*>(resource);
+    
+    handle.filepath = "";
+    handle.id       = 0;
+    handle.type     = ResourceType::NON;
+
+    return true;
 }
 
-const void* ResourceManager::get(const ResourceHandle& handle) 
+Resource* ResourceManager::get(const ResourceHandle& handle) 
 {
     return m_resources[handle.id];
 }

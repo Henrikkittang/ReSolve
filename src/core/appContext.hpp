@@ -1,3 +1,4 @@
+#pragma once
 #include"graphics/renderWindow.hpp"
 #include"core/sceneManager.hpp"
 

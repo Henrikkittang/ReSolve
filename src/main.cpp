@@ -24,20 +24,21 @@ int main()
 
     ResourceManager rm{};
 
-    ResourceHandle shaderHande;
+    ResourceHandle shaderHandle;
     ResourceHandle textureHandle;
 
     
 
-    rm.load("./resources/shaders/basic.shader", &shaderHande);
-    rm.load("./resources/textures/paint.png", &textureHandle);
+    rm.load("./resources/shaders/basic.shader", shaderHandle);
+    rm.load("./resources/textures/paint.png", textureHandle);
 
-    
+    Texture* texture = (Texture*)rm.get(textureHandle);
 
-    // app.registerScene<SceneClearColor>("Color");
-    // app.registerScene<SceneNoise>("Noise");
-    // app.registerScene<SceneMaze>("Maze");
-    // app.sceneManager.addScene<SceneFractal>("Fractal");
+    rm.unload(shaderHandle);
 
-    // app.run();    
+    app.registerScene<SceneClearColor>("Color");
+    app.registerScene<SceneNoise>("Noise");
+    app.registerScene<SceneMaze>("Maze");
+
+    app.run();    
 }

@@ -15,7 +15,8 @@ void SceneFractal::onCreate()
     uPan = {0.0f, 0.0f};
     maxIterations = 500;
 
-    m_shader = Shader{"./resources/shaders/fractal.shader"};
+    m_shader = Shader{};
+    m_shader.load("./resources/shaders/fractal.shader");
 
     std::vector<float> positions = {
         -1.0f, -1.0f,

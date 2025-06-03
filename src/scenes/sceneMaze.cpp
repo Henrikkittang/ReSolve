@@ -26,7 +26,8 @@ void SceneMaze::onCreate()
         position = { Random::getInt(0, m_width), Random::getInt(0, m_height) };
     m_open.push( position );
     
-    m_shader = Shader{"./resources/shaders/red.shader"};
+    m_shader = Shader{};
+    m_shader.load("./resources/shaders/red.shader");
     auto mvp = m_camera.getMVP();
 
     m_shader.bind();
