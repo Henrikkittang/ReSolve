@@ -9,6 +9,7 @@
 #include"core/appContext.hpp"
 #include"core/scene.hpp"
 #include"core/sceneManager.hpp"
+#include"core/resourceManager.hpp"
 #include"graphics/renderWindow.hpp"
 
 
@@ -31,14 +32,16 @@ public:
 private:
 
 
-    RenderWindow m_window;
-    SceneManager m_sceneManager;
-    bool         m_isImguiActive;
+    RenderWindow    m_window;
+    SceneManager    m_sceneManager;
+    ResourceManager m_resourceManager;
+    bool            m_isImguiActive;
 
     // Important that these are defined in the same way as in the struct
     AppContext m_appContext = 
     {
         m_window,
-        m_sceneManager
+        m_sceneManager,
+        m_resourceManager
     };
 };
