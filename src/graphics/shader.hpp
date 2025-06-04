@@ -48,7 +48,6 @@ private:
     uint32_t getUniformLocation(const std::string& name);
 
 private:
-    std::string m_filepath;
     GLuint      m_renderID;
     std::unordered_map<std::string, int> m_uniformLocationCache;
 };

@@ -29,8 +29,11 @@ int main()
 
     
 
-    rm.load("./resources/shaders/basic.shader", shaderHandle);
-    rm.load("./resources/textures/paint.png", textureHandle);
+    if(!rm.load("./resources/shaders/basic.shader", shaderHandle));
+        std::cout << "Shader not loaded \n";
+    
+    if(!rm.load("./resources/textures/paint.png", textureHandle));
+        std::cout << "Texture not loaded \n";
 
     Texture* texture = (Texture*)rm.get(textureHandle);
 
@@ -39,6 +42,7 @@ int main()
     app.registerScene<SceneClearColor>("Color");
     app.registerScene<SceneNoise>("Noise");
     app.registerScene<SceneMaze>("Maze");
+    app.registerScene<SceneFractal>("Fractal");
 
     app.run();    
 }

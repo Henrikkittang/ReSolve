@@ -11,7 +11,7 @@
 #include"util/util.hpp"
 
 Shader::Shader()
-    :m_filepath(""), m_renderID(0)
+    :m_renderID(0)
 {}
 
 Shader::~Shader()
@@ -35,7 +35,6 @@ Shader& Shader::operator=(Shader&& other)
         GLCall( glDeleteProgram(m_renderID) );
         
         m_renderID = other.m_renderID;
-        m_filepath = std::move( other.m_filepath );
         m_uniformLocationCache = std::move( other.m_uniformLocationCache );
         
         other.m_renderID = 0;

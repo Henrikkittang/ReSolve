@@ -33,8 +33,11 @@ bool ResourceManager::load(const std::string& filepath, ResourceHandle& handle)
     else
         return false;
 
-    if(!resource->load(filepath));
+    if(!resource->load(filepath))
+    {
+        delete resource;
         return false;
+    }
 
     handle.filepath = filepath;
     handle.id = Random::getInt();
@@ -49,7 +52,7 @@ bool ResourceManager::unload(ResourceHandle& handle)
 {
 #ifdef DEBUG
     if( !m_resources.contains(handle.id) ) 
-        std::cout << "Resource not found: " << handle.id << "\n";       
+        std::cout << "Resource not found in unload " << handle.filepath << "\n";       
 #endif
     
     Resource* resource = m_resources[handle.id];
@@ -71,6 +74,11 @@ bool ResourceManager::unload(ResourceHandle& handle)
 
 Resource* ResourceManager::get(const ResourceHandle& handle) 
 {
+#ifdef DEBUG
+    if( !m_resources.contains(handle.id) ) 
+        std::cout << "Resource not found in get " << handle.filepath << "\n";       
+#endif
+
     return m_resources[handle.id];
 }
 
