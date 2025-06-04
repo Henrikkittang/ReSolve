@@ -19,7 +19,7 @@ public:
     bool load(const std::string& filepath, ResourceHandle& handle);
     bool unload(ResourceHandle& handle);
     Resource* get(const ResourceHandle& handle);
-    bool contains(const ResourceHandle& handle);
+    bool isValid(const ResourceHandle& handle);
 
 private:
 

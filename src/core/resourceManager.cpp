@@ -3,8 +3,7 @@
 
 #include<iostream>
 #include<filesystem>
-
-#include"util/random.hpp"
+#include<functional>
 
 
 ResourceManager::ResourceManager()
@@ -15,9 +14,14 @@ ResourceManager::~ResourceManager()
 
 bool ResourceManager::load(const std::string& filepath, ResourceHandle& handle)
 {
+    std::hash<std::string> hasher;
+    uint32_t id = hasher(filepath);
+
+    // if( m_resources.contains(id) ) // maybe add something like smart pointer func to the handles
+ 
     std::filesystem::path pathObject(filepath);
     std::string extension = pathObject.extension().string();
-    
+
     Resource* resource;
     ResourceType type;
     if( extension ==  ".shader")
@@ -40,8 +44,8 @@ bool ResourceManager::load(const std::string& filepath, ResourceHandle& handle)
     }
 
     handle.filepath = filepath;
-    handle.id = Random::getInt();
-    handle.type = type;
+    handle.id       = id;
+    handle.type     = type;
 
     m_resources[handle.id] = resource;
 
@@ -82,7 +86,7 @@ Resource* ResourceManager::get(const ResourceHandle& handle)
     return m_resources[handle.id];
 }
 
-bool ResourceManager::contains(const ResourceHandle& handle)
+bool ResourceManager::isValid(const ResourceHandle& handle)
 {
     return m_resources.contains(handle.id);
 }
