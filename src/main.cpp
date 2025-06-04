@@ -29,13 +29,14 @@ int main()
 
     
 
-    if(!rm.load("./resources/shaders/basic.shader", shaderHandle));
+    if(!rm.load("./resources/shaders/basic.shader", shaderHandle))
         std::cout << "Shader not loaded \n";
     
-    if(!rm.load("./resources/textures/paint.png", textureHandle));
+    if(!rm.load("./resources/textures/paint.png", textureHandle))
         std::cout << "Texture not loaded \n";
 
-    Texture* texture = (Texture*)rm.get(textureHandle);
+    auto texture = rm.get<Texture>(textureHandle);
+
 
     rm.unload(shaderHandle);
 

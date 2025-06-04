@@ -1,10 +1,8 @@
 
 #include"resourceManager.hpp"
 
-#include<iostream>
 #include<filesystem>
 #include<functional>
-
 
 ResourceManager::ResourceManager()
 {}
@@ -14,34 +12,30 @@ ResourceManager::~ResourceManager()
 
 bool ResourceManager::load(const std::string& filepath, ResourceHandle& handle)
 {
-    std::hash<std::string> hasher;
-    uint32_t id = hasher(filepath);
+    uint32_t id = std::hash<std::string>{}(filepath);
 
     // if( m_resources.contains(id) ) // maybe add something like smart pointer func to the handles
  
-    std::filesystem::path pathObject(filepath);
-    std::string extension = pathObject.extension().string();
+    std::string extension = std::filesystem::path(filepath).extension().string();;
 
-    Resource* resource;
+    Ref<Resource> resource;
     ResourceType type;
     if( extension ==  ".shader")
     {
-        resource = (Resource*)new Shader{};
+        resource = std::make_shared<Shader>();
         type = ResourceType::SHD; 
     }
     else if( extension == ".png" )
     {
-        resource = (Resource*)new Texture{};
+        resource = std::make_shared<Texture>();
         type = ResourceType::TEX; 
     }
     else
         return false;
 
     if(!resource->load(filepath))
-    {
-        delete resource;
         return false;
-    }
+    
 
     handle.filepath = filepath;
     handle.id       = id;
@@ -59,16 +53,10 @@ bool ResourceManager::unload(ResourceHandle& handle)
         std::cout << "Resource not found in unload " << handle.filepath << "\n";       
 #endif
     
-    Resource* resource = m_resources[handle.id];
+    Ref<Resource> resource = m_resources[handle.id];
     m_resources.erase(handle.id);
-
     resource->unload();
 
-    if(handle.type == ResourceType::SHD)
-        delete static_cast<Shader*>(resource);
-    else if(handle.type == ResourceType::TEX)
-        delete static_cast<Texture*>(resource);
-    
     handle.filepath = "";
     handle.id       = 0;
     handle.type     = ResourceType::NON;
@@ -76,7 +64,7 @@ bool ResourceManager::unload(ResourceHandle& handle)
     return true;
 }
 
-Resource* ResourceManager::get(const ResourceHandle& handle) 
+Ref<Resource> ResourceManager::get(const ResourceHandle& handle) 
 {
 #ifdef DEBUG
     if( !m_resources.contains(handle.id) ) 

@@ -4,7 +4,7 @@
 
 
 
-enum class ResourceType
+enum class ResourceType : uint8_t
 {
     NON, SHD, TEX
 };

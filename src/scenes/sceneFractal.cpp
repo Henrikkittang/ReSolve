@@ -68,7 +68,7 @@ void SceneFractal::onUpdate()
     if( m_ctx.window.isKeyPressed(GLFW_KEY_A) )
         uPan.x = uPan.x + 0.01 * uZoom;
 
-    Shader* shader = (Shader*)m_ctx.resourceManager.get(m_shaderHandle);
+    Ref<Shader> shader = m_ctx.resourceManager.get<Shader>(m_shaderHandle);
     shader->bind();
     shader->setUniform1f("uZoom", uZoom);
     shader->setUniform2f("uPan", uPan.x, uPan.y);
@@ -78,7 +78,7 @@ void SceneFractal::onUpdate()
 
 void SceneFractal::onRender() 
 {
-    Shader* shader = (Shader*)m_ctx.resourceManager.get(m_shaderHandle);
+    Ref<Shader> shader = m_ctx.resourceManager.get<Shader>(m_shaderHandle);
 
     shader->bind();
     m_va.bind();
