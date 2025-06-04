@@ -16,7 +16,7 @@ bool ResourceManager::load(const std::string& filepath, ResourceHandle& handle)
 
     // if( m_resources.contains(id) ) // maybe add something like smart pointer func to the handles
  
-    std::string extension = std::filesystem::path(filepath).extension().string();;
+    std::string extension = std::filesystem::path(filepath).extension().string();
 
     Ref<Resource> resource;
     ResourceType type;

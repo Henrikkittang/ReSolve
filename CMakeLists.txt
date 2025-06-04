@@ -27,7 +27,13 @@ endif()
 # Find OpenGL
 find_package(OpenGL REQUIRED)
 
+
 # Dependencies
+
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL " " FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL " " FORCE)
+set(GLFW_BUILD_DOCS OFF CACHE BOOL " " FORCE)
+
 add_subdirectory(vendor/GLAD)
 add_subdirectory(vendor/GLFW)
 
