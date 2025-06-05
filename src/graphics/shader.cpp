@@ -18,6 +18,7 @@ Shader::~Shader()
 {
     if(m_renderID != 0)
         GLCall( glDeleteProgram(m_renderID) );
+    m_uniformLocationCache.clear();
     m_renderID = 0;
 }
 
@@ -61,6 +62,8 @@ bool Shader::unload()
 {
     if(m_renderID != 0)
         GLCall( glDeleteProgram(m_renderID) );
+
+    m_uniformLocationCache.clear();
     m_renderID = 0;
 
     return true;

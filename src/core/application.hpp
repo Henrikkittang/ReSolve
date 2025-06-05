@@ -31,7 +31,7 @@ public:
     
 private:
 
-
+    // NB! The order her may be kinda important since in dictates the order of destruction
     RenderWindow    m_window;
     SceneManager    m_sceneManager;
     ResourceManager m_resourceManager;

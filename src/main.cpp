@@ -43,7 +43,7 @@ int main()
     std::cout << texHandle1.filepath << ", " << texHandle1.id << ", " << (int)texHandle1.type << "\n";
     std::cout << texHandle2.filepath << ", " << texHandle2.id << ", " << (int)texHandle2.type << "\n";
 
-    app.registerScene<SceneClearColor>("Color");
+    // app.registerScene<SceneClearColor>("Color");
     app.registerScene<SceneNoise>("Noise");
     app.registerScene<SceneMaze>("Maze");
     app.registerScene<SceneFractal>("Fractal");
