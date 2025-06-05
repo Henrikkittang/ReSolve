@@ -1,7 +1,6 @@
 #include"timer.hpp"
 
-
-Timer::Timer()
+/*Timer::Timer()
     : m_time( std::chrono::high_resolution_clock::now() )
 {}
 
@@ -22,4 +21,6 @@ double Timer::seconds() const
 void Timer::reset()
 {
     m_time = std::chrono::high_resolution_clock::now();
-}
+}*/
+
+

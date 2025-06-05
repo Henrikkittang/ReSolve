@@ -12,12 +12,10 @@ This project contains a .vscode folder, which means that the easiest way to buil
 # To do list
 
 ## Build system
-- Add initlizer tasks in vscode for different build systems (vscode specific)
 - Maybe have som sort of system where its easy to switch compilers (vscode specific)
 - Have cmake specify parallel building, like the -j<n> flag
 
 ## Project
-- Access to resources should happen via a resources manager with proper path access
 - Add glfw events to the event system via callback functions
 - I maybe want the applicaton class to own the raw window pointer and have a renderwindow wrapped around it and sent to the scenes without ever modifying it
 - Be able to send data to scenes, send data through events?

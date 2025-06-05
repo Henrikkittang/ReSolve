@@ -18,7 +18,6 @@ int main()
         std::cout << "No mode is active." << std::endl;
     #endif
 
-
     Application app{960, 540, "Hello world"};
     app.ImGuiInit();
 

@@ -53,8 +53,8 @@ bool AssetManager::unload(AssetHandle& handle)
     DEBUG_CHECK(!m_assets.contains(handle.id), "Asset not found in unload " + handle.filepath.string());
     
     Ref<Asset> asset = m_assets[handle.id];
-    m_assets.erase(handle.id);
     asset->unload();
+    m_assets.erase(handle.id);
 
     handle.filepath = "";
     handle.id       = 0;
