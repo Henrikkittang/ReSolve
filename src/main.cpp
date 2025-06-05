@@ -24,21 +24,24 @@ int main()
 
     ResourceManager rm{};
 
-    ResourceHandle shaderHandle;
-    ResourceHandle textureHandle;
+    ResourceHandle texHandle1;
+    ResourceHandle texHandle2;
 
     
 
-    if(!rm.load("./resources/shaders/basic.shader", shaderHandle))
-        std::cout << "Shader not loaded \n";
+    if(!rm.load("./resources/textures/paint.png", texHandle1))
+        std::cout << "Texture not loaded \n";
     
-    if(!rm.load("./resources/textures/paint.png", textureHandle))
+    if(!rm.load("./resources/textures/paint.png", texHandle2))
         std::cout << "Texture not loaded \n";
 
-    auto texture = rm.get<Texture>(textureHandle);
+    auto tex1 = rm.get<Texture>(texHandle1);
+    auto tex2 = rm.get<Texture>(texHandle2);
 
+    std::cout << (rm.isValid(texHandle2) ? "valid" : "not valid") << "\n";
 
-    rm.unload(shaderHandle);
+    std::cout << texHandle1.filepath << ", " << texHandle1.id << ", " << (int)texHandle1.type << "\n";
+    std::cout << texHandle2.filepath << ", " << texHandle2.id << ", " << (int)texHandle2.type << "\n";
 
     app.registerScene<SceneClearColor>("Color");
     app.registerScene<SceneNoise>("Noise");

@@ -151,12 +151,12 @@ void Texture::update()
 
 glm::u8vec4 Texture::getPixel(int x, int y) const
 {
-#if DEBUG
-    if( x >= m_width - 3 || x < 0 || y >= m_height - 3 || y < 0)
-        std::cout << "Position out of bound in texture \n";
-    if(!m_localBuffer)
-        std::cout << "Local buffer is nullptr \n";
-#endif
+// #if DEBUG
+//     if( x >= m_width - 3 || x < 0 || y >= m_height - 3 || y < 0)
+//         std::cout << "Position out of bound in texture \n";
+//     if(!m_localBuffer)
+//         std::cout << "Local buffer is nullptr \n";
+// #endif
 
     return { 
         m_localBuffer[y*m_width*4 + x*4 + 0],  
@@ -168,12 +168,12 @@ glm::u8vec4 Texture::getPixel(int x, int y) const
 
 void Texture::setPixel(int x, int y, glm::u8vec4 color)
 {
-#if DEBUG
-    if( x >= m_width - 3 || x < 0 || y >= m_height - 3 || y < 0)
-        std::cout << "Position out of bound in texture \n";
-    if(!m_localBuffer)
-        std::cout << "Local buffer is nullptr \n";
-#endif
+// #if DEBUG
+//     if( x >= m_width - 3 || x < 0 || y >= m_height - 3 || y < 0)
+//         std::cout << "Position out of bound in texture \n";
+//     if(!m_localBuffer)
+//         std::cout << "Local buffer is nullptr \n";
+// #endif
 
     m_localBuffer[4*y*m_width + 4*x + 0] = color.r;
     m_localBuffer[4*y*m_width + 4*x + 1] = color.g;

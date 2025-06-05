@@ -3,7 +3,7 @@
 #include<iostream>
 #include<unordered_map>
 #include<memory>
-
+#include<functional>
 
 #include"core/resource.hpp"
 #include"graphics/texture.hpp"
@@ -12,6 +12,10 @@
 
 template<typename T>
 using Ref = std::shared_ptr<T>;
+
+
+template<typename T>
+using FuncRef = std::function<Ref<T>()>;
 
 class ResourceManager
 {
@@ -39,8 +43,18 @@ public:
     bool isValid(const ResourceHandle& handle);
 
 private:
+    std::pair<ResourceType, FuncRef<Resource>> getType(const std::string& extension);
+
+private:
 
     std::unordered_map<uint32_t, Ref<Resource>> m_resources;
+
+    std::unordered_map<std::string, std::pair<ResourceType, FuncRef<Resource>>  > m_types = {
+        {".png",     {ResourceType::TEX, []() { return std::make_shared<Texture>(); }}},
+        {".jpg",     {ResourceType::TEX, []() { return std::make_shared<Texture>(); }}},
+        {".jpeg",    {ResourceType::TEX, []() { return std::make_shared<Texture>(); }}},
+        {".shader",  {ResourceType::SHD, []() { return std::make_shared<Shader>();  }}},
+    };
 };
 
 

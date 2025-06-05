@@ -1,6 +1,7 @@
 
 #include"resourceManager.hpp"
 
+
 #include<filesystem>
 #include<functional>
 
@@ -13,28 +14,23 @@ ResourceManager::~ResourceManager()
 bool ResourceManager::load(const std::string& filepath, ResourceHandle& handle)
 {
     uint32_t id = std::hash<std::string>{}(filepath);
-
-    // if( m_resources.contains(id) ) // maybe add something like smart pointer func to the handles
- 
     std::string extension = std::filesystem::path(filepath).extension().string();
+    
+    auto [type, resFunc] = getType(extension);
+    if( type == ResourceType::NON )
+        return false; // Manager does not support this file type
 
-    Ref<Resource> resource;
-    ResourceType type;
-    if( extension ==  ".shader")
+    if( m_resources.contains(id) )
     {
-        resource = std::make_shared<Shader>();
-        type = ResourceType::SHD; 
+        handle.filepath = filepath;
+        handle.id       = id;
+        handle.type     = type;
+        return true;  // Resource already loaded and cached
     }
-    else if( extension == ".png" )
-    {
-        resource = std::make_shared<Texture>();
-        type = ResourceType::TEX; 
-    }
-    else
-        return false;
 
+    Ref<Resource> resource = resFunc();
     if(!resource->load(filepath))
-        return false;
+        return false;  // Resource failed to load
     
 
     handle.filepath = filepath;
@@ -77,4 +73,15 @@ Ref<Resource> ResourceManager::get(const ResourceHandle& handle)
 bool ResourceManager::isValid(const ResourceHandle& handle)
 {
     return m_resources.contains(handle.id);
+}
+
+//////////////
+// Private //
+//////////////
+
+std::pair<ResourceType, FuncRef<Resource>> ResourceManager::getType(const std::string& extension)
+{
+    if( m_types.contains( extension ) )
+        return m_types[extension];
+    return { ResourceType::NON, []() -> Ref<Resource> { return nullptr; }};
 }
