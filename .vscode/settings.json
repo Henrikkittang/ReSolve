@@ -103,6 +103,9 @@
         "*.inc": "cpp",
         "*.def": "cpp"
     },
+    "search.exclude": {
+        "**/vendor": true
+    },
     "files.exclude": {
         // "build/": true,
         "*.ini": true,

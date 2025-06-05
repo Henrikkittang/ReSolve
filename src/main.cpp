@@ -22,27 +22,7 @@ int main()
     Application app{960, 540, "Hello world"};
     app.ImGuiInit();
 
-    AssetManager rm{};
-
-    AssetHandle texHandle1;
-    AssetHandle texHandle2;
-
     
-
-    if(!rm.load("./assets/textures/paint.png", texHandle1))
-        std::cout << "Texture not loaded \n";
-    
-    if(!rm.load("./assets/textures/paint.png", texHandle2))
-        std::cout << "Texture not loaded \n";
-
-    auto tex1 = rm.get<Texture>(texHandle1);
-    auto tex2 = rm.get<Texture>(texHandle2);
-
-    std::cout << (rm.isValid(texHandle2) ? "valid" : "not valid") << "\n";
-
-    std::cout << texHandle1.filepath << ", " << texHandle1.id << ", " << (int)texHandle1.type << "\n";
-    std::cout << texHandle2.filepath << ", " << texHandle2.id << ", " << (int)texHandle2.type << "\n";
-
     // app.registerScene<SceneClearColor>("Color");
     app.registerScene<SceneNoise>("Noise");
     app.registerScene<SceneMaze>("Maze");
