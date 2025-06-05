@@ -6,23 +6,23 @@
 
 using FilePath = std::filesystem::path;
 
-enum class ResourceType : uint8_t
+enum class AssetType : uint8_t
 {
     NON, SHD, TEX
 };
 
-struct ResourceHandle
+struct AssetHandle
 {
     FilePath     filepath = "";
     uint32_t     id       = 0;
-    ResourceType type     = ResourceType::NON;
+    AssetType type     = AssetType::NON;
 };
 
 
-class Resource
+class Asset
 {
 public:
-    virtual ~Resource(){}
+    virtual ~Asset(){}
     virtual bool load(const std::string& filepath)   = 0;
     virtual bool unload() = 0;
 };

@@ -8,7 +8,7 @@
 
 #include"core/scene.hpp"
 #include"core/camera.hpp"
-#include"core/resource.hpp"
+#include"core/asset.hpp"
 
 
 class SceneFractal : public Scene 
@@ -28,7 +28,7 @@ private:
     glm::vec2    uPan;               
     int          maxIterations;
     
-    ResourceHandle m_shaderHandle;
+    AssetHandle m_shaderHandle;
     VertexArray    m_va;
     IndexBuffer    m_ib;
 

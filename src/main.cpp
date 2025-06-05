@@ -6,7 +6,7 @@
 #include"scenes/sceneMaze.hpp"
 #include"scenes/sceneNoise.hpp"
 
-#include"core/resourceManager.hpp"
+#include"core/assetManager.hpp"
 
 int main()
 {    
@@ -22,17 +22,17 @@ int main()
     Application app{960, 540, "Hello world"};
     app.ImGuiInit();
 
-    ResourceManager rm{};
+    AssetManager rm{};
 
-    ResourceHandle texHandle1;
-    ResourceHandle texHandle2;
+    AssetHandle texHandle1;
+    AssetHandle texHandle2;
 
     
 
-    if(!rm.load("./resources/textures/paint.png", texHandle1))
+    if(!rm.load("./assets/textures/paint.png", texHandle1))
         std::cout << "Texture not loaded \n";
     
-    if(!rm.load("./resources/textures/paint.png", texHandle2))
+    if(!rm.load("./assets/textures/paint.png", texHandle2))
         std::cout << "Texture not loaded \n";
 
     auto tex1 = rm.get<Texture>(texHandle1);

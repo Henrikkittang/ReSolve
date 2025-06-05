@@ -9,7 +9,7 @@
 #include"core/appContext.hpp"
 #include"core/scene.hpp"
 #include"core/sceneManager.hpp"
-#include"core/resourceManager.hpp"
+#include"core/assetManager.hpp"
 #include"graphics/renderWindow.hpp"
 
 
@@ -34,7 +34,7 @@ private:
     // NB! The order her may be kinda important since in dictates the order of destruction
     RenderWindow    m_window;
     SceneManager    m_sceneManager;
-    ResourceManager m_resourceManager;
+    AssetManager m_AssetManager;
     bool            m_isImguiActive;
 
     // Important that these are defined in the same way as in the struct
@@ -42,6 +42,6 @@ private:
     {
         m_window,
         m_sceneManager,
-        m_resourceManager
+        m_AssetManager
     };
 };

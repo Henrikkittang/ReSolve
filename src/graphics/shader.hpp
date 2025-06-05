@@ -6,7 +6,7 @@
 #include<glad/glad.h>
 #include<glm/glm.hpp>
 
-#include"core/resource.hpp"
+#include"core/asset.hpp"
 
 struct ShaderProgramSource
 {
@@ -14,7 +14,7 @@ struct ShaderProgramSource
     std::string fragmentSource;
 };
 
-class Shader : public Resource
+class Shader : public Asset
 {
 
 public:

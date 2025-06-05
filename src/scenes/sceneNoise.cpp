@@ -10,7 +10,7 @@ void SceneNoise::onCreate()
     m_camera = Camera{960.0, 540.0};
 
     m_shader = Shader{};
-    m_shader.load("./resources/shaders/basic.shader");
+    m_shader.load("./assets/shaders/basic.shader");
     auto mvp = m_camera.getMVP();
     m_shader.bind();
     m_shader.setUniformMat4f("uMVP", mvp);

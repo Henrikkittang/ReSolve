@@ -6,9 +6,9 @@
 #include<glad/glad.h>
 #include<glm/glm.hpp>
 
-#include"core/resource.hpp"
+#include"core/asset.hpp"
 
-class Texture : public Resource
+class Texture : public Asset
 {
 public:
     

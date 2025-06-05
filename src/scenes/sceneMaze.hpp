@@ -7,7 +7,7 @@
 
 #include"core/scene.hpp"
 #include"core/camera.hpp"
-#include"core/resource.hpp"
+#include"core/asset.hpp"
 #include"graphics/renderable.hpp"
 #include"graphics/shader.hpp"
 
@@ -45,7 +45,7 @@ private:
     uint32_t               m_width, m_height, m_scl;
     std::vector<int>       m_mazeData;
     std::stack<glm::ivec2> m_open;
-    ResourceHandle         m_shaderHandle;
+    AssetHandle         m_shaderHandle;
     Renderable             m_renderable;
     std::vector<Quad>      m_quads;
 
