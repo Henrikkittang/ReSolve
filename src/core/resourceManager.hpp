@@ -28,6 +28,7 @@ public:
 
     bool load(const std::string& filepath, ResourceHandle& handle);
     bool unload(ResourceHandle& handle);
+    bool reload(const ResourceHandle& handle);
     Ref<Resource> get(const ResourceHandle& handle);
 
     template<typename T>

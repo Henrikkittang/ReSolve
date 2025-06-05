@@ -60,6 +60,19 @@ bool ResourceManager::unload(ResourceHandle& handle)
     return true;
 }
 
+bool ResourceManager::reload(const ResourceHandle& handle)
+{
+#ifdef DEBUG
+    if( !m_resources.contains(handle.id) ) 
+        std::cout << "Resource not found in unload " << handle.filepath << "\n";       
+#endif
+
+    Ref<Resource> resource = m_resources[handle.id];
+    resource->unload();
+
+    return resource->load(handle.filepath);
+}
+
 Ref<Resource> ResourceManager::get(const ResourceHandle& handle) 
 {
 #ifdef DEBUG
