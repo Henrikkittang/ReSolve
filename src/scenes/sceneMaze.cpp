@@ -29,10 +29,10 @@ void SceneMaze::onCreate()
     m_open.push( position );
     
 
-    m_ctx.assetManager.load("./assets/shaders/red.shader", m_shaderHandle);
+    ctx.assets.load("./assets/shaders/red.shader", m_shaderHandle);
 
 
-    Ref<Shader> shader = m_ctx.assetManager.get<Shader>(m_shaderHandle); 
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle); 
     auto mvp = m_camera.getMVP();
 
     shader->bind();
@@ -91,10 +91,10 @@ void SceneMaze::onImGuiRender()
 {
     if( ImGui::Button("Reload") )
     {
-        Ref<Shader> shader = m_ctx.assetManager.get<Shader>(m_shaderHandle); 
+        Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle); 
 
         shader->unbind();
-        m_ctx.assetManager.reload(m_shaderHandle); 
+        ctx.assets.reload(m_shaderHandle); 
         
         auto mvp = m_camera.getMVP();
 
@@ -160,10 +160,10 @@ std::vector<glm::ivec2> SceneMaze::find_frontiers(glm::ivec2 pos, int state)
 
 void SceneMaze::onActivate()
 {
-    m_ctx.window.clear();
+    ctx.window.clear();
     m_renderable.bind();
 
-    Ref<Shader> shader = m_ctx.assetManager.get<Shader>(m_shaderHandle); 
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle); 
     shader->bind();
 }
 
@@ -172,6 +172,6 @@ void SceneMaze::onDeactivate()
 {
     m_renderable.unbind();
 
-    Ref<Shader> shader = m_ctx.assetManager.get<Shader>(m_shaderHandle); 
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle); 
     shader->unbind();
 }  

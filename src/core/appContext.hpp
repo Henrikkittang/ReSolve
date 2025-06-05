@@ -6,6 +6,6 @@
 struct AppContext
 {
     RenderWindow&    window;
-    SceneManager&    sceneManager;
-    AssetManager&    assetManager;
+    SceneManager&    scenes;
+    AssetManager&    assets;
 };

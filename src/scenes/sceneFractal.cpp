@@ -15,7 +15,7 @@ void SceneFractal::onCreate()
     uPan = {0.0f, 0.0f};
     maxIterations = 500;
 
-    m_ctx.assetManager.load("./assets/shaders/fractal.shader", m_shaderHandle);
+    ctx.assets.load("./assets/shaders/fractal.shader", m_shaderHandle);
 
     std::vector<float> positions = {
         -1.0f, -1.0f,
@@ -50,25 +50,25 @@ void SceneFractal::onCreate()
 
 void SceneFractal::onUpdate() 
 {    
-    if( m_ctx.window.isKeyPressed(GLFW_KEY_UP) )
+    if( ctx.window.isKeyPressed(GLFW_KEY_UP) )
         uZoom = uZoom * 0.99;
 
-    if( m_ctx.window.isKeyPressed(GLFW_KEY_D) )
+    if( ctx.window.isKeyPressed(GLFW_KEY_D) )
         uZoom = uZoom / 0.99;
 
-    if( m_ctx.window.isKeyPressed(GLFW_KEY_W) )
+    if( ctx.window.isKeyPressed(GLFW_KEY_W) )
         uPan.y = uPan.y - 0.01 * uZoom;
 
-    if( m_ctx.window.isKeyPressed(GLFW_KEY_S) )
+    if( ctx.window.isKeyPressed(GLFW_KEY_S) )
         uPan.y = uPan.y + 0.01 * uZoom;
 
-    if( m_ctx.window.isKeyPressed(GLFW_KEY_D) )
+    if( ctx.window.isKeyPressed(GLFW_KEY_D) )
         uPan.x = uPan.x - 0.01 * uZoom;
 
-    if( m_ctx.window.isKeyPressed(GLFW_KEY_A) )
+    if( ctx.window.isKeyPressed(GLFW_KEY_A) )
         uPan.x = uPan.x + 0.01 * uZoom;
 
-    Ref<Shader> shader = m_ctx.assetManager.get<Shader>(m_shaderHandle);
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
     shader->bind();
     shader->setUniform1f("uZoom", uZoom);
     shader->setUniform2f("uPan", uPan.x, uPan.y);
@@ -78,7 +78,7 @@ void SceneFractal::onUpdate()
 
 void SceneFractal::onRender() 
 {
-    Ref<Shader> shader = m_ctx.assetManager.get<Shader>(m_shaderHandle);
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
 
     shader->bind();
     m_va.bind();
