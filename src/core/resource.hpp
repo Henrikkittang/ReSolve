@@ -1,8 +1,10 @@
 #pragma once
 #include<string>
 #include<cstdint>
+#include<filesystem>
 
 
+using FilePath = std::filesystem::path;
 
 enum class ResourceType : uint8_t
 {
@@ -11,7 +13,7 @@ enum class ResourceType : uint8_t
 
 struct ResourceHandle
 {
-    std::string  filepath = "";
+    FilePath     filepath = "";
     uint32_t     id       = 0;
     ResourceType type     = ResourceType::NON;
 };

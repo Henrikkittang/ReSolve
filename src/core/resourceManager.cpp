@@ -11,10 +11,14 @@ ResourceManager::ResourceManager()
 ResourceManager::~ResourceManager()
 {}
 
-bool ResourceManager::load(const std::string& filepath, ResourceHandle& handle)
-{
-    uint32_t id = std::hash<std::string>{}(filepath);
-    std::string extension = std::filesystem::path(filepath).extension().string();
+bool ResourceManager::load(const std::string& filePathString, ResourceHandle& handle)
+{   
+    FilePath filepath{filePathString};
+
+
+    uint32_t id = std::hash<std::string>{}(filepath.string());
+    std::string extension = filepath.extension().string();
+
     
     auto [type, resFunc] = getType(extension);
     if( type == ResourceType::NON )
@@ -29,7 +33,7 @@ bool ResourceManager::load(const std::string& filepath, ResourceHandle& handle)
     }
 
     Ref<Resource> resource = resFunc();
-    if(!resource->load(filepath))
+    if(!resource->load(filepath.string()))
         return false;  // Resource failed to load
     
 
@@ -70,7 +74,7 @@ bool ResourceManager::reload(const ResourceHandle& handle)
     Ref<Resource> resource = m_resources[handle.id];
     resource->unload();
 
-    return resource->load(handle.filepath);
+    return resource->load(handle.filepath.string());
 }
 
 Ref<Resource> ResourceManager::get(const ResourceHandle& handle) 
