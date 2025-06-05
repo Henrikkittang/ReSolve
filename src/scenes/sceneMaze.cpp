@@ -2,6 +2,8 @@
 
 #include<iostream>
 
+#include<imgui/imgui.h>
+
 #include"core/appContext.hpp"
 #include"util/random.hpp"
 #include"util/util.hpp"
@@ -26,11 +28,15 @@ void SceneMaze::onCreate()
         position = { Random::getInt(0, m_width), Random::getInt(0, m_height) };
     m_open.push( position );
     
-    m_shader = Shader{"./resources/shaders/red.shader"};
+
+    m_ctx.assetManager.load("./assets/shaders/red.shader", m_shaderHandle);
+
+
+    Ref<Shader> shader = m_ctx.assetManager.get<Shader>(m_shaderHandle); 
     auto mvp = m_camera.getMVP();
 
-    m_shader.bind();
-    m_shader.setUniformMat4f("uMVP", mvp);
+    shader->bind();
+    shader->setUniformMat4f("uMVP", mvp);
 }
 
 void SceneMaze::onUpdate() 
@@ -81,7 +87,21 @@ void SceneMaze::onRender()
 }
 
 
-void SceneMaze::onImGuiRender() {}
+void SceneMaze::onImGuiRender() 
+{
+    if( ImGui::Button("Reload") )
+    {
+        Ref<Shader> shader = m_ctx.assetManager.get<Shader>(m_shaderHandle); 
+
+        shader->unbind();
+        m_ctx.assetManager.reload(m_shaderHandle); 
+        
+        auto mvp = m_camera.getMVP();
+
+        shader->bind();
+        shader->setUniformMat4f("uMVP", mvp);
+    }
+}
 
 
 
@@ -142,12 +162,16 @@ void SceneMaze::onActivate()
 {
     m_ctx.window.clear();
     m_renderable.bind();
-    m_shader.bind();
+
+    Ref<Shader> shader = m_ctx.assetManager.get<Shader>(m_shaderHandle); 
+    shader->bind();
 }
 
 
 void SceneMaze::onDeactivate()
 {
     m_renderable.unbind();
-    m_shader.unbind();
+
+    Ref<Shader> shader = m_ctx.assetManager.get<Shader>(m_shaderHandle); 
+    shader->unbind();
 }  

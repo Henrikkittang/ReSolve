@@ -1,12 +1,12 @@
 #pragma once
 
+#include<string>
+#include<unordered_map>
 
 #include<glad/glad.h>
 #include<glm/glm.hpp>
 
-#include<string>
-#include<unordered_map>
-
+#include"core/asset.hpp"
 
 struct ShaderProgramSource
 {
@@ -14,16 +14,18 @@ struct ShaderProgramSource
     std::string fragmentSource;
 };
 
-class Shader
+class Shader : public Asset
 {
 
 public:
 
     Shader();
-    Shader(const std::string& filepath);
     ~Shader();
     Shader(Shader&& other);
     Shader& operator=(Shader&& other);
+
+    bool load(const std::string& filepath)   override;
+    bool unload() override;
 
     void bind() const;
     void unbind() const;
@@ -46,7 +48,6 @@ private:
     uint32_t getUniformLocation(const std::string& name);
 
 private:
-    std::string m_filepath;
     GLuint      m_renderID;
     std::unordered_map<std::string, int> m_uniformLocationCache;
 };

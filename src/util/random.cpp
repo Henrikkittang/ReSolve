@@ -26,7 +26,6 @@ float Random::getFloat(float min, float max)
     return static_cast<float>( getDouble(min, max) );
 }
 
-
 glm::vec3 Random::getFloat3(float min, float max)
 {
     return { getFloat(min, max), getFloat(min, max), getFloat(min, max) }; ;
@@ -36,7 +35,6 @@ int32_t Random::getInt(int32_t min, int32_t max)
 {
     return static_cast<int32_t>( getDouble(min, max)  ); 
 }    
-
 
 
 

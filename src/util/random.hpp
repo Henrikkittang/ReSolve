@@ -2,6 +2,7 @@
 #include<chrono>
 #include<random>
 #include<thread> 
+#include<limits>
 
 #include<glm/glm.hpp>
 
@@ -17,7 +18,9 @@ public:
     static double    getDouble(double min=0.0, double max=1.0);
     static float     getFloat(float min=0.0f, float max=1.0f);
     static glm::vec3 getFloat3(float min=0.0f, float max=1.0f);
-    static int32_t   getInt(int32_t min=0, int32_t max=2);  
+    static int32_t   getInt(int32_t min=0, int32_t max=std::numeric_limits<int32_t>::max());  
+
+
 
 private:   
   

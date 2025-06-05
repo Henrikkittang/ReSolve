@@ -8,7 +8,9 @@ SceneManager::SceneManager()
 
 SceneManager::~SceneManager()
 {
-    m_currentScene->onDeactivate();
+    if(m_currentScene != nullptr)
+        m_currentScene->onDeactivate();
+ 
     for (const auto& [name, scene] : m_scenes) 
     {
         scene->onDestroy();

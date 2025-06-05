@@ -11,25 +11,15 @@
 #include"util/util.hpp"
 
 Shader::Shader()
-    :m_filepath(""), m_renderID(0)
+    :m_renderID(0)
 {}
-
-// Constructors
-Shader::Shader(const std::string& filepath)
-    :m_filepath(filepath), m_renderID(0)
-{
-    ShaderProgramSource source = parseShader(filepath);
-    m_renderID = createShader(source.vertexSource, source.fragmentSource); 
-
-    if( m_renderID == 0 )
-        std::cout << "Creating shader failed, m_renderID = " << m_renderID << " \n";
-}
-
 
 Shader::~Shader()
 {
-    GLCall( glDeleteProgram(m_renderID) );
-    // m_renderID = 0;
+    if(m_renderID != 0)
+        GLCall( glDeleteProgram(m_renderID) );
+    m_uniformLocationCache.clear();
+    m_renderID = 0;
 }
 
 
@@ -46,12 +36,37 @@ Shader& Shader::operator=(Shader&& other)
         GLCall( glDeleteProgram(m_renderID) );
         
         m_renderID = other.m_renderID;
-        m_filepath = std::move( other.m_filepath );
         m_uniformLocationCache = std::move( other.m_uniformLocationCache );
         
         other.m_renderID = 0;
     }
     return *this;
+}
+
+bool Shader::load(const std::string& filepath)
+{
+    ShaderProgramSource source = parseShader(filepath);
+    m_renderID = createShader(source.vertexSource, source.fragmentSource); 
+
+    if( m_renderID == 0 )
+    {
+#ifdef DEBUG
+        std::cout << "Creating shader failed  \n";
+#endif
+        return false; 
+    }
+    return true;
+}
+
+bool Shader::unload()
+{
+    if(m_renderID != 0)
+        GLCall( glDeleteProgram(m_renderID) );
+
+    m_uniformLocationCache.clear();
+    m_renderID = 0;
+
+    return true;
 }
 
 
