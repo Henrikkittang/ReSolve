@@ -1,9 +1,11 @@
 
-#include"assetManager.hpp"
+#include"core/assetManager.hpp"
 
 
 #include<filesystem>
 #include<functional>
+
+#include"util/util.hpp"
 
 AssetManager::AssetManager()
 {}
@@ -48,10 +50,7 @@ bool AssetManager::load(const std::string& filePathString, AssetHandle& handle)
 
 bool AssetManager::unload(AssetHandle& handle)
 {
-#ifdef DEBUG
-    if( !m_assets.contains(handle.id) ) 
-        std::cout << "Asset not found in unload " << handle.filepath << "\n";       
-#endif
+    DEBUG_CHECK(!m_assets.contains(handle.id), "Asset not found in unload " + handle.filepath.string());
     
     Ref<Asset> asset = m_assets[handle.id];
     m_assets.erase(handle.id);
@@ -66,10 +65,7 @@ bool AssetManager::unload(AssetHandle& handle)
 
 bool AssetManager::reload(const AssetHandle& handle)
 {
-#ifdef DEBUG
-    if( !m_assets.contains(handle.id) ) 
-        std::cout << "Asset not found in unload " << handle.filepath << "\n";       
-#endif
+    DEBUG_CHECK(!m_assets.contains(handle.id), "Asset not found in reload " + handle.filepath.string());
 
     Ref<Asset> asset = m_assets[handle.id];
     asset->unload();
@@ -79,11 +75,7 @@ bool AssetManager::reload(const AssetHandle& handle)
 
 Ref<Asset> AssetManager::get(const AssetHandle& handle) 
 {
-#ifdef DEBUG
-    if( !m_assets.contains(handle.id) ) 
-        std::cout << "Asset not found in get " << handle.filepath << "\n";       
-#endif
-
+    DEBUG_CHECK(!m_assets.contains(handle.id), "Asset not found in get " + handle.filepath.string());
     return m_assets[handle.id];
 }
 

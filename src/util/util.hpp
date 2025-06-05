@@ -1,6 +1,8 @@
 #pragma once
 
-#include <glad/glad.h>
+#include<iostream>
+
+#include<glad/glad.h>
 #include<GLFW/glfw3.h>
 
 
@@ -19,3 +21,17 @@ void GLClearError();
 bool GLLogCall(const char* function, const char* file, int line);
 
 
+inline void DEBUG_LOG(const std::string& msg)
+{
+#ifdef DEBUG
+    std::cout << msg << "\n";
+#endif
+}
+
+inline void DEBUG_CHECK(bool cond, const std::string& msg)
+{
+#ifdef DEBUG
+    if(cond)
+        std::cout << msg << "\n";
+#endif
+}

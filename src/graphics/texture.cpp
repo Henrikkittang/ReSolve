@@ -77,10 +77,8 @@ Texture& Texture::operator=(Texture&& other)
 
 bool Texture::load(const std::string& filepath) 
 {
-#ifdef DEBUG
-    if(m_localBuffer != nullptr)
-        std::cout << "Overwriting local buffer in texture" << "\n";
-#endif
+    DEBUG_CHECK(m_localBuffer != nullptr, "Overwriting local buffer in texture");
+
 
     stbi_set_flip_vertically_on_load(true);
     m_localBuffer = stbi_load(filepath.c_str(), &m_width, &m_height, &m_BBP, 4);
@@ -97,10 +95,9 @@ bool Texture::load(const std::string& filepath)
     
     unbind();
 
-    if (!m_localBuffer) {
-#ifdef DEBUG
-        std::cerr << "Failed to load texture: " << filepath << "\n";
-#endif
+    if (!m_localBuffer) 
+    {
+        DEBUG_LOG("Failed to load texture: " + filepath);
         return false;
     }
 

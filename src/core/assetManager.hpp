@@ -5,9 +5,10 @@
 #include<memory>
 #include<functional>
 
-#include"asset.hpp"
+#include"core/asset.hpp"
 #include"graphics/texture.hpp"
 #include"graphics/shader.hpp"
+#include"util/util.hpp"
 
 
 template<typename T>
@@ -34,10 +35,7 @@ public:
     template<typename T>
     Ref<T> get(const AssetHandle& handle)
     {
-#ifdef DEBUG
-        if( !m_assets.contains(handle.id) ) 
-            std::cout << "Resource not found in get " << handle.filepath << "\n";       
-#endif
+        DEBUG_CHECK(!m_assets.contains(handle.id), "Resource not found in get " + handle.filepath.string());
         return std::static_pointer_cast<T>(m_assets[handle.id]);
     }
 

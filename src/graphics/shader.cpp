@@ -50,9 +50,7 @@ bool Shader::load(const std::string& filepath)
 
     if( m_renderID == 0 )
     {
-#ifdef DEBUG
-        std::cout << "Creating shader failed  \n";
-#endif
+        DEBUG_LOG("Creating shader failed");
         return false; 
     }
     return true;
