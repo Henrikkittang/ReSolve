@@ -12,7 +12,7 @@
         {
             "label": "Build: Debug",
             "type": "shell",
-            "command": "cmake --build build/debug --config Debug -j9",
+            "command": "cmake --build build/debug --config Debug -j8",
             "group": "build"
         },
         {
@@ -48,7 +48,7 @@
         {
             "label": "Build: Release",
             "type": "shell",
-            "command": "cmake --build build/release --config Release -j9",
+            "command": "cmake --build build/release --config Release -j8",
             "group": "build"
         },
         {
