@@ -7,6 +7,10 @@
 
 #include"util/util.hpp"
 
+#ifndef SOURCE_DIR
+#define SOURCE_DIR ""
+#endif
+
 AssetManager::AssetManager()
 {}
 
@@ -15,8 +19,8 @@ AssetManager::~AssetManager()
 
 bool AssetManager::load(const std::string& filePathString, AssetHandle& handle)
 {   
-    FilePath filepath{filePathString};
-
+    // NB! Not a permanent solution
+    FilePath filepath = FilePath(SOURCE_DIR) / FilePath(filePathString);
 
     uint32_t id = std::hash<std::string>{}(filepath.string());
     std::string extension = filepath.extension().string();

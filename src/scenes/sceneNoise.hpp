@@ -2,6 +2,7 @@
 
 #include"core/scene.hpp"
 #include"core/camera.hpp"
+#include"core/asset.hpp"
 #include"graphics/texture.hpp"
 #include"graphics/shader.hpp"
 #include"util/random.hpp"
@@ -31,8 +32,9 @@ public:
 
 private:
     Texture m_texture;
-    Shader  m_shader;
+    // Shader  m_shader;
     Camera  m_camera;
+    AssetHandle m_shaderHandle;
 
     NoiseSettnings m_noiseSettnigns;
 };

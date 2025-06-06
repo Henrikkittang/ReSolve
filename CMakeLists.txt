@@ -29,7 +29,6 @@ find_package(OpenGL REQUIRED)
 
 
 # Dependencies
-
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL " " FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL " " FORCE)
 set(GLFW_BUILD_DOCS OFF CACHE BOOL " " FORCE)
@@ -59,12 +58,12 @@ target_include_directories(imgui PUBLIC
 file(GLOB_RECURSE PROJECT_SOURCES ${CMAKE_SOURCE_DIR}/src/*.cpp)
 
 # Executable target
-add_executable(output 
+add_executable(resolve 
     ${PROJECT_SOURCES}
     ${CMAKE_SOURCE_DIR}/vendor/stb_image/stb_image.cpp
 )
 
-target_include_directories(output PRIVATE
+target_include_directories(resolve PRIVATE
     ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/vendor
     ${CMAKE_SOURCE_DIR}/vendor/GLFW/include
@@ -73,7 +72,7 @@ target_include_directories(output PRIVATE
 )
 
 # Link libraries
-target_link_libraries(output PRIVATE
+target_link_libraries(resolve PRIVATE
     glad
     glfw
     OpenGL::GL
@@ -81,25 +80,28 @@ target_link_libraries(output PRIVATE
 )
 
 # Compiler definitions
-target_compile_definitions(output PRIVATE
+target_compile_definitions(resolve PRIVATE
     $<$<CONFIG:Debug>:DEBUG>
     $<$<CONFIG:Release>:RELEASE>
+    SOURCE_DIR="${CMAKE_SOURCE_DIR}/"
 )
 
 # Compiler options
 if (COMPILER_GCC OR COMPILER_CLANG)
-    target_compile_options(output PRIVATE
+    target_compile_options(resolve PRIVATE
         $<$<CONFIG:Debug>:-g>
         $<$<CONFIG:Release>:-O3>
     )
 elseif(COMPILER_MSVC)
-    target_compile_options(output PRIVATE
+    target_compile_options(resolve PRIVATE
         $<$<CONFIG:Debug>:/Zi /Od>
         $<$<CONFIG:Release>:/O2>
     )
+    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT resolve)
 endif()
+
 
 # Platform-specific settings
 if (PLATFORM_WINDOWS)
-    target_link_libraries(output PRIVATE gdi32)
+    target_link_libraries(resolve PRIVATE gdi32)
 endif()

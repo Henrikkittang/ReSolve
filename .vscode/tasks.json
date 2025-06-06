@@ -18,7 +18,7 @@
         {
             "label": "Run: Debug",
             "type": "shell",
-            "command": "./build/debug/bin/output.exe",
+            "command": "./build/debug/bin/resolve.exe",
             "group": "build"
         },
         {
@@ -53,7 +53,7 @@
         },
         {
             "label": "Run: Release",
-            "command": "./build/release/bin/output.exe",
+            "command": "./build/release/bin/resolve.exe",
             "type": "shell",
             "group": "build"
         },

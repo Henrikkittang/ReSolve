@@ -22,5 +22,5 @@ This project contains a .vscode folder, which means that the easiest way to buil
 - Add glfw events to the event system via callback functions
 - I maybe want the applicaton class to own the raw window pointer and have a renderwindow wrapped around it and sent to the scenes without ever modifying it
 - Be able to send data to scenes, send data through events?
-- Having destroy function for scenes, so that I can construct them directly in the map (???)
 - Remove need for appContext.hpp to be included in cpp whenever its used
+- Drawing stuff is generally awfull. Its a perfect mix of abstract but not quite and having to be very careful with the ordering of things 

@@ -1,19 +1,23 @@
 #include"sceneNoise.hpp"
 
 #include<imgui/imgui.h>
-#include"graphics/texture.hpp"
 #include"core/camera.hpp"
 #include"core/appContext.hpp"
+#include"core/asset.hpp"
+#include"graphics/texture.hpp"
 
 void SceneNoise::onCreate() 
 {
     m_camera = Camera{960.0, 540.0};
 
-    m_shader = Shader{};
-    m_shader.load("./assets/shaders/basic.shader");
+    ctx.assets.load("./assets/shaders/basic.shader", m_shaderHandle);
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
+
+    // m_shader = Shader{};
+    // m_shader.load("./assets/shaders/basic.shader");
     auto mvp = m_camera.getMVP();
-    m_shader.bind();
-    m_shader.setUniformMat4f("uMVP", mvp);
+    shader->bind();
+    shader->setUniformMat4f("uMVP", mvp);
 
     m_texture = Texture{960, 540};
     
@@ -30,7 +34,7 @@ void SceneNoise::onCreate()
     }
     m_texture.update();
     m_texture.bind();
-    m_shader.setUniform1i("uTexture", 0);
+    shader->setUniform1i("uTexture", 0);
 
     m_noiseSettnigns.redraw = true;
 }
@@ -82,7 +86,14 @@ void SceneNoise::onRender(  )
 
     m_texture.bind();
 
-    ctx.window.draw(va, ib, m_shader);   
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
+    shader->bind();
+    va.bind();
+    ib.bind();
+    GLCall(glDrawElements(GL_TRIANGLES, ib.getCount(), GL_UNSIGNED_INT, nullptr));
+    shader->unbind();
+    va.unbind();
+    ib.unbind();
 }
 
 void SceneNoise::onImGuiRender() 
@@ -96,7 +107,9 @@ void SceneNoise::onImGuiRender()
 
 
 void SceneNoise::onActivate() 
-{}
+{
+
+}
 
 void SceneNoise::onDeactivate() 
 {}
