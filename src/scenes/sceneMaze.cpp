@@ -61,6 +61,9 @@ void SceneMaze::onUpdate()
     }else{
         m_open.pop();
     }
+
+    float* data = (float*)m_quads.data();
+    m_renderable.update(data, (uint32_t)m_quads.size() * 4); // 4 vertices per quad
 }
 
 
@@ -79,10 +82,24 @@ void SceneMaze::onRender()
     // }
     
 
-    float* data = (float*)m_quads.data();
-    m_renderable.update(data, (uint32_t)m_quads.size()*8*sizeof(float));
+    
+    // m_renderable = Renderable(data, (uint32_t)m_quads.size()*8*sizeof(float), 2);
 
-    GLCall( glDrawArrays(GL_QUADS, 0, m_renderable.size()*8*sizeof(float)) );    
+    // float x = 50;
+    // float y = 50;
+    // float size = 100;
+    // float data[] = {
+    //     x, y,
+    //     x+size, y,
+    //     x+size, y+size,
+    //     x, y+size,
+    // };
+    // Renderable renderable = {data, 4, 2, GL_STATIC_DRAW};
+
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle); 
+    ctx.window.draw(m_renderable, shader);
+
+    // GLCall( glDrawArrays(GL_QUADS, 0, m_renderable.vertexCount()*8*sizeof(float)) );    
 
 }
 

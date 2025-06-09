@@ -5,7 +5,7 @@
             "name": "Release",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/build/release/bin/output.exe",  // Path to the compiled executable
+            "program": "${workspaceRoot}/build/release/bin/resolve.exe",  // Path to the compiled executable
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
@@ -32,7 +32,7 @@
             "name": "Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/build/debug/bin/output.exe",  // Path to the compiled executable
+            "program": "${workspaceRoot}/build/debug/bin/resolve.exe",  // Path to the compiled executable
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",

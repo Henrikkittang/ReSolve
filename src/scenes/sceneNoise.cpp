@@ -1,10 +1,15 @@
 #include"sceneNoise.hpp"
 
 #include<imgui/imgui.h>
+
 #include"core/camera.hpp"
 #include"core/appContext.hpp"
 #include"core/asset.hpp"
 #include"graphics/texture.hpp"
+
+#include"decapricated/indexBuffer.hpp"
+#include"decapricated/vertexBuffer.hpp"
+#include"decapricated/vertexArray.hpp"
 
 void SceneNoise::onCreate() 
 {

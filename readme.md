@@ -7,8 +7,14 @@ mkdir build/release
 cmake -B build/release -DCMAKE_BUILD_TYPE=Release
 cmake --build build/release --config Release -j8
 ```
-
 The binary will be located in `build/release/bin/output.exe`
+
+Commands for building project with MSVC
+```
+mkdir build/
+cmake -B build/ 
+cmake --build build/ --config Release -j8
+```
 
 This project contains a .vscode folder, which means that the easiest way to build and modify the project is from the vscode editor. Here you can bring up your task prompt to initilize, build and run for different modes (debug and release). The build system used for devolopment is make and the tasks need minor refactoring to work with other systems. 
 
@@ -24,3 +30,5 @@ This project contains a .vscode folder, which means that the easiest way to buil
 - Be able to send data to scenes, send data through events?
 - Remove need for appContext.hpp to be included in cpp whenever its used
 - Drawing stuff is generally awfull. Its a perfect mix of abstract but not quite and having to be very careful with the ordering of things 
+- Make a quick and simple file interface for standardized paths
+- Write info about the system to a log file on start up, like compiler, opengl version etc. 

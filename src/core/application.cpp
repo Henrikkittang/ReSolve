@@ -26,6 +26,14 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
         exit(0);
     }
 
+    // Request OpenGL 4.6 Core Profile
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+    // Optional: forward-compatible context (for macOS and strict compliance)
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+
     GLFWwindow* window = glfwCreateWindow(screenWidth, screenHeight, title.c_str(), NULL, NULL);
     if (!window)
     {
@@ -42,6 +50,8 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
         glfwTerminate();
         exit(0);
     }
+    // const GLubyte* version = glGetString(GL_VERSION);
+    // std::cout << "OpenGL Version: " << version << std::endl;
 
     m_window = RenderWindow(window);
     GLCall( glEnable(GL_BLEND) );

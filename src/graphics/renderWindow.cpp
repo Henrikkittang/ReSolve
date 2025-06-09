@@ -45,28 +45,25 @@ void RenderWindow::clear() const
     // glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); 
 }
 
-void RenderWindow::draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader) const
-{
-    shader.bind();
-    va.bind();
-    ib.bind();
-    
-    GLCall(glDrawElements(GL_TRIANGLES, ib.getCount(), GL_UNSIGNED_INT, nullptr));
-
-    shader.unbind();
-    va.unbind();
-    ib.unbind();
-}
 
 
-void RenderWindow::draw(const Renderable& renderable, const Shader& shader) const
+void RenderWindow::draw(const Renderable& renderable, Ref<Shader> shader) const
 {
     renderable.bind();
-    shader.bind();
-    GLCall( glDrawArrays(GL_QUADS, 0, renderable.size()) );
+    shader->bind();
+
+    // GLCall( glDrawArrays(GL_TRIANGLES, 0, renderable.vertexCount()) );
+    GLCall(glDrawElements(GL_TRIANGLES, renderable.indexCount(), GL_UNSIGNED_INT, nullptr));
+
     renderable.unbind();
-    shader.unbind();
+    shader->unbind();
 }
+
+void RenderWindow::draw(const glm::vec2* vertecies, uint32_t size) const
+{
+    
+}
+
 
 bool RenderWindow::windowShouldClose() const
 {
