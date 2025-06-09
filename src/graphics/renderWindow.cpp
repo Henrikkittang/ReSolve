@@ -59,7 +59,7 @@ void RenderWindow::draw(const Renderable& renderable, Ref<Shader> shader) const
     shader->unbind();
 }
 
-void RenderWindow::draw(const glm::vec2* vertecies, uint32_t size) const
+void RenderWindow::draw(const glm::vec2* vertecies, uint32_t size, PrimitiveType type) const
 {
     
 }

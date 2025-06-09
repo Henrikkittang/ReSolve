@@ -18,7 +18,7 @@ void SceneMaze::onCreate()
     m_width  = 960 / m_scl;
     m_height = 540 / m_scl;
 
-    m_renderable = Renderable{nullptr, (uint32_t)(m_width * m_height * 8 * sizeof(float)), 2, GL_DYNAMIC_DRAW};
+    m_renderable = Renderable{nullptr, (uint32_t)(m_width * m_height * 8 * sizeof(float)), 2, PrimitiveType::QUAD, GL_DYNAMIC_DRAW};
     // m_renderable = Renderable{nullptr, 2 * 8 * sizeof(float), 2, GL_DYNAMIC_DRAW};
 
     m_mazeData = std::vector<int>( m_width*m_height, 1 );
