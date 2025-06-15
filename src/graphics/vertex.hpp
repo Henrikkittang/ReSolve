@@ -7,4 +7,8 @@ struct Vertex
     glm::vec3 position;
     glm::vec4 color;
     glm::vec2 texCoord;
+
+    Vertex(glm::vec3 position, glm::vec4 color, glm::vec2 texCoord)
+        :position(position), color(color), texCoord(texCoord)
+    {}
 };

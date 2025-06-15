@@ -5,37 +5,53 @@
 #include"util/util.hpp"
 
 Renderable::Renderable()
-    : m_vertexCount(0), m_indexCount(0), m_floatPerVertex(0), m_type(PrimitiveType::TRIANGLE), m_mode(GL_STATIC_DRAW), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
+    : m_vertexCount(0), m_indexCount(0), m_floatPerVertex(0), m_type(PrimitiveType::TRIANGLE), 
+      m_mode(GL_STATIC_DRAW), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
 {}
 
 Renderable::Renderable(const void* data, uint32_t vertexCount, uint32_t floatPerVertex, PrimitiveType type,  int mode)      
-    : m_vertexCount(vertexCount), m_indexCount(0), m_floatPerVertex(floatPerVertex), m_type(type),  m_mode(mode), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
+    : m_vertexCount(vertexCount), m_indexCount(0), m_floatPerVertex(floatPerVertex), m_type(type),  
+      m_mode(mode), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
 {
-    // Create indices for QUAD
+     // Create indices for QUAD
     std::vector<uint32_t> indices = generateIndices(m_type, m_vertexCount / 4);
     m_indexCount = static_cast<uint32_t>(indices.size());
 
-    // Generate and bind VertexArray
-    GLCall( glGenVertexArrays(1, &m_vertexArrayID) );   
-    GLCall( glBindVertexArray(m_vertexArrayID) );
+    // Generate and bind Vertex Array
+    GLCall(glGenVertexArrays(1, &m_vertexArrayID));
+    GLCall(glBindVertexArray(m_vertexArrayID));
 
-    // Generate and bind VertexBuffer
-    GLCall( glGenBuffers(1, &m_vertexBufferID) );
-    GLCall( glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID) );
-    GLCall(glBufferData(GL_ARRAY_BUFFER, vertexCount*floatPerVertex*sizeof(float), data, m_mode));
+    // Generate and bind Vertex Buffer
+    GLCall(glGenBuffers(1, &m_vertexBufferID));
+    GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));
+    GLCall(glBufferData(GL_ARRAY_BUFFER, vertexCount * floatPerVertex * sizeof(float), data, m_mode));
 
-    // Generate and bind IndexBuffer
+    // Generate and bind Index Buffer
     GLCall(glGenBuffers(1, &m_indexBufferID));
     GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferID));
-    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indexCount*sizeof(uint32_t), indices.data(), m_mode));
+    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indexCount * sizeof(uint32_t), indices.data(), m_mode));
 
-    // Unbind VertexArray
-    GLCall( glEnableVertexAttribArray(0) );
-    GLCall( glVertexAttribPointer(0, floatPerVertex, GL_FLOAT, GL_FALSE, floatPerVertex*sizeof(float), (void*)0) );
+    // Enable and set vertex attribute pointers
+    GLCall(glEnableVertexAttribArray(0)); // position
+    GLCall(glEnableVertexAttribArray(1)); // color
+    GLCall(glEnableVertexAttribArray(2)); // texCoord
 
-    // Unbind VertexBuffer
-    GLCall( glBindBuffer(GL_ARRAY_BUFFER, 0) );
-    GLCall( glBindVertexArray(0) );
+    GLsizei stride = floatPerVertex * sizeof(float);
+
+    // Attribute 0: position (vec3)
+    GLCall(glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, (void*)(0)));
+
+    // Attribute 1: color (vec4)
+    GLCall(glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, stride, (void*)(3 * sizeof(float))));
+
+    // Attribute 2: texCoord (vec2)
+    GLCall(glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, stride, (void*)(7 * sizeof(float))));
+
+    // Unbind Vertex Array (VAO)
+    GLCall(glBindVertexArray(0));
+
+    // Optional: unbind buffer (not strictly necessary as VAO stores state)
+    GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
 }
 
 Renderable::Renderable(Renderable&& other)
@@ -114,21 +130,40 @@ void Renderable::update(const void* data, uint32_t vertexCount)
 {
     m_vertexCount = vertexCount;
 
-    auto indices = generateIndices(m_type, m_vertexCount / 4);
-    uint32_t indexCount = static_cast<uint32_t>(indices.size());
-    m_indexCount = indexCount;
+    // Regenerate indices based on updated vertex count
+    std::vector<uint32_t> indices = generateIndices(m_type, m_vertexCount / 4);
+    m_indexCount = static_cast<uint32_t>(indices.size());
 
+    // Update or generate index buffer
     if (m_indexBufferID == 0)
         GLCall(glGenBuffers(1, &m_indexBufferID));
 
     GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferID));
-    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexCount * sizeof(uint32_t), indices.data(), m_mode));
+    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indexCount * sizeof(uint32_t), indices.data(), m_mode));
 
-    GLCall( glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID) );    
-    
-    GLCall( glBufferData(GL_ARRAY_BUFFER, m_vertexCount * m_floatPerVertex * sizeof(float), data, m_mode); );
-    // GLCall( glBufferSubData(GL_ARRAY_BUFFER, 0, m_vertexCount * m_floatPerVertex * sizeof(float), data) );
+    // Update vertex buffer
+    GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));
+    GLCall(glBufferData(GL_ARRAY_BUFFER, m_vertexCount * m_floatPerVertex * sizeof(float), data, m_mode));
+
+    // Rebind vertex attributes if necessary (optional safety)
+    GLCall(glBindVertexArray(m_vertexArrayID));
+    GLCall(glEnableVertexAttribArray(0)); // position
+    GLCall(glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, m_floatPerVertex * sizeof(float), (void*)0));
+
+    GLCall(glEnableVertexAttribArray(1)); // color
+    GLCall(glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, m_floatPerVertex * sizeof(float), (void*)(3 * sizeof(float))));
+
+    GLCall(glEnableVertexAttribArray(2)); // texCoord
+    GLCall(glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, m_floatPerVertex * sizeof(float), (void*)(7 * sizeof(float))));
+
+    // Unbind for cleanliness
+    GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
+    GLCall(glBindVertexArray(0));
 }
+
+
+// GLCall( glBufferSubData(GL_ARRAY_BUFFER, 0, m_vertexCount * m_floatPerVertex * sizeof(float), data) );
+
 
 /////////////
 // Private // 

@@ -21,7 +21,6 @@ int main()
     Application app{960, 540, "Hello world"};
     app.ImGuiInit();
 
-    
     // app.registerScene<SceneClearColor>("Color");
     app.registerScene<SceneNoise>("Noise");
     app.registerScene<SceneMaze>("Maze");

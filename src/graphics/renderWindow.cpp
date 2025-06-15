@@ -21,7 +21,6 @@ RenderWindow::RenderWindow(GLFWwindow* window)
 
     m_basicShader.bind();
     m_basicShader.setUniformMat4f("uMVP", mvp);
-    m_basicShader.setUniform4f("uColor", 1.0, 0.0, 0.0, 1.0);
     m_basicShader.unbind();
 }
 
@@ -32,7 +31,7 @@ RenderWindow::~RenderWindow()
 }
 
 RenderWindow::RenderWindow(RenderWindow&& other)
-    : m_window(other.m_window), m_basicShader( std::move( other.m_basicShader ) )
+    : m_window(other.m_window), m_basicShader( std::move(other.m_basicShader) )
 {
     other.m_window = nullptr; 
 }

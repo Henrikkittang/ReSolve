@@ -30,6 +30,7 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    // glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
 
     // Optional: forward-compatible context (for macOS and strict compliance)
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);

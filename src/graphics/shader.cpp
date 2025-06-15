@@ -37,7 +37,7 @@ Shader::~Shader()
 
 
 Shader::Shader(Shader&& other)  
-    : m_renderID(other.m_renderID) 
+    : m_renderID(other.m_renderID), m_uniformLocationCache(other.m_uniformLocationCache) 
 {
     other.m_renderID = 0; 
 }

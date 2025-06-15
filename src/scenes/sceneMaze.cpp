@@ -5,6 +5,7 @@
 #include<imgui/imgui.h>
 
 #include"core/appContext.hpp"
+#include"graphics/vertex.hpp"
 #include"util/random.hpp"
 #include"util/util.hpp"
 
@@ -18,8 +19,7 @@ void SceneMaze::onCreate()
     m_width  = 960 / m_scl;
     m_height = 540 / m_scl;
 
-    m_renderable = Renderable{nullptr, (uint32_t)(m_width * m_height * 8 * sizeof(float)), 2, PrimitiveType::QUAD, GL_DYNAMIC_DRAW};
-    // m_renderable = Renderable{nullptr, 2 * 8 * sizeof(float), 2, GL_DYNAMIC_DRAW};
+    m_renderable = Renderable{nullptr, (uint32_t)(m_width * m_height * 8 * sizeof(float)), 9, PrimitiveType::QUAD, GL_DYNAMIC_DRAW};
 
     m_mazeData = std::vector<int>( m_width*m_height, 1 );
 
@@ -31,12 +31,6 @@ void SceneMaze::onCreate()
 
     ctx.assets.load("./assets/shaders/red.shader", m_shaderHandle);
 
-
-    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle); 
-    auto mvp = m_camera.getMVP();
-
-    shader->bind();
-    shader->setUniformMat4f("uMVP", mvp);
 }
 
 void SceneMaze::onUpdate() 
@@ -62,62 +56,34 @@ void SceneMaze::onUpdate()
         m_open.pop();
     }
 
-    float* data = (float*)m_quads.data();
-    m_renderable.update(data, (uint32_t)m_quads.size() * 4); // 4 vertices per quad
+    std::vector<Vertex> vertecies;
+    vertecies.reserve(m_quads.size()*4);
+    for(auto quad : m_quads)
+    {
+        for(int i = 0; i < 8; i += 2)
+        {
+            vertecies.emplace_back( glm::vec3{quad.p[i], quad.p[i+1], 0}, glm::vec4{1.0, 0.0, 0.0, 1.0}, glm::vec2{0.0, 0.0} );
+        }
+    }
+
+    m_renderable.update(vertecies.data(), (uint32_t)m_quads.size() * 4); // 4 vertices per quad
 }
 
 
 void SceneMaze::onRender() 
 {
-    // std::vector<Quad> quads;
-    // quads.reserve( m_mazeData.size() );
-    // for(size_t i = 0; i < m_mazeData.size(); i++)
-    // {
-    //     glm::vec2 position = { i % m_width, i / m_width };
-// 
-    //     if( m_mazeData[position.y*m_width + position.x] == 1 )
-    //         continue;
-// 
-    //     quads.emplace_back( position.x*m_scl, position.y*m_scl, m_scl, m_scl );
-    // }
-    
+   
+
+    ctx.window.draw(m_renderable, {});
 
     
-    // m_renderable = Renderable(data, (uint32_t)m_quads.size()*8*sizeof(float), 2);
-
-    // float x = 50;
-    // float y = 50;
-    // float size = 100;
-    // float data[] = {
-    //     x, y,
-    //     x+size, y,
-    //     x+size, y+size,
-    //     x, y+size,
-    // };
-    // Renderable renderable = {data, 4, 2, GL_STATIC_DRAW};
-
-    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle); 
-    ctx.window.draw(m_renderable, shader);
-
-    // GLCall( glDrawArrays(GL_QUADS, 0, m_renderable.vertexCount()*8*sizeof(float)) );    
-
 }
 
 
 void SceneMaze::onImGuiRender() 
 {
-    if( ImGui::Button("Reload") )
-    {
-        Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle); 
-
-        shader->unbind();
-        ctx.assets.reload(m_shaderHandle); 
-        
-        auto mvp = m_camera.getMVP();
-
-        shader->bind();
-        shader->setUniformMat4f("uMVP", mvp);
-    }
+    ImGui::Text("Quads: %zu",  m_quads.size());
+    ImGui::Text("Vertices size: %zu kB", sizeof(Vertex) * m_quads.size() * 4/1000);
 }
 
 
@@ -179,16 +145,10 @@ void SceneMaze::onActivate()
 {
     ctx.window.clear();
     m_renderable.bind();
-
-    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle); 
-    shader->bind();
 }
 
 
 void SceneMaze::onDeactivate()
 {
     m_renderable.unbind();
-
-    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle); 
-    shader->unbind();
 }  
