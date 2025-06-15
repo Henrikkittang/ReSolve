@@ -4,7 +4,6 @@
 
 #include"util/util.hpp"
 
-// add defualt values here to index stuff
 Renderable::Renderable()
     : m_vertexCount(0), m_indexCount(0), m_floatPerVertex(0), m_type(PrimitiveType::TRIANGLE), m_mode(GL_STATIC_DRAW), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
 {}
@@ -82,7 +81,7 @@ Renderable::~Renderable()
 void Renderable::bind() const
 {
     GLCall( glBindVertexArray(m_vertexArrayID) );
-    GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferID));  
+    GLCall( glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferID) );  
 }
 
 

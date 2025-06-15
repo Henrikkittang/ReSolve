@@ -16,6 +16,17 @@ Shader::Shader()
     :m_renderID(0)
 {}
 
+
+Shader::Shader(const std::string& shaderProgram)
+    :m_renderID(0)
+{
+    ShaderProgramSource source = parseShader(shaderProgram);
+    m_renderID = createShader(source.vertexSource, source.fragmentSource); 
+
+    DEBUG_CHECK(m_renderID == 0, "Creating shader failed");
+}
+
+
 Shader::~Shader()
 {
     if(m_renderID != 0)
@@ -47,7 +58,12 @@ Shader& Shader::operator=(Shader&& other)
 
 bool Shader::load(const std::string& filepath)
 {
-    ShaderProgramSource source = parseShader(filepath);
+    std::ifstream file(filepath);
+    
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+
+    ShaderProgramSource source = parseShader(buffer.str());
     m_renderID = createShader(source.vertexSource, source.fragmentSource); 
 
     if( m_renderID == 0 )
@@ -108,48 +124,38 @@ void Shader::setUniformMat4f(const std::string& name, const glm::mat4& matrix)
 }
 
 
-
-ShaderProgramSource Shader::parseShader(const std::string& filepath)
+ShaderProgramSource Shader::parseShader(const std::string& source)
 {
-    std::ifstream stream(filepath);
-
-   if (!stream.good()) 
-   {
-        std::cerr << "Error: The file at '" << filepath << "' was not found. \n"; 
-        return {"", ""};
-    }
+    std::istringstream stream(source);
 
     enum class ShaderType
     {
-        NONE=-1, VERTEX=0, FRAGMENT=1
+        NONE = -1, VERTEX = 0, FRAGMENT = 1
     };
 
-    std::string line; 
+    std::string line;
     std::stringstream ss[2];
     ShaderType type = ShaderType::NONE;
-    while(getline(stream, line))
+
+    while (getline(stream, line))
     {
-        if(line.find("#shader") != std::string::npos)
+        if (line.find("#shader") != std::string::npos)
         {
-            if(line.find("vertex") != std::string::npos)
+            if (line.find("vertex") != std::string::npos)
                 type = ShaderType::VERTEX;
-            else if(line.find("fragment") != std::string::npos)
+            else if (line.find("fragment") != std::string::npos)
                 type = ShaderType::FRAGMENT;
         }
-        else
+        else if (type != ShaderType::NONE)
         {
-            ss[(int)type] << line << "\n";
+            ss[(int)type] << line << '\n';
         }
     }
 
-    if( ss[0].str().length() == 0 )
-        std::cout << "Warning: Vertex shader length is zero\n";
-    if( ss[1].str().length() == 0 )
-        std::cout << "Warning: Fragment shader length is zero\n";
-
+    DEBUG_CHECK(ss[0].str().empty(), "Warning: Vertex shader length is zero\n");
+    DEBUG_CHECK(ss[1].str().empty(), "Warning: Fragment shader length is zero\n");
 
     return { ss[0].str(), ss[1].str() };
-
 }
 
 uint32_t Shader::compileShader(uint32_t type, const std::string& source)
@@ -178,7 +184,7 @@ uint32_t Shader::compileShader(uint32_t type, const std::string& source)
 
 uint32_t Shader::createShader(const std::string& vertexShader, const std::string& fragmentShader)
 {
-    uint32_t program = glCreateProgram(); 
+    uint32_t program = glCreateProgram() ;
     uint32_t vs = compileShader(GL_VERTEX_SHADER, vertexShader);
     uint32_t fs = compileShader(GL_FRAGMENT_SHADER, fragmentShader);
 

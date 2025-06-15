@@ -20,6 +20,7 @@ class Shader : public Asset
 public:
 
     Shader();
+    Shader(const std::string& shaderProgram);
     ~Shader();
     Shader(Shader&& other);
     Shader& operator=(Shader&& other);
@@ -41,7 +42,7 @@ public:
 
 private:
 
-    ShaderProgramSource parseShader(const std::string& filepath);
+    ShaderProgramSource parseShader(const std::string& string);
     uint32_t compileShader(uint32_t type, const std::string& source);
     uint32_t createShader(const std::string& vertexShader, const std::string& fragmentShader);
     

@@ -1,7 +1,7 @@
 #pragma once
 
 #include<cstdint>
-
+#include<vector>
 
 #include<glad/glad.h>
 #include<GLFW/glfw3.h>
@@ -11,6 +11,15 @@
 #include"graphics/shader.hpp"
 #include"graphics/renderable.hpp"
 
+
+
+
+
+// Suggested Features:
+// - Resizing/viewport management
+// - VSync toggle
+// - Input abstraction (mouse/scroll)
+// - Optional: expose getNativeHandle() cleanly
 
 class RenderWindow
 {
@@ -40,4 +49,31 @@ public:
 private:
 
 	GLFWwindow* m_window;
+
+	
+	static inline const char* s_basicShaderSource = R"glsl(
+#shader vertex
+#version 460 core
+
+layout(location = 0) in vec4 position;
+
+uniform mat4 uMVP;
+
+void main()
+{
+    gl_Position = uMVP * position;
+}
+
+#shader fragment
+#version 460 core
+
+layout(location = 0) out vec4 color;
+
+void main()
+{
+    color = vec4(1.0f, 0.0f, 0.0f, 1.0f);
+} 
+)glsl";
+
+	Shader m_basicShader;
 };
