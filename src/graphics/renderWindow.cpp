@@ -21,6 +21,7 @@ RenderWindow::RenderWindow(GLFWwindow* window)
 
     m_basicShader.bind();
     m_basicShader.setUniformMat4f("uMVP", mvp);
+    m_basicShader.setUniform4f("uColor", 1.0, 0.0, 0.0, 1.0);
     m_basicShader.unbind();
 }
 

@@ -67,12 +67,15 @@ void main()
 #shader fragment
 #version 460 core
 
+uniform vec4 uColor;             
+
 layout(location = 0) out vec4 color;
 
 void main()
 {
-    color = vec4(1.0f, 0.0f, 0.0f, 1.0f);
-} 
+    color = uColor;
+}
+
 )glsl";
 
 	Shader m_basicShader;
