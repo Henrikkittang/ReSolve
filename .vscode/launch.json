@@ -2,37 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Release",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceRoot}/build/release/bin/resolve.exe",  // Path to the compiled executable
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceRoot}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "Build: Release",
-            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe", // Path to GDB on Windows
-            "logging": {
-                "engineLogging": true,
-                "trace": true,
-                "traceResponse": true
-            }
-        },
-        
-        {
             "name": "Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/build/debug/bin/resolve.exe",  // Path to the compiled executable
+            "program": "${workspaceRoot}/build/debug/bin/resolve",  // Path to the compiled executable
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
@@ -47,7 +20,32 @@
                 }
             ],
             "preLaunchTask": "Build: Debug",
-            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe", // Path to GDB on Windows
+            "logging": {
+                "engineLogging": true,
+                "trace": true,
+                "traceResponse": true
+            }
+        },
+
+        {
+            "name": "Release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/build/release/bin/resolve",  // Path to the compiled executable
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Build: Release",
             "logging": {
                 "engineLogging": true,
                 "trace": true,
