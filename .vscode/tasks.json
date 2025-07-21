@@ -6,7 +6,7 @@
         {
             "label": "Initilize: Debug",
             "type": "shell",
-            "command": "cmake -B build/debug -G 'MinGW Makefiles' -DCMAKE_BUILD_TYPE=Debug",
+            "command": "cmake -B build/debug -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug",
             "group": "build"
         },        
         {
@@ -18,7 +18,7 @@
         {
             "label": "Run: Debug",
             "type": "shell",
-            "command": "./build/debug/bin/resolve.exe",
+            "command": "./build/debug/bin/resolve",
             "group": "build"
         },
         {
@@ -42,7 +42,7 @@
         {
             "label": "Initilize: Release",
             "type": "shell",
-            "command": "cmake  -B build/release -G 'MinGW Makefiles' -DCMAKE_BUILD_TYPE=Release",
+            "command": "cmake  -B build/release -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release",
             "group": "build"
         },
         {
@@ -53,7 +53,7 @@
         },
         {
             "label": "Run: Release",
-            "command": "./build/release/bin/resolve.exe",
+            "command": "./build/release/bin/resolve",
             "type": "shell",
             "group": "build"
         },

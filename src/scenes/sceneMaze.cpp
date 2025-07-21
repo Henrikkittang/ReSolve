@@ -10,11 +10,12 @@
 #include"util/util.hpp"
 
 
+
 void SceneMaze::onCreate() 
 {
     m_camera = Camera{960.0, 540.0};
 
-    m_scl = 8;
+    m_scl = 2;
 
     m_width  = 960 / m_scl;
     m_height = 540 / m_scl;
@@ -74,7 +75,7 @@ void SceneMaze::onRender()
 {
    
 
-    ctx.window.draw(m_renderable, {});
+    ctx.window.draw(m_renderable);
 
     
 }

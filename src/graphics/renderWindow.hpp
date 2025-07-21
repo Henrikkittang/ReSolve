@@ -34,7 +34,7 @@ public:
 	RenderWindow& operator=(RenderWindow&& other);
 
     void clear() const;
-	void draw(const Renderable& renderable, Ref<Shader> shader) const;
+	void draw(const Renderable& renderable) const;
 	void draw(const glm::vec2* vertecies, uint32_t size, PrimitiveType type) const;
 
 	bool windowShouldClose() const;

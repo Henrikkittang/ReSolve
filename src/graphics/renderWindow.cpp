@@ -58,7 +58,7 @@ void RenderWindow::clear() const
 
 
 
-void RenderWindow::draw(const Renderable& renderable, Ref<Shader> shader) const
+void RenderWindow::draw(const Renderable& renderable) const
 {
     renderable.bind();
     m_basicShader.bind();

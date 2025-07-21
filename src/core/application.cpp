@@ -55,6 +55,9 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
     // std::cout << "OpenGL Version: " << version << std::endl;
 
     m_window = RenderWindow(window);
+
+    glfwSwapInterval(0);
+
     GLCall( glEnable(GL_BLEND) );
     GLCall( glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) );
 }
