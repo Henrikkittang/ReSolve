@@ -8,11 +8,16 @@
 
 #include"core/assetManager.hpp"
 
+#include"util/log.hpp"
+
 int main()
 {    
-    #if DEBUG
+    LOG_DEBUG("Hello");
+
+
+    #if RS_DEBUG
         std::cout << "Debug mode is active." << std::endl;
-    #elif RELEASE
+    #elif RS_RELEASE
         std::cout << "Release mode is active." << std::endl;
     #else
         std::cout << "No mode is active." << std::endl;

@@ -1,6 +1,6 @@
 #include<iostream>
 #include"core/sceneManager.hpp"
-
+#include"util/util.hpp"
 
 SceneManager::SceneManager()
     : m_scenes(), m_currentScene(nullptr)
@@ -20,20 +20,16 @@ SceneManager::~SceneManager()
 
 void SceneManager::addScene(const std::string& name, Scene* scene)
 {
-#if DEBUG
-    if( m_scenes.contains(name) )
-        std::cout << "Scene label already used: " << name << "\n";
-#endif 
+    DEBUG_CHECK(m_scenes.contains(name), "Scene label already used: " + name);
+
     scene->onCreate();
     m_scenes[name] = scene;
 }
 
 void SceneManager::removeScene(const std::string& name)
 {
-#if DEBUG
-    if( !m_scenes.contains( name ) )
-        std::cout << "Cant remove scene because name not in scenes: "<< name << "\n";
-#endif
+    DEBUG_CHECK(m_scenes.contains(name), "Cant remove scene because name not in scenes: " + name);
+
 
     auto it = m_scenes.find(name);
     m_scenes.erase(name);
@@ -41,20 +37,15 @@ void SceneManager::removeScene(const std::string& name)
 }
 
 Scene* SceneManager::getCurrentScene()
-{
-#if DEBUG
-    if(m_currentScene == nullptr)
-        std::cout << "Current scene is nullptr \n";
-#endif   
+{   
+    DEBUG_CHECK(m_currentScene == nullptr, "Current scene is nullptr");
+
     return m_currentScene;
 }
 
 void SceneManager::setCurrentScene(const std::string& name)
 {
-#if DEBUG
-    if( !m_scenes.contains( name ) )
-        std::cout << "Cant set scene because name not in scenes: "<< name << "\n";
-#endif    
+    DEBUG_CHECK(m_scenes.contains(name), "Cant set scene because name not in scenes: " + name);
 
     if( m_currentScene )
         m_currentScene->onDeactivate();

@@ -81,8 +81,8 @@ target_link_libraries(resolve PRIVATE
 
 # Compiler definitions
 target_compile_definitions(resolve PRIVATE
-    $<$<CONFIG:Debug>:DEBUG>
-    $<$<CONFIG:Release>:RELEASE>
+    $<$<CONFIG:Debug>:RS_DEBUG>
+    $<$<CONFIG:Release>:RS_RELEASE>
     SOURCE_DIR="${CMAKE_SOURCE_DIR}/"
 )
 
