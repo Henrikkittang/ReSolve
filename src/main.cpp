@@ -6,14 +6,15 @@
 #include"scenes/sceneMaze.hpp"
 #include"scenes/sceneNoise.hpp"
 
-#include"core/assetManager.hpp"
-
 #include"util/log.hpp"
 
 int main()
 {    
     LOG_DEBUG("Hello");
-
+    LOG_INFO("Hello");
+    LOG_WARN("Hello");
+    LOG_ERROR("Hello");
+    // LOG_FATAL("Hello");
 
     #if RS_DEBUG
         std::cout << "Debug mode is active." << std::endl;

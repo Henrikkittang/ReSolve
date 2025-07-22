@@ -1,39 +1,35 @@
 #include"log.hpp"
 #include<iostream>
 
-void Logger::Init(const std::string& logFilePath)
+void Logger::init(const std::string& logFilePath)
 {
 
 }
 
-void Logger::Log(LogLevel level, const char* file, int line, const char* func, const std::string& msg)
+void Logger::log(LogLevel level, const char* file, int line, const char* func, const std::string& msg)
 {
-#ifdef DEBUG
-    switch (level) {
-        case LogLevel::DEBUG: return;
-        case LogLevel::INFO:  return;
-        case LogLevel::WARN:  return;
+    // This distinction might become kinda weird
+#ifdef RS_DEBUG
+   
+    std::cout << "\n";
+
+    switch (level) 
+    {
+        case LogLevel::DEBUG: std::cout << TERMINAL_CYAN    << "[DEBUG]" << TERMINAL_RESET; break;
+        case LogLevel::INFO:  std::cout << TERMINAL_GREEN   << "[INFO]" << TERMINAL_RESET; break;
+        case LogLevel::WARN:  std::cout << TERMINAL_YELLOW  << "[WARN]" << TERMINAL_RESET; break;
+        case LogLevel::ERROR: std::cout << TERMINAL_RED     << "[ERROR]" << TERMINAL_RESET; break;
+        case LogLevel::FATAL: std::cout << TERMINAL_MAGENTA << "[FATAL]" << TERMINAL_RESET; break;
     }
+
+    std::cout << ": " << msg << "\n";
+    std::cout <<  file << ":" << line << "(" << func << ")\n\n";
+
+
+    // if (level == LogLevel::FATAL) 
+    //     exit(1);
 #endif 
-
-    switch (level) {
-        case LogLevel::DEBUG: std::cout << "[DEBUG] "; break;
-        case LogLevel::INFO:  std::cout << "[INFO]  "; break;
-        case LogLevel::WARN:  std::cout << "[WARN]  "; break;
-
-        case LogLevel::ERROR: std::cout << "[ERROR] "; break;
-        case LogLevel::FATAL: std::cout << "[FATAL] "; break;
-    }
-
-
-
-    std::cout << msg << "\n";
-    
-    if (level == LogLevel::FATAL) {
-        exit(1); // or exit(1)
-    }
 }
 
-void Logger::SetLogLevel(LogLevel level) {}
 
 

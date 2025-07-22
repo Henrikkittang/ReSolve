@@ -6,11 +6,11 @@
                 "${workspaceFolder}/**"
             ],
             "defines": [
-                "UNICODE",
-                "_UNICODE"
+                "RS_DEBUG",
+                "RS_RELEASE"
             ],
             "windowsSdkVersion": "10.0.22621.0",
-            "compilerPath": "C:/msys64/ucrt64/bin/clang++",
+            "compilerPath": "/usr/bin/gcc",
             "cStandard": "c23",
             "cppStandard": "c++23",
             "intelliSenseMode": "windows-clang-x64"
