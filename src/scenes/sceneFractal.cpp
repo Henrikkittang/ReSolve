@@ -84,7 +84,7 @@ void SceneFractal::onRender()
     m_va.bind();
     m_ib.bind();
     
-    GLCall(glDrawElements(GL_TRIANGLES, m_ib.getCount(), GL_UNSIGNED_INT, nullptr));
+    GLCall( glDrawElements(GL_TRIANGLES, m_ib.getCount(), GL_UNSIGNED_INT, nullptr) );
 
     shader->unbind();
     m_va.unbind();

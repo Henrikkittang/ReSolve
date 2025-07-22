@@ -96,7 +96,7 @@ void SceneNoise::onRender(  )
     shader->bind();
     va.bind();
     ib.bind();
-    GLCall(glDrawElements(GL_TRIANGLES, ib.getCount(), GL_UNSIGNED_INT, nullptr));
+    GLCall( glDrawElements(GL_TRIANGLES, ib.getCount(), GL_UNSIGNED_INT, nullptr) );
     shader->unbind();
     va.unbind();
     ib.unbind();

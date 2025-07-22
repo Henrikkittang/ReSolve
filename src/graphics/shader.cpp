@@ -69,7 +69,7 @@ bool Shader::load(const std::string& filepath)
 
     if( m_renderID == 0 )
     {
-        LOG_WARN("Creating shader failed");
+        LOG_ERROR("Creating shader failed");
         return false; 
     }
     return true;
@@ -185,7 +185,7 @@ uint32_t Shader::compileShader(uint32_t type, const std::string& source)
 
 uint32_t Shader::createShader(const std::string& vertexShader, const std::string& fragmentShader)
 {
-    uint32_t program = glCreateProgram() ;
+    uint32_t program = glCreateProgram();
     uint32_t vs = compileShader(GL_VERTEX_SHADER, vertexShader);
     uint32_t fs = compileShader(GL_FRAGMENT_SHADER, fragmentShader);
 
@@ -206,9 +206,9 @@ uint32_t Shader::getUniformLocation(const std::string& name)
     if(m_uniformLocationCache.find(name) != m_uniformLocationCache.end())
         return m_uniformLocationCache[name];
 
-    GLCall(int location = glGetUniformLocation(m_renderID, name.c_str()));
+    int location = glGetUniformLocation(m_renderID, name.c_str());
     if(location == -1)
-        std::cout << "Warning: uniform '" << name << "' dosent exists! \n";
+        LOG_WARN("Uniform '" + name + "' dosent exists!");
     m_uniformLocationCache[name] = location;
     return location;
 }
