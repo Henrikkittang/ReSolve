@@ -31,7 +31,7 @@ void Logger::log(LogLevel level, const char* file, int line, const char* func, c
         case LogLevel::FATAL: oss << TERMINAL_MAGENTA << "[FATAL]" << TERMINAL_RESET; break;
     }
 
-    oss << ": " << msg << "\n";
+    oss << ": " << TERMINAL_BOLDWHITE << msg << TERMINAL_RESET << "\n";
     oss <<  file << ":" << line << "(" << func << ")\n\n";
 
     std::cout << oss.str();

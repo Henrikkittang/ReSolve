@@ -49,6 +49,8 @@ private:
 #define TERMINAL_CYAN    "\033[36m"      
 #define TERMINAL_WHITE   "\033[37m"      
 #define TERMINAL_RESET   "\033[0m"
+#define TERMINAL_BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
+
 
 #define LOG_TRACE(msg) Logger::log(LogLevel::TRACE, __FILE__, __LINE__, __func__, msg)
 #define LOG_DEBUG(msg) Logger::log(LogLevel::DEBUG, __FILE__, __LINE__, __func__, msg)
