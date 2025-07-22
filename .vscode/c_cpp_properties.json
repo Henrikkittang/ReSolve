@@ -8,6 +8,7 @@
             "defines": [
                 "RS_DEBUG",
                 "RS_RELEASE"
+                // "_WIN32"
             ],
             "windowsSdkVersion": "10.0.22621.0",
             "compilerPath": "/usr/bin/gcc",

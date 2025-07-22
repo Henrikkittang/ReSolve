@@ -1,15 +1,37 @@
 #pragma once
 #include<string>
+#include<chrono>
+#include<ctime>
+#include<sstream>
+#include<iomanip>
+#include<cstdlib>
+#include<mutex>
+
+// | Level   | Meaning                                                     | Typical Use Cases                           |
+// | ------- | ----------------------------------------------------------- | ------------------------------------------- |
+// | `DEBUG` | Very detailed, noisy logs, mostly useful during development | Variable values, function entry/exit        |
+// | `INFO`  | General information about app progress                      | "Scene loaded", "Renderer initialized"      |
+// | `WARN`  | Something unexpected, but non-breaking                      | "Fallback to default shader", missing asset |
+// | `ERROR` | A serious problem occurred, but app can continue            | Failed file load, OpenGL error              |
+// | `FATAL` | Critical problem that forces app termination                | GL context failure, missing dependencies    |
 
 
 enum class LogLevel { TRACE=0, DEBUG, INFO, WARN, ERROR, FATAL };
 
 class Logger {
 public:
-    static void init(const std::string& logFilePath);
+    static void initilize(const std::string& logFilePath);
     static void log(LogLevel level, const char* file, int line, const char* func, const std::string& msg);
+
 private:
-    static LogLevel currentLevel;
+    static std::string getTimestampStr();
+
+
+private:
+    static LogLevel      s_curLevel;
+    static std::ofstream s_file;
+    static std::mutex    s_mutex;
+
 };
 
 
@@ -31,27 +53,9 @@ private:
 #define LOG_ERROR(msg) Logger::log(LogLevel::ERROR, __FILE__, __LINE__, __func__, msg)
 #define LOG_FATAL(msg) Logger::log(LogLevel::FATAL, __FILE__, __LINE__, __func__, msg)
 
-inline void CHECK_DEBUG(bool cond, const std::string& msg)
-{
-    if(cond) LOG_DEBUG(msg);
-}
+#define CHECK_DEBUG(cond, msg) do { if (cond) LOG_DEBUG(msg); } while (0)
+#define CHECK_INFO(cond, msg)  do { if (cond) LOG_INFO(msg); } while (0)
+#define CHECK_WARN(cond, msg)  do { if (cond) LOG_WARN(msg); } while (0)
+#define CHECK_ERROR(cond, msg) do { if (cond) LOG_ERROR(msg); } while (0)
+#define CHECK_FATAL(cond, msg) do { if (cond) LOG_FATAL(msg); } while (0)
 
-inline void CHECK_INFO(bool cond, const std::string& msg)
-{
-    if(cond) LOG_INFO(msg);
-}
-
-inline void CHECK_WARN(bool cond, const std::string& msg)
-{
-    if(cond) LOG_WARN(msg);
-}
-
-inline void CHECK_ERROR(bool cond, const std::string& msg)
-{
-    if(cond) LOG_ERROR(msg);
-}
-
-inline void CHECK_FATAL(bool cond, const std::string& msg)
-{
-    if(cond) LOG_FATAL(msg);
-}

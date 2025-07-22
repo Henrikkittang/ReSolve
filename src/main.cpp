@@ -10,6 +10,8 @@
 
 int main()
 {    
+    
+
     #if RS_DEBUG
         std::cout << "Debug mode is active." << std::endl;
     #elif RS_RELEASE

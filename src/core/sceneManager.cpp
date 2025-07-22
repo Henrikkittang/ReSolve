@@ -37,14 +37,14 @@ void SceneManager::removeScene(const std::string& name)
 
 Scene* SceneManager::getCurrentScene()
 {   
-    CHECK_WARN(m_currentScene == nullptr, "Current scene is nullptr");
+    CHECK_ERROR(m_currentScene == nullptr, "Current scene is nullptr");
 
     return m_currentScene;
 }
 
 void SceneManager::setCurrentScene(const std::string& name)
 {
-    CHECK_WARN(m_scenes.contains(name), "Cant set scene because name not in scenes: " + name);
+    CHECK_ERROR(m_scenes.contains(name), "Cant set scene because name not in scenes: " + name);
 
     if( m_currentScene )
         m_currentScene->onDeactivate();

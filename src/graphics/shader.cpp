@@ -174,8 +174,7 @@ uint32_t Shader::compileShader(uint32_t type, const std::string& source)
         GLCall( glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length) );
         char* message = (char*)alloca(length * sizeof(char));
         GLCall( glGetShaderInfoLog(id, length, &length, message) );
-        std::cout << "Failed to compile shader " << std::endl;
-        std::cout << message << std::endl;
+        LOG_ERROR( "Failed to compile shader, " + std::string(message)  );
         GLCall( glDeleteShader(id) );
         return 0; 
     }

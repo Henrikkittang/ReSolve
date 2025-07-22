@@ -4,25 +4,31 @@
 #include<stack>
 #include<thread>
 
+#include<glad/glad.h>
+#include<GLFW/glfw3.h>
+
 
 #include<imgui/imgui.h>
 #include<imgui_impl_glfw.h>
 #include<imgui_impl_opengl3.h>
 
+
 #include"core/scene.hpp"
 #include"core/event.hpp"
 #include"util/random.hpp"
 #include"util/util.hpp"
+#include"util/log.hpp"
 
 
 Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std::string& title)
 {
     Random::initialize();
     Noise::initilize();
+    Logger::initilize("");
 
     if (!glfwInit())
-        LOG_FATAL("Failed to initialize glfw");
-    
+        LOG_FATAL("Failed to initialize GLFW");
+
 
     // Request OpenGL 4.6 Core Profile
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -37,7 +43,7 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
     if (!window)
     {
         glfwTerminate();
-        LOG_FATAL("Failed to create glfw window ");
+        LOG_FATAL("Failed to create GLFW window ");
     }
 
     glfwMakeContextCurrent(window);
@@ -48,20 +54,19 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
         LOG_FATAL("Failed to initialize GLAD");
     }
 
-#ifdef RS_DEBUG
-    EnableOpenGLDebugOutput();
-#endif
-
-
-    const GLubyte* version = glGetString(GL_VERSION);
-    LOG_INFO("OpenGL Version: " + std::string(reinterpret_cast<const char*>(glGetString(GL_VERSION))));
-
     m_window = RenderWindow(window);
-
     glfwSwapInterval(0);
 
     GLCall( glEnable(GL_BLEND) );
     GLCall( glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) );
+
+#ifdef RS_DEBUG
+    enableOpenGLDebugOutput();
+#endif
+    LOG_INFO("OpenGL Version: " + std::string(reinterpret_cast<const char*>(glGetString(GL_VERSION))));
+    LOG_INFO("GL Renderer: " + std::string(reinterpret_cast<const char*>(glGetString(GL_RENDERER))));
+    LOG_INFO("GL Vendor: " + std::string(reinterpret_cast<const char*>(glGetString(GL_VENDOR))));
+
 }
 
 

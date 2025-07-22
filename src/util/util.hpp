@@ -133,11 +133,12 @@ inline void APIENTRY GLDebugCallback(GLenum source, GLenum type, GLuint id,
     GL_DEBUG_SEVERITY_HIGH ? LOG_ERROR(ss.str()) : LOG_WARN(ss.str());    
 }
 
-inline void EnableOpenGLDebugOutput() 
+inline void enableOpenGLDebugOutput() 
 {
-    glEnable(GL_DEBUG_OUTPUT);
-    glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
-    glDebugMessageCallback(GLDebugCallback, nullptr);
+    GLCall( glEnable(GL_DEBUG_OUTPUT) );
+    GLCall( glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS) );
+    GLCall( glDebugMessageCallback(GLDebugCallback, nullptr) );
+    GLCall( glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, nullptr, GL_TRUE) );
 }
 // #endif
 
