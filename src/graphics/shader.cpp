@@ -10,6 +10,7 @@
 #include<glad/glad.h>
 
 #include"util/util.hpp"
+#include"util/log.hpp"
 #include"util/timer.hpp"
 
 Shader::Shader()
@@ -23,7 +24,7 @@ Shader::Shader(const std::string& shaderProgram)
     ShaderProgramSource source = parseShader(shaderProgram);
     m_renderID = createShader(source.vertexSource, source.fragmentSource); 
 
-    DEBUG_CHECK(m_renderID == 0, "Creating shader failed");
+    CHECK_ERROR(m_renderID == 0, "Creating shader failed");
 }
 
 
@@ -68,7 +69,7 @@ bool Shader::load(const std::string& filepath)
 
     if( m_renderID == 0 )
     {
-        DEBUG_LOG("Creating shader failed");
+        LOG_WARN("Creating shader failed");
         return false; 
     }
     return true;
@@ -152,8 +153,8 @@ ShaderProgramSource Shader::parseShader(const std::string& source)
         }
     }
 
-    DEBUG_CHECK(ss[0].str().empty(), "Warning: Vertex shader length is zero\n");
-    DEBUG_CHECK(ss[1].str().empty(), "Warning: Fragment shader length is zero\n");
+    CHECK_WARN(ss[0].str().empty(), "Vertex shader length is zero");
+    CHECK_WARN(ss[1].str().empty(), "Fragment shader length is zero");
 
     return { ss[0].str(), ss[1].str() };
 }

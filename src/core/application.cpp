@@ -21,10 +21,8 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
     Noise::initilize();
 
     if (!glfwInit())
-    {
-        std::cout << "Failed to initialize glfw \n";
-        exit(0);
-    }
+        LOG_FATAL("Failed to initialize glfw");
+    
 
     // Request OpenGL 4.6 Core Profile
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -38,18 +36,16 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
     GLFWwindow* window = glfwCreateWindow(screenWidth, screenHeight, title.c_str(), NULL, NULL);
     if (!window)
     {
-        std::cerr << "Failed to create glfw window \n";
         glfwTerminate();
-        exit(0);
+        LOG_FATAL("Failed to create glfw window ");
     }
 
     glfwMakeContextCurrent(window);
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
-        std::cout << "Failed to initialize GLAD\n";
         glfwDestroyWindow(window);
         glfwTerminate();
-        exit(0);
+        LOG_FATAL("Failed to initialize GLAD");
     }
 
 #ifdef RS_DEBUG
@@ -58,7 +54,7 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
 
 
     const GLubyte* version = glGetString(GL_VERSION);
-    std::cout << "OpenGL Version: " << version << std::endl;
+    LOG_INFO("OpenGL Version: " + std::string(reinterpret_cast<const char*>(glGetString(GL_VERSION))));
 
     m_window = RenderWindow(window);
 

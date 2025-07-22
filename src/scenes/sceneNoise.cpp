@@ -6,6 +6,7 @@
 #include"core/appContext.hpp"
 #include"core/asset.hpp"
 #include"graphics/texture.hpp"
+#include"util/util.hpp"
 
 #include"decapricated/indexBuffer.hpp"
 #include"decapricated/vertexBuffer.hpp"

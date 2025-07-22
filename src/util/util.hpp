@@ -141,19 +141,3 @@ inline void EnableOpenGLDebugOutput()
 }
 // #endif
 
-
-
-inline void DEBUG_LOG(const std::string& msg)
-{
-#ifdef RS_DEBUG
-    std::cout << msg << "\n";
-#endif
-}
-
-inline void DEBUG_CHECK(bool cond, const std::string& msg)
-{
-#ifdef RS_DEBUG
-    if(cond)
-        std::cout << msg << "\n";
-#endif
-}

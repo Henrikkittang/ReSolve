@@ -5,7 +5,7 @@
 #include<filesystem>
 #include<functional>
 
-#include"util/util.hpp"
+#include"util/log.hpp"
 
 #ifndef SOURCE_DIR
 #define SOURCE_DIR ""
@@ -54,7 +54,7 @@ bool AssetManager::load(const std::string& filePathString, AssetHandle& handle)
 
 bool AssetManager::unload(AssetHandle& handle)
 {
-    DEBUG_CHECK(!m_assets.contains(handle.id), "Asset not found in unload " + handle.filepath.string());
+    CHECK_FATAL(!m_assets.contains(handle.id), "Asset not found in unload " + handle.filepath.string());
     
     Ref<Asset> asset = m_assets[handle.id];
     asset->unload();
@@ -69,7 +69,7 @@ bool AssetManager::unload(AssetHandle& handle)
 
 bool AssetManager::reload(const AssetHandle& handle)
 {
-    DEBUG_CHECK(!m_assets.contains(handle.id), "Asset not found in reload " + handle.filepath.string());
+    CHECK_FATAL(!m_assets.contains(handle.id), "Asset not found in reload " + handle.filepath.string());
 
     Ref<Asset> asset = m_assets[handle.id];
     asset->unload();
@@ -79,7 +79,7 @@ bool AssetManager::reload(const AssetHandle& handle)
 
 Ref<Asset> AssetManager::get(const AssetHandle& handle) 
 {
-    DEBUG_CHECK(!m_assets.contains(handle.id), "Asset not found in get " + handle.filepath.string());
+    CHECK_FATAL(!m_assets.contains(handle.id), "Asset not found in get " + handle.filepath.string());
     return m_assets[handle.id];
 }
 
