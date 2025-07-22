@@ -9,7 +9,7 @@
 
 #include<glad/glad.h>
 
-#include"util/util.hpp"
+#include"util/log.hpp"
 #include"util/log.hpp"
 #include"util/timer.hpp"
 

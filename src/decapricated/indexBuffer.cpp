@@ -1,5 +1,5 @@
 #include"indexBuffer.hpp"
-#include"util/util.hpp"
+#include"util/log.hpp"
 
 IndexBuffer::IndexBuffer(const uint32_t* data, uint32_t count)
     : m_count(count)

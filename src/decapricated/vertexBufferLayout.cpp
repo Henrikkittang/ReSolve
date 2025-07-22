@@ -1,7 +1,7 @@
 #include"vertexBufferLayout.hpp"
-#include"util/util.hpp"
 
 #include <glad/glad.h>
+#include"util/log.hpp"
 
 
 VertexBufferElement::VertexBufferElement(uint32_t type, uint32_t count, bool normalized)

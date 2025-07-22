@@ -6,6 +6,10 @@
 #include<iomanip>
 #include<cstdlib>
 #include<mutex>
+#include<string>
+#include<sstream>
+
+#include<glad/glad.h>
 
 // | Level   | Meaning                                                     | Typical Use Cases                           |
 // | ------- | ----------------------------------------------------------- | ------------------------------------------- |
@@ -58,4 +62,37 @@ private:
 #define CHECK_WARN(cond, msg)  do { if (cond) LOG_WARN(msg); } while (0)
 #define CHECK_ERROR(cond, msg) do { if (cond) LOG_ERROR(msg); } while (0)
 #define CHECK_FATAL(cond, msg) do { if (cond) LOG_FATAL(msg); } while (0)
+
+
+
+// ─── Platform-Specific Debug Break ─────────────────────────────────────────────
+#if defined(_MSC_VER)
+    #define DEBUG_BREAK() __debugbreak()
+#else
+    #define DEBUG_BREAK() __builtin_trap()
+#endif
+
+const char* getGLErrorString(GLenum error);
+const char* getGLErrorHint(GLenum error);
+
+void GLClearError();
+bool GLLogCall(const char* function, const char* file, int line, const char* context = nullptr);
+
+const char* getDebugSource(GLenum source);
+const char* getDebugType(GLenum type);
+const char* getDebugSeverity(GLenum severity); 
+void APIENTRY GLDebugCallback(GLenum source, GLenum type, GLuint id,
+                                     GLenum severity, GLsizei length,
+                                     const GLchar* message, const void* userParam); 
+void enableOpenGLDebugOutput();
+
+
+#define GLCall(x) GLClearError();\
+    x;\
+    if (!GLLogCall(#x, __FILE__, __LINE__)) DEBUG_BREAK()
+
+#define GLCheck(x, context) GLClearError();\
+    x;\
+    if (!GLLogCall(#x, __FILE__, __LINE__, context)) DEBUG_BREAK()
+
 

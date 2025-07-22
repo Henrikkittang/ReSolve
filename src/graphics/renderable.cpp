@@ -2,7 +2,7 @@
 
 #include<vector>
 
-#include"util/util.hpp"
+#include"util/log.hpp"
 
 Renderable::Renderable()
     : m_vertexCount(0), m_indexCount(0), m_floatPerVertex(0), m_type(PrimitiveType::TRIANGLE), 

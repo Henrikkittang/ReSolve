@@ -5,7 +5,7 @@
 #include"core/camera.hpp"
 #include"graphics/shader.hpp"
 #include"graphics/renderable.hpp"
-#include"util/util.hpp"
+#include"util/log.hpp"
 
 RenderWindow::RenderWindow()
     : m_window(nullptr), m_basicShader()

@@ -16,7 +16,6 @@
 #include"core/scene.hpp"
 #include"core/event.hpp"
 #include"util/random.hpp"
-#include"util/util.hpp"
 #include"util/log.hpp"
 
 

@@ -5,7 +5,7 @@
 
 #include<stb_image/stb_image.h>
 
-#include"util/util.hpp"
+#include"util/log.hpp"
 
 
 Texture::Texture()

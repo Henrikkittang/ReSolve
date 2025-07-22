@@ -1,7 +1,8 @@
 #include"vertexBuffer.hpp"
-#include"util/util.hpp"
 
 #include<iostream>
+
+#include"util/log.hpp"
 
 VertexBuffer::VertexBuffer()
     : m_renderID(0)
