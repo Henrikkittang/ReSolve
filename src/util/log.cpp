@@ -16,9 +16,9 @@ void Logger::initilize(const std::string& logFilePath)
     
 }
 
-// TODO: strip down full path into relative path. Add cross platform clean fucntions printsI
+// TODO:  Add cross platform clean fucntions printsI
 
-void Logger::log(LogLevel level, const char* filepath, int line, const char* func, const std::string& msg)
+void Logger::log(LogLevel level, const std::string& msg, std::source_location locaction)
 {
 #ifdef RS_DEBUG
    
@@ -38,13 +38,13 @@ void Logger::log(LogLevel level, const char* filepath, int line, const char* fun
     auto now = std::chrono::system_clock::now();
     auto time = std::chrono::system_clock::to_time_t(now);
 
-    std::filesystem::path relativePath = std::filesystem::relative(filepath, SOURCE_DIR);
+    std::filesystem::path relativePath = std::filesystem::relative(locaction.file_name(), SOURCE_DIR);
 
-    fmt::print("\n[{:%Y-%m-%d %H:%M:%S}] {}: {}\n{}:{} ({})\n\n",
+    fmt::print("\n[{:%Y-%m-%d %H:%M:%S}] {}: {}\n{}:{}({})\n\n",
         *std::localtime(&time),
         fmt::format(fg(color) | fmt::emphasis::bold, "[{}]", levelLabel),
         fmt::format(fmt::emphasis::bold, "{}", msg),
-        relativePath.c_str(), line, func
+        relativePath.c_str(), locaction.line(), locaction.function_name()
     );
 
     if (level == LogLevel::FATAL) 

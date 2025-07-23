@@ -7,16 +7,13 @@
 
 #include"util/log.hpp"
 
-#ifndef SOURCE_DIR
-#define SOURCE_DIR ""
-#endif
-
 AssetManager::AssetManager()
 {}
 
 AssetManager::~AssetManager()
 {}
 
+// TODO! Change this to use expected
 bool AssetManager::load(const std::string& filePathString, AssetHandle& handle)
 {   
     // NB! Not a permanent solution
@@ -28,7 +25,11 @@ bool AssetManager::load(const std::string& filePathString, AssetHandle& handle)
     
     auto [type, resFunc] = getType(extension);
     if( type == AssetType::NON )
-        return false; // Manager does not support this file type
+    {
+        LOG_ERROR("Asset manager does not support this file type");
+        return false; 
+    }
+
 
     if( m_assets.contains(id) )
     {
@@ -40,7 +41,10 @@ bool AssetManager::load(const std::string& filePathString, AssetHandle& handle)
 
     Ref<Asset> asset = resFunc();
     if(!asset->load(filepath.string()))
-        return false;  // asset failed to load
+    {
+        LOG_ERROR("Asset failed to load");
+        return false; 
+    }
     
 
     handle.filepath = filepath;

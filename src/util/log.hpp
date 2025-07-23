@@ -1,13 +1,9 @@
 #pragma once
 #include<string>
 #include<chrono>
-#include<ctime>
-#include<sstream>
-#include<iomanip>
-#include<cstdlib>
 #include<mutex>
-#include<string>
-#include<sstream>
+#include<source_location>
+
 
 #include<glad/glad.h>
 
@@ -25,7 +21,7 @@ enum class LogLevel { TRACE=0, DEBUG, INFO, WARN, ERROR, FATAL };
 class Logger {
 public:
     static void initilize(const std::string& logFilePath);
-    static void log(LogLevel level, const char* filepath, int line, const char* func, const std::string& msg);
+    static void log(LogLevel level, const std::string& msg, std::source_location locaction = std::source_location::current());
 
 private:
     static std::string getTimestampStr();
@@ -38,13 +34,19 @@ private:
 
 };
 
+// | Compiler  | Macro                 | Output example                           |
+// | --------- | --------------------- | ---------------------------------------- |
+// | GCC/Clang | `__PRETTY_FUNCTION__` | `void MyClass::myFunction()`             |
+// | MSVC      | `__FUNCSIG__`         | `void __cdecl MyClass::myFunction(void)` |
 
-#define LOG_TRACE(msg) Logger::log(LogLevel::TRACE, __FILE__, __LINE__, __func__, msg)
-#define LOG_DEBUG(msg) Logger::log(LogLevel::DEBUG, __FILE__, __LINE__, __func__, msg)
-#define LOG_INFO(msg)  Logger::log(LogLevel::INFO,  __FILE__, __LINE__, __func__, msg)
-#define LOG_WARN(msg)  Logger::log(LogLevel::WARN,  __FILE__, __LINE__, __func__, msg)
-#define LOG_ERROR(msg) Logger::log(LogLevel::ERROR, __FILE__, __LINE__, __func__, msg)
-#define LOG_FATAL(msg) Logger::log(LogLevel::FATAL, __FILE__, __LINE__, __func__, msg)
+
+
+#define LOG_TRACE(msg) Logger::log(LogLevel::TRACE, msg)
+#define LOG_DEBUG(msg) Logger::log(LogLevel::DEBUG, msg)
+#define LOG_INFO(msg)  Logger::log(LogLevel::INFO,  msg)
+#define LOG_WARN(msg)  Logger::log(LogLevel::WARN,  msg)
+#define LOG_ERROR(msg) Logger::log(LogLevel::ERROR, msg)
+#define LOG_FATAL(msg) Logger::log(LogLevel::FATAL, msg)
 
 #define CHECK_DEBUG(cond, msg) do { if (cond) LOG_DEBUG(msg); } while (0)
 #define CHECK_INFO(cond, msg)  do { if (cond) LOG_INFO(msg); } while (0)

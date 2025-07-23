@@ -9,7 +9,10 @@
             "defines": [
                 "RS_DEBUG",
                 "RS_RELEASE",
-                "SOURCE_DIR"
+                "SOURCE_DIR",
+                "_MSC_VER",
+                "__GNUC__",
+                "__clang__"
             ],
             "compilerPath": "/usr/bin/g++",
             "cStandard": "c23",

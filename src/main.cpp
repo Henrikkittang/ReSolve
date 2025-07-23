@@ -11,6 +11,17 @@
 int main()
 {    
     
+    #ifdef _MSC_VER
+        std::cout << "Compiled with MSVC\n";
+    #elif __clang__
+        std::cout << "Compiled with Clang\n";
+    #elif __GNUC__
+        std::cout << "Compiled with GCC\n";
+    #else
+        std::cout << "Compiler not detected\n";
+    #endif
+
+
     #if RS_DEBUG
         std::cout << "Debug mode is active." << std::endl;
     #elif RS_RELEASE
