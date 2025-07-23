@@ -1,6 +1,12 @@
 #include"log.hpp"
-#include<iostream>
 
+#include<iostream>
+#include<format>
+#include<filesystem>
+
+#include<fmt/base.h>
+#include<fmt/color.h>
+#include<fmt/chrono.h>
 
 LogLevel      Logger::s_curLevel;
 std::mutex    Logger::s_mutex;
@@ -10,31 +16,36 @@ void Logger::initilize(const std::string& logFilePath)
     
 }
 
+// TODO: strip down full path into relative path. Add cross platform clean fucntions printsI
 
-
-void Logger::log(LogLevel level, const char* file, int line, const char* func, const std::string& msg)
+void Logger::log(LogLevel level, const char* filepath, int line, const char* func, const std::string& msg)
 {
 #ifdef RS_DEBUG
    
     std::lock_guard<std::mutex> lock(s_mutex);
 
-    std::ostringstream oss;
-    oss << "\n";
-    oss << "[" << getTimestampStr() << "] ";
+    fmt::color color;
+    std::string levelLabel;
 
-    switch (level) 
-    {
-        case LogLevel::DEBUG: oss << TERMINAL_CYAN    << "[DEBUG]" << TERMINAL_RESET; break;
-        case LogLevel::INFO:  oss << TERMINAL_GREEN   << "[INFO]"  << TERMINAL_RESET; break;
-        case LogLevel::WARN:  oss << TERMINAL_YELLOW  << "[WARN]"  << TERMINAL_RESET; break;
-        case LogLevel::ERROR: oss << TERMINAL_RED     << "[ERROR]" << TERMINAL_RESET; break;
-        case LogLevel::FATAL: oss << TERMINAL_MAGENTA << "[FATAL]" << TERMINAL_RESET; break;
+    switch (level) {
+        case LogLevel::DEBUG: levelLabel = "DEBUG"; color = fmt::color::cyan; break;
+        case LogLevel::INFO:  levelLabel = "INFO";  color = fmt::color::green; break;
+        case LogLevel::WARN:  levelLabel = "WARN";  color = fmt::color::yellow; break;
+        case LogLevel::ERROR: levelLabel = "ERROR"; color = fmt::color::red; break;
+        case LogLevel::FATAL: levelLabel = "FATAL"; color = fmt::color::magenta; break;
     }
 
-    oss << ": " << TERMINAL_BOLDWHITE << msg << TERMINAL_RESET << "\n";
-    oss <<  file << ":" << line << "(" << func << ")\n\n";
+    auto now = std::chrono::system_clock::now();
+    auto time = std::chrono::system_clock::to_time_t(now);
 
-    std::cout << oss.str();
+    std::filesystem::path relativePath = std::filesystem::relative(filepath, SOURCE_DIR);
+
+    fmt::print("\n[{:%Y-%m-%d %H:%M:%S}] {}: {}\n{}:{} ({})\n\n",
+        *std::localtime(&time),
+        fmt::format(fg(color) | fmt::emphasis::bold, "[{}]", levelLabel),
+        fmt::format(fmt::emphasis::bold, "{}", msg),
+        relativePath.c_str(), line, func
+    );
 
     if (level == LogLevel::FATAL) 
         exit(1);

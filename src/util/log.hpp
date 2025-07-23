@@ -25,7 +25,7 @@ enum class LogLevel { TRACE=0, DEBUG, INFO, WARN, ERROR, FATAL };
 class Logger {
 public:
     static void initilize(const std::string& logFilePath);
-    static void log(LogLevel level, const char* file, int line, const char* func, const std::string& msg);
+    static void log(LogLevel level, const char* filepath, int line, const char* func, const std::string& msg);
 
 private:
     static std::string getTimestampStr();
@@ -37,19 +37,6 @@ private:
     static std::mutex    s_mutex;
 
 };
-
-
-// NB! These should be changed to 'using' or idealy fmt
-#define TERMINAL_BLACK   "\033[30m"      
-#define TERMINAL_RED     "\033[31m"      
-#define TERMINAL_GREEN   "\033[32m"      
-#define TERMINAL_YELLOW  "\033[33m"      
-#define TERMINAL_BLUE    "\033[34m"      
-#define TERMINAL_MAGENTA "\033[35m"      
-#define TERMINAL_CYAN    "\033[36m"      
-#define TERMINAL_WHITE   "\033[37m"      
-#define TERMINAL_RESET   "\033[0m"
-#define TERMINAL_BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
 
 
 #define LOG_TRACE(msg) Logger::log(LogLevel::TRACE, __FILE__, __LINE__, __func__, msg)

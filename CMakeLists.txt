@@ -35,6 +35,7 @@ set(GLFW_BUILD_DOCS OFF CACHE BOOL " " FORCE)
 
 add_subdirectory(vendor/GLAD)
 add_subdirectory(vendor/GLFW)
+add_subdirectory(vendor/fmt)
 
 # ImGui setup
 set(IMGUI_DIR ${CMAKE_SOURCE_DIR}/vendor/imgui)
@@ -69,6 +70,7 @@ target_include_directories(resolve PRIVATE
     ${CMAKE_SOURCE_DIR}/vendor/GLFW/include
     ${IMGUI_DIR}
     ${IMGUI_DIR}/backends
+    ${CMAKE_SOURCE_DIR}/vendor/fmt/include
 )
 
 # Link libraries
@@ -77,6 +79,7 @@ target_link_libraries(resolve PRIVATE
     glfw
     OpenGL::GL
     imgui
+    fmt::fmt
 )
 
 # Compiler definitions
