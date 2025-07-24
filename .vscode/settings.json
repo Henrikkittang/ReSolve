@@ -120,5 +120,5 @@
         // "build/": true,
         "*.ini": true,
     },
-    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.errorSquiggles": "disabled",
 }

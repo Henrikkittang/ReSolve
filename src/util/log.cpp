@@ -63,7 +63,7 @@ void Logger::log(LogLevel level, const std::string& msg, std::source_location lo
 
     fmt::print("\n{}: {} \n {}:  {:%Y-%m-%d %H:%M:%S} \n {}: {} \n {}: ./{}:{}\n\n",
         fmt::format(fg(color) | fmt::emphasis::bold, "[{}]", levelLabel),
-        fmt::format(fmt::emphasis::, "{}", msg),
+        fmt::format(fmt::emphasis::italic, "{}", msg),
         fmt::format(fmt::emphasis::bold, "Time"), *std::localtime(&time),
         fmt::format(fmt::emphasis::bold, "Function"), locaction.function_name(),
         fmt::format(fmt::emphasis::bold, "Location"), relativePath.c_str(), locaction.line()

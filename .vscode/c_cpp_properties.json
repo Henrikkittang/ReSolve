@@ -4,7 +4,7 @@
             "name": "UNIX",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/vendor/fmt/include"
+                "${workspaceFolder}/vendor/fmt/include/**"
             ],
             "defines": [
                 "RS_DEBUG",
@@ -12,7 +12,9 @@
                 "SOURCE_DIR",
                 "_MSC_VER",
                 "__GNUC__",
-                "__clang__"
+                "__clang__",
+                "__debugbreak",
+                "__builtin_trap"
             ],
             "compilerPath": "/usr/bin/g++",
             "cStandard": "c23",
