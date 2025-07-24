@@ -48,12 +48,29 @@ void SceneFractal::onCreate()
     m_va.addBuffer(vb, layout);
 }
 
+void SceneFractal::onActivate() 
+{
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
+
+    shader->bind();
+    m_va.bind();
+    m_ib.bind();
+}
+void SceneFractal::onDeactivate() 
+{
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
+
+    shader->unbind();
+    m_va.unbind();
+    m_ib.unbind();
+}
+
 void SceneFractal::onUpdate() 
 {    
     if( ctx.window.isKeyPressed(GLFW_KEY_UP) )
         uZoom = uZoom * 0.99;
 
-    if( ctx.window.isKeyPressed(GLFW_KEY_D) )
+    if( ctx.window.isKeyPressed(GLFW_KEY_DOWN) )
         uZoom = uZoom / 0.99;
 
     if( ctx.window.isKeyPressed(GLFW_KEY_W) )
@@ -69,26 +86,24 @@ void SceneFractal::onUpdate()
         uPan.x = uPan.x + 0.01 * uZoom;
 
     Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
-    shader->bind();
     shader->setUniform1f("uZoom", uZoom);
     shader->setUniform2f("uPan", uPan.x, uPan.y);
     shader->setUniform1i("maxIterations", maxIterations);   
-    
 }
 
 void SceneFractal::onRender() 
 {
-    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
+    // Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
 
-    shader->bind();
-    m_va.bind();
-    m_ib.bind();
+    // shader->bind();
+    // m_va.bind();
+    // m_ib.bind();
     
     GLCall( glDrawElements(GL_TRIANGLES, m_ib.getCount(), GL_UNSIGNED_INT, nullptr) );
 
-    shader->unbind();
-    m_va.unbind();
-    m_ib.unbind();
+    // shader->unbind();
+    // m_va.unbind();
+    // m_ib.unbind();
 }
 
 void SceneFractal::onImGuiRender() 

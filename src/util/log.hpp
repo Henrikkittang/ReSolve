@@ -23,9 +23,6 @@ public:
     static void initilize(const std::string& logFilePath);
     static void log(LogLevel level, const std::string& msg, std::source_location locaction = std::source_location::current());
 
-private:
-    static std::string getTimestampStr();
-
 
 private:
     static LogLevel      s_curLevel;
@@ -33,12 +30,6 @@ private:
     static std::mutex    s_mutex;
 
 };
-
-// | Compiler  | Macro                 | Output example                           |
-// | --------- | --------------------- | ---------------------------------------- |
-// | GCC/Clang | `__PRETTY_FUNCTION__` | `void MyClass::myFunction()`             |
-// | MSVC      | `__FUNCSIG__`         | `void __cdecl MyClass::myFunction(void)` |
-
 
 
 #define LOG_TRACE(msg) Logger::log(LogLevel::TRACE, msg)
@@ -59,15 +50,17 @@ private:
 // ─── Platform-Specific Debug Break ─────────────────────────────────────────────
 #if defined(_MSC_VER)
     #define DEBUG_BREAK() __debugbreak()
-#else
+#elif __clang__ || __GNUC__
     #define DEBUG_BREAK() __builtin_trap()
+#else
+    #error "Debug break not defined" 
 #endif
 
 const char* getGLErrorString(GLenum error);
 const char* getGLErrorHint(GLenum error);
 
 void GLClearError();
-bool GLLogCall(const char* function, const char* file, int line, const char* context = nullptr);
+bool GLLogCall(const char* function, const char* context = nullptr, std::source_location locaction = std::source_location::current());
 
 const char* getDebugSource(GLenum source);
 const char* getDebugType(GLenum type);
@@ -80,10 +73,10 @@ void enableOpenGLDebugOutput();
 
 #define GLCall(x) GLClearError();\
     x;\
-    if (!GLLogCall(#x, __FILE__, __LINE__)) DEBUG_BREAK()
+    if (!GLLogCall(#x)) DEBUG_BREAK()
 
 #define GLCheck(x, context) GLClearError();\
     x;\
-    if (!GLLogCall(#x, __FILE__, __LINE__, context)) DEBUG_BREAK()
+    if (!GLLogCall(#x, context)) DEBUG_BREAK()
 
 

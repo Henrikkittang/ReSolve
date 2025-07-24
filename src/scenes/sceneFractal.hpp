@@ -22,6 +22,8 @@ public:
     void onRender(  ) override;
     void onImGuiRender() override;
 
+    void onActivate()   override;
+    void onDeactivate() override;
 
 private:
     float        uZoom;                   

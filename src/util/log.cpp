@@ -1,6 +1,5 @@
 #include"log.hpp"
 
-#include<iostream>
 #include<format>
 #include<filesystem>
 
@@ -11,12 +10,17 @@
 LogLevel      Logger::s_curLevel;
 std::mutex    Logger::s_mutex;
 
+// TODO: Log files
+// TODO: Log level filter
+// ? Swap out in favor off spdlog
+// ? Make more customizable
+// ? Add async queue for messages
+// ? Remove fmt in favor of built-in print and format
+
 void Logger::initilize(const std::string& logFilePath)
 {
     
 }
-
-// TODO:  Add cross platform clean fucntions printsI
 
 void Logger::log(LogLevel level, const std::string& msg, std::source_location locaction)
 {
@@ -27,7 +31,8 @@ void Logger::log(LogLevel level, const std::string& msg, std::source_location lo
     fmt::color color;
     std::string levelLabel;
 
-    switch (level) {
+    switch (level) 
+    {
         case LogLevel::DEBUG: levelLabel = "DEBUG"; color = fmt::color::cyan; break;
         case LogLevel::INFO:  levelLabel = "INFO";  color = fmt::color::green; break;
         case LogLevel::WARN:  levelLabel = "WARN";  color = fmt::color::yellow; break;
@@ -38,13 +43,30 @@ void Logger::log(LogLevel level, const std::string& msg, std::source_location lo
     auto now = std::chrono::system_clock::now();
     auto time = std::chrono::system_clock::to_time_t(now);
 
+    // TODO: Add "./"
     std::filesystem::path relativePath = std::filesystem::relative(locaction.file_name(), SOURCE_DIR);
 
-    fmt::print("\n[{:%Y-%m-%d %H:%M:%S}] {}: {}\n{}:{}({})\n\n",
-        *std::localtime(&time),
+    // fmt::print("\n[{:%Y-%m-%d %H:%M:%S}] {}: {}\n{}:{}({})\n\n",
+    //     *std::localtime(&time),
+    //     fmt::format(fg(color) | fmt::emphasis::bold, "[{}]", levelLabel),
+    //     fmt::format(fmt::emphasis::bold, "{}", msg),
+    //     relativePath.c_str(), locaction.line(), locaction.function_name()
+    // );
+
+    // fmt::print("\n{}: {} \n Time:  {:%Y-%m-%d %H:%M:%S} \n Function: {} \n Location: ./{}:{}\n\n",
+    //     fmt::format(fg(color) | fmt::emphasis::bold, "[{}]", levelLabel),
+    //     fmt::format(fg(fmt::color::white), "{}", msg),
+    //     *std::localtime(&time),
+    //     locaction.function_name(),
+    //     relativePath.c_str(), locaction.line()
+    // );
+
+    fmt::print("\n{}: {} \n {}:  {:%Y-%m-%d %H:%M:%S} \n {}: {} \n {}: ./{}:{}\n\n",
         fmt::format(fg(color) | fmt::emphasis::bold, "[{}]", levelLabel),
-        fmt::format(fmt::emphasis::bold, "{}", msg),
-        relativePath.c_str(), locaction.line(), locaction.function_name()
+        fmt::format(fmt::emphasis::, "{}", msg),
+        fmt::format(fmt::emphasis::bold, "Time"), *std::localtime(&time),
+        fmt::format(fmt::emphasis::bold, "Function"), locaction.function_name(),
+        fmt::format(fmt::emphasis::bold, "Location"), relativePath.c_str(), locaction.line()
     );
 
     if (level == LogLevel::FATAL) 
@@ -54,21 +76,6 @@ void Logger::log(LogLevel level, const std::string& msg, std::source_location lo
 
 
 
-
-std::string Logger::getTimestampStr() 
-{
-    auto now = std::chrono::system_clock::now();
-    auto time = std::chrono::system_clock::to_time_t(now);
-    std::tm tm;
-#if defined(_WIN32)
-    localtime_s(&tm, &time);
-#else
-    localtime_r(&time, &tm);
-#endif
-    std::ostringstream oss;
-    oss << std::put_time(&tm, "%Y-%m-%d %H:%M:%S");
-    return oss.str();
-}
 
 
 
@@ -97,7 +104,7 @@ const char* getGLErrorHint(GLenum error)
         case GL_INVALID_VALUE: return "Numeric argument is out of range.";
         case GL_INVALID_OPERATION: return "Operation is not allowed in the current state.";
         case GL_OUT_OF_MEMORY: return "System ran out of memory.";
-        default: return "";
+        default: return "No hint";
     }
 }
 
@@ -107,33 +114,23 @@ void GLClearError()
     while (glGetError() != GL_NO_ERROR);
 }
 
-bool GLLogCall(const char* function, const char* file, int line, const char* context) 
+bool GLLogCall(const char* function, const char* context, std::source_location locaction) 
 {
     bool success = true;
     while (GLenum error = glGetError()) 
     {
-        std::stringstream ss;
-        ss << "OpenGL Error: " << getGLErrorString(error)
-           << " (" << error << ")";
-        if (context) ss << " in " << context;
-        ss << "\n  Function: " << function
-           << "\n  Location: " << file << ":" << line;
         const char* hint = getGLErrorHint(error);
-        if (*hint) ss << "\n  Hint:     " << hint;
+        fmt::print("[OpenGL ERROR]: {} ({}) \n  Function: \n Location: {}:{} \n Hint: {}",
+            getGLErrorString(error), error,
+            function,
+            locaction.file_name(), locaction.line(),
+            hint 
+        );
 
-        LOG_ERROR( ss.str() );
         success = false;
     }
     return success;
 }
-
-#define GLCall(x) GLClearError();\
-    x;\
-    if (!GLLogCall(#x, __FILE__, __LINE__)) DEBUG_BREAK()
-
-#define GLCheck(x, context) GLClearError();\
-    x;\
-    if (!GLLogCall(#x, __FILE__, __LINE__, context)) DEBUG_BREAK()
 
 // ─── Optional: OpenGL Debug Output (GL 4.3+) ───────────────────────────────────
 // #ifdef GL_ARB_debug_output
@@ -179,16 +176,18 @@ const char* getDebugSeverity(GLenum severity)
 }
 
 void APIENTRY GLDebugCallback(GLenum source, GLenum type, GLuint id,
-                                     GLenum severity, GLsizei /*length*/,
-                                     const GLchar* message, const void* /*userParam*/) 
-                                     {
-    std::stringstream ss;
-    ss << "[GL DEBUG] Type: " << getDebugType(type)
-       << " | Severity: " << getDebugSeverity(severity)
-       << " | Source: " << getDebugSource(source)
-       << "\n  Message: " << message;
-    
-    GL_DEBUG_SEVERITY_HIGH ? LOG_ERROR(ss.str()) : LOG_WARN(ss.str());    
+                                     GLenum severity, GLsizei length,
+                                     const GLchar* message, const void* userParam) 
+{
+
+    fmt::print( "[GL DEBUG] Type: {} | Severity: {} | Source: {} \n Message: {}", 
+        getDebugType(type),
+        getDebugSeverity(severity),
+        getDebugSource(source),
+        message
+    );
+
+    // GL_DEBUG_SEVERITY_HIGH ? LOG_ERROR(ss.str()) : LOG_WARN(ss.str());    
 }
 
 void enableOpenGLDebugOutput() 
