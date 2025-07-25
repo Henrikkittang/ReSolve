@@ -2,7 +2,6 @@
 #include<map>
 #include<string>
 #include<vector>
-#include<variant>
 
 #include"core/scene.hpp"
 

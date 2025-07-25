@@ -1,11 +1,11 @@
 #pragma once
-#include<iostream>
 #include<cassert>
 
 
 struct AppContext; 
 
 
+// TODO: Change to custom assert
 class Scene
 {
 public:

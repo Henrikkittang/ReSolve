@@ -2,8 +2,8 @@
 
 #include<imgui/imgui.h>
 
-#include"util/log.hpp"
 #include"core/event.hpp"
+#include"util/log.hpp"
 
 
 void SceneClearColor::onCreate()

@@ -1,6 +1,5 @@
 #include"sceneMaze.hpp"
 
-#include<iostream>
 
 #include<imgui/imgui.h>
 

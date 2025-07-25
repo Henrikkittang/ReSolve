@@ -1,6 +1,5 @@
 #include"graphics/renderWindow.hpp"
 
-#include<iostream>
 
 #include"core/camera.hpp"
 #include"graphics/shader.hpp"

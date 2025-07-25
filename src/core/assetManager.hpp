@@ -1,6 +1,5 @@
 #pragma once
 
-#include<iostream>
 #include<unordered_map>
 #include<memory>
 #include<functional>
@@ -9,7 +8,7 @@
 #include"graphics/texture.hpp"
 #include"graphics/shader.hpp"
 #include"util/log.hpp"
-
+    
 
 template<typename T>
 using Ref = std::shared_ptr<T>;

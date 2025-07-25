@@ -1,10 +1,8 @@
 #include"graphics/shader.hpp"
 
 
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <sstream>    
+#include<string>
+#include<fstream>
 
 
 #include<glad/glad.h>

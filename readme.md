@@ -1,7 +1,7 @@
 # How to run and build project
 This project uses cmake as its configuration system. The project should support MinGW, Clang and MSVC on both windows and linux, with emphasis on should. 
 
-Commands for building project with MinGW/Clang
+Commands for building project with GCC/Clang
 ```
 mkdir build/release
 cmake -B build/release -DCMAKE_BUILD_TYPE=Release
@@ -31,6 +31,6 @@ This project contains a .vscode folder, which means that the easiest way to buil
 - Remove need for appContext.hpp to be included in cpp whenever its used
 - Drawing stuff is generally awfull. Its a perfect mix of abstract but not quite and having to be very careful with the ordering of things 
 - Make a quick and simple file interface for standardized paths
-- Write info about the system to a log file on start up, like compiler, opengl version etc. 
-- Add a logging system
 - Fix bug where everything crashes brutally. Occuers when many quads are rendered in the maze scene.
+- Switch to spdlogger
+- Swap out fmt infavor of C++23 functionality

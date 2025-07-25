@@ -1,4 +1,3 @@
-#include<iostream>
 
 #include"core/application.hpp"
 #include"scenes/sceneFractal.hpp"
@@ -6,11 +5,9 @@
 #include"scenes/sceneMaze.hpp"
 #include"scenes/sceneNoise.hpp"
 
-#include"util/log.hpp"
 
 int main()
 {    
-    
     Application app{960, 540, "Hello world"};
     app.ImGuiInit();
 

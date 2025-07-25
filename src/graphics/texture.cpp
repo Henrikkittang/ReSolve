@@ -1,6 +1,5 @@
 #include"graphics/texture.hpp"
 
-#include<iostream>
 #include<cstring>
 
 #include<stb_image/stb_image.h>

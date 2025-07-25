@@ -1,6 +1,5 @@
 #include"vertexBuffer.hpp"
 
-#include<iostream>
 
 #include"util/log.hpp"
 

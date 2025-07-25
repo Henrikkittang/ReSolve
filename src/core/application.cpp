@@ -1,6 +1,5 @@
 #include"application.hpp"
 
-#include<iostream>
 #include<stack>
 #include<thread>
 

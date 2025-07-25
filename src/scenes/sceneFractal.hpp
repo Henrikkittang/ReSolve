@@ -1,14 +1,15 @@
 #pragma once
 
-#include"decapricated/vertexArray.hpp"
-#include"decapricated/vertexBuffer.hpp"
-
-#include"decapricated/indexBuffer.hpp"
-#include"graphics/shader.hpp"
 
 #include"core/scene.hpp"
 #include"core/camera.hpp"
 #include"core/asset.hpp"
+
+#include"graphics/shader.hpp"
+
+#include"decapricated/vertexArray.hpp"
+#include"decapricated/vertexBuffer.hpp"
+#include"decapricated/indexBuffer.hpp"
 
 
 class SceneFractal : public Scene 

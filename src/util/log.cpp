@@ -1,6 +1,5 @@
 #include"log.hpp"
 
-#include<format>
 #include<filesystem>
 
 #include<fmt/base.h>
@@ -19,41 +18,44 @@ std::mutex    Logger::s_mutex;
 
 void Logger::initilize(const std::string& logFilePath)
 {
+    #include<fmt/core.h>
+
     #if __cplusplus == 202002L
-        std::cout << "C++20\n";
+        fmt::println("C++20");
     #elif __cplusplus == 202300L
-        std::cout << "C++23\n";  // Some compilers use this value for C++23
+        fmt::println("C++23");
     #elif __cplusplus > 202002L
-        std::cout << "C++23 or newer (__cplusplus = " << __cplusplus << ")\n";
+        fmt::println("C++23 or newer (__cplusplus = {})", __cplusplus);
     #elif __cplusplus == 201703L
-        std::cout << "C++17\n";
+        fmt::println("C++17");
     #elif __cplusplus == 201402L
-        std::cout << "C++14\n";
+        fmt::println("C++14");
     #elif __cplusplus == 201103L
-        std::cout << "C++11\n";
+        fmt::println("C++11");
     #elif __cplusplus == 199711L
-        std::cout << "C++98\n";
+        fmt::println("C++98");
     #else
-        std::cout << "pre-standard or unknown (__cplusplus = " << __cplusplus << ")\n";
+        fmt::println("pre-standard or unknown (__cplusplus = {})", __cplusplus);
     #endif
 
     #ifdef _MSC_VER
-        std::cout << "Compiled with MSVC\n";
-    #elif __clang__
-        std::cout << "Compiled with Clang\n";
-    #elif __GNUC__
-        std::cout << "Compiled with GCC\n";
+        fmt::println("Compiled with MSVC");
+    #elif defined(__clang__)
+        fmt::println("Compiled with Clang");
+    #elif defined(__GNUC__)
+        fmt::println("Compiled with GCC");
     #else
-        std::cout << "Compiler not detected\n";
+        fmt::println("Compiler not detected");
     #endif
 
     #if RS_DEBUG
-        std::cout << "Debug mode is active." << std::endl;
+        fmt::println("Debug mode is active.");
     #elif RS_RELEASE
-        std::cout << "Release mode is active." << std::endl;
+        fmt::println("Release mode is active.");
     #else
-        std::cout << "No mode is active." << std::endl;
+        fmt::println("No mode is active.");
     #endif
+
 }
 
 void Logger::log(LogLevel level, const std::string& msg, std::source_location locaction)
@@ -90,7 +92,7 @@ void Logger::log(LogLevel level, const std::string& msg, std::source_location lo
     
     fmt::print("\n{}: {} \n {}:  {:%Y-%m-%d %H:%M:%S} \n {}: {} \n {}: ./{}:{}\n\n",
         fmt::format(fg(color) | fmt::emphasis::bold, "[{}]", levelLabel),
-        fmt::format(fmt::emphasis::italic, "{}", msg),
+        fmt::format(fmt::emphasis::italic | fmt::emphasis::underline, "{}", msg),
         fmt::format(fmt::emphasis::bold, "Time"), *std::localtime(&time),
         fmt::format(fmt::emphasis::bold, "Function"), locaction.function_name(),
         fmt::format(fmt::emphasis::bold, "Location"), relativePath.c_str(), locaction.line()

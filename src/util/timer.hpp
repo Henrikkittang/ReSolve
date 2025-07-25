@@ -1,8 +1,9 @@
 #pragma once
 
-#include<iostream>
-#include<type_traits>
 #include<chrono>
+
+#include<fmt/core.h>
+
 
 using Clock = std::chrono::high_resolution_clock;
 
@@ -22,24 +23,24 @@ public:
 
     ~ScopedTimer()
     {
+
         auto now = std::chrono::high_resolution_clock::now();
 
         // Convert to duration<double, Ratio> to get fractional count
         std::chrono::duration<double, typename Duration::period> elapsed = now - m_time;
         double elapsed_time = elapsed.count();
 
-        std::cout << "Time elapsed: " << elapsed_time;
-
         if constexpr (std::is_same_v<Duration, std::chrono::seconds>)
-            std::cout << " [s]\n";
+            fmt::println("Time elapsed: {} [s]", elapsed_time);
         else if constexpr (std::is_same_v<Duration, std::chrono::milliseconds>)
-            std::cout << " [ms]\n";
+            fmt::println("Time elapsed: {} [ms]", elapsed_time);
         else if constexpr (std::is_same_v<Duration, std::chrono::microseconds>)
-            std::cout << " [us]\n";
+            fmt::println("Time elapsed: {} [us]", elapsed_time);
         else if constexpr (std::is_same_v<Duration, std::chrono::nanoseconds>)
-            std::cout << " [ns]\n";
+            fmt::println("Time elapsed: {} [ns]", elapsed_time);
         else
-            std::cout << " (custom duration units)\n";
+            fmt::println("Time elapsed: {} (custom duration units)", elapsed_time);
+
     }
 
 private:
