@@ -1,5 +1,5 @@
 # How to run and build project
-This project uses cmake as its configuration system. The project should support MinGW, Clang and MSVC on both windows and linux, with emphasis on should. 
+This project uses cmake as its configuration system. The project should support GCC, Clang and MSVC on both windows and linux, with emphasis on should. 
 
 Commands for building project with GCC/Clang
 ```
@@ -7,7 +7,7 @@ mkdir build/release
 cmake -B build/release -DCMAKE_BUILD_TYPE=Release
 cmake --build build/release --config Release -j8
 ```
-The binary will be located in `build/release/bin/output.exe`
+The binary will be located in `build/release/bin/` 
 
 Commands for building project with MSVC
 ```
@@ -33,4 +33,5 @@ This project contains a .vscode folder, which means that the easiest way to buil
 - Make a quick and simple file interface for standardized paths
 - Fix bug where everything crashes brutally. Occuers when many quads are rendered in the maze scene.
 - Switch to spdlogger
-- Swap out fmt infavor of C++23 functionality
+- Swap out fmt in favor of C++23 functionality
+- Use cmake fetch content in favor of git modules
