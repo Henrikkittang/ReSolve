@@ -1,6 +1,6 @@
 #include"util/random.hpp"
 
-
+#include"core/base.hpp"
 
 // Necesarry for g++ compilation. It is not happy about the thread_local business
 thread_local std::mt19937 Random::s_generator{};
@@ -13,7 +13,7 @@ void Random::initialize()
     if(device.entropy() != 0)
         s_generator.seed(device());
     else
-        s_generator.seed(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+        s_generator.seed(Clock::now().time_since_epoch().count());
 }
 
 double Random::getDouble(double min, double max)
@@ -118,7 +118,7 @@ double Noise::turbulence(double x, double y, double z, int depth)
         freq   *= 2.0;
     }
 
-    return abs(acc);
+    return std::abs(acc); // * Have hadd trouble with this before
 }
 
 

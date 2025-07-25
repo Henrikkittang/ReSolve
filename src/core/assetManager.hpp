@@ -4,18 +4,12 @@
 #include<memory>
 #include<functional>
 
+#include"core/base.hpp"
 #include"core/asset.hpp"
 #include"graphics/texture.hpp"
 #include"graphics/shader.hpp"
 #include"util/log.hpp"
-    
 
-template<typename T>
-using Ref = std::shared_ptr<T>;
-
-
-template<typename T>
-using FuncRef = std::function<Ref<T>()>;
 
 class AssetManager
 {

@@ -2,6 +2,7 @@
 
 #include<filesystem>
 
+#include<fmt/core.h>
 #include<fmt/base.h>
 #include<fmt/color.h>
 #include<fmt/chrono.h>
@@ -18,8 +19,6 @@ std::mutex    Logger::s_mutex;
 
 void Logger::initilize(const std::string& logFilePath)
 {
-    #include<fmt/core.h>
-
     #if __cplusplus == 202002L
         fmt::println("C++20");
     #elif __cplusplus == 202300L

@@ -7,6 +7,8 @@
 
 #include<glad/glad.h>
 
+#include"core/base.hpp"
+
 // | Level   | Meaning                                                     | Typical Use Cases                           |
 // | ------- | ----------------------------------------------------------- | ------------------------------------------- |
 // | `DEBUG` | Very detailed, noisy logs, mostly useful during development | Variable values, function entry/exit        |
@@ -47,14 +49,7 @@ private:
 
 
 
-// ─── Platform-Specific Debug Break ─────────────────────────────────────────────
-#if defined(_MSC_VER)
-    #define DEBUG_BREAK() __debugbreak()
-#elif __clang__ || __GNUC__
-    #define DEBUG_BREAK() __builtin_trap()
-#else
-    #error "Debug break not defined" 
-#endif
+
 
 const char* getGLErrorString(GLenum error);
 const char* getGLErrorHint(GLenum error);

@@ -1,30 +1,22 @@
 #pragma once
 
 #include<chrono>
-
 #include<fmt/core.h>
 
-
-using Clock = std::chrono::high_resolution_clock;
-
-using Second = std::chrono::seconds;
-using Milli  = std::chrono::milliseconds;
-using Micro  = std::chrono::microseconds;
-using Nano   = std::chrono::nanoseconds;
-
+#include"core/base.hpp"
 
 template<typename Duration = std::chrono::seconds>
 class ScopedTimer
 {
 public:
     ScopedTimer()
-        : m_time(std::chrono::high_resolution_clock::now())
+        : m_time(Clock::now())
     {}
 
     ~ScopedTimer()
     {
 
-        auto now = std::chrono::high_resolution_clock::now();
+        auto now = Clock::now();
 
         // Convert to duration<double, Ratio> to get fractional count
         std::chrono::duration<double, typename Duration::period> elapsed = now - m_time;
@@ -44,5 +36,5 @@ public:
     }
 
 private:
-    std::chrono::high_resolution_clock::time_point m_time;
+    Clock::time_point m_time;
 };
