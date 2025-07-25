@@ -6,7 +6,7 @@
         {
             "label": "Initilize: Debug",
             "type": "shell",
-            "command": "cmake -B build/debug -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug",
+            "command": "cmake -B build/debug -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=clang++",
             "group": "build"
         },        
         {
@@ -42,7 +42,7 @@
         {
             "label": "Initilize: Release",
             "type": "shell",
-            "command": "cmake  -B build/release -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release",
+            "command": "cmake  -B build/release -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=clang++",
             "group": "build"
         },
         {

@@ -19,7 +19,41 @@ std::mutex    Logger::s_mutex;
 
 void Logger::initilize(const std::string& logFilePath)
 {
-    
+    #if __cplusplus == 202002L
+        std::cout << "C++20\n";
+    #elif __cplusplus == 202300L
+        std::cout << "C++23\n";  // Some compilers use this value for C++23
+    #elif __cplusplus > 202002L
+        std::cout << "C++23 or newer (__cplusplus = " << __cplusplus << ")\n";
+    #elif __cplusplus == 201703L
+        std::cout << "C++17\n";
+    #elif __cplusplus == 201402L
+        std::cout << "C++14\n";
+    #elif __cplusplus == 201103L
+        std::cout << "C++11\n";
+    #elif __cplusplus == 199711L
+        std::cout << "C++98\n";
+    #else
+        std::cout << "pre-standard or unknown (__cplusplus = " << __cplusplus << ")\n";
+    #endif
+
+    #ifdef _MSC_VER
+        std::cout << "Compiled with MSVC\n";
+    #elif __clang__
+        std::cout << "Compiled with Clang\n";
+    #elif __GNUC__
+        std::cout << "Compiled with GCC\n";
+    #else
+        std::cout << "Compiler not detected\n";
+    #endif
+
+    #if RS_DEBUG
+        std::cout << "Debug mode is active." << std::endl;
+    #elif RS_RELEASE
+        std::cout << "Release mode is active." << std::endl;
+    #else
+        std::cout << "No mode is active." << std::endl;
+    #endif
 }
 
 void Logger::log(LogLevel level, const std::string& msg, std::source_location locaction)
@@ -53,14 +87,7 @@ void Logger::log(LogLevel level, const std::string& msg, std::source_location lo
     //     relativePath.c_str(), locaction.line(), locaction.function_name()
     // );
 
-    // fmt::print("\n{}: {} \n Time:  {:%Y-%m-%d %H:%M:%S} \n Function: {} \n Location: ./{}:{}\n\n",
-    //     fmt::format(fg(color) | fmt::emphasis::bold, "[{}]", levelLabel),
-    //     fmt::format(fg(fmt::color::white), "{}", msg),
-    //     *std::localtime(&time),
-    //     locaction.function_name(),
-    //     relativePath.c_str(), locaction.line()
-    // );
-
+    
     fmt::print("\n{}: {} \n {}:  {:%Y-%m-%d %H:%M:%S} \n {}: {} \n {}: ./{}:{}\n\n",
         fmt::format(fg(color) | fmt::emphasis::bold, "[{}]", levelLabel),
         fmt::format(fmt::emphasis::italic, "{}", msg),
