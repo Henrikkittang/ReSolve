@@ -48,6 +48,7 @@ private:
     AssetHandle         m_shaderHandle;
     Renderable             m_renderable;
     std::vector<Quad>      m_quads;
+    uint32_t               m_lastQuadSize;
 
     Camera m_camera;
 };

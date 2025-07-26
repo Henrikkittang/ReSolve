@@ -62,8 +62,8 @@ void RenderWindow::draw(const Renderable& renderable) const
     renderable.bind();
     m_basicShader.bind();
 
-    // GLCall( glDrawArrays(GL_TRIANGLES, 0, renderable.vertexCount()) );
-    GLCall(glDrawElements(GL_TRIANGLES, renderable.indexCount(), GL_UNSIGNED_INT, nullptr));
+    // GLCall( glDrawArrays(GL_TRIANGLES, 0, renderable.vertexSize()) );
+    GLCall(glDrawElements(GL_TRIANGLES, renderable.indexSize(), GL_UNSIGNED_INT, nullptr));
 
     renderable.unbind();
     m_basicShader.unbind();

@@ -2,20 +2,23 @@
 
 #include<vector>
 
+#include<fmt/core.h>
 #include"util/log.hpp"
 
 Renderable::Renderable()
-    : m_vertexCount(0), m_indexCount(0), m_floatPerVertex(0), m_type(PrimitiveType::TRIANGLE), 
+    : m_vertexSize(0), m_indexSize(0), m_floatPerVertex(0), m_type(PrimitiveType::TRIANGLE), 
       m_mode(GL_STATIC_DRAW), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
 {}
 
-Renderable::Renderable(const void* data, uint32_t vertexCount, uint32_t floatPerVertex, PrimitiveType type,  int mode)      
-    : m_vertexCount(vertexCount), m_indexCount(0), m_floatPerVertex(floatPerVertex), m_type(type),  
+Renderable::Renderable(const void* data, uint32_t size, uint32_t vertexCapacity, uint32_t floatPerVertex, PrimitiveType type, int mode)  
+    : m_vertexCapacity(vertexCapacity), m_indexCapacity(0), m_vertexSize(size), m_indexSize(0), m_floatPerVertex(floatPerVertex), m_type(type),  
       m_mode(mode), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
 {
-     // Create indices for QUAD
-    std::vector<uint32_t> indices = generateIndices(m_type, m_vertexCount / 4);
-    m_indexCount = static_cast<uint32_t>(indices.size());
+    CHECK_WARN(m_vertexSize > m_vertexCapacity, "Vertex Size is larger than Vertex Capacity");
+
+    std::vector<uint32_t> indices = generateIndices(m_type, m_vertexCapacity);
+    m_indexCapacity = static_cast<uint32_t>(indices.size());
+    m_indexSize     = vertexCountToIndexCount(m_type, m_vertexSize);
 
     // Generate and bind Vertex Array
     GLCall(glGenVertexArrays(1, &m_vertexArrayID));
@@ -24,12 +27,12 @@ Renderable::Renderable(const void* data, uint32_t vertexCount, uint32_t floatPer
     // Generate and bind Vertex Buffer
     GLCall(glGenBuffers(1, &m_vertexBufferID));
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));
-    GLCall(glBufferData(GL_ARRAY_BUFFER, vertexCount * floatPerVertex * sizeof(float), data, m_mode));
+    GLCall(glBufferData(GL_ARRAY_BUFFER, m_vertexCapacity * floatPerVertex * sizeof(float), data, m_mode));
 
     // Generate and bind Index Buffer
     GLCall(glGenBuffers(1, &m_indexBufferID));
     GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferID));
-    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indexCount * sizeof(uint32_t), indices.data(), m_mode));
+    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indexCapacity * sizeof(uint32_t), indices.data(), m_mode));
 
     // Enable and set vertex attribute pointers
     GLCall(glEnableVertexAttribArray(0)); // position
@@ -55,7 +58,11 @@ Renderable::Renderable(const void* data, uint32_t vertexCount, uint32_t floatPer
 }
 
 Renderable::Renderable(Renderable&& other)
-    : m_vertexCount(other.m_vertexCount),  m_indexCount(other.m_indexCount), m_floatPerVertex(other.m_floatPerVertex), m_type(other.m_type), m_mode(other.m_mode),  m_vertexBufferID(other.m_vertexBufferID), m_vertexArrayID(other.m_vertexArrayID)
+    : m_vertexCapacity(other.m_vertexCapacity),  m_vertexSize(other.m_vertexSize), 
+    m_indexCapacity(other.m_indexCapacity),  m_indexSize(other.m_indexSize), 
+    m_floatPerVertex(other.m_floatPerVertex), m_type(other.m_type), m_mode(other.m_mode),  
+    m_vertexBufferID(other.m_vertexBufferID), m_vertexArrayID(other.m_vertexArrayID),
+    m_indexBufferID(other.m_indexBufferID)
 {
     other.m_vertexBufferID = 0;
     other.m_vertexArrayID  = 0;
@@ -70,13 +77,17 @@ Renderable& Renderable::operator=(Renderable&& other)
         GLCall( glDeleteBuffers(1, &m_vertexBufferID) );
         GLCall( glDeleteVertexArrays(1, &m_vertexArrayID) );
 
-        m_vertexCount    = other.m_vertexCount;
-        m_indexCount     = other.m_indexCount;
+        m_vertexCapacity = other.m_vertexCapacity;
+        m_indexCapacity = other.m_indexCapacity;
+
+        m_vertexSize    = other.m_vertexSize;
+        m_indexSize     = other.m_indexSize;
         m_type           = other.m_type;
         m_mode           = other.m_mode;
         m_floatPerVertex = other.m_floatPerVertex;
         m_vertexBufferID = other.m_vertexBufferID;
         m_vertexArrayID  = other.m_vertexArrayID;
+        m_indexBufferID  = other.m_indexBufferID;
 
         other.m_vertexBufferID = 0;
         other.m_vertexArrayID  = 0;
@@ -106,14 +117,14 @@ void Renderable::unbind() const
     GLCall( glBindVertexArray(0) );
 }
 
-uint32_t Renderable::vertexCount() const
+uint32_t Renderable::vertexSize() const
 {
-    return m_vertexCount;
+    return m_vertexSize;
 }
 
-uint32_t Renderable::indexCount() const 
+uint32_t Renderable::indexSize() const 
 { 
-    return m_indexCount; 
+    return m_indexSize; 
 }
 
 uint32_t Renderable::floatPerVertex() const 
@@ -123,27 +134,27 @@ uint32_t Renderable::floatPerVertex() const
 
 uint32_t Renderable::size() const 
 { 
-    return m_vertexCount * m_floatPerVertex * sizeof(float); 
+    return m_vertexSize * m_floatPerVertex * sizeof(float); 
 }
 
-void Renderable::update(const void* data, uint32_t vertexCount)
+void Renderable::update(const void* data, uint32_t vertexSize, uint32_t offset)
 {
-    m_vertexCount = vertexCount;
+    m_vertexSize = vertexSize;
 
     // Regenerate indices based on updated vertex count
-    std::vector<uint32_t> indices = generateIndices(m_type, m_vertexCount / 4);
-    m_indexCount = static_cast<uint32_t>(indices.size());
+    std::vector<uint32_t> indices = generateIndices(m_type, m_vertexSize / 4);
+    m_indexSize = static_cast<uint32_t>(indices.size());
 
     // Update or generate index buffer
     if (m_indexBufferID == 0)
         GLCall(glGenBuffers(1, &m_indexBufferID));
 
     GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferID));
-    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indexCount * sizeof(uint32_t), indices.data(), m_mode));
+    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indexSize * sizeof(uint32_t), indices.data(), m_mode));
 
     // Update vertex buffer
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));
-    GLCall(glBufferData(GL_ARRAY_BUFFER, m_vertexCount * m_floatPerVertex * sizeof(float), data, m_mode));
+    GLCall(glBufferData(GL_ARRAY_BUFFER, m_vertexSize * m_floatPerVertex * sizeof(float), data, m_mode));
 
     // Rebind vertex attributes if necessary (optional safety)
     GLCall(glBindVertexArray(m_vertexArrayID));
@@ -162,77 +173,73 @@ void Renderable::update(const void* data, uint32_t vertexCount)
 }
 
 
-void Renderable::sub(const void* data, uint32_t size, uint32_t offset)
+
+void Renderable::updateAppend(const void* data, uint32_t vertexSize) 
 {
+    if (vertexSize == 0) return;
 
-}
+    CHECK_WARN(m_vertexSize + vertexSize > m_vertexCapacity, "New size exceeds capacity"); 
 
-void Renderable::updateAppend(const void* data, uint32_t vertexCount, uint32_t offset) 
-{
-    if (vertexCount == 0) return;
-
-    // const uint32_t offset = m_vertexCount * m_floatPerVertex * sizeof(float);
-    const uint32_t size   = vertexCount  * m_floatPerVertex * sizeof(float);
+    const uint32_t offset = m_vertexSize * m_floatPerVertex * sizeof(float);
+    const uint32_t size   = vertexSize  * m_floatPerVertex * sizeof(float);
 
     // Upload only new vertex data
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));
     GLCall(glBufferSubData(GL_ARRAY_BUFFER, offset, size, data));
-
-    return;
-    m_vertexCount += vertexCount;
-
-    // Update index buffer (if needed)
-    std::vector<uint32_t> newIndices = generateIndices(m_type, m_vertexCount / 4);
-    if (newIndices.size() > m_indexCount) {
-        m_indexCount = static_cast<uint32_t>(newIndices.size());
-
-        GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferID));
-        GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indexCount * sizeof(uint32_t), newIndices.data(), m_mode));
-    }
-
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
+    
+    m_vertexSize += vertexSize;
+    m_indexSize = vertexCountToIndexCount(m_type, m_vertexSize);
+
+    // fmt::println("VertexSize: {} | Vertex Capacity: {} | Index Size: {} | Index Capacity {}",
+    //     m_vertexSize, m_vertexCapacity, m_indexSize, m_indexCapacity
+    // );
 }
 
 
-// GLCall( glBufferSubData(GL_ARRAY_BUFFER, 0, m_vertexCount * m_floatPerVertex * sizeof(float), data) );
+// GLCall( glBufferSubData(GL_ARRAY_BUFFER, 0, m_vertexSize * m_floatPerVertex * sizeof(float), data) );
 
 
 /////////////
 // Private // 
 /////////////
 
-
-std::vector<uint32_t> Renderable::generateIndices(PrimitiveType type, uint32_t primitiveCount) const
+std::vector<uint32_t> Renderable::generateIndices(PrimitiveType type, uint32_t vertexCount) const 
 {
     std::vector<uint32_t> indices;
-    indices.reserve(primitiveCount * 6); // 2 triangles per quad
 
     switch (type) 
     {
-        case PrimitiveType::POINT: 
-        {
-            for (uint32_t i = 0; i < primitiveCount; ++i)
-                indices.push_back(i); // Each point is a vertex
+        case PrimitiveType::POINT: {
+            indices.reserve(vertexCount);
+            for (uint32_t i = 0; i < vertexCount; ++i)
+                indices.push_back(i);
             break;
         }
 
-        case PrimitiveType::LINE: 
-        {
-            for (uint32_t i = 0; i < primitiveCount * 2; ++i)
-                indices.push_back(i); // 2 indices per line
+        case PrimitiveType::LINE: {
+            // Each line is 2 vertices → 2 indices per line
+            uint32_t lineCount = vertexCount / 2;
+            indices.reserve(lineCount * 2);
+            for (uint32_t i = 0; i < lineCount * 2; ++i)
+                indices.push_back(i);
             break;
         }
 
-        case PrimitiveType::TRIANGLE: 
-        {
-            for (uint32_t i = 0; i < primitiveCount * 3; ++i)
-                indices.push_back(i); // 3 indices per triangle
+        case PrimitiveType::TRIANGLE: {
+            // Each triangle is 3 vertices → 3 indices per triangle
+            uint32_t triCount = vertexCount / 3;
+            indices.reserve(triCount * 3);
+            for (uint32_t i = 0; i < triCount * 3; ++i)
+                indices.push_back(i);
             break;
         }
 
-        case PrimitiveType::QUAD: 
-        {
-            for (uint32_t i = 0; i < primitiveCount; ++i) 
+        case PrimitiveType::QUAD: {
+            // Each quad is 4 vertices → 6 indices (2 triangles: 0-1-2, 2-3-0)
+            uint32_t quadCount = vertexCount / 4;
+            indices.reserve(quadCount * 6);
+            for (uint32_t i = 0; i < quadCount; ++i) 
             {
                 uint32_t base = i * 4;
                 indices.push_back(base + 0);
@@ -245,22 +252,25 @@ std::vector<uint32_t> Renderable::generateIndices(PrimitiveType type, uint32_t p
             break;
         }
 
-        case PrimitiveType::TRIANGLE_STRIP: 
-        {
-            // Primitive count = number of triangles
-            // Vertex count = primitiveCount + 2
-            for (uint32_t i = 0; i < primitiveCount + 2; ++i)
+        case PrimitiveType::TRIANGLE_STRIP: {
+            // triangleCount = vertexCount - 2
+            if (vertexCount < 3) break;
+            indices.reserve(vertexCount);
+            for (uint32_t i = 0; i < vertexCount; ++i)
                 indices.push_back(i);
             break;
         }
 
-        case PrimitiveType::TRIANGLE_FAN: 
-        {
-            // Fan starts from vertex 0, then connects in a fan
-            for (uint32_t i = 1; i <= primitiveCount; ++i) {
+        case PrimitiveType::TRIANGLE_FAN: {
+            // triangleCount = vertexCount - 2
+            if (vertexCount < 3) break;
+            uint32_t triCount = vertexCount - 2;
+            indices.reserve(triCount * 3);
+            for (uint32_t i = 0; i < triCount; ++i) 
+            {
                 indices.push_back(0);
-                indices.push_back(i);
                 indices.push_back(i + 1);
+                indices.push_back(i + 2);
             }
             break;
         }
@@ -270,6 +280,33 @@ std::vector<uint32_t> Renderable::generateIndices(PrimitiveType type, uint32_t p
     }
 
     return indices;
+}
 
+uint32_t Renderable::vertexCountToIndexCount(PrimitiveType type, uint32_t vertexCount) const
+{
+    switch (type) 
+    {
+        case PrimitiveType::POINT:
+            return vertexCount;
 
+        case PrimitiveType::LINE:
+            // Each line uses 2 vertices → 2 indices per line
+            return (vertexCount / 2) * 2;
+
+        case PrimitiveType::TRIANGLE:
+            // Each triangle uses 3 vertices → 3 indices per triangle
+            return (vertexCount / 3) * 3;
+
+        case PrimitiveType::QUAD:
+            // Each quad uses 4 vertices → 6 indices (two triangles)
+            return (vertexCount / 4) * 6;
+
+        case PrimitiveType::TRIANGLE_STRIP:
+        case PrimitiveType::TRIANGLE_FAN:
+            // Strip/Fan directly reference vertices in order
+            return vertexCount;
+
+        default:
+            return 0;
+    }
 }

@@ -16,12 +16,12 @@ void SceneMaze::onCreate()
 
     m_camera = Camera{(float)ctx.window.getSize().x, (float)ctx.window.getSize().y};
 
-    m_scl = 2;
+    m_scl = 1;
 
     m_width  = ctx.window.getSize().x / m_scl;
     m_height = ctx.window.getSize().y / m_scl;
 
-    m_renderable = Renderable{nullptr, (uint32_t)(m_width * m_height * 8 * sizeof(float)), 9, PrimitiveType::QUAD, GL_DYNAMIC_DRAW};
+    m_renderable = Renderable{nullptr, 0, (uint32_t)(m_width * m_height * 8 * sizeof(float)), 9, PrimitiveType::QUAD, GL_DYNAMIC_DRAW};
 
     m_mazeData = std::vector<int>( m_width*m_height, 1 );
 
@@ -33,6 +33,7 @@ void SceneMaze::onCreate()
 
     ctx.assets.load("./assets/shaders/red.shader", m_shaderHandle);
 
+    m_lastQuadSize = m_quads.size();
 }
 
 void SceneMaze::onUpdate() 
@@ -58,26 +59,30 @@ void SceneMaze::onUpdate()
         m_open.pop();
     }
 
-    std::vector<Vertex> vertecies;
-    vertecies.reserve(m_quads.size()*4);
-    for(auto quad : m_quads)
-    {
-        for(int i = 0; i < 8; i += 2)
-        {
-            vertecies.emplace_back( glm::vec3{quad.p[i], quad.p[i+1], 0}, glm::vec4{1.0, 0.0, 0.0, 1.0}, glm::vec2{0.0, 0.0} );
-        }
-    }
-    m_renderable.update(vertecies.data(), (uint32_t)m_quads.size() * 4); // 4 vertices per quad
-    
-    return;
+    // std::vector<Vertex> vertecies;
+    // vertecies.reserve(m_quads.size()*4);
+    // for(auto quad : m_quads)
+    // {
+    //     for(int i = 0; i < 8; i += 2)
+    //     {
+    //         vertecies.emplace_back( glm::vec3{quad.p[i], quad.p[i+1], 0}, glm::vec4{1.0, 0.0, 0.0, 1.0}, glm::vec2{0.0, 0.0} );
+    //     }
+    // }
+    // m_renderable.update(vertecies.data(), (uint32_t)m_quads.size() * 4); // 4 vertices per quad
+    // return;
 
     std::vector<Vertex> newVertecies;
-    Quad quad = m_quads[ m_quads.size() - 1 ];
-    for(int i = 0; i < 8; i += 2)
+
+    while( m_lastQuadSize < m_quads.size() )
     {
-        newVertecies.emplace_back( glm::vec3{quad.p[i], quad.p[i+1], 0}, glm::vec4{1.0, 0.0, 0.0, 1.0}, glm::vec2{0.0, 0.0} );
-    }
-    m_renderable.updateAppend(newVertecies.data(), (uint32_t)newVertecies.size(), 4*m_quads.size()*9*sizeof(float)); // 4 vertices per quad
+        Quad quad = m_quads[ m_lastQuadSize ];
+        for(int i = 0; i < 8; i += 2)
+        {
+            newVertecies.emplace_back( glm::vec3{quad.p[i], quad.p[i+1], 0}, glm::vec4{1.0, 0.0, 0.0, 1.0}, glm::vec2{0.0, 0.0} );
+        }
+        m_lastQuadSize++;
+    }    
+    m_renderable.updateAppend(newVertecies.data(), (uint32_t)newVertecies.size()); 
 
 }
 
