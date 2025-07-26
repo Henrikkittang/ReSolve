@@ -6,19 +6,18 @@
 #include"util/log.hpp"
 
 Renderable::Renderable()
-    : m_vertexSize(0), m_indexSize(0), m_floatPerVertex(0), m_type(PrimitiveType::TRIANGLE), 
+    : m_vertexSize(0), m_floatPerVertex(0), m_type(PrimitiveType::TRIANGLE), 
       m_mode(GL_STATIC_DRAW), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
 {}
 
 Renderable::Renderable(const void* data, uint32_t size, uint32_t vertexCapacity, uint32_t floatPerVertex, PrimitiveType type, int mode)  
-    : m_vertexCapacity(vertexCapacity), m_indexCapacity(0), m_vertexSize(size), m_indexSize(0), m_floatPerVertex(floatPerVertex), m_type(type),  
+    : m_vertexCapacity(vertexCapacity), m_vertexSize(size), m_floatPerVertex(floatPerVertex), m_type(type),  
       m_mode(mode), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
 {
     CHECK_WARN(m_vertexSize > m_vertexCapacity, "Vertex Size is larger than Vertex Capacity");
 
     std::vector<uint32_t> indices = generateIndices(m_type, m_vertexCapacity);
-    m_indexCapacity = static_cast<uint32_t>(indices.size());
-    m_indexSize     = vertexCountToIndexCount(m_type, m_vertexSize);
+    uint32_t indexCapacity = static_cast<uint32_t>(indices.size());
 
     // Generate and bind Vertex Array
     GLCall(glGenVertexArrays(1, &m_vertexArrayID));
@@ -32,7 +31,7 @@ Renderable::Renderable(const void* data, uint32_t size, uint32_t vertexCapacity,
     // Generate and bind Index Buffer
     GLCall(glGenBuffers(1, &m_indexBufferID));
     GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferID));
-    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indexCapacity * sizeof(uint32_t), indices.data(), m_mode));
+    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexCapacity * sizeof(uint32_t), indices.data(), m_mode));
 
     // Enable and set vertex attribute pointers
     GLCall(glEnableVertexAttribArray(0)); // position
@@ -59,7 +58,6 @@ Renderable::Renderable(const void* data, uint32_t size, uint32_t vertexCapacity,
 
 Renderable::Renderable(Renderable&& other)
     : m_vertexCapacity(other.m_vertexCapacity),  m_vertexSize(other.m_vertexSize), 
-    m_indexCapacity(other.m_indexCapacity),  m_indexSize(other.m_indexSize), 
     m_floatPerVertex(other.m_floatPerVertex), m_type(other.m_type), m_mode(other.m_mode),  
     m_vertexBufferID(other.m_vertexBufferID), m_vertexArrayID(other.m_vertexArrayID),
     m_indexBufferID(other.m_indexBufferID)
@@ -78,10 +76,8 @@ Renderable& Renderable::operator=(Renderable&& other)
         GLCall( glDeleteVertexArrays(1, &m_vertexArrayID) );
 
         m_vertexCapacity = other.m_vertexCapacity;
-        m_indexCapacity = other.m_indexCapacity;
 
         m_vertexSize    = other.m_vertexSize;
-        m_indexSize     = other.m_indexSize;
         m_type           = other.m_type;
         m_mode           = other.m_mode;
         m_floatPerVertex = other.m_floatPerVertex;
@@ -124,7 +120,7 @@ uint32_t Renderable::vertexSize() const
 
 uint32_t Renderable::indexSize() const 
 { 
-    return m_indexSize; 
+    return vertexCountToIndexCount(m_type, m_vertexSize);
 }
 
 uint32_t Renderable::floatPerVertex() const 
@@ -137,39 +133,21 @@ uint32_t Renderable::size() const
     return m_vertexSize * m_floatPerVertex * sizeof(float); 
 }
 
-void Renderable::update(const void* data, uint32_t vertexSize, uint32_t offset)
+
+// ! Not tested
+void Renderable::update(const void* data, uint32_t vertexSize, uint32_t vertexOffset)
 {
-    m_vertexSize = vertexSize;
+    if( vertexOffset > m_vertexSize )
+        m_vertexSize += ( m_vertexSize - vertexOffset );
 
-    // Regenerate indices based on updated vertex count
-    std::vector<uint32_t> indices = generateIndices(m_type, m_vertexSize / 4);
-    m_indexSize = static_cast<uint32_t>(indices.size());
+    CHECK_WARN(m_vertexSize > m_vertexCapacity, "New size exceeds capacity"); 
 
-    // Update or generate index buffer
-    if (m_indexBufferID == 0)
-        GLCall(glGenBuffers(1, &m_indexBufferID));
+    const uint32_t offset = m_vertexSize * m_floatPerVertex * sizeof(float);
+    const uint32_t size   = vertexSize  * m_floatPerVertex * sizeof(float);
 
-    GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferID));
-    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indexSize * sizeof(uint32_t), indices.data(), m_mode));
-
-    // Update vertex buffer
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));
-    GLCall(glBufferData(GL_ARRAY_BUFFER, m_vertexSize * m_floatPerVertex * sizeof(float), data, m_mode));
-
-    // Rebind vertex attributes if necessary (optional safety)
-    GLCall(glBindVertexArray(m_vertexArrayID));
-    GLCall(glEnableVertexAttribArray(0)); // position
-    GLCall(glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, m_floatPerVertex * sizeof(float), (void*)0));
-
-    GLCall(glEnableVertexAttribArray(1)); // color
-    GLCall(glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, m_floatPerVertex * sizeof(float), (void*)(3 * sizeof(float))));
-
-    GLCall(glEnableVertexAttribArray(2)); // texCoord
-    GLCall(glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, m_floatPerVertex * sizeof(float), (void*)(7 * sizeof(float))));
-
-    // Unbind for cleanliness
+    GLCall(glBufferSubData(GL_ARRAY_BUFFER, offset, size, data));
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
-    GLCall(glBindVertexArray(0));
 }
 
 
@@ -189,15 +167,9 @@ void Renderable::updateAppend(const void* data, uint32_t vertexSize)
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
     
     m_vertexSize += vertexSize;
-    m_indexSize = vertexCountToIndexCount(m_type, m_vertexSize);
-
-    // fmt::println("VertexSize: {} | Vertex Capacity: {} | Index Size: {} | Index Capacity {}",
-    //     m_vertexSize, m_vertexCapacity, m_indexSize, m_indexCapacity
-    // );
+  
 }
 
-
-// GLCall( glBufferSubData(GL_ARRAY_BUFFER, 0, m_vertexSize * m_floatPerVertex * sizeof(float), data) );
 
 
 /////////////
@@ -302,6 +274,8 @@ uint32_t Renderable::vertexCountToIndexCount(PrimitiveType type, uint32_t vertex
             return (vertexCount / 4) * 6;
 
         case PrimitiveType::TRIANGLE_STRIP:
+            LOG_WARN("Not implemented for TRIANGLE_STRIP");
+            return 0;
         case PrimitiveType::TRIANGLE_FAN:
             // Strip/Fan directly reference vertices in order
             return vertexCount;

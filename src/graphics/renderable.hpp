@@ -37,7 +37,7 @@ public:
     void bind() const;
     void unbind() const;
 
-    void update(const void* data, uint32_t size, uint32_t offset=0);
+    void update(const void* data, uint32_t size, uint32_t vertexOffset=0);
     void updateAppend(const void* data, uint32_t vertexSize);
 
 private:
@@ -47,11 +47,8 @@ private:
 private:
 
     uint32_t m_vertexCapacity; // * Buffer size
-    uint32_t m_indexCapacity;  // ? Make it purley a functio of m_vertexCapacity
-
     uint32_t m_vertexSize;  // * Size of acutally used in buffer 
-    uint32_t m_indexSize;   // ? Make it purley a functio of m_vertexSize 
-
+    
     uint32_t m_floatPerVertex;
     PrimitiveType m_type;
     int      m_mode;
