@@ -111,7 +111,8 @@
         "source_location": "cpp",
         "stdfloat": "cpp",
         "typeindex": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "csetjmp": "cpp"
     },
     "search.exclude": {
         "**/vendor": true

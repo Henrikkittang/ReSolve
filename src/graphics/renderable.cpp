@@ -162,6 +162,38 @@ void Renderable::update(const void* data, uint32_t vertexCount)
 }
 
 
+void Renderable::sub(const void* data, uint32_t size, uint32_t offset)
+{
+
+}
+
+void Renderable::updateAppend(const void* data, uint32_t vertexCount, uint32_t offset) 
+{
+    if (vertexCount == 0) return;
+
+    // const uint32_t offset = m_vertexCount * m_floatPerVertex * sizeof(float);
+    const uint32_t size   = vertexCount  * m_floatPerVertex * sizeof(float);
+
+    // Upload only new vertex data
+    GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));
+    GLCall(glBufferSubData(GL_ARRAY_BUFFER, offset, size, data));
+
+    return;
+    m_vertexCount += vertexCount;
+
+    // Update index buffer (if needed)
+    std::vector<uint32_t> newIndices = generateIndices(m_type, m_vertexCount / 4);
+    if (newIndices.size() > m_indexCount) {
+        m_indexCount = static_cast<uint32_t>(newIndices.size());
+
+        GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferID));
+        GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indexCount * sizeof(uint32_t), newIndices.data(), m_mode));
+    }
+
+    GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
+}
+
+
 // GLCall( glBufferSubData(GL_ARRAY_BUFFER, 0, m_vertexCount * m_floatPerVertex * sizeof(float), data) );
 
 

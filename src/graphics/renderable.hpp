@@ -16,9 +16,9 @@ enum class PrimitiveType
     TRIANGLE_FAN
 };
 
-// Try to keep following convetion
-// Size: number of bytes
-// Length: number of elements
+// * Try to keep following convention
+// * Size: number of bytes
+// * Length: number of elements
 
 class Renderable 
 {
@@ -37,6 +37,9 @@ public:
     void bind() const;
     void unbind() const;
     void update(const void* data, uint32_t size);
+
+    void sub(const void* data, uint32_t size, uint32_t offset);
+    void updateAppend(const void* data, uint32_t vertexCount, uint32_t offset);
 
 private:
     std::vector<uint32_t> generateIndices(PrimitiveType type, uint32_t primitiveCount) const;
