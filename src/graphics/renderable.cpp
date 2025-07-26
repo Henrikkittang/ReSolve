@@ -115,6 +115,17 @@ void Renderable::unbind() const
     GLCall( glBindVertexArray(0) );
 }
 
+
+uint32_t Renderable::vertexCapacity() const
+{
+    return m_vertexCapacity;
+}
+
+uint32_t Renderable::indexCapacity() const
+{
+    return vertexCountToIndexCount(m_type, m_vertexCapacity);
+}
+
 uint32_t Renderable::vertexSize() const
 {
     return m_vertexSize;
@@ -128,11 +139,6 @@ uint32_t Renderable::indexSize() const
 uint32_t Renderable::floatPerVertex() const 
 { 
     return m_floatPerVertex; 
-}
-
-uint32_t Renderable::size() const 
-{ 
-    return m_vertexSize * m_floatPerVertex * sizeof(float); 
 }
 
 

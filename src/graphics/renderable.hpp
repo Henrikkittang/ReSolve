@@ -30,10 +30,12 @@ public:
     Renderable(Renderable&& other);
     Renderable& operator=(Renderable&& other);
 
+    uint32_t vertexCapacity() const;
+    uint32_t indexCapacity() const;
     uint32_t vertexSize() const;
-    uint32_t indexSize() const;
+    uint32_t indexSize() const;    
     uint32_t floatPerVertex() const;
-    uint32_t size() const;
+    
     void bind() const;
     void unbind() const;
 
