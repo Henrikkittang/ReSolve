@@ -16,7 +16,7 @@ void SceneMaze::onCreate()
 
     m_camera = Camera{(float)ctx.window.getSize().x, (float)ctx.window.getSize().y};
 
-    m_scl = 1;
+    m_scl = 2;
 
     m_width  = ctx.window.getSize().x / m_scl;
     m_height = ctx.window.getSize().y / m_scl;
