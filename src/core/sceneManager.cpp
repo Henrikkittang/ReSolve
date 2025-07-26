@@ -44,7 +44,7 @@ Scene* SceneManager::getCurrentScene()
 
 void SceneManager::setCurrentScene(const std::string& name)
 {
-    CHECK_ERROR(m_scenes.contains(name), "Cant set scene because name not in scenes: " + name);
+    CHECK_ERROR(!m_scenes.contains(name), "Cant set scene because name not in scenes: " + name);
 
     if( m_currentScene )
         m_currentScene->onDeactivate();

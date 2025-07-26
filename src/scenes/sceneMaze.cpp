@@ -59,17 +59,17 @@ void SceneMaze::onUpdate()
         m_open.pop();
     }
 
-    // std::vector<Vertex> vertecies;
-    // vertecies.reserve(m_quads.size()*4);
-    // for(auto quad : m_quads)
-    // {
-    //     for(int i = 0; i < 8; i += 2)
-    //     {
-    //         vertecies.emplace_back( glm::vec3{quad.p[i], quad.p[i+1], 0}, glm::vec4{1.0, 0.0, 0.0, 1.0}, glm::vec2{0.0, 0.0} );
-    //     }
-    // }
-    // m_renderable.update(vertecies.data(), (uint32_t)m_quads.size() * 4); // 4 vertices per quad
-    // return;
+    std::vector<Vertex> vertecies;
+    vertecies.reserve(m_quads.size()*4);
+    for(auto quad : m_quads)
+    {
+        for(int i = 0; i < 8; i += 2)
+        {
+            vertecies.emplace_back( glm::vec3{quad.p[i], quad.p[i+1], 0}, glm::vec4{1.0, 0.0, 0.0, 1.0}, glm::vec2{0.0, 0.0} );
+        }
+    }
+    m_renderable.update(vertecies.data(), vertecies.size()); // 4 vertices per quad
+    return;
 
     std::vector<Vertex> newVertecies;
 

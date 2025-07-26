@@ -139,12 +139,13 @@ uint32_t Renderable::size() const
 // ! Not tested
 void Renderable::update(const void* data, uint32_t vertexSize, uint32_t vertexOffset)
 {
-    if( vertexOffset > m_vertexSize )
-        m_vertexSize += ( m_vertexSize - vertexOffset );
+    // if( vertexOffset > m_vertexSize )
+    //     m_vertexSize += ( vertexSize - vertexOffset );
+    m_vertexSize += vertexSize;
 
     CHECK_WARN(m_vertexSize > m_vertexCapacity, "New size exceeds capacity"); 
 
-    const uint32_t offset = m_vertexSize * m_floatPerVertex * sizeof(float);
+    const uint32_t offset = vertexOffset * m_floatPerVertex * sizeof(float);
     const uint32_t size   = vertexSize  * m_floatPerVertex * sizeof(float);
 
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));

@@ -57,7 +57,7 @@ void Logger::initilize(const std::string& logFilePath)
 
 }
 
-void Logger::log(LogLevel level, const std::string& msg, std::source_location locaction)
+void Logger::log(LogLevel level, const std::string& msg, std::source_location location)
 {
 #ifdef RS_DEBUG
    
@@ -79,13 +79,13 @@ void Logger::log(LogLevel level, const std::string& msg, std::source_location lo
     auto time = std::chrono::system_clock::to_time_t(now);
 
     // TODO: Add "./"
-    std::filesystem::path relativePath = std::filesystem::relative(locaction.file_name(), SOURCE_DIR);
+    std::filesystem::path relativePath = std::filesystem::relative(location.file_name(), SOURCE_DIR);
 
     // fmt::print("\n[{:%Y-%m-%d %H:%M:%S}] {}: {}\n{}:{}({})\n\n",
     //     *std::localtime(&time),
     //     fmt::format(fg(color) | fmt::emphasis::bold, "[{}]", levelLabel),
     //     fmt::format(fmt::emphasis::bold, "{}", msg),
-    //     relativePath.c_str(), locaction.line(), locaction.function_name()
+    //     relativePath.c_str(), location.line(), location.function_name()
     // );
 
     
@@ -93,8 +93,8 @@ void Logger::log(LogLevel level, const std::string& msg, std::source_location lo
         fmt::format(fg(color) | fmt::emphasis::bold, "[{}]", levelLabel),
         fmt::format(fmt::emphasis::italic | fmt::emphasis::underline, "{}", msg),
         fmt::format(fmt::emphasis::bold, "Time"), *std::localtime(&time),
-        fmt::format(fmt::emphasis::bold, "Function"), locaction.function_name(),
-        fmt::format(fmt::emphasis::bold, "Location"), relativePath.c_str(), locaction.line()
+        fmt::format(fmt::emphasis::bold, "Function"), location.function_name(),
+        fmt::format(fmt::emphasis::bold, "Location"), relativePath.c_str(), location.line()
     );
 
     if (level == LogLevel::FATAL) 
@@ -142,7 +142,7 @@ void GLClearError()
     while (glGetError() != GL_NO_ERROR);
 }
 
-bool GLLogCall(const char* function, const char* context, std::source_location locaction) 
+bool GLLogCall(const char* function, const char* context, std::source_location location) 
 {
     bool success = true;
     while (GLenum error = glGetError()) 
@@ -151,7 +151,7 @@ bool GLLogCall(const char* function, const char* context, std::source_location l
         fmt::print("[OpenGL ERROR]: {} ({}) \n  Function: \n Location: {}:{} \n Hint: {}",
             getGLErrorString(error), error,
             function,
-            locaction.file_name(), locaction.line(),
+            location.file_name(), location.line(),
             hint 
         );
 
