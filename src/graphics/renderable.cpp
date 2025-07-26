@@ -6,7 +6,7 @@
 #include"util/log.hpp"
 
 Renderable::Renderable()
-    : m_vertexSize(0), m_floatPerVertex(0), m_type(PrimitiveType::TRIANGLE), 
+    : m_vertexCapacity(0), m_vertexSize(0), m_floatPerVertex(0), m_type(PrimitiveType::TRIANGLE), 
       m_mode(GL_STATIC_DRAW), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
 {}
 
@@ -22,16 +22,19 @@ Renderable::Renderable(const void* data, uint32_t size, uint32_t vertexCapacity,
     // Generate and bind Vertex Array
     GLCall(glGenVertexArrays(1, &m_vertexArrayID));
     GLCall(glBindVertexArray(m_vertexArrayID));
+    CHECK_WARN(m_vertexArrayID == 0, "Failed to generate vertex array");
 
     // Generate and bind Vertex Buffer
     GLCall(glGenBuffers(1, &m_vertexBufferID));
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));
     GLCall(glBufferData(GL_ARRAY_BUFFER, m_vertexCapacity * floatPerVertex * sizeof(float), data, m_mode));
+    CHECK_WARN(m_vertexBufferID == 0, "Failed to generate buffer array");
 
     // Generate and bind Index Buffer
     GLCall(glGenBuffers(1, &m_indexBufferID));
     GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferID));
     GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexCapacity * sizeof(uint32_t), indices.data(), m_mode));
+    CHECK_WARN(m_indexBufferID == 0, "Failed to generate buffer array");
 
     // Enable and set vertex attribute pointers
     GLCall(glEnableVertexAttribArray(0)); // position
