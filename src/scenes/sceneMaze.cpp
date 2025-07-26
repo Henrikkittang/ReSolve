@@ -2,6 +2,8 @@
 
 
 #include<imgui/imgui.h>
+#include<fmt/core.h>
+
 
 #include"core/appContext.hpp"
 #include"graphics/vertex.hpp"
@@ -77,7 +79,7 @@ void SceneMaze::onUpdate()
         Quad quad = m_quads[ m_lastQuadSize ];
         for(int i = 0; i < 8; i += 2)
         {
-            newVertecies.emplace_back( glm::vec3{quad.p[i], quad.p[i+1], 0}, glm::vec4{1.0, 0.0, 0.0, 1.0}, glm::vec2{0.0, 0.0} );
+            newVertecies.emplace_back( glm::vec3{quad.p[i], quad.p[i+1], 0}, glm::vec4{1.0, (m_lastQuadSize % 255) / 255.0, 0.0, 1.0}, glm::vec2{0.0, 0.0} );
         }
         m_lastQuadSize++;
     }    

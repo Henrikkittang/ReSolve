@@ -15,7 +15,7 @@ RenderWindow::RenderWindow(GLFWwindow* window)
     : m_window(window), m_basicShader(s_basicShaderSource)
 {
     // auto camera = Camera{(float)getSize().x, (float)getSize().y};
-    auto camera = Camera{960.0, 540.0};
+    auto camera = Camera{(float)getSize().x, (float)getSize().y};
     auto mvp = camera.getMVP();
 
     m_basicShader.bind();
@@ -41,8 +41,9 @@ RenderWindow& RenderWindow::operator=(RenderWindow&& other)
         if (m_window) 
             glfwDestroyWindow(m_window);
         
-        m_window = other.m_window;
-        m_basicShader = std::move( other.m_basicShader );
+        m_window       = other.m_window;
+        m_basicShader  = std::move( other.m_basicShader );
+        
         other.m_window = nullptr;
     }
     return *this;
@@ -62,7 +63,6 @@ void RenderWindow::draw(const Renderable& renderable) const
     renderable.bind();
     m_basicShader.bind();
 
-    // GLCall( glDrawArrays(GL_TRIANGLES, 0, renderable.vertexSize()) );
     GLCall(glDrawElements(GL_TRIANGLES, renderable.indexSize(), GL_UNSIGNED_INT, nullptr));
 
     renderable.unbind();

@@ -7,7 +7,6 @@
 #include<GLFW/glfw3.h>
 #include<glm/glm.hpp>
 
-#include"core/assetManager.hpp"  // Needed for Ref, this needs to be changed
 #include"graphics/shader.hpp"
 #include"graphics/renderable.hpp"
 
@@ -49,8 +48,8 @@ public:
 private:
 
 	GLFWwindow* m_window;
+	Shader      m_basicShader;
 
-	
 	static inline const char* s_basicShaderSource = R"glsl(
 #shader vertex
 #version 460 core
@@ -90,6 +89,4 @@ void main()
 
 
 )glsl";
-
-	Shader m_basicShader;
 };
