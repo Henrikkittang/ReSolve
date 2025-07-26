@@ -11,6 +11,7 @@
 #include"graphics/renderable.hpp"
 #include"graphics/shader.hpp"
 
+// ! For of love of all that is sacred, this monstrosity needs to go 
 struct Quad
 {
     float p[8];

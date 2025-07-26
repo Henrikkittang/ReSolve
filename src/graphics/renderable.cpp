@@ -76,8 +76,7 @@ Renderable& Renderable::operator=(Renderable&& other)
         GLCall( glDeleteVertexArrays(1, &m_vertexArrayID) );
 
         m_vertexCapacity = other.m_vertexCapacity;
-
-        m_vertexSize    = other.m_vertexSize;
+        m_vertexSize     = other.m_vertexSize;
         m_type           = other.m_type;
         m_mode           = other.m_mode;
         m_floatPerVertex = other.m_floatPerVertex;
