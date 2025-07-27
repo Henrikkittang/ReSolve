@@ -53,7 +53,7 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
     }
 
     m_window = RenderWindow(window);
-    glfwSwapInterval(0);
+    m_window.setVSync(false);
 
     GLCall( glEnable(GL_BLEND) );
     GLCall( glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) );
@@ -95,7 +95,7 @@ void Application::ImGuiInit()
     io.Fonts->Build();
 
     ImGui_ImplOpenGL3_Init("#version 460");
-    ImGui_ImplGlfw_InitForOpenGL( m_window.getWindow() , true);
+    ImGui_ImplGlfw_InitForOpenGL( m_window.getNativeHandle() , true);
     ImGui::StyleColorsDark();
 }
 

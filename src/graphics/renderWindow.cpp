@@ -14,7 +14,6 @@ RenderWindow::RenderWindow()
 RenderWindow::RenderWindow(GLFWwindow* window)
     : m_window(window), m_basicShader(s_basicShaderSource)
 {
-    // auto camera = Camera{(float)getSize().x, (float)getSize().y};
     auto camera = Camera{(float)getSize().x, (float)getSize().y};
     auto mvp = camera.getMVP();
 
@@ -56,8 +55,6 @@ void RenderWindow::clear() const
     GLCall( glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT) ); 
 }
 
-
-
 void RenderWindow::draw(const Renderable& renderable) const
 {
     renderable.bind();
@@ -69,22 +66,63 @@ void RenderWindow::draw(const Renderable& renderable) const
     m_basicShader.unbind();
 }
 
-void RenderWindow::draw(const glm::vec2* vertecies, uint32_t size, PrimitiveType type) const
-{
-    
-}
-
-
-bool RenderWindow::windowShouldClose() const
-{
-    return glfwWindowShouldClose( m_window );
-}
-
 void RenderWindow::update()
 {
     glfwSwapBuffers(m_window);
     glfwPollEvents();      
 }
+
+// --------- Toggles ------------------------
+// ? Maybe have these function issue events to the application
+
+
+
+// ! Add a framebuffer_size_callback
+void RenderWindow::resize(int width, int height)
+{
+    if( m_window == nullptr )
+        glfwSetWindowSize(m_window, width, height);
+}
+
+
+void RenderWindow::setVSync(bool enabled)
+{
+    glfwSwapInterval(enabled ? 1 : 0);
+}
+
+
+// ! Untested
+void RenderWindow::toggleFullscreen()
+{
+    static bool fullscreen = false;
+    static int windowedX, windowedY, windowedWidth, windowedHeight;
+
+    fullscreen = !fullscreen;
+
+    if (fullscreen) {
+        glfwGetWindowPos(m_window, &windowedX, &windowedY);
+        glfwGetWindowSize(m_window, &windowedWidth, &windowedHeight);
+
+        GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+        const GLFWvidmode* mode = glfwGetVideoMode(monitor);
+
+        glfwSetWindowMonitor(m_window, monitor, 0, 0, mode->width, mode->height, mode->refreshRate);
+    } else {
+        glfwSetWindowMonitor(m_window, nullptr, windowedX, windowedY, windowedWidth, windowedHeight, 0);
+    }
+}
+
+
+// --------- Getters ------------------------
+
+
+glm::ivec2 RenderWindow::getMousePosition() const
+{
+    double xpos, ypos;
+    glfwGetCursorPos(m_window, &xpos, &ypos);
+    return {xpos, ypos};
+}
+
 
 glm::ivec2 RenderWindow::getSize() const
 {
@@ -93,7 +131,24 @@ glm::ivec2 RenderWindow::getSize() const
     return size;
 }
 
+GLFWwindow* RenderWindow::getNativeHandle() 
+{ 
+    return m_window; 
+}	
+
+
 bool RenderWindow::isKeyPressed(int key) const
 {
     return glfwGetKey(m_window, key) == GLFW_PRESS;
+}
+
+bool RenderWindow::windowShouldClose() const
+{
+    return glfwWindowShouldClose( m_window );
+}
+
+
+bool RenderWindow::isFullscreen() const
+{
+    return glfwGetWindowMonitor(m_window) != nullptr;
 }

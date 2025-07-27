@@ -16,9 +16,6 @@
 
 // Suggested Features:
 // - Resizing/viewport management
-// - VSync toggle
-// - Input abstraction (mouse/scroll)
-// - Optional: expose getNativeHandle() cleanly
 
 class RenderWindow
 {
@@ -34,16 +31,18 @@ public:
 
     void clear() const;
 	void draw(const Renderable& renderable) const;
-	void draw(const glm::vec2* vertecies, uint32_t size, PrimitiveType type) const;
-
-	bool windowShouldClose() const;
 	void update();
 
+	void resize(int width, int height);
+	void setVSync(bool enabled);
+	void toggleFullscreen();
+ 
+	glm::ivec2 getMousePosition() const;
 	glm::ivec2 getSize() const;
+	GLFWwindow* getNativeHandle();
 	bool isKeyPressed(int key) const;
-	
-	// This function should not exists but it does for now during development
-	GLFWwindow* getWindow() { return m_window; }	
+	bool windowShouldClose() const;
+	bool isFullscreen() const;
 	
 private:
 
