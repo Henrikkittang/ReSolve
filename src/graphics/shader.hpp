@@ -31,6 +31,9 @@ public:
     void bind() const;
     void unbind() const;
 
+    void setUniform1d(const std::string& name, double value);
+    void setUniform2d(const std::string& name, double v0, double v1);
+
     void setUniform1f(const std::string& name, float value);
     void setUniform1i(const std::string& name, int value);
 

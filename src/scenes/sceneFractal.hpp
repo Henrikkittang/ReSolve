@@ -28,9 +28,10 @@ public:
     void onDeactivate() override;
 
 private:
-    float        uZoom;                   
-    glm::vec2    uPan;               
-    int          maxIterations;
+
+    double       m_scale;
+    glm::dvec2   m_center;
+    int          m_maxIterations;
     
     AssetHandle m_shaderHandle;
     Renderable  m_renderTarget;

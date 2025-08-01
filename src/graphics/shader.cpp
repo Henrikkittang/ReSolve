@@ -95,6 +95,16 @@ void Shader::unbind() const
     GLCall( glUseProgram(0) );
 }
 
+void Shader::setUniform1d(const std::string& name, double value)
+{
+    GLCall(glUniform1d(getUniformLocation(name), value));
+}
+
+void Shader::setUniform2d(const std::string& name, double v0, double v1)
+{
+    GLCall(glUniform2d(getUniformLocation(name), v0, v1));
+}
+
 
 void Shader::setUniform1f(const std::string& name, float value)
 {
@@ -156,29 +166,42 @@ ShaderProgramSource Shader::parseShader(const std::string& source)
 
     return { ss[0].str(), ss[1].str() };
 }
-
 uint32_t Shader::compileShader(uint32_t type, const std::string& source)
 {
     uint32_t id = glCreateShader(type);
     const char* src = source.c_str();
-    GLCall( glShaderSource(id, 1, &src, nullptr) );
-    GLCall( glCompileShader(id) );
+    GLCall(glShaderSource(id, 1, &src, nullptr));
+    GLCall(glCompileShader(id));
 
-    int result;
-    GLCall( glGetShaderiv(id, GL_COMPILE_STATUS, &result) );
-    if(result == GL_FALSE)
+    int result = GL_FALSE;
+    GLCall(glGetShaderiv(id, GL_COMPILE_STATUS, &result));
+
+    if (result == GL_FALSE)
     {
-        int length;
-        GLCall( glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length) );
-        char* message = (char*)alloca(length * sizeof(char));
-        GLCall( glGetShaderInfoLog(id, length, &length, message) );
-        LOG_ERROR( "Failed to compile shader, " + std::string(message)  );
-        GLCall( glDeleteShader(id) );
-        return 0; 
+        int length = 0;
+        GLCall(glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length));
+
+        std::vector<char> message(length);
+        GLCall(glGetShaderInfoLog(id, length, &length, message.data()));
+
+        std::string shaderType =
+            (type == GL_VERTEX_SHADER) ? "VERTEX" :
+            (type == GL_FRAGMENT_SHADER) ? "FRAGMENT" :
+            (type == GL_GEOMETRY_SHADER) ? "GEOMETRY" : "UNKNOWN";
+
+        LOG_ERROR("Failed to compile " + shaderType + " shader");
+        LOG_ERROR("Shader log:\n" + std::string(message.data()));
+
+        // Optionally dump source for debugging
+        LOG_ERROR("Shader source:\n" + source);
+
+        GLCall(glDeleteShader(id));
+        return 0;
     }
 
     return id;
 }
+
 
 uint32_t Shader::createShader(const std::string& vertexShader, const std::string& fragmentShader)
 {

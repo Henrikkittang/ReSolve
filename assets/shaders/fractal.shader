@@ -3,7 +3,8 @@
 
 layout(location = 0) in vec4 position;
 
-void main() {
+void main() 
+{
     gl_Position = position;
 }
 
@@ -12,12 +13,13 @@ void main() {
 
 layout(location = 0) out vec4 color;
 
-uniform float uZoom;            
-uniform vec2 uPan;              
-uniform int maxIterations;              
+uniform dvec2 uCenter;
+uniform double uScale;
+uniform int umaxIterations;
+uniform vec2 uResolution;
 
-// Optimized interpolateColor using float and vec3
-vec3 interpolateColor(float t) {
+vec3 interpolateColor(float t)
+{
     vec3 color1 = vec3(0.8, 0.3, 0.1);
     vec3 color2 = vec3(0.1, 0.8, 0.8);
     vec3 color3 = vec3(0.8, 0.8, 0.1);
@@ -33,32 +35,37 @@ vec3 interpolateColor(float t) {
 
 void main()
 {
-    // Avoid using double precision — float is enough
-    float normX = ((gl_FragCoord.x / 960.0) * 2.0 - 1.0);
-    float normY = ((gl_FragCoord.y / 540.0) * 2.0 - 1.0);
+    // Use double for initial high-precision mapping
+    dvec2 pixelPos = dvec2(gl_FragCoord.xy);
+    dvec2 offset = (pixelPos - dvec2(uResolution) * 0.5) * uScale;
+    dvec2 dC = uCenter + offset;
 
-    float x0 = 1.235 * normX * uZoom - uPan.x - 0.765;
-    float y0 = 1.120 * normY * uZoom - uPan.y;
+    // Convert to float for main loop
+    vec2 c = vec2(dC);
+    vec2 z = c;
 
-    float xn = x0;
-    float yn = y0;
-
-    float xn2, yn2, xt;
     int i;
-    for (i = 0; i < maxIterations; ++i)
+    for (i = 0; i < umaxIterations; ++i)
     {
-        xn2 = xn * xn;
-        yn2 = yn * yn;
+        float x = z.x;
+        float y = z.y;
 
-        if (xn2 + yn2 >= 4.0)
-            break;
+        if (x * x + y * y > 4.0) break;
 
-        xt = xn2 - yn2 + x0;
-        yn = 2.0 * xn * yn + y0;
-        xn = xt;
+        z = vec2(x * x - y * y, 2.0 * x * y) + c;
     }
 
-    float normIter = float(i) / float(maxIterations);
-    vec3 finalColor = interpolateColor(normIter);
+    // Smooth iteration
+    float smoothIter = float(i);
+    if (i < umaxIterations)
+    {
+        float mag2 = dot(z, z);
+        float log_zn = log(mag2) / 2.0;
+        float nu = log(log_zn / log(2.0)) / log(2.0);
+        smoothIter = float(i) + 1.0 - nu;
+    }
+
+    float t = smoothIter / float(umaxIterations);
+    vec3 finalColor = interpolateColor(t);
     color = vec4(finalColor, 1.0);
 }

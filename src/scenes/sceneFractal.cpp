@@ -8,13 +8,24 @@
 
 void SceneFractal::onCreate()
 {
-    uZoom = 1.0f;
-    uPan = {0.0f, 0.0f};
-    maxIterations = 500;
+   
+
+    glm::vec2 screenSize = (glm::vec2)ctx.window.getSize();
+
+    m_center = glm::dvec2(-0.75, 0.0);
+    m_scale = 3.0 / screenSize.y; // Fit vertically
+    m_maxIterations = 500;
+
 
     ctx.assets.load("./assets/shaders/fractal.shader", m_shaderHandle);
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
+    shader->bind();
+    shader->setUniform2d("uCenter", m_center.x, m_center.y);
+    shader->setUniform1d("uScale", m_scale);
+    shader->setUniform1i("umaxIterations", m_maxIterations);   
+    shader->setUniform2f("uResolution", screenSize.x, screenSize.y);   
+    shader->unbind();
 
-    glm::ivec2 screenSize = ctx.window.getSize();
 
     float vertecies[] = {
          -1.0f, -1.0f,
@@ -23,6 +34,8 @@ void SceneFractal::onCreate()
         -1.0f,  1.0f,
     };     
     m_renderTarget = Renderable(vertecies, 4, 2, PrimitiveType::QUAD);
+
+    
 
     /*std::vector<float> positions = {
         -1.0f, -1.0f,
@@ -78,29 +91,28 @@ void SceneFractal::onDeactivate()
 
 void SceneFractal::onUpdate() 
 {    
-    if( ctx.window.isKeyPressed(GLFW_KEY_UP) )
-        uZoom = uZoom * 0.99;
+    if (ctx.window.isKeyPressed(GLFW_KEY_UP))
+        m_scale *= 0.99; // Zoom in
+    if (ctx.window.isKeyPressed(GLFW_KEY_DOWN))
+        m_scale /= 0.99; // Zoom out
 
-    if( ctx.window.isKeyPressed(GLFW_KEY_DOWN) )
-        uZoom = uZoom / 0.99;
+    // Pan (move center in world space)
+    double panStep = 1.0 * m_scale;
 
-    if( ctx.window.isKeyPressed(GLFW_KEY_W) )
-        uPan.y = uPan.y - 0.01 * uZoom;
-
-    if( ctx.window.isKeyPressed(GLFW_KEY_S) )
-        uPan.y = uPan.y + 0.01 * uZoom;
-
-    if( ctx.window.isKeyPressed(GLFW_KEY_D) )
-        uPan.x = uPan.x - 0.01 * uZoom;
-
-    if( ctx.window.isKeyPressed(GLFW_KEY_A) )
-        uPan.x = uPan.x + 0.01 * uZoom;
+    if (ctx.window.isKeyPressed(GLFW_KEY_W))
+        m_center.y += panStep;
+    if (ctx.window.isKeyPressed(GLFW_KEY_S))
+        m_center.y -= panStep;
+    if (ctx.window.isKeyPressed(GLFW_KEY_A))
+        m_center.x -= panStep;
+    if (ctx.window.isKeyPressed(GLFW_KEY_D))
+        m_center.x += panStep;
 
     Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
     shader->bind();
-    shader->setUniform1f("uZoom", uZoom);
-    shader->setUniform2f("uPan", uPan.x, uPan.y);
-    shader->setUniform1i("maxIterations", maxIterations);   
+    shader->setUniform2d("uCenter", m_center.x, m_center.y);
+    shader->setUniform1d("uScale", m_scale);
+    shader->setUniform1i("umaxIterations", m_maxIterations);   
     shader->unbind();
 }
 
@@ -125,7 +137,7 @@ void SceneFractal::onRender()
 
 void SceneFractal::onImGuiRender() 
 {
-    ImGui::DragInt("Max iterations", &maxIterations, 100, 5, 3000);
+    ImGui::DragInt("Max iterations", &m_maxIterations, 100, 5, 3000);
 }
 
 
