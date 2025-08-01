@@ -24,7 +24,7 @@ void SceneFractal::onCreate()
     };     
     m_renderTarget = Renderable(vertecies, 4, 2, PrimitiveType::QUAD);
 
-    std::vector<float> positions = {
+    /*std::vector<float> positions = {
         -1.0f, -1.0f,
          1.0f, -1.0f,
          1.0f,  1.0f,
@@ -52,7 +52,7 @@ void SceneFractal::onCreate()
     VertexBufferLayout layout; 
     layout.push<float>(2);
     
-    m_va.addBuffer(vb, layout);
+    m_va.addBuffer(vb, layout);*/
 }
 
 void SceneFractal::onActivate() 
@@ -62,8 +62,8 @@ void SceneFractal::onActivate()
     shader->bind();
     m_renderTarget.bind();
 
-    m_va.bind();
-    m_ib.bind();
+    // m_va.bind();
+    // m_ib.bind();
 }
 void SceneFractal::onDeactivate() 
 {
@@ -72,8 +72,8 @@ void SceneFractal::onDeactivate()
     shader->unbind();
     m_renderTarget.unbind();
 
-    m_va.unbind();
-    m_ib.unbind();
+    // m_va.unbind();
+    // m_ib.unbind();
 }
 
 void SceneFractal::onUpdate() 
