@@ -39,7 +39,4 @@ This project contains a .vscode folder, which means that the easiest way to buil
 
 ## Renderwindow
 - Resizing/viewport management
-- VSync toggle
-- Input abstraction (mouse/scroll)
-- Optional: expose getNativeHandle() cleanly
 - I maybe want the applicaton class to own the raw window pointer and have a renderwindow wrapped around it and sent to the scenes without ever modifying it

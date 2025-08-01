@@ -6,10 +6,8 @@
 
 
 #include"core/scene.hpp"
-#include"core/camera.hpp"
 #include"core/asset.hpp"
 #include"graphics/renderable.hpp"
-#include"graphics/shader.hpp"
 
 // ! For of love of all that is sacred, this monstrosity needs to go 
 struct Quad
@@ -44,12 +42,12 @@ private:
 
 private:
     uint32_t               m_width, m_height, m_scl;
+    
     std::vector<int>       m_mazeData;
     std::stack<glm::ivec2> m_open;
-    AssetHandle         m_shaderHandle;
+    
+    AssetHandle            m_shaderHandle;
     Renderable             m_renderable;
     std::vector<Quad>      m_quads;
     uint32_t               m_lastQuadSize;
-
-    Camera m_camera;
 };

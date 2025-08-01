@@ -6,6 +6,10 @@
 #include"graphics/renderable.hpp"
 #include"util/log.hpp"
 
+
+
+
+
 RenderWindow::RenderWindow()
     : m_window(nullptr), m_basicShader()
 {}
@@ -14,6 +18,9 @@ RenderWindow::RenderWindow()
 RenderWindow::RenderWindow(GLFWwindow* window)
     : m_window(window), m_basicShader(s_basicShaderSource)
 {
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+
     auto camera = Camera{(float)getSize().x, (float)getSize().y};
     auto mvp = camera.getMVP();
 
@@ -80,7 +87,7 @@ void RenderWindow::update()
 // ! Add a framebuffer_size_callback
 void RenderWindow::resize(int width, int height)
 {
-    if( m_window == nullptr )
+    if( m_window != nullptr )
         glfwSetWindowSize(m_window, width, height);
 }
 
@@ -90,27 +97,6 @@ void RenderWindow::setVSync(bool enabled)
     glfwSwapInterval(enabled ? 1 : 0);
 }
 
-
-// ! Untested
-void RenderWindow::toggleFullscreen()
-{
-    static bool fullscreen = false;
-    static int windowedX, windowedY, windowedWidth, windowedHeight;
-
-    fullscreen = !fullscreen;
-
-    if (fullscreen) {
-        glfwGetWindowPos(m_window, &windowedX, &windowedY);
-        glfwGetWindowSize(m_window, &windowedWidth, &windowedHeight);
-
-        GLFWmonitor* monitor = glfwGetPrimaryMonitor();
-        const GLFWvidmode* mode = glfwGetVideoMode(monitor);
-
-        glfwSetWindowMonitor(m_window, monitor, 0, 0, mode->width, mode->height, mode->refreshRate);
-    } else {
-        glfwSetWindowMonitor(m_window, nullptr, windowedX, windowedY, windowedWidth, windowedHeight, 0);
-    }
-}
 
 
 // --------- Getters ------------------------
@@ -148,7 +134,14 @@ bool RenderWindow::windowShouldClose() const
 }
 
 
-bool RenderWindow::isFullscreen() const
+
+
+
+
+void RenderWindow::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
-    return glfwGetWindowMonitor(m_window) != nullptr;
+    // Update the OpenGL viewport to the new framebuffer size
+    glViewport(0, 0, width, height);
+
+   
 }

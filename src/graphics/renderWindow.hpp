@@ -16,6 +16,8 @@
 
 // Suggested Features:
 // - Resizing/viewport management
+//   This needs some kind of resize event that scenes can react to
+
 
 class RenderWindow
 {
@@ -35,15 +37,16 @@ public:
 
 	void resize(int width, int height);
 	void setVSync(bool enabled);
-	void toggleFullscreen();
  
 	glm::ivec2 getMousePosition() const;
 	glm::ivec2 getSize() const;
 	GLFWwindow* getNativeHandle();
 	bool isKeyPressed(int key) const;
 	bool windowShouldClose() const;
-	bool isFullscreen() const;
-	
+
+private:
+	static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+
 private:
 
 	GLFWwindow* m_window;

@@ -3,8 +3,7 @@
 
 layout(location = 0) in vec4 position;
 
-void main()
-{
+void main() {
     gl_Position = position;
 }
 
@@ -17,48 +16,49 @@ uniform float uZoom;
 uniform vec2 uPan;              
 uniform int maxIterations;              
 
+// Optimized interpolateColor using float and vec3
+vec3 interpolateColor(float t) {
+    vec3 color1 = vec3(0.8, 0.3, 0.1);
+    vec3 color2 = vec3(0.1, 0.8, 0.8);
+    vec3 color3 = vec3(0.8, 0.8, 0.1);
+    vec3 color4 = vec3(0.0, 0.0, 0.0);
 
-dvec3 interpolateColor(double t)
-{
-    dvec3 color1 = dvec3(0.8, 0.3, 0.1);  // Yellow
-    dvec3 color2 = dvec3(0.1, 0.8, 0.8);  // Cyan
-    dvec3 color3 = dvec3(0.8, 0.8, 0.1);  // Yellow
-    dvec3 color4 = dvec3(0.0, 0.0, 0.0);  // Red
-    
-    // Interpolate between color1 and color2, then color2 and color3, etc.
     if (t < 0.33)
-        return mix(color1, color2, t * 3.0);  // Interpolate from blue to cyan
+        return mix(color1, color2, t * 3.0);
     else if (t < 0.66)
-        return mix(color2, color3, (t - 0.33) * 3.0);  // Interpolate from cyan to yellow
+        return mix(color2, color3, (t - 0.33) * 3.0);
     else
-        return mix(color3, color4, (t - 0.66) * 3.0);  // Interpolate from yellow to red
+        return mix(color3, color4, (t - 0.66) * 3.0);
 }
 
 void main()
 {
-    double x0 = 1.235 * ((gl_FragCoord.x / 960.0) * 2.0 - 1.0) * uZoom  - uPan.x  - 0.765; 
-    double y0 = 1.120 * ((gl_FragCoord.y / 540.0) * 2.0 - 1.0) * uZoom  - uPan.y ;        
+    // Avoid using double precision — float is enough
+    float normX = ((gl_FragCoord.x / 960.0) * 2.0 - 1.0);
+    float normY = ((gl_FragCoord.y / 540.0) * 2.0 - 1.0);
 
-    double xn = x0;
-    double yn = y0;
+    float x0 = 1.235 * normX * uZoom - uPan.x - 0.765;
+    float y0 = 1.120 * normY * uZoom - uPan.y;
 
+    float xn = x0;
+    float yn = y0;
 
-    double xn2, yn2, xt;
-
-    int iterations = 0;
-    for(iterations = 0; iterations < maxIterations; iterations++)
+    float xn2, yn2, xt;
+    int i;
+    for (i = 0; i < maxIterations; ++i)
     {
-        xn2 = xn*xn;
-        yn2 = yn*yn;
+        xn2 = xn * xn;
+        yn2 = yn * yn;
 
-        if( xn2 + yn2 >= 4.0f )
+        if (xn2 + yn2 >= 4.0)
             break;
 
         xt = xn2 - yn2 + x0;
-        yn = 2*xn*yn + y0;
-        xn = xt;        
+        yn = 2.0 * xn * yn + y0;
+        xn = xt;
     }
 
-    dvec3 finalColor = interpolateColor(double(iterations) / double(maxIterations));
+    float normIter = float(i) / float(maxIterations);
+    vec3 finalColor = interpolateColor(normIter);
     color = vec4(finalColor, 1.0);
-} 
+}

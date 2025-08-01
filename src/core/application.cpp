@@ -106,6 +106,8 @@ void Application::run()
     std::string currentname = names[0];
     m_sceneManager.setCurrentScene(currentname);
 
+    // ! Kinda bad, means that all systems depend on wether window should close or not
+    // ! Add a m_running memeber and add window should close as a possible way of finishing app
     while( !m_window.windowShouldClose() )
     {
         Event event;
