@@ -5,6 +5,7 @@
 #include"core/camera.hpp"
 #include"core/asset.hpp"
 
+#include"graphics/renderable.hpp"
 #include"graphics/shader.hpp"
 
 #include"decapricated/vertexArray.hpp"
@@ -32,9 +33,9 @@ private:
     int          maxIterations;
     
     AssetHandle m_shaderHandle;
+    Renderable  m_renderTarget;
+
     VertexArray    m_va;
     IndexBuffer    m_ib;
-
-    Camera m_camera;
 };
 

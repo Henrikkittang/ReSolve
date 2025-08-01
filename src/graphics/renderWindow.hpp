@@ -7,6 +7,7 @@
 #include<GLFW/glfw3.h>
 #include<glm/glm.hpp>
 
+#include"core/base.hpp"
 #include"graphics/shader.hpp"
 #include"graphics/renderable.hpp"
 
@@ -32,6 +33,7 @@ public:
 	RenderWindow& operator=(RenderWindow&& other);
 
     void clear() const;
+	void draw(const Renderable& renderable, Ref<Shader> shader) const;
 	void draw(const Renderable& renderable) const;
 	void update();
 

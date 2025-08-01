@@ -8,13 +8,21 @@
 
 void SceneFractal::onCreate()
 {
-    m_camera = Camera{960.0, 540.0};
-
     uZoom = 1.0f;
     uPan = {0.0f, 0.0f};
     maxIterations = 500;
 
     ctx.assets.load("./assets/shaders/fractal.shader", m_shaderHandle);
+
+    glm::ivec2 screenSize = ctx.window.getSize();
+
+    float vertecies[] = {
+         -1.0f, -1.0f,
+         1.0f, -1.0f,
+         1.0f,  1.0f,
+        -1.0f,  1.0f,
+    };     
+    m_renderTarget = Renderable(vertecies, 4, 2, PrimitiveType::QUAD);
 
     std::vector<float> positions = {
         -1.0f, -1.0f,
@@ -52,6 +60,8 @@ void SceneFractal::onActivate()
     Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
 
     shader->bind();
+    m_renderTarget.bind();
+
     m_va.bind();
     m_ib.bind();
 }
@@ -60,6 +70,8 @@ void SceneFractal::onDeactivate()
     Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
 
     shader->unbind();
+    m_renderTarget.unbind();
+
     m_va.unbind();
     m_ib.unbind();
 }
@@ -85,9 +97,11 @@ void SceneFractal::onUpdate()
         uPan.x = uPan.x + 0.01 * uZoom;
 
     Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
+    shader->bind();
     shader->setUniform1f("uZoom", uZoom);
     shader->setUniform2f("uPan", uPan.x, uPan.y);
     shader->setUniform1i("maxIterations", maxIterations);   
+    shader->unbind();
 }
 
 void SceneFractal::onRender() 
@@ -97,8 +111,12 @@ void SceneFractal::onRender()
     // shader->bind();
     // m_va.bind();
     // m_ib.bind();
+
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
+    ctx.window.draw(m_renderTarget, shader);
+
     
-    GLCall( glDrawElements(GL_TRIANGLES, m_ib.getCount(), GL_UNSIGNED_INT, nullptr) );
+    // GLCall( glDrawElements(GL_TRIANGLES, m_ib.getCount(), GL_UNSIGNED_INT, nullptr) );
 
     // shader->unbind();
     // m_va.unbind();

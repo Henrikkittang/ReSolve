@@ -62,6 +62,18 @@ void RenderWindow::clear() const
     GLCall( glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT) ); 
 }
 
+
+void RenderWindow::draw(const Renderable& renderable, Ref<Shader> shader) const
+{
+    shader->bind();
+    renderable.bind();
+
+    GLCall(glDrawElements(GL_TRIANGLES, renderable.indexSize(), GL_UNSIGNED_INT, nullptr));
+
+    shader->unbind();
+    renderable.unbind();
+}
+
 void RenderWindow::draw(const Renderable& renderable) const
 {
     renderable.bind();

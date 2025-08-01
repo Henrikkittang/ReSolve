@@ -10,6 +10,48 @@ Renderable::Renderable()
       m_mode(GL_STATIC_DRAW), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
 {}
 
+// ? Felt cute, might delete later
+Renderable::Renderable(const void* data, uint32_t size, uint32_t floatPerVertex, PrimitiveType type, int mode)  
+    : m_vertexCapacity(size), m_vertexSize(size), m_floatPerVertex(floatPerVertex), m_type(type),  
+      m_mode(mode), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
+{
+    std::vector<uint32_t> indices = generateIndices(m_type, m_vertexCapacity);
+    uint32_t indexCapacity = static_cast<uint32_t>(indices.size());
+
+    // Generate and bind Vertex Array
+    GLCall(glGenVertexArrays(1, &m_vertexArrayID));
+    GLCall(glBindVertexArray(m_vertexArrayID));
+    CHECK_WARN(m_vertexArrayID == 0, "Failed to generate vertex array");
+
+    // Generate and bind Vertex Buffer
+    GLCall(glGenBuffers(1, &m_vertexBufferID));
+    GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));
+    GLCall(glBufferData(GL_ARRAY_BUFFER, m_vertexCapacity * floatPerVertex * sizeof(float), data, m_mode));
+    CHECK_WARN(m_vertexBufferID == 0, "Failed to generate buffer array");
+
+    // Generate and bind Index Buffer
+    GLCall(glGenBuffers(1, &m_indexBufferID));
+    GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBufferID));
+    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexCapacity * sizeof(uint32_t), indices.data(), m_mode));
+    CHECK_WARN(m_indexBufferID == 0, "Failed to generate buffer array");
+
+    // Enable and set vertex attribute pointers
+    GLCall(glEnableVertexAttribArray(0)); // position
+    GLCall(glEnableVertexAttribArray(1)); // color
+    GLCall(glEnableVertexAttribArray(2)); // texCoord
+
+    GLsizei stride = floatPerVertex * sizeof(float);
+
+    // Attribute 0: position (vec2)
+    GLCall(glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, stride, (void*)(0)));
+
+    // Unbind Vertex Array (VAO)
+    GLCall(glBindVertexArray(0));
+
+    // Optional: unbind buffer (not strictly necessary as VAO stores state)
+    GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
+}
+
 Renderable::Renderable(const void* data, uint32_t size, uint32_t vertexCapacity, uint32_t floatPerVertex, PrimitiveType type, int mode)  
     : m_vertexCapacity(vertexCapacity), m_vertexSize(size), m_floatPerVertex(floatPerVertex), m_type(type),  
       m_mode(mode), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)

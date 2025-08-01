@@ -25,6 +25,7 @@ class Renderable
 public:
 
     Renderable();
+    Renderable(const void* data, uint32_t size, uint32_t floatPerVertex, PrimitiveType type, int mode=GL_STATIC_DRAW);  
     Renderable(const void* data, uint32_t size, uint32_t vertexCapacity, uint32_t floatPerVertex, PrimitiveType type, int mode=GL_STATIC_DRAW);   
     ~Renderable();
     Renderable(Renderable&& other);
