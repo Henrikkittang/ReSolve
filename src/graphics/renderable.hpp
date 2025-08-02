@@ -56,7 +56,7 @@ private:
     uint32_t m_vertexCapacity; // * Buffer size
     uint32_t m_vertexSize;  // * Size of acutally used in buffer 
     
-    uint32_t m_floatsPerVertex;
+    uint32_t m_stride;
     PrimitiveType m_type;
     int      m_mode;
     GLuint   m_vertexBufferID;

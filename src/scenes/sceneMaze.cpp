@@ -31,7 +31,7 @@ void SceneMaze::onCreate()
     layout.push<float>(2); // Position vec2
     layout.push<float>(4); // Color vec4
 
-    m_renderable = Renderable{nullptr, 0, (uint32_t)(m_width * m_height * 6 * sizeof(float)), 6, PrimitiveType::QUAD, GL_DYNAMIC_DRAW};
+    m_renderable = Renderable{nullptr, 0, (uint32_t)m_width * m_height * layout.getStride(), layout.getStride(), PrimitiveType::QUAD, GL_DYNAMIC_DRAW};
     m_renderable.setVertexLayout(layout);
 
     m_mazeData = std::vector<int>( m_width*m_height, 1 );
