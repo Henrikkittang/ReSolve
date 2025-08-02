@@ -37,8 +37,6 @@ Renderable::Renderable(const void* data, uint32_t size, uint32_t floatPerVertex,
 
     // Enable and set vertex attribute pointers
     GLCall(glEnableVertexAttribArray(0)); // position
-    GLCall(glEnableVertexAttribArray(1)); // color
-    GLCall(glEnableVertexAttribArray(2)); // texCoord
 
     GLsizei stride = floatPerVertex * sizeof(float);
 
@@ -69,7 +67,7 @@ Renderable::Renderable(const void* data, uint32_t size, uint32_t vertexCapacity,
     // Generate and bind Vertex Buffer
     GLCall(glGenBuffers(1, &m_vertexBufferID));
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));
-    GLCall(glBufferData(GL_ARRAY_BUFFER, m_vertexCapacity * floatPerVertex * sizeof(float), data, m_mode));
+    GLCall(glBufferData(GL_ARRAY_BUFFER, m_vertexCapacity * m_floatPerVertex * sizeof(float), data, m_mode));
     CHECK_WARN(m_vertexBufferID == 0, "Failed to generate buffer array");
 
     // Generate and bind Index Buffer
@@ -78,27 +76,7 @@ Renderable::Renderable(const void* data, uint32_t size, uint32_t vertexCapacity,
     GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexCapacity * sizeof(uint32_t), indices.data(), m_mode));
     CHECK_WARN(m_indexBufferID == 0, "Failed to generate buffer array");
 
-    // Enable and set vertex attribute pointers
-    GLCall(glEnableVertexAttribArray(0)); // position
-    GLCall(glEnableVertexAttribArray(1)); // color
-    GLCall(glEnableVertexAttribArray(2)); // texCoord
-
-    GLsizei stride = floatPerVertex * sizeof(float);
-
-    // Attribute 0: position (vec3)
-    GLCall(glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, (void*)(0)));
-
-    // Attribute 1: color (vec4)
-    GLCall(glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, stride, (void*)(3 * sizeof(float))));
-
-    // Attribute 2: texCoord (vec2)
-    GLCall(glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, stride, (void*)(7 * sizeof(float))));
-
-    // Unbind Vertex Array (VAO)
-    GLCall(glBindVertexArray(0));
-
-    // Optional: unbind buffer (not strictly necessary as VAO stores state)
-    GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
+    
 }
 
 Renderable::Renderable(Renderable&& other)
@@ -181,6 +159,35 @@ uint32_t Renderable::indexSize() const
 uint32_t Renderable::floatPerVertex() const 
 { 
     return m_floatPerVertex; 
+}
+
+
+void Renderable::defaultBufferLayout()
+{
+    GLCall( glBindVertexArray(m_vertexArrayID) );
+    GLCall( glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID) );
+    
+    // Enable and set vertex attribute pointers
+    GLCall(glEnableVertexAttribArray(0)); // position
+    GLCall(glEnableVertexAttribArray(1)); // color
+    GLCall(glEnableVertexAttribArray(2)); // texCoord
+
+    GLsizei stride = m_floatPerVertex * sizeof(float);
+
+    // Attribute 0: position (vec3)
+    GLCall(glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, (void*)(0)));
+
+    // Attribute 1: color (vec4)
+    GLCall(glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, stride, (void*)(3 * sizeof(float))));
+
+    // Attribute 2: texCoord (vec2)
+    GLCall(glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, stride, (void*)(7 * sizeof(float))));
+
+    // Unbind Vertex Array (VAO)
+    GLCall(glBindVertexArray(0));
+
+    // Optional: unbind buffer (not strictly necessary as VAO stores state)
+    GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
 }
 
 

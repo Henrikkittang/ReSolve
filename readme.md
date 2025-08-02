@@ -25,18 +25,24 @@ This project contains a .vscode folder, which means that the easiest way to buil
 - Be able to send data to scenes, send data through events?
 - Remove need for appContext.hpp to be included in cpp whenever its used
 - Make a quick and simple file interface for standardized paths
+- The asset manager is kinda overkill, as my projects rearly uses that many assets or has any need for dynamic loading, unloading or caching. 
+- There realy is not camera system in place, only a util for calculating the mvp matrix, so move this over to a util class
 
 ## Build system
 - Use cmake fetch content in favor of git modules
 - Make better cross platform vscode tasks
 - Making sure paths for assets are correct
 - ? Add a production build mode (with copying of assets, bundling libraries, etc)
-- Maybe have som sort of system where its easy to switch compilers (vscode specific)
+- ? Have som sort of system where its easy to switch compilers (vscode specific)
 
 ## Logger
 - Switch to spdlogger
 - Swap out fmt in favor of C++23 functionality
+- Integrate OpenGL errors better with the logger
 
 ## Renderwindow
 - Resizing/viewport management
-- I maybe want the applicaton class to own the raw window pointer and have a renderwindow wrapped around it and sent to the scenes without ever modifying it
+- ? I maybe want the applicaton class to own the raw window pointer and have a renderwindow wrapped around it and sent to the scenes without ever modifying it
+
+## Renderable
+- Fix vertex atrribute array issue, something like the old vertexbuffer solution
