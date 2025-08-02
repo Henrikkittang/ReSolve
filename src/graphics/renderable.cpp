@@ -6,13 +6,13 @@
 #include"util/log.hpp"
 
 Renderable::Renderable()
-    : m_vertexCapacity(0), m_vertexSize(0), m_floatPerVertex(0), m_type(PrimitiveType::TRIANGLE), 
+    : m_vertexCapacity(0), m_vertexSize(0), m_floatsPerVertex(0), m_type(PrimitiveType::TRIANGLE), 
       m_mode(GL_STATIC_DRAW), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
 {}
 
 // ? Felt cute, might delete later
 Renderable::Renderable(const void* data, uint32_t size, uint32_t floatPerVertex, PrimitiveType type, int mode)  
-    : m_vertexCapacity(size), m_vertexSize(size), m_floatPerVertex(floatPerVertex), m_type(type),  
+    : m_vertexCapacity(size), m_vertexSize(size), m_floatsPerVertex(floatPerVertex), m_type(type),  
       m_mode(mode), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
 {
     std::vector<uint32_t> indices = generateIndices(m_type, m_vertexCapacity);
@@ -51,7 +51,7 @@ Renderable::Renderable(const void* data, uint32_t size, uint32_t floatPerVertex,
 }
 
 Renderable::Renderable(const void* data, uint32_t size, uint32_t vertexCapacity, uint32_t floatPerVertex, PrimitiveType type, int mode)  
-    : m_vertexCapacity(vertexCapacity), m_vertexSize(size), m_floatPerVertex(floatPerVertex), m_type(type),  
+    : m_vertexCapacity(vertexCapacity), m_vertexSize(size), m_floatsPerVertex(floatPerVertex), m_type(type),  
       m_mode(mode), m_vertexBufferID(0), m_vertexArrayID(0), m_indexBufferID(0)
 {
     CHECK_WARN(m_vertexSize > m_vertexCapacity, "Vertex Size is larger than Vertex Capacity");
@@ -67,7 +67,7 @@ Renderable::Renderable(const void* data, uint32_t size, uint32_t vertexCapacity,
     // Generate and bind Vertex Buffer
     GLCall(glGenBuffers(1, &m_vertexBufferID));
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));
-    GLCall(glBufferData(GL_ARRAY_BUFFER, m_vertexCapacity * m_floatPerVertex * sizeof(float), data, m_mode));
+    GLCall(glBufferData(GL_ARRAY_BUFFER, m_vertexCapacity * m_floatsPerVertex * sizeof(float), data, m_mode));
     CHECK_WARN(m_vertexBufferID == 0, "Failed to generate buffer array");
 
     // Generate and bind Index Buffer
@@ -81,7 +81,7 @@ Renderable::Renderable(const void* data, uint32_t size, uint32_t vertexCapacity,
 
 Renderable::Renderable(Renderable&& other)
     : m_vertexCapacity(other.m_vertexCapacity),  m_vertexSize(other.m_vertexSize), 
-    m_floatPerVertex(other.m_floatPerVertex), m_type(other.m_type), m_mode(other.m_mode),  
+    m_floatsPerVertex(other.m_floatsPerVertex), m_type(other.m_type), m_mode(other.m_mode),  
     m_vertexBufferID(other.m_vertexBufferID), m_vertexArrayID(other.m_vertexArrayID),
     m_indexBufferID(other.m_indexBufferID)
 {
@@ -102,7 +102,7 @@ Renderable& Renderable::operator=(Renderable&& other)
         m_vertexSize     = other.m_vertexSize;
         m_type           = other.m_type;
         m_mode           = other.m_mode;
-        m_floatPerVertex = other.m_floatPerVertex;
+        m_floatsPerVertex = other.m_floatsPerVertex;
         m_vertexBufferID = other.m_vertexBufferID;
         m_vertexArrayID  = other.m_vertexArrayID;
         m_indexBufferID  = other.m_indexBufferID;
@@ -158,7 +158,7 @@ uint32_t Renderable::indexSize() const
 
 uint32_t Renderable::floatPerVertex() const 
 { 
-    return m_floatPerVertex; 
+    return m_floatsPerVertex; 
 }
 
 
@@ -172,7 +172,7 @@ void Renderable::defaultVertexLayout()
     GLCall(glEnableVertexAttribArray(1)); // color
     GLCall(glEnableVertexAttribArray(2)); // texCoord
 
-    GLsizei stride = m_floatPerVertex * sizeof(float);
+    GLsizei stride = m_floatsPerVertex * sizeof(float);
 
     // Attribute 0: position (vec3)
     GLCall(glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, (void*)(0)));
@@ -215,12 +215,12 @@ void Renderable::update(const void* data, uint32_t vertexSize, uint32_t vertexOf
 
     CHECK_WARN(m_vertexSize > m_vertexCapacity, "New size exceeds capacity"); 
 
-    const uint32_t offset = vertexOffset * m_floatPerVertex * sizeof(float);
-    const uint32_t size   = vertexSize  * m_floatPerVertex * sizeof(float);
+    const uint32_t offset = vertexOffset * m_floatsPerVertex * sizeof(float);
+    const uint32_t size   = vertexSize  * m_floatsPerVertex * sizeof(float);
 
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));
 
-    // GLCall(glBufferData(GL_ARRAY_BUFFER, m_vertexSize * m_floatPerVertex * sizeof(float), data, m_mode));
+    // GLCall(glBufferData(GL_ARRAY_BUFFER, m_vertexSize * m_floatsPerVertex * sizeof(float), data, m_mode));
     GLCall(glBufferSubData(GL_ARRAY_BUFFER, offset, size, data));
     
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
@@ -233,8 +233,8 @@ void Renderable::updateAppend(const void* data, uint32_t vertexSize)
 
     CHECK_WARN(m_vertexSize + vertexSize > m_vertexCapacity, "New size exceeds capacity"); 
 
-    const uint32_t offset = m_vertexSize * m_floatPerVertex * sizeof(float);
-    const uint32_t size   = vertexSize  * m_floatPerVertex * sizeof(float);
+    const uint32_t offset = m_vertexSize * m_floatsPerVertex * sizeof(float);
+    const uint32_t size   = vertexSize  * m_floatsPerVertex * sizeof(float);
 
     // Upload only new vertex data
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID));

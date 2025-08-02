@@ -25,10 +25,10 @@ struct Quad
 
 struct MazeVertex
 {
-    glm::vec3 position;
+    glm::vec2 position;
     glm::vec4 color;
 
-    MazeVertex(glm::vec3 position, glm::vec4 color)
+    MazeVertex(glm::vec2 position, glm::vec4 color)
         :position(position), color(color)
     {}
 };

@@ -28,10 +28,10 @@ void SceneMaze::onCreate()
     shader->setUniformMat4f("uMVP", camera.getMVP());
 
     VertexLayout layout;
-    layout.push<float>(3); // Position vec3
+    layout.push<float>(2); // Position vec2
     layout.push<float>(4); // Color vec4
 
-    m_renderable = Renderable{nullptr, 0, (uint32_t)(m_width * m_height * 7 * sizeof(float)), 7, PrimitiveType::QUAD, GL_DYNAMIC_DRAW};
+    m_renderable = Renderable{nullptr, 0, (uint32_t)(m_width * m_height * 6 * sizeof(float)), 6, PrimitiveType::QUAD, GL_DYNAMIC_DRAW};
     m_renderable.setVertexLayout(layout);
 
     m_mazeData = std::vector<int>( m_width*m_height, 1 );
@@ -85,7 +85,7 @@ void SceneMaze::onUpdate()
         Quad quad = m_quads[ m_lastQuadSize ];
         for(int i = 0; i < 8; i += 2)
         {
-            newVertecies.emplace_back( glm::vec3{quad.p[i], quad.p[i+1], 0.0f}, glm::vec4{1.0, (m_lastQuadSize % 255) / 255.0, 0.0, 1.0} );
+            newVertecies.emplace_back( glm::vec2{quad.p[i], quad.p[i+1]}, glm::vec4{1.0, (m_lastQuadSize % 255) / 255.0, 0.0, 1.0} );
         }
         m_lastQuadSize++;
     }    
