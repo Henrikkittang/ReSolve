@@ -11,22 +11,17 @@
 
 
 RenderWindow::RenderWindow()
-    : m_window(nullptr), m_basicShader()
+    : m_window(nullptr)
 {}
 
 
 RenderWindow::RenderWindow(GLFWwindow* window)
-    : m_window(window), m_basicShader(s_basicShaderSource)
+    : m_window(window)
 {
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 
-    auto camera = Camera{(float)getSize().x, (float)getSize().y};
-    auto mvp = camera.getMVP();
-
-    m_basicShader.bind();
-    m_basicShader.setUniformMat4f("uMVP", mvp);
-    m_basicShader.unbind();
+  
 }
 
 RenderWindow::~RenderWindow()
@@ -36,7 +31,7 @@ RenderWindow::~RenderWindow()
 }
 
 RenderWindow::RenderWindow(RenderWindow&& other)
-    : m_window(other.m_window), m_basicShader( std::move(other.m_basicShader) )
+    : m_window(other.m_window)
 {
     other.m_window = nullptr; 
 }
@@ -48,7 +43,6 @@ RenderWindow& RenderWindow::operator=(RenderWindow&& other)
             glfwDestroyWindow(m_window);
         
         m_window       = other.m_window;
-        m_basicShader  = std::move( other.m_basicShader );
         
         other.m_window = nullptr;
     }
@@ -74,16 +68,6 @@ void RenderWindow::draw(const Renderable& renderable, Ref<Shader> shader) const
     renderable.unbind();
 }
 
-void RenderWindow::draw(const Renderable& renderable) const
-{
-    renderable.bind();
-    m_basicShader.bind();
-
-    GLCall(glDrawElements(GL_TRIANGLES, renderable.indexSize(), GL_UNSIGNED_INT, nullptr));
-
-    renderable.unbind();
-    m_basicShader.unbind();
-}
 
 void RenderWindow::update()
 {
