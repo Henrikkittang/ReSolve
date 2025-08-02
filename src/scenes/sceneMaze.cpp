@@ -19,8 +19,12 @@ void SceneMaze::onCreate()
     m_width  = ctx.window.getSize().x / m_scl;
     m_height = ctx.window.getSize().y / m_scl;
 
-    m_renderable = Renderable{nullptr, 0, (uint32_t)(m_width * m_height * 8 * sizeof(float)), 9, PrimitiveType::QUAD, GL_DYNAMIC_DRAW};
-    m_renderable.defaultVertexLayout();
+    VertexLayout layout;
+    layout.push<float>(3); // Position vec3
+    layout.push<float>(4); // Color vec4
+
+    m_renderable = Renderable{nullptr, 0, (uint32_t)(m_width * m_height * 7 * sizeof(float)), 7, PrimitiveType::QUAD, GL_DYNAMIC_DRAW};
+    m_renderable.setVertexLayout(layout);
 
     m_mazeData = std::vector<int>( m_width*m_height, 1 );
 
@@ -70,13 +74,13 @@ void SceneMaze::onUpdate()
     // m_renderable.update(vertecies.data(), vertecies.size()); // 4 vertices per quad
     // return;
 
-    std::vector<Vertex> newVertecies;
+    std::vector<MazeVertex> newVertecies;
     while( m_lastQuadSize < m_quads.size() )
     {
         Quad quad = m_quads[ m_lastQuadSize ];
         for(int i = 0; i < 8; i += 2)
         {
-            newVertecies.emplace_back( glm::vec3{quad.p[i], quad.p[i+1], 0}, glm::vec4{1.0, (m_lastQuadSize % 255) / 255.0, 0.0, 1.0}, glm::vec2{0.0, 0.0} );
+            newVertecies.emplace_back( glm::vec3{quad.p[i], quad.p[i+1], 0.0f}, glm::vec4{1.0, (m_lastQuadSize % 255) / 255.0, 0.0, 1.0} );
         }
         m_lastQuadSize++;
     }    
