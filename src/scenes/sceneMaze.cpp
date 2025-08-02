@@ -7,7 +7,6 @@
 
 #include"core/appContext.hpp"
 #include"core/camera.hpp"
-#include"graphics/vertex.hpp"
 #include"util/random.hpp"
 #include"util/log.hpp"
 
@@ -107,7 +106,6 @@ void SceneMaze::onRender()
 void SceneMaze::onImGuiRender() 
 {
     ImGui::Text("Quads: %zu",  m_quads.size());
-    ImGui::Text("Vertices size: %zu kB", sizeof(Vertex) * m_quads.size() * 4/1000);
 }
 
 

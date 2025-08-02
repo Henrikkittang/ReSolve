@@ -23,11 +23,9 @@ public:
 
     const std::vector<VertexElement>& getElements() const;
     uint32_t getStride() const; 
-    uint32_t getFloatsPerVertex() const;
 private:
     std::vector<VertexElement> m_elements;
     uint32_t m_stride;
-    uint32_t m_floatsPerVertex;
 };
 
 template<>
