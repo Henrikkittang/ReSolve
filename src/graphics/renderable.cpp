@@ -36,7 +36,7 @@ Renderable::Renderable(const void* data, uint32_t size, uint32_t floatPerVertex,
     CHECK_WARN(m_indexBufferID == 0, "Failed to generate buffer array");
 
     // Enable and set vertex attribute pointers
-    GLCall(glEnableVertexAttribArray(0)); // position
+    /*GLCall(glEnableVertexAttribArray(0)); // position
 
     GLsizei stride = floatPerVertex * sizeof(float);
 
@@ -47,7 +47,7 @@ Renderable::Renderable(const void* data, uint32_t size, uint32_t floatPerVertex,
     GLCall(glBindVertexArray(0));
 
     // Optional: unbind buffer (not strictly necessary as VAO stores state)
-    GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
+    GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));*/
 }
 
 Renderable::Renderable(const void* data, uint32_t size, uint32_t vertexCapacity, uint32_t floatPerVertex, PrimitiveType type, int mode)  
@@ -162,7 +162,7 @@ uint32_t Renderable::floatPerVertex() const
 }
 
 
-void Renderable::defaultBufferLayout()
+void Renderable::defaultVertexLayout()
 {
     GLCall( glBindVertexArray(m_vertexArrayID) );
     GLCall( glBindBuffer(GL_ARRAY_BUFFER, m_vertexBufferID) );
@@ -188,6 +188,22 @@ void Renderable::defaultBufferLayout()
 
     // Optional: unbind buffer (not strictly necessary as VAO stores state)
     GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
+}
+
+void Renderable::setVertexLayout(const VertexLayout& layout)
+{
+    bind();
+    const auto& elements = layout.getElements();
+    uint32_t offset = 0;
+    for(size_t i = 0; i < elements.size(); i++)
+    {
+        const auto& element = elements[i];
+        GLCall( glEnableVertexAttribArray(i) );
+        GLCall( glVertexAttribPointer(i, element.count, element.type, element.normalized, layout.getStride(), (const void*)offset) );
+        offset += element.count * VertexElement::getSizeOfType( element.type );
+    }
+
+    unbind();
 }
 
 

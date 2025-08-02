@@ -5,6 +5,7 @@
 
 #include<glad/glad.h>
 
+#include"graphics/vertexLayout.hpp"
 
 enum class PrimitiveType
 {
@@ -40,7 +41,8 @@ public:
     void bind() const;
     void unbind() const;
 
-    void defaultBufferLayout();
+    void defaultVertexLayout();
+    void setVertexLayout(const VertexLayout& layout);
 
     void update(const void* data, uint32_t size, uint32_t vertexOffset=0);
     void updateAppend(const void* data, uint32_t vertexSize);

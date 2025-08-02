@@ -28,14 +28,20 @@ void SceneFractal::onCreate()
 
 
     float vertecies[] = {
-         -1.0f, -1.0f,
+        -1.0f, -1.0f,
          1.0f, -1.0f,
          1.0f,  1.0f,
         -1.0f,  1.0f,
     };     
+    
+    VertexLayout layout;
+    layout.push<float>(2);
+    
     m_renderTarget = Renderable(vertecies, 4, 2, PrimitiveType::QUAD);
 
     
+    
+    m_renderTarget.setVertexLayout(layout);
 
     /*std::vector<float> positions = {
         -1.0f, -1.0f,

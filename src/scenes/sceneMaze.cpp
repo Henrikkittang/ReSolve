@@ -20,7 +20,7 @@ void SceneMaze::onCreate()
     m_height = ctx.window.getSize().y / m_scl;
 
     m_renderable = Renderable{nullptr, 0, (uint32_t)(m_width * m_height * 8 * sizeof(float)), 9, PrimitiveType::QUAD, GL_DYNAMIC_DRAW};
-    m_renderable.defaultBufferLayout();
+    m_renderable.defaultVertexLayout();
 
     m_mazeData = std::vector<int>( m_width*m_height, 1 );
 
