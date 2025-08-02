@@ -6,6 +6,7 @@
 
 
 #include"core/appContext.hpp"
+#include"core/camera.hpp"
 #include"graphics/vertex.hpp"
 #include"util/random.hpp"
 #include"util/log.hpp"
@@ -18,6 +19,13 @@ void SceneMaze::onCreate()
 
     m_width  = ctx.window.getSize().x / m_scl;
     m_height = ctx.window.getSize().y / m_scl;
+
+    Camera camera{(float)ctx.window.getSize().x, (float)ctx.window.getSize().y};
+
+    ctx.assets.load("./assets/shaders/maze.shader", m_shaderHandle);
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
+    shader->bind();
+    shader->setUniformMat4f("uMVP", camera.getMVP());
 
     VertexLayout layout;
     layout.push<float>(3); // Position vec3
@@ -33,9 +41,6 @@ void SceneMaze::onCreate()
         position = { Random::getInt(0, m_width), Random::getInt(0, m_height) };
     m_open.push( position );
     
-
-    ctx.assets.load("./assets/shaders/red.shader", m_shaderHandle);
-
     m_lastQuadSize = m_quads.size();
 }
 
@@ -92,8 +97,8 @@ void SceneMaze::onUpdate()
 void SceneMaze::onRender() 
 {
    
-
-    ctx.window.draw(m_renderable);
+    Ref<Shader> shader = ctx.assets.get<Shader>(m_shaderHandle);
+    ctx.window.draw(m_renderable, shader);
 
     
 }
