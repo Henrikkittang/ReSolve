@@ -36,6 +36,8 @@ set(GLFW_BUILD_DOCS OFF CACHE BOOL " " FORCE)
 add_subdirectory(vendor/GLAD)
 add_subdirectory(vendor/GLFW)
 add_subdirectory(vendor/fmt)
+add_subdirectory(vendor/spdlog)
+
 
 # ImGui setup
 set(IMGUI_DIR ${CMAKE_SOURCE_DIR}/vendor/imgui)
@@ -80,6 +82,8 @@ target_link_libraries(resolve PRIVATE
     OpenGL::GL
     imgui
     fmt::fmt
+    spdlog::spdlog
+
 )
 
 # Compiler definitions
