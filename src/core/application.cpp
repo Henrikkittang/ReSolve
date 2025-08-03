@@ -21,8 +21,8 @@
 Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std::string& title)
 {
     Random::initialize();
-    Noise::initilize();
-    Logger::initilize("");
+    Noise::initialize();
+    Logger::initialize();
 
     if (!glfwInit())
         LOG_FATAL("Failed to initialize GLFW");
@@ -61,9 +61,10 @@ Application::Application(uint32_t screenWidth, uint32_t screenHeight, const std:
 #ifdef RS_DEBUG
     enableOpenGLDebugOutput();
 #endif
-    LOG_INFO("OpenGL Version: " + std::string(reinterpret_cast<const char*>(glGetString(GL_VERSION))));
-    LOG_INFO("GL Renderer: " + std::string(reinterpret_cast<const char*>(glGetString(GL_RENDERER))));
-    LOG_INFO("GL Vendor: " + std::string(reinterpret_cast<const char*>(glGetString(GL_VENDOR))));
+
+    LOG_INFO("OpenGL Version: {}", reinterpret_cast<const char*>(glGetString(GL_VERSION)));
+    LOG_INFO("GL Renderer: {}", reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
+    LOG_INFO("GL Vendor: {}", reinterpret_cast<const char*>(glGetString(GL_VENDOR)));
 
 }
 

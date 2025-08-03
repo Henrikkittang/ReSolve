@@ -26,7 +26,7 @@ bool AssetManager::load(const std::string& filePathString, AssetHandle& handle)
     auto [type, resFunc] = getType(extension);
     if( type == AssetType::NON )
     {
-        LOG_ERROR("Asset manager does not support this file type");
+        LOG_ERROR("Asset manager does not support files of type {}", extension);
         return false; 
     }
 

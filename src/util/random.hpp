@@ -36,7 +36,7 @@ public:
 
     Noise() = delete;
 
-    static void initilize();
+    static void initialize();
     static void destroy();
     static double noise(double x, double y, double z) ;
     static double turbulence(double x, double y, double z, int depth=7);

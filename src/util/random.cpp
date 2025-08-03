@@ -38,7 +38,7 @@ int32_t Random::getInt(int32_t min, int32_t max)
 
 
 
-void Noise::initilize() 
+void Noise::initialize() 
 {
 
     delete[] s_randomValues;
@@ -48,7 +48,7 @@ void Noise::initilize()
 
     // These does not need to be heap allocations, but they are a straight forward and should never be called
     // in a loop. I dont realy know the implications of static stack allocations.
-    // Pluss its nice to be able to reinitilize with a different s_pointCount
+    // Pluss its nice to be able to reinitialize with a different s_pointCount
     s_pointCount = 256;
     s_randomValues = new glm::vec3[s_pointCount];
     s_xperm = new int[s_pointCount];

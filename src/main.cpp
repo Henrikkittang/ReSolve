@@ -5,7 +5,6 @@
 #include"scenes/sceneMaze.hpp"
 #include"scenes/sceneNoise.hpp"
 
-#include <spdlog/spdlog.h>
 
 
 int main()

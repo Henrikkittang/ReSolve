@@ -6,6 +6,7 @@
 
 
 #include<glad/glad.h>
+#include<spdlog/spdlog.h>
 
 #include"core/base.hpp"
 
@@ -18,34 +19,29 @@
 // | `FATAL` | Critical problem that forces app termination                | GL context failure, missing dependencies    |
 
 
-enum class LogLevel { TRACE=0, DEBUG, INFO, WARN, ERROR, FATAL };
-
 class Logger {
 public:
-    static void initilize(const std::string& logFilePath);
-    static void log(LogLevel level, const std::string& msg, std::source_location locaction = std::source_location::current());
-
+    static void initialize();
+    static Ref<spdlog::logger> getLogger() { return s_logger; }
 
 private:
-    static LogLevel      s_curLevel;
-    static std::ofstream s_file;
-    static std::mutex    s_mutex;
+    static Ref<spdlog::logger> s_logger;
 
 };
 
 
-#define LOG_TRACE(msg) Logger::log(LogLevel::TRACE, msg)
-#define LOG_DEBUG(msg) Logger::log(LogLevel::DEBUG, msg)
-#define LOG_INFO(msg)  Logger::log(LogLevel::INFO,  msg)
-#define LOG_WARN(msg)  Logger::log(LogLevel::WARN,  msg)
-#define LOG_ERROR(msg) Logger::log(LogLevel::ERROR, msg)
-#define LOG_FATAL(msg) Logger::log(LogLevel::FATAL, msg)
+#define LOG_TRACE(...) Logger::getLogger()->trace(__VA_ARGS__)
+#define LOG_DEBUG(...) Logger::getLogger()->debug(__VA_ARGS__)
+#define LOG_INFO(...)  Logger::getLogger()->info(__VA_ARGS__)
+#define LOG_WARN(...)  Logger::getLogger()->warn(__VA_ARGS__)
+#define LOG_ERROR(...) Logger::getLogger()->error(__VA_ARGS__)
+#define LOG_FATAL(...) Logger::getLogger()->critical(__VA_ARGS__)
 
-#define CHECK_DEBUG(cond, msg) do { if (cond) LOG_DEBUG(msg); } while (0)
-#define CHECK_INFO(cond, msg)  do { if (cond) LOG_INFO(msg); } while (0)
-#define CHECK_WARN(cond, msg)  do { if (cond) LOG_WARN(msg); } while (0)
-#define CHECK_ERROR(cond, msg) do { if (cond) LOG_ERROR(msg); } while (0)
-#define CHECK_FATAL(cond, msg) do { if (cond) LOG_FATAL(msg); } while (0)
+#define CHECK_DEBUG(cond, ...) do { if (cond) LOG_DEBUG(__VA_ARGS__); } while (0)
+#define CHECK_INFO(cond, ...)  do { if (cond) LOG_INFO(__VA_ARGS__); } while (0)
+#define CHECK_WARN(cond, ...)  do { if (cond) LOG_WARN(__VA_ARGS__); } while (0)
+#define CHECK_ERROR(cond, ...) do { if (cond) LOG_ERROR(__VA_ARGS__); } while (0)
+#define CHECK_FATAL(cond, ...) do { if (cond) LOG_FATAL(__VA_ARGS__); } while (0)
 
 
 

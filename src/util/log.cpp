@@ -2,23 +2,28 @@
 
 #include<filesystem>
 
-#include<fmt/core.h>
-#include<fmt/base.h>
-#include<fmt/color.h>
-#include<fmt/chrono.h>
 
-LogLevel      Logger::s_curLevel;
-std::mutex    Logger::s_mutex;
+#include<spdlog/sinks/stdout_color_sinks.h>
+#include<spdlog/sinks/basic_file_sink.h>
 
-// TODO: Log files
-// TODO: Log level filter
-// ? Swap out in favor off spdlog
-// ? Make more customizable
-// ? Add async queue for messages
-// ? Remove fmt in favor of built-in print and format
 
-void Logger::initilize(const std::string& logFilePath)
+Ref<spdlog::logger> Logger::s_logger;
+
+
+void Logger::initialize()
 {
+    std::vector<spdlog::sink_ptr> logSinks;
+    logSinks.emplace_back(std::make_shared<spdlog::sinks::stdout_color_sink_mt>());
+    logSinks.emplace_back(std::make_shared<spdlog::sinks::basic_file_sink_mt>("ReSolve.log", true));
+
+    logSinks[0]->set_pattern("[%T] [%l] %n: %v");
+    logSinks[1]->set_pattern("[%T] [%^%l%$] [%s:%# - %!] %v");
+
+    s_logger = std::make_shared<spdlog::logger>("APP", begin(logSinks), end(logSinks));
+    spdlog::register_logger(s_logger);
+    s_logger->set_level(spdlog::level::trace);
+    s_logger->flush_on(spdlog::level::trace);
+
     #if __cplusplus == 202002L
         fmt::println("C++20");
     #elif __cplusplus == 202300L
@@ -55,54 +60,9 @@ void Logger::initilize(const std::string& logFilePath)
         fmt::println("No mode is active.");
     #endif
 
+
+
 }
-
-void Logger::log(LogLevel level, const std::string& msg, std::source_location location)
-{
-#ifdef RS_DEBUG
-   
-    std::lock_guard<std::mutex> lock(s_mutex);
-
-    fmt::color color;
-    std::string levelLabel;
-
-    switch (level) 
-    {
-        case LogLevel::DEBUG: levelLabel = "DEBUG"; color = fmt::color::cyan; break;
-        case LogLevel::INFO:  levelLabel = "INFO";  color = fmt::color::green; break;
-        case LogLevel::WARN:  levelLabel = "WARN";  color = fmt::color::yellow; break;
-        case LogLevel::ERROR: levelLabel = "ERROR"; color = fmt::color::red; break;
-        case LogLevel::FATAL: levelLabel = "FATAL"; color = fmt::color::magenta; break;
-    }
-
-    auto now = std::chrono::system_clock::now();
-    auto time = std::chrono::system_clock::to_time_t(now);
-
-    // TODO: Add "./"
-    std::filesystem::path relativePath = std::filesystem::relative(location.file_name(), SOURCE_DIR);
-
-    // fmt::print("\n[{:%Y-%m-%d %H:%M:%S}] {}: {}\n{}:{}({})\n\n",
-    //     *std::localtime(&time),
-    //     fmt::format(fg(color) | fmt::emphasis::bold, "[{}]", levelLabel),
-    //     fmt::format(fmt::emphasis::bold, "{}", msg),
-    //     relativePath.c_str(), location.line(), location.function_name()
-    // );
-
-    
-    fmt::print("\n{}: {} \n {}:  {:%Y-%m-%d %H:%M:%S} \n {}: {} \n {}: ./{}:{}\n\n",
-        fmt::format(fg(color) | fmt::emphasis::bold, "[{}]", levelLabel),
-        fmt::format(fmt::emphasis::italic | fmt::emphasis::underline, "{}", msg),
-        fmt::format(fmt::emphasis::bold, "Time"), *std::localtime(&time),
-        fmt::format(fmt::emphasis::bold, "Function"), location.function_name(),
-        fmt::format(fmt::emphasis::bold, "Location"), relativePath.c_str(), location.line()
-    );
-
-    if (level == LogLevel::FATAL) 
-        exit(1);
-#endif 
-}
-
-
 
 
 
