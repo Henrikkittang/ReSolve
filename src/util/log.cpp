@@ -16,48 +16,42 @@ void Logger::initialize()
     logSinks.emplace_back(std::make_shared<spdlog::sinks::stdout_color_sink_mt>());
     logSinks.emplace_back(std::make_shared<spdlog::sinks::basic_file_sink_mt>("ReSolve.log", true));
 
-    logSinks[0]->set_pattern("[%T] [%l] %n: %v");
+    logSinks[0]->set_pattern("[%T] [%^%l%$] %n: %v \n");
     logSinks[1]->set_pattern("[%T] [%^%l%$] [%s:%# - %!] %v");
 
-    s_logger = std::make_shared<spdlog::logger>("APP", begin(logSinks), end(logSinks));
+    s_logger = std::make_shared<spdlog::logger>("RESOLVE", begin(logSinks), end(logSinks));
     spdlog::register_logger(s_logger);
     s_logger->set_level(spdlog::level::trace);
     s_logger->flush_on(spdlog::level::trace);
 
-    #if __cplusplus == 202002L
-        fmt::println("C++20");
-    #elif __cplusplus == 202300L
-        fmt::println("C++23");
-    #elif __cplusplus > 202002L
-        fmt::println("C++23 or newer (__cplusplus = {})", __cplusplus);
-    #elif __cplusplus == 201703L
-        fmt::println("C++17");
-    #elif __cplusplus == 201402L
-        fmt::println("C++14");
-    #elif __cplusplus == 201103L
-        fmt::println("C++11");
-    #elif __cplusplus == 199711L
-        fmt::println("C++98");
-    #else
-        fmt::println("pre-standard or unknown (__cplusplus = {})", __cplusplus);
-    #endif
+    // ? Kinda shakey code, maybe better to just print out the macro value
+    constexpr auto cpp_version = __cplusplus;
+    if( cpp_version > 202002L)        LOG_INFO("Version C++23 or newer (__cplusplus = {})", __cplusplus);
+    else if( cpp_version ==  202300L) LOG_INFO("Version C++23");
+    else if( cpp_version ==  202002L) LOG_INFO("Version C++20");
+    else if( cpp_version ==  201703L) LOG_INFO("Version C++17");
+    else if( cpp_version ==  201402L) LOG_INFO("Version C++14");
+    else if( cpp_version ==  201103L) LOG_INFO("Version C++11");
+    else if( cpp_version ==  199711L) LOG_INFO("Version C++98");
+    else LOG_INFO("pre-standard or unknown (__cplusplus = {})", __cplusplus);
+
 
     #ifdef _MSC_VER
-        fmt::println("Compiled with MSVC");
+        LOG_INFO("Compiled with MSVC");
     #elif defined(__clang__)
-        fmt::println("Compiled with Clang");
+        LOG_INFO("Compiled with Clang");
     #elif defined(__GNUC__)
-        fmt::println("Compiled with GCC");
+        LOG_INFO("Compiled with GCC");
     #else
-        fmt::println("Compiler not detected");
+        LOG_INFO("Compiler not detected");
     #endif
 
     #if RS_DEBUG
-        fmt::println("Debug mode is active.");
+        LOG_INFO("Debug mode is active.");
     #elif RS_RELEASE
-        fmt::println("Release mode is active.");
+        LOG_INFO("Release mode is active.");
     #else
-        fmt::println("No mode is active.");
+        LOG_INFO("No mode is active.");
     #endif
 
 
@@ -108,7 +102,7 @@ bool GLLogCall(const char* function, const char* context, std::source_location l
     while (GLenum error = glGetError()) 
     {
         const char* hint = getGLErrorHint(error);
-        fmt::print("[OpenGL ERROR]: {} ({}) \n  Function: \n Location: {}:{} \n Hint: {}",
+        LOG_ERROR("[OpenGL ERROR]: {} ({}) \n  Function: \n Location: {}:{} \n Hint: {}",
             getGLErrorString(error), error,
             function,
             location.file_name(), location.line(),
@@ -168,14 +162,13 @@ void APIENTRY GLDebugCallback(GLenum source, GLenum type, GLuint id,
                                      const GLchar* message, const void* userParam) 
 {
 
-    fmt::print( "[GL DEBUG] Type: {} | Severity: {} | Source: {} \n Message: {}", 
+    LOG_ERROR( "[GL DEBUG] Type: {} | Severity: {} | Source: {} \n Message: {}", 
         getDebugType(type),
         getDebugSeverity(severity),
         getDebugSource(source),
         message
     );
 
-    // GL_DEBUG_SEVERITY_HIGH ? LOG_ERROR(ss.str()) : LOG_WARN(ss.str());    
 }
 
 void enableOpenGLDebugOutput() 

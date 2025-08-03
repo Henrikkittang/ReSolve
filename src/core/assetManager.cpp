@@ -42,7 +42,7 @@ bool AssetManager::load(const std::string& filePathString, AssetHandle& handle)
     Ref<Asset> asset = resFunc();
     if(!asset->load(filepath.string()))
     {
-        LOG_ERROR("Asset failed to load");
+        LOG_ERROR("Asset failed to load: {}", filePathString);
         return false; 
     }
     

@@ -58,6 +58,7 @@ Shader& Shader::operator=(Shader&& other)
 bool Shader::load(const std::string& filepath)
 {
     std::ifstream file(filepath);
+    CHECK_ERROR(!file.is_open(), "Failed to open file: {}", filepath);
     
     std::stringstream buffer;
     buffer << file.rdbuf();
@@ -189,11 +190,11 @@ uint32_t Shader::compileShader(uint32_t type, const std::string& source)
             (type == GL_FRAGMENT_SHADER) ? "FRAGMENT" :
             (type == GL_GEOMETRY_SHADER) ? "GEOMETRY" : "UNKNOWN";
 
-        LOG_ERROR("Failed to compile " + shaderType + " shader");
-        LOG_ERROR("Shader log:\n" + std::string(message.data()));
 
-        // Optionally dump source for debugging
-        LOG_ERROR("Shader source:\n" + source);
+        LOG_ERROR("Failed to compile {} shader \n Shader log: {}", 
+            shaderType, 
+            message.data()
+        );
 
         GLCall(glDeleteShader(id));
         return 0;
@@ -228,7 +229,7 @@ uint32_t Shader::getUniformLocation(const std::string& name)
 
     int location = glGetUniformLocation(m_renderID, name.c_str());
     if(location == -1)
-        LOG_WARN("Uniform '" + name + "' dosent exists!");
+        LOG_WARN("Uniform '{}' dosent exists", name);
     m_uniformLocationCache[name] = location;
     return location;
 }

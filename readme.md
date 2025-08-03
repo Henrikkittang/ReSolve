@@ -36,9 +36,9 @@ This project contains a .vscode folder, which means that the easiest way to buil
 - ? Have som sort of system where its easy to switch compilers (vscode specific)
 
 ## Logger
-- Switch to spdlogger
 - Swap out fmt in favor of C++23 functionality
 - Integrate OpenGL errors better with the logger
+- Add file, line and function to output log
 
 ## Renderwindow
 - Resizing/viewport management

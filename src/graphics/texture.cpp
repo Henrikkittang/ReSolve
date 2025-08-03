@@ -95,7 +95,7 @@ bool Texture::load(const std::string& filepath)
 
     if (!m_localBuffer) 
     {
-        LOG_WARN("Failed to load texture: " + filepath);
+        LOG_WARN("Failed to load texture: {}", filepath);
         return false;
     }
 
